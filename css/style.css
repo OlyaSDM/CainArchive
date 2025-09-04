@@ -1,0 +1,111 @@
+:root{
+	--red: #780000;
+	--bg:#003049;
+	--light-blue: #219ebc;
+	--blue:#457b9d;
+	--ivory: #fdf0d5;
+  --dark-blue: #023047;
+}
+
+
+
+
+
+/* Hero Layout */
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding-left: 6vw;
+  box-sizing: border-box;
+}
+
+.hero-video {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+
+.hero-overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  background-color: rgba(0, 31, 47, 0.8); /* #003049 at 70% opacity */
+  z-index: -1;
+}
+
+.hero-content {
+  max-width: 600px;
+  color: #fff;
+  z-index: 1;
+}
+
+.hero-content h1 {
+  font-family: "Frank Ruhl Libre", serif;
+  font-size: 68px;
+  letter-spacing: 0.1em;
+  margin-bottom: 1rem;
+}
+
+.hero-content p {
+  font-family: "Roboto Slab", serif;
+  font-size: 22px;
+  margin-bottom: 2rem;
+  color: #fff;
+  font-weight: 100;
+}
+
+.hero-cta {
+  text-decoration: none;
+}
+
+.hero-cta-btn{
+  padding: 10px 15px;
+  font-family: "Roboto Slab", serif;
+  font-weight: 300;
+  transition: all 0.3s ease;
+  background-color: var(--light-blue);
+  border: none;
+  font-size: 16px;
+
+}
+.hero-cta-btn:hover{
+  cursor: pointer;
+  background-color: var(--blue);
+
+}
+
+/*  Responsive  */
+@media (max-width: 1024px) {
+  .hero {
+    justify-content: center;
+    padding: 0 4vw;
+    text-align: center;
+  }
+  .hero-content {
+    max-width: 90%;
+  }
+  .hero-content h1 {
+    font-size: 2.5rem;
+  }
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+  .hero-content p {
+    font-size: 1rem;
+  }
+}
+
