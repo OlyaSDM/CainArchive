@@ -5,10 +5,26 @@
 	--blue:#457b9d;
 	--ivory: #fdf0d5;
   --dark-blue: #023047;
+  --white: #ffffff;
 }
 
+@font-face {
+  font-family: 'Trajan Pro';
+  src: url('fonts/trajanpro_bold.otf') format('opentype');
+  font-weight: bold; 
+  font-style: normal;
+  font-display: swap;
+}
 
+.roboto-slab {
+  font-family: "Roboto Slab", serif;
+}
 
+.great-vibes-regular {
+  font-family: "Great Vibes", cursive;
+  font-weight: 400;
+  font-style: normal;
+}
 
 
 /* Hero Layout */
@@ -43,7 +59,7 @@
 
 .hero-content {
   max-width: 600px;
-  color: #fff;
+  color: var(--white);
   z-index: 1;
 }
 
@@ -58,7 +74,7 @@
   font-family: "Roboto Slab", serif;
   font-size: 22px;
   margin-bottom: 2rem;
-  color: #fff;
+  color: var(--white);
   font-weight: 100;
 }
 
@@ -109,3 +125,143 @@
   }
 }
 
+
+
+/* Highlights */
+.highlights {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: radial-gradient(circle at top, #0d0618, #05030d);
+  color: var(--white);
+  padding: 80px 20px;
+  overflow: visible;
+}
+
+.highlights-title {
+  font-family: "Trajan Pro", serif;
+  font-size: clamp(2.5rem, 5vw, 8rem);
+  text-transform: uppercase;
+  text-align: center;
+  margin-bottom: 80px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.highlights-title span {
+  display: inline-block;
+  opacity: 0;
+  transform: translateX(-200px) rotateY(-45deg);
+  color: var(--white);
+}
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 60px;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 140px;
+}
+
+@media (min-width: 1010px) {
+  .cards {
+    flex-direction: row;
+    justify-content: center;
+    gap: 80px;
+  }
+}
+
+.card {
+  width: clamp(280px, 80%, 400px);
+  max-width: 400px;
+  min-height: 240px;
+  padding: 20px;
+  box-sizing: border-box;
+  background: radial-gradient(circle at top, #0d0618, #05030d);
+  border-top: 2px solid rgba(255, 255, 255, 0.4);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.4);
+  padding: 30px 20px;
+  border-radius: 18px;
+  position: relative;
+  cursor: pointer;
+  opacity: 0;
+  transform: translateY(100px);
+  transition: all 0.4s ease;
+}
+
+.middle {
+  margin-top: 120px;
+}
+
+.card h3 {
+  text-align: center;
+  font-weight: lighter;
+  font-size: clamp(2rem, 5vw, 3rem);
+  margin-bottom: 15px;
+  font-family: "Great Vibes", serif;
+}
+
+.card .extra {
+  font-size: clamp(0.9rem, 2.5vw, 1rem);
+  font-family: "Roboto Slab", serif;
+  font-weight: 200;
+  margin: 0 auto;
+  line-height: 1.5;
+  opacity: 0;
+  max-height: 0;
+  transition: opacity 0.4s ease, max-height 0.6s ease;
+}
+
+.card.active .extra {
+  opacity: 1;
+  max-height: 300px;
+}
+
+.card.active {
+  height: 400px;
+  box-shadow: 0 5px 20px rgba(33, 158, 188, 0.5);
+}
+
+.card.active .extra {
+  opacity: 1;
+  max-height: 300px;
+}
+
+.card-arrow-wrapper {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0.85;
+  transform: translateX(-50%);
+}
+
+.card-arrow {
+  font-size: 2rem;
+  color: var(--light-blue);
+  transition: transform 1.4s ease, opacity 1.4s ease;
+}
+
+
+.card:hover .card-arrow-wrapper {
+  transform: translateX(-50%) translateY(10px) scale(0.9);
+}
+
+.card:hover .card-arrow {
+  transform: rotate(180deg);
+}
+
+
+@media (max-width: 1010px) {
+  .middle {
+    margin-top: 0px;
+  }
+}
