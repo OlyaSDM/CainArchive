@@ -1,47 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Cain Archive</title>
-    
-    <link rel="stylesheet" href="css/style.css">
-    <link type="image/png" sizes="16x16" rel="icon" href="#">
-
+    <link rel="stylesheet" href="css/style.css" />
+    <link type="image/png" sizes="16x16" rel="icon" href="#" />
     <!-- FONTS -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Frank+Ruhl+Libre:wght@300..900&family=Great+Vibes&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
-</head>
-<body>
-    
-<!-- NAVIGATION -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Roboto+Slab:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <!-- NAVIGATION -->
 
+    <!-- Hero Section -->
 
+    <section id="hero" class="hero">
+      <video class="hero-video" autoplay muted loop playsinline>
+        <source src="/video/13165043_3840_2160_60fps.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
 
-  <!-- Hero Section -->
+      <div class="hero-overlay"></div>
 
-<section id="hero" class="hero">
-  <video class="hero-video" autoplay muted loop playsinline>
-    <source src="/video/13165043_3840_2160_60fps.mp4" type="video/mp4" />
-    Your browser does not support the video tag.
-  </video>
+      <div class="hero-content">
+        <h1>CAIN ARCHIVE</h1>
+        <p>
+          A private collection of rare vintage photographs capturing the
+          Holocaust, WWII, Churchill, Kennedy, and Hollywood's cultural memory.
+        </p>
+        <a href="#" class="hero-cta"
+          ><button class="hero-cta-btn">Our Mission</button></a
+        >
+      </div>
+    </section>
 
-  <div class="hero-overlay"></div>
+    <!-- Highlights Section -->
 
-  <div class="hero-content">
-    <h1>CAIN ARCHIVE</h1>
-    <p>A private collection of rare vintage photographs capturing the Holocaust, WWII, Churchill, Kennedy, and Hollywood's cultural memory.</p>
-    <a href="#" class="hero-cta"><button class="hero-cta-btn">Our Mission</button></a>
-  </div>
-</section>
-
-
-
-
-
-
-<script src="js/main.js"></script>
-<script src="js/loader.js"></script>
-</body>
+    <section id="highlight" class="highlights">
+      <h2 class="highlights-title">HIGHLIGHTS</h2>
+      <div class="cards">
+        <div class="card">
+          <h3 class="title">Our History</h3>
+          <p class="extra">
+            Cain Archive is a private collection of globally significant vintage
+            photographs. Each image is a fragment of history, captured by the
+            eyes of legendary photographers.
+          </p>
+          <div class="card-arrow-wrapper">
+            <div class="card-arrow-circle"></div>
+            <span class="card-arrow">↓</span>
+          </div>
+        </div>
+        <div class="card middle">
+          <h3 class="title">Our Mission</h3>
+          <p class="extra">
+            Cain Archive is a private collection of globally significant vintage
+            photographs. Each image is a fragment of history, captured by the
+            eyes of legendary photographers.
+          </p>
+          <div class="card-arrow-wrapper">
+            <div class="card-arrow-circle"></div>
+            <span class="card-arrow">↓</span>
+          </div>
+        </div>
+        <div class="card">
+          <h3 class="title">Our Collection</h3>
+          <p class="extra">
+            Cain Archive is a private collection of globally significant vintage
+            photographs. Each image is a fragment of history, captured by the
+            eyes of legendary photographers.
+          </p>
+          <div class="card-arrow-wrapper">
+            <div class="card-arrow-circle"></div>
+            <span class="card-arrow">↓</span>
+          </div>
+        </div>
+      </div>
+    </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/loader.js"></script>
+    <script src="js/highlights.js"></script>
+  </body>
 </html>
