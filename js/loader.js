@@ -31,5 +31,5 @@ tlLoader
 })
 .to('.loader', {
     yPercent: -100,
-    duration: 1,
+    duration: 0.5,
 })
