@@ -494,12 +494,38 @@ body{
   font-size: clamp(0.9rem, 2.5vw, 1rem);
   font-family: "Roboto Slab", serif;
   font-weight: 200;
-  margin: 0 auto;
+  margin: 0 auto 10px;
   line-height: 1.5;
-  opacity: 0;
-  max-height: 0;
-  transition: opacity 0.4s ease, max-height 0.6s ease;
+  color: #ddd;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  transition: all 0.5s ease;
 }
+
+.card:hover .extra,
+.card.active .extra {
+  -webkit-line-clamp: unset;
+  max-height: 300px;
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  font-size: 0.95rem;
+  font-family: "Libre Franklin", sans-serif;
+  text-decoration: underline;
+  color: var(--light-blue);
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.card:hover .read-more,
+.card.active .read-more {
+  opacity: 1;
+}
+
 
 .card.active .extra {
   opacity: 1;
