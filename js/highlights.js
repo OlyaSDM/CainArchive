@@ -5,13 +5,21 @@ const title = document.querySelector(".highlights-title");
 const titleText = title.textContent.trim();
 title.textContent = "";
 
-const half = Math.ceil(titleText.length / 2);
-titleText.split("").forEach((char, i) => {
-  const span = document.createElement("span");
-  span.textContent = char;
-  if (i < half) span.style.color = "#219EBC";
-  title.appendChild(span);
-});
+//  HIGH и LIGHTS
+const [firstWord, secondWord] = titleText.split(/(?=LIGHTS)/);
+
+
+function createSpans(word, color) {
+  return word.split("").map((char) => {
+    const span = document.createElement("span");
+    span.textContent = char;
+    span.style.color = color;
+    return span;
+  });
+}
+
+createSpans(firstWord, "#219EBC").forEach((span) => title.appendChild(span));
+createSpans(secondWord, "#ffffff").forEach((span) => title.appendChild(span));
 
 // GSAP for letters
 gsap.set(".highlights-title span", {
@@ -62,10 +70,14 @@ gsap.utils.toArray(".card").forEach((card) => {
 // Hover + click animation for cards
 const cards = document.querySelectorAll(".card");
 cards.forEach((card) => {
-  const extra = card.querySelector(".extra");
   const toggleButton = card.querySelector(".card-arrow-wrapper");
-  const fullText = extra.textContent.trim();
-  extra.dataset.full = fullText;
+  
+  toggleButton.addEventListener("click", (e) => {
+    e.stopPropagation();
+    card.classList.toggle("active");
+  });
+});
+
 
   // Hover GSAP
   const cardTween = gsap.to(card, {
@@ -120,4 +132,4 @@ cards.forEach((card) => {
       textTween.reverse();
     }
   });
-});
+
