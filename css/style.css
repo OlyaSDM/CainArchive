@@ -411,7 +411,7 @@ body{
 
 
 /* Highlights */
-.highlights {
+/* .highlights {
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -432,10 +432,7 @@ body{
   font-weight: 300;
 } 
 
-/* .highlights-title {
-  font-family: "Libre Franklin", sans-serif;
-    font-weight: 300;
-}  */
+
 .highlights-title span {
   display: inline-block;
   opacity: 0;
@@ -578,4 +575,188 @@ body{
   .middle {
     margin-top: 0px;
   }
+} */
+
+.highlights-neomorph {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 40px 140px;
+	background: var(--background);
+	font-family: 'Libre Franklin', sans-serif;
+	color: var(--fonts);
+	position: relative;
+}
+
+.highlights-container {
+	display: flex;
+	max-width: 1600px;
+	align-items: center;
+	gap: 140px;
+	width: 100%;
+	position: relative;
+  margin-bottom: 180px;
+}
+
+.highlight-photo {
+	position: relative;
+	width: 660px;
+	height: 460px;
+	overflow: hidden;
+	border-radius: 12px;
+	box-shadow: 0 8px 14px rgba(0, 0, 0, 0.3);
+	transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+
+.highlight-photo .photo {
+	position: absolute;
+	inset: 0;
+	background-size: cover;
+	background-position: center;
+	filter: grayscale(100%);
+}
+
+.highlight-photo .photo:first-child {
+	opacity: 1;
+}
+
+.highlights-right {
+	flex: 1;
+	display: flex;
+	flex-direction: column;
+}
+
+.highlights-title {
+	font-size: clamp(2.5rem, 5vw, 8rem);
+	font-weight: 300;
+	text-transform: uppercase;
+	font-family: 'GT Super Ds Trial Rg';
+	margin-bottom: 80px;
+	color: var(--fonts);
+	align-self: flex-start;
+
+}
+
+.highlights-title .blue {
+	color: var(--light-blue);
+}
+
+
+/* Accordion */
+.accordion {
+	display: flex;
+	align-self: center;
+	flex-direction: column;
+	gap: 50px;
+}
+
+.accordion-item {
+	border-bottom: 1px solid var(--dark-grey);
+}
+
+.accordion-toggle {
+	width: 100%;
+	padding: 16px 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	background: none;
+	border: none;
+	cursor: pointer;
+	text-align: left;
+}
+
+.accordion-header {
+	display: flex;
+	flex-direction: column;
+	gap: 4px;
+}
+
+.accordion-header .title {
+	font-family: "Roboto Slab", serif;
+	font-size: 40px;
+	font-weight: 300;
+	color: var(--fonts);
+	font-style: italic;
+}
+
+.italic {
+	font-family: 'GT Super Ds Trial Rg';
+	margin-bottom: 1rem;
+	font-size: 36px;
+	font-weight: 600;
+	margin-top: 0;
+	font-style: italic;
+}
+
+.accordion-header .preview {
+	margin-top: 8px;
+	font-size: 19px;
+	color: var(--deer-dark-grey);
+	opacity: 0.8;
+}
+
+.arrow_accardion {
+	font-size: 48px;
+	color: var(--light-blue);
+	display: inline-block;
+	transition: transform 0.4s ease-in-out;
+	transform-origin: center;
+}
+
+.accordion-item.active .arrow_accardion {
+	transform: rotate(90deg);
+}
+
+.text_accordion {
+	font-size: 19px;
+	font-size: 18px;
+	color: var(--fonts);
+	transform: rotate(0deg);
+	transition: transform 0.35s ease;
+}
+
+.accordion-content {
+	height: 0;
+	overflow: hidden;
+}
+
+.preview {
+	display: inline-block;
+	transition: opacity 0.5s ease;
+}
+
+.accordion-item.active .preview {
+	opacity: 0;
+}
+
+.read-more {
+	display: inline-block;
+	margin-top: 5px;
+	color: var(--light-blue);
+	text-decoration: underline;
+	cursor: pointer;
+}
+
+.accordion-header .title .italic {
+	font-style: italic;
+}
+
+
+@media (max-width: 1010px) {
+	.highlights-neomorph {
+		flex-direction: column;
+	}
+
+	.highlights-container {
+		flex-direction: column;
+		gap: 40px;
+	}
+
+	.highlight-photo {
+		width: 100%;
+		height: 300px;
+	}
 }
