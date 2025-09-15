@@ -244,7 +244,9 @@
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-// Column Animation
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+// ===== Column Animation =====
 const leftCol = document.querySelector(".column.left .column-inner") || document.querySelector(".column.left");
 const middleCol = document.querySelector(".column.middle .column-inner");
 const rightCol = document.querySelector(".column.right .column-inner");
@@ -265,24 +267,25 @@ ScrollTrigger.create({
   }
 });
 
-// Overlay 
+// ===== Overlay =====
 (function(){
   const overlay = document.querySelector('.mosaic-overlay');
   const overlayText = overlay && overlay.querySelector('.overlay-text');
   if(!overlay || !overlayText) return;
 
   let overlayActive = false;
-  let overlayTimer;
+  let overlayTimer = null;
+  const overlayDelay = 11000;
+  let userStartedScroll = false;
 
-  const overlayDelay = 11000; 
-  const scrollTriggerThreshold = 0.11; 
+  const mosaicSection = document.querySelector('.mosaic-section');
+  if(!mosaicSection) return;
 
-  // Show overlay and scroll
   function showOverlayAndScroll(){
     if(overlayActive) return;
     overlayActive = true;
 
-    const nextBlock = document.querySelector('.mosaic-section').nextElementSibling;
+    const nextBlock = mosaicSection.nextElementSibling;
     if(!nextBlock) return;
 
     const tl = gsap.timeline();
@@ -296,34 +299,33 @@ ScrollTrigger.create({
       .call(()=>{ overlayActive = false; });
   }
 
-  // Timer in case the user doesn't scroll
-  function startOverlayTimer(){
-    clearTimeout(overlayTimer);
-    overlayTimer = setTimeout(showOverlayAndScroll, overlayDelay);
-  }
+  // Listening to real page scroll
+  window.addEventListener('scroll', () => {
+    if(!userStartedScroll){
+      userStartedScroll = true;
+      overlayTimer = setTimeout(showOverlayAndScroll, overlayDelay);
+    }
+  });
 
-  startOverlayTimer();
-
+  // ScrollTrigger for gallery so overlay triggers when scrolling down
   ScrollTrigger.create({
-    trigger: '.mosaic-section',
+    trigger: mosaicSection,
     start: 'top top',
     end: 'bottom bottom',
     onUpdate: self => {
-      const progress = self.progress;
-
-      // Scroll down: only if threshold passed
-      if(self.direction === 1 && progress > scrollTriggerThreshold){
-        clearTimeout(overlayTimer);
+      if(self.direction === 1 && !overlayActive){
+                clearTimeout(overlayTimer);
         showOverlayAndScroll();
       }
 
-      // Scroll up: Reset flags and timer
       if(self.direction === -1){
         overlayActive = false;
-        startOverlayTimer();
+        userStartedScroll = false;
+        if(overlayTimer) clearTimeout(overlayTimer);
       }
     }
   });
+
 })();
 
 
