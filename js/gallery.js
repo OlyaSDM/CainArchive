@@ -244,8 +244,6 @@
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-
 // ===== Column Animation =====
 const leftCol = document.querySelector(".column.left .column-inner") || document.querySelector(".column.left");
 const middleCol = document.querySelector(".column.middle .column-inner");
@@ -275,9 +273,9 @@ ScrollTrigger.create({
 
   let overlayActive = false;
   let overlayTimer = null;
-  const overlayDelay = 11000;
+  const overlayDelay = 11000; 
   let userStartedScroll = false;
-
+  let disableAutoOverlay = false; 
   const mosaicSection = document.querySelector('.mosaic-section');
   if(!mosaicSection) return;
 
@@ -299,36 +297,39 @@ ScrollTrigger.create({
       .call(()=>{ overlayActive = false; });
   }
 
-  // Listening to real page scroll
+  //Listen to page scrolling
   window.addEventListener('scroll', () => {
     if(!userStartedScroll){
       userStartedScroll = true;
-      overlayTimer = setTimeout(showOverlayAndScroll, overlayDelay);
+      if(!disableAutoOverlay){
+        overlayTimer = setTimeout(showOverlayAndScroll, overlayDelay);
+      }
     }
   });
 
-  // ScrollTrigger for gallery so overlay triggers when scrolling down
+  // ScrollTrigger for mosaic-section
   ScrollTrigger.create({
     trigger: mosaicSection,
     start: 'top top',
     end: 'bottom bottom',
     onUpdate: self => {
+      // Scroll down → show overlay
       if(self.direction === 1 && !overlayActive){
-                clearTimeout(overlayTimer);
+        clearTimeout(overlayTimer);
         showOverlayAndScroll();
       }
 
+      // Scroll up → disable auto-appearance of overlay
       if(self.direction === -1){
         overlayActive = false;
         userStartedScroll = false;
+        disableAutoOverlay = true; 
         if(overlayTimer) clearTimeout(overlayTimer);
       }
     }
   });
 
 })();
-
-
 
 
 

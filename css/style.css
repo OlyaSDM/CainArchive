@@ -743,6 +743,7 @@ body{
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
   padding: 40px 140px;
   background: var(--background);
   font-family: "Libre Franklin", sans-serif;
@@ -794,8 +795,8 @@ body{
   font-size: clamp(2.5rem, 5vw, 8rem);
   font-weight: 300;
   text-transform: uppercase;
-  font-family: "GT Super Ds Trial Rg";
-  margin-bottom: 80px;
+    font-family: 'GT Super';
+  margin-bottom: 88px;
   color: var(--fonts);
   align-self: flex-start;
 }
