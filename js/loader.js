@@ -33,3 +33,15 @@ tlLoader
     yPercent: -100,
     duration: 0.5,
 })
+
+//Animation - 4s delay for menu to appear AFTER loader
+
+  window.addEventListener('load', () => {
+    gsap.to(".delayed", {
+      duration: 1.2,
+      opacity: 1,
+      y: 0,
+      ease: "power2.out",
+      delay: 4
+    });
+  });

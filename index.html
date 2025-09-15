@@ -7,56 +7,58 @@
     <link rel="stylesheet" href="css/style.css" />
     <link type="image/png" sizes="16x16" rel="icon" href="#" />
 
-        <!-- FONTS -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&family=Libre+Franklin:ital,wght@0,100..900;1,100..900&family=Roboto+Slab:wght@100..900&display=swap" rel="stylesheet">
-  <body>
+      <!-- FONTS -->
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<body>
 
         <!-- LOADER 
-        UNBLOCK WHEN YOU WANT TO SEE ANIMATION !!! -->
+        UNBLOCK WHEN YOU WANT TO SEE THE ANIMATION !!! -->
 
-    <!-- <div class="loader">
+     <!-- <div class="loader">
         <div class="loader__title">
           <img src="logos/loader-logo.png" alt="" width="300px">
         </div>
         <div class="loader__item loader__item-1"></div>
         <div class="loader__item loader__item-2"></div>
         <div class="loader__item loader__item-3"></div>
-    </div>  -->
+    </div>   -->
 
 <!-- NAVIGATION -->
-<header class="navbar" id="navbar">
+<header class="navbar delayed" id="navbar">
   <a href="/" class="logo">
-    <img src="logos/C (1).png" alt="CAIN Archive Logo" />
+    <img src="logos/C in.png" alt="CAIN Archive Logo" />
   </a>
 
   <div class="nav-controls">
     <!-- Language Switcher -->
-    <div class="lang-switcher" id="langSwitcher">
-      <button id="lang-toggle" aria-expanded="false" aria-haspopup="true">
-        EN ▼
-      </button>
-      <ul class="lang-options" role="menu">
-        <li role="menuitem" data-lang="EN">EN</li>
-        <li role="menuitem" data-lang="Japanese">Japanese</li>
-        <li role="menuitem" data-lang="Arabic">Arabic</li>
-      </ul>
-    </div>
+
+   <div class="lang-switcher" id="langSwitcher">
+   <button id="lang-toggle" aria-haspopup="true" aria-expanded="false">
+      <span id="lang-current">EN</span>
+      <i class="fa-solid fa-angle-down"></i>
+   </button>
+   <ul class="lang-options" role="menu">
+      <li role="menuitem" data-lang="en">English</li>
+      <li role="menuitem" data-lang="ja">日本語</li>
+      <li role="menuitem" data-lang="ar">العربية</li>
+   </ul>
+   </div>
 
     <!-- Burger -->
     <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
+      <span class="bar bar-long"></span>
+      <span class="bar bar-middle"></span>
+      <span class="bar bar-short"></span>
     </button>
   </div>
 </header>
 
 <!-- FULLSCREEN MENU -->
 <div class="fullscreen-menu" id="menu">
-  <button class="close-btn" id="closeBtn" aria-label="Close menu">✕</button>
+  <!-- <button class="close-btn" id="closeBtn" aria-label="Close menu">✕</button> -->
 
   <div class="fullscreen-menu-content">
     <!-- LEFT: Navigation Links -->
@@ -73,8 +75,13 @@
 
     <!-- RIGHT: Contact Info -->
     <div class="menu-contact">
-      <div class="email">hey@yourdomain.com</div>
-      <div>+1 321 998 0987</div>
+      <div>
+            <p>John Cain</p>
+            <p>Founder & Director | Cain Archive</p>
+            <p>History That Shapes Tomorrow</p>
+      </div>
+      <a href="#" class="menu-contacts">john@cainarchive.com</a>
+      <a href="#" class="menu-contacts">+1 321 111 0101</a>
       <div class="social-icons">
         <ul>
           <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
@@ -365,6 +372,40 @@
 
 <!-- COLLECTIONS SECTION -->
 
+<section id="horizontal">
+   <a href="#" class="collection">
+      <div class="overlay">
+         <h3>World War II</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+      </div>
+   </a>
+      <a href="#" class="collection">
+      <div class="overlay">
+         <h3>Winston Churchill</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+      </div>
+   </a>
+      <a href="#" class="collection">
+      <div class="overlay">
+         <h3>John F. Kennedy</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+      </div>
+   </a>
+      <a href="#" class="collection">
+      <div class="overlay">
+         <h3>Hollywood & Culture</h3>
+         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
+      </div>
+   </a>
+</section>
+
+
+
+<section class="after-collection">
+   <h2>That is the end</h2>
+   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. At repellendus adipisci veritatis nisi dolor? Non deleniti delectus neque ex dolore. Provident veritatis, aliquid atque beatae inventore doloremque minus voluptates? Quos.</p>
+</section>
+
 
 
 
@@ -390,6 +431,8 @@
     <script src="js/highlights.js"></script>
     <script src="js/navbar.js"></script>
     <script src="js/gallery.js"></script>
+    <script src="js/dropdown.js"></script>
+    <script src="js/collections.js"></script>
 
   </body>
 </html>
