@@ -1,237 +1,351 @@
-gsap.registerPlugin(ScrollTrigger);
+// // gsap.registerPlugin(ScrollTrigger);
 
-window.addEventListener("load", () => {
-   const cosmosGroups = document.querySelectorAll(".cosmos");
-   const allItems = [];
-   const wanderTweens = new Map();
-   let active = false;
-   let lastIndex = -1;
-   let focusTween = null;
-   let focusActive = false;
+// // window.addEventListener("load", () => {
+// //    const cosmosGroups = document.querySelectorAll(".cosmos");
+// //    const allItems = [];
+// //    const wanderTweens = new Map();
+// //    let active = false;
+// //    let lastIndex = -1;
+// //    let focusTween = null;
+// //    let focusActive = false;
 
-   const heroText = document.querySelector(".hero-text");
+// //    const heroText = document.querySelector(".hero-text");
 
-   //timeline for text - easier to restart 
-   const heroTextTimeline = gsap.timeline({
-         paused: true
-      })
-      .fromTo(heroText ?? ".hero-text", {
-         opacity: 0,
-         scale: 0.2
-      }, {
-         opacity: 1,
-         scale: 1,
-         duration: 2.5,
-         ease: "power2.out"
-      });
+// //    //timeline for text - easier to restart 
+// //    const heroTextTimeline = gsap.timeline({
+// //          paused: true
+// //       })
+// //       .fromTo(heroText ?? ".hero-text", {
+// //          opacity: 0,
+// //          scale: 0.2
+// //       }, {
+// //          opacity: 1,
+// //          scale: 1,
+// //          duration: 2.5,
+// //          ease: "power2.out"
+// //       });
 
-   // Hide the text immediately (start state)
-   if (heroText) gsap.set(heroText, {
-      opacity: 0,
-      scale: 0.2
-   });
+// //    // Hide the text immediately (start state)
+// //    if (heroText) gsap.set(heroText, {
+// //       opacity: 0,
+// //       scale: 0.2
+// //    });
 
-   // Initializing a photo
-   cosmosGroups.forEach(group => {
-      group.querySelectorAll(".cosmic-item").forEach(item => {
-         const inner = item.querySelector(".cosmic-inner");
-         if (!inner) return;
+// //    // Initializing a photo
+// //    cosmosGroups.forEach(group => {
+// //       group.querySelectorAll(".cosmic-item").forEach(item => {
+// //          const inner = item.querySelector(".cosmic-inner");
+// //          if (!inner) return;
 
-         gsap.set(inner, {
-            x: window.innerWidth / 2,
-            y: window.innerHeight / 2,
-            scale: 0,
-            opacity: 0,
-            zIndex: 1,
-            transformOrigin: "center center",
-         });
+// //          gsap.set(inner, {
+// //             x: window.innerWidth / 2,
+// //             y: window.innerHeight / 2,
+// //             scale: 0,
+// //             opacity: 0,
+// //             zIndex: 1,
+// //             transformOrigin: "center center",
+// //          });
 
-         allItems.push(inner);
-      });
-   });
+// //          allItems.push(inner);
+// //       });
+// //    });
 
-   // Vortex
-   const startWander = (item) => {
-      const t = gsap.to(item, {
-         x: () => (Math.random() - 0.5) * window.innerWidth * 1.4,
-         y: () => (Math.random() - 0.5) * window.innerHeight * 1.4,
-         duration: 4 + Math.random() * 3,
-         ease: "sine.inOut",
-         repeat: -8,
-         yoyo: true,
-      });
-      wanderTweens.set(item, t);
-   };
+// //    // Vortex
+// //    const startWander = (item) => {
+// //       const t = gsap.to(item, {
+// //          x: () => (Math.random() - 0.5) * window.innerWidth * 1.4,
+// //          y: () => (Math.random() - 0.5) * window.innerHeight * 1.4,
+// //          duration: 4 + Math.random() * 3,
+// //          ease: "sine.inOut",
+// //          repeat: -8,
+// //          yoyo: true,
+// //       });
+// //       wanderTweens.set(item, t);
+// //    };
 
-   // Approaching the center
-   const focusNext = () => {
-      if (!active || focusActive || allItems.length === 0) return;
-      focusActive = true;
+// //    // Approaching the center
+// //    const focusNext = () => {
+// //       if (!active || focusActive || allItems.length === 0) return;
+// //       focusActive = true;
 
-      let randomIndex;
-      do {
-         randomIndex = Math.floor(Math.random() * allItems.length);
-      }
-      while (randomIndex === lastIndex && allItems.length > 1);
-      lastIndex = randomIndex;
+// //       let randomIndex;
+// //       do {
+// //          randomIndex = Math.floor(Math.random() * allItems.length);
+// //       }
+// //       while (randomIndex === lastIndex && allItems.length > 1);
+// //       lastIndex = randomIndex;
 
-      const item = allItems[randomIndex];
-      const wt = wanderTweens.get(item);
-      if (wt) wt.kill();
+// //       const item = allItems[randomIndex];
+// //       const wt = wanderTweens.get(item);
+// //       if (wt) wt.kill();
 
-      allItems.forEach(i => {
-         if (i !== item) gsap.to(i, {
-            scale: 0.5,
-            zIndex: 1,
-            duration: 0.5
-         });
-      });
+// //       allItems.forEach(i => {
+// //          if (i !== item) gsap.to(i, {
+// //             scale: 0.5,
+// //             zIndex: 1,
+// //             duration: 0.5
+// //          });
+// //       });
 
-      const rect = item.getBoundingClientRect();
+// //       const rect = item.getBoundingClientRect();
 
-      // Center X based on width
-      const viewportCenterX = window.innerWidth > 1200 ?
-         window.innerWidth / 1.6 // a little to the right on larger screens
-         :
-         window.innerWidth / 2; // exactly in the center at <=1200px
+// //       // Center X based on width
+// //       const viewportCenterX = window.innerWidth > 1200 ?
+// //          window.innerWidth / 1.6 // a little to the right on larger screens
+// //          :
+// //          window.innerWidth / 2; // exactly in the center at <=1200px
 
-      const viewportCenterY = window.innerHeight / 2;
+// //       const viewportCenterY = window.innerHeight / 2;
 
-      // For small screens, move the photo below the text
-      const textHeight = heroText ? heroText.offsetHeight : 0;
-      const safeTop = textHeight + 20;
-      const safeBottom = window.innerHeight - 50;
-      let targetY = viewportCenterY;
-      if (window.innerWidth < 768) {
-         targetY = Math.max(safeTop, viewportCenterY);
-         targetY = Math.min(targetY, safeBottom);
-      }
+// //       // For small screens, move the photo below the text
+// //       const textHeight = heroText ? heroText.offsetHeight : 0;
+// //       const safeTop = textHeight + 20;
+// //       const safeBottom = window.innerHeight - 50;
+// //       let targetY = viewportCenterY;
+// //       if (window.innerWidth < 768) {
+// //          targetY = Math.max(safeTop, viewportCenterY);
+// //          targetY = Math.min(targetY, safeBottom);
+// //       }
 
-      const deltaX = viewportCenterX - (rect.left + rect.width / 2);
-      const deltaY = targetY - (rect.top + rect.height / 2);
+// //       const deltaX = viewportCenterX - (rect.left + rect.width / 2);
+// //       const deltaY = targetY - (rect.top + rect.height / 2);
 
-      // Scale to fit different screen sizes
-      let scaleValue;
-      if (window.innerWidth >= 1200) scaleValue = 4.2;
-      else if (window.innerWidth >= 768) scaleValue = 5.2;
-      else scaleValue = 6.5;
+// //       // Scale to fit different screen sizes
+// //       let scaleValue;
+// //       if (window.innerWidth >= 1200) scaleValue = 4.2;
+// //       else if (window.innerWidth >= 768) scaleValue = 5.2;
+// //       else scaleValue = 6.5;
 
-      focusTween = gsap.to(item, {
-         x: `+=${deltaX}`,
-         y: `+=${deltaY}`,
-         scale: scaleValue,
-         zIndex: 1000,
-         duration: 3,
-         ease: "power3.out",
-         onComplete: () => {
-            gsap.delayedCall(1, () => {
-               focusTween = gsap.to(item, {
-                  x: Math.random() * window.innerWidth,
-                  y: Math.random() * window.innerHeight,
-                  scale: 0.5,
-                  zIndex: 1,
-                  duration: 2,
-                  ease: "power2.inOut",
-                  onComplete: () => {
-                     startWander(item);
-                     focusActive = false;
-                     if (active) focusNext();
-                  },
-               });
-            });
-         },
-      });
-   };
+// //       focusTween = gsap.to(item, {
+// //          x: `+=${deltaX}`,
+// //          y: `+=${deltaY}`,
+// //          scale: scaleValue,
+// //          zIndex: 1000,
+// //          duration: 3,
+// //          ease: "power3.out",
+// //          onComplete: () => {
+// //             gsap.delayedCall(1, () => {
+// //                focusTween = gsap.to(item, {
+// //                   x: Math.random() * window.innerWidth,
+// //                   y: Math.random() * window.innerHeight,
+// //                   scale: 0.5,
+// //                   zIndex: 1,
+// //                   duration: 2,
+// //                   ease: "power2.inOut",
+// //                   onComplete: () => {
+// //                      startWander(item);
+// //                      focusActive = false;
+// //                      if (active) focusNext();
+// //                   },
+// //                });
+// //             });
+// //          },
+// //       });
+// //    };
 
-   // Scene start function (used in both onEnter and onEnterBack)
-   function startScene() {
-      active = true;
+// //    // Scene start function (used in both onEnter and onEnterBack)
+// //    function startScene() {
+// //       active = true;
 
-      //Let's make sure the old twins are killed
-      wanderTweens.forEach(t => t.kill());
-      wanderTweens.clear();
-      if (focusTween) {
-         focusTween.kill();
-         focusTween = null;
-         focusActive = false;
-      }
+// //       //Let's make sure the old twins are killed
+// //       wanderTweens.forEach(t => t.kill());
+// //       wanderTweens.clear();
+// //       if (focusTween) {
+// //          focusTween.kill();
+// //          focusTween = null;
+// //          focusActive = false;
+// //       }
 
-      // Reset positions and visibility
-      allItems.forEach(item => {
-         gsap.set(item, {
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
-            scale: 0.5,
-            opacity: 0,
-            zIndex: 1,
-         });
-      });
+// //       // Reset positions and visibility
+// //       allItems.forEach(item => {
+// //          gsap.set(item, {
+// //             x: Math.random() * window.innerWidth,
+// //             y: Math.random() * window.innerHeight,
+// //             scale: 0.5,
+// //             opacity: 0,
+// //             zIndex: 1,
+// //          });
+// //       });
 
-      // We launch a vortex and make photos visible
-      gsap.delayedCall(0.1, () => {
-         allItems.forEach(item => {
-            startWander(item);
-            gsap.to(item, {
-               opacity: 1,
-               duration: 1.2,
-               ease: "power1.out"
-            });
-         });
-      });
+// //       // We launch a vortex and make photos visible
+// //       gsap.delayedCall(0.1, () => {
+// //          allItems.forEach(item => {
+// //             startWander(item);
+// //             gsap.to(item, {
+// //                opacity: 1,
+// //                duration: 1.2,
+// //                ease: "power1.out"
+// //             });
+// //          });
+// //       });
 
-      // We start the focus in 4 seconds
-      gsap.delayedCall(4, () => {
-         if (active) focusNext();
-      });
+// //       // We start the focus in 4 seconds
+// //       gsap.delayedCall(4, () => {
+// //          if (active) focusNext();
+// //       });
 
-      // Restarting text animation from scratch
-      if (heroText) heroTextTimeline.restart(true);
-   }
+// //       // Restarting text animation from scratch
+// //       if (heroText) heroTextTimeline.restart(true);
+// //    }
 
-   // Scene stop function (when going up/down)
-   function stopScene() {
-      active = false;
+// //    // Scene stop function (when going up/down)
+// //    function stopScene() {
+// //       active = false;
 
-      // Hide photos and kill twins
-      gsap.to(allItems, {
-         opacity: 0,
-         duration: 0.5,
-         stagger: 0.02
-      });
-      wanderTweens.forEach(t => t.kill());
-      wanderTweens.clear();
+// //       // Hide photos and kill twins
+// //       gsap.to(allItems, {
+// //          opacity: 0,
+// //          duration: 0.5,
+// //          stagger: 0.02
+// //       });
+// //       wanderTweens.forEach(t => t.kill());
+// //       wanderTweens.clear();
 
-      if (focusTween) {
-         focusTween.kill();
-         focusTween = null;
-      }
-      focusActive = false;
+// //       if (focusTween) {
+// //          focusTween.kill();
+// //          focusTween = null;
+// //       }
+// //       focusActive = false;
 
-      // Reset the text to its initial state (so that when you log in again it starts over)
-      if (heroText) gsap.set(heroText, {
-         opacity: 0,
-         scale: 0.2
-      });
-   }
+// //       // Reset the text to its initial state (so that when you log in again it starts over)
+// //       if (heroText) gsap.set(heroText, {
+// //          opacity: 0,
+// //          scale: 0.2
+// //       });
+// //    }
 
-   // ScrollTrigger - now use onEnter and onEnterBack to repeat when scrolling up
-   ScrollTrigger.create({
-      trigger: ".container",
-      start: "top bottom",
-      end: "bottom top",
-      onEnter: () => startScene(),
-      onEnterBack: () => startScene(),
-      onLeaveBack: () => stopScene(),
-      onLeave: () => stopScene(),
-   });
+// //    // ScrollTrigger - now use onEnter and onEnterBack to repeat when scrolling up
+// //    ScrollTrigger.create({
+// //       trigger: ".container",
+// //       start: "top bottom",
+// //       end: "bottom top",
+// //       onEnter: () => startScene(),
+// //       onEnterBack: () => startScene(),
+// //       onLeaveBack: () => stopScene(),
+// //       onLeave: () => stopScene(),
+// //    });
 
-   // Update on resize
-   window.addEventListener("resize", () => {
-      allItems.forEach(item => {
-         gsap.set(item, {
-            x: Math.random() * window.innerWidth,
-            y: Math.random() * window.innerHeight,
-         });
-      });
-   });
+// //    // Update on resize
+// //    window.addEventListener("resize", () => {
+// //       allItems.forEach(item => {
+// //          gsap.set(item, {
+// //             x: Math.random() * window.innerWidth,
+// //             y: Math.random() * window.innerHeight,
+// //          });
+// //       });
+// //    });
+// // });
+
+
+
+
+
+
+
+gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+
+// Column Animation
+const leftCol = document.querySelector(".column.left .column-inner") || document.querySelector(".column.left");
+const middleCol = document.querySelector(".column.middle .column-inner");
+const rightCol = document.querySelector(".column.right .column-inner");
+
+const leftAnim = gsap.to(leftCol, { y: -leftCol.scrollHeight / 4, duration: 18, ease: "linear", repeat: -5 });
+const middleAnim = gsap.to(middleCol, { y: -middleCol.scrollHeight / 4, duration: 18, ease: "linear", repeat: -5 });
+const rightAnim = gsap.to(rightCol, { y: -rightCol.scrollHeight / 4, duration: 18, ease: "linear", repeat: -5 });
+
+ScrollTrigger.create({
+  trigger: ".mosaic-section",
+  start: "top top",
+  end: "bottom bottom",
+  onUpdate: self => {
+    const dir = self.direction;
+    leftAnim.timeScale(dir === 1 ? 1 : -1);
+    middleAnim.timeScale(dir === 1 ? -1 : 1);
+    rightAnim.timeScale(dir === 1 ? 1 : -1);
+  }
 });
+
+// Overlay 
+(function(){
+  const overlay = document.querySelector('.mosaic-overlay');
+  const overlayText = overlay && overlay.querySelector('.overlay-text');
+  if(!overlay || !overlayText) return;
+
+  let overlayActive = false;
+  let overlayTimer;
+
+  const overlayDelay = 11000; 
+  const scrollTriggerThreshold = 0.11; 
+
+  // Show overlay and scroll
+  function showOverlayAndScroll(){
+    if(overlayActive) return;
+    overlayActive = true;
+
+    const nextBlock = document.querySelector('.mosaic-section').nextElementSibling;
+    if(!nextBlock) return;
+
+    const tl = gsap.timeline();
+    tl.set(overlay, {pointerEvents: 'auto'})
+      .to(overlay, {opacity: 1, duration: 1.5})
+      .to(overlayText, {opacity:1, y:0, duration:1.2, ease:'power3.out'}, '-=0.4')
+      .call(() => {
+        gsap.to(window, {duration: 1.6, scrollTo: nextBlock, ease:'power2.inOut'});
+      }, null, '+=1')
+      .to(overlay, {opacity: 0, pointerEvents: 'none', duration:0.8}, '+=0.3')
+      .call(()=>{ overlayActive = false; });
+  }
+
+  // Timer in case the user doesn't scroll
+  function startOverlayTimer(){
+    clearTimeout(overlayTimer);
+    overlayTimer = setTimeout(showOverlayAndScroll, overlayDelay);
+  }
+
+  startOverlayTimer();
+
+  ScrollTrigger.create({
+    trigger: '.mosaic-section',
+    start: 'top top',
+    end: 'bottom bottom',
+    onUpdate: self => {
+      const progress = self.progress;
+
+      // Scroll down: only if threshold passed
+      if(self.direction === 1 && progress > scrollTriggerThreshold){
+        clearTimeout(overlayTimer);
+        showOverlayAndScroll();
+      }
+
+      // Scroll up: Reset flags and timer
+      if(self.direction === -1){
+        overlayActive = false;
+        startOverlayTimer();
+      }
+    }
+  });
+})();
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

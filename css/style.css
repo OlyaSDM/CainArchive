@@ -941,7 +941,7 @@ body{
 
 
 /* Gallery Section*/
-:root {
+/* :root {
 	--hero-text-font: 72px;
 	--cosmic-item-width: 220px;
 	--cosmic-item-height: 180px;
@@ -962,7 +962,6 @@ body{
 	text-align: center;
 	text-transform: uppercase;
 	z-index: 10;
-	/* color: #fff; */
 	color: var(--fonts);
 	text-shadow: 0 4px 4px rgba(20, 20, 20, 0.5);
 }
@@ -975,7 +974,6 @@ body{
 	justify-content: center;
 	align-items: center;
 	overflow: hidden;
-	/* background-image: url('/img/bg_g.jpg'); */
 	background-image: url('/img/bg.jpg');
 
 	background-size: cover;
@@ -1100,6 +1098,70 @@ body{
 		opacity: 0;
 		transform: scale(0.7);
 	}
+} */
+
+
+.mosaic-section {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+  background-image: url("../img/bg.jpg");
+}
+
+.mosaic {
+  display: flex;
+  gap: 30px;
+  margin-left: 140px;
+  margin-right: 140px;
+  height: 100%;
+}
+
+.column {
+  flex: 1;
+  position: relative;
+}
+
+.column img {
+  width: 100%;
+  display: block;
+  margin-top: 30px;
+}
+
+.column.middle .column-inner,
+.column.right .column-inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.img_top {
+  margin-bottom: -30px;
+}
+
+/* Overlay */
+.mosaic-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.8);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  pointer-events: none; 
+}
+
+.mosaic-overlay .overlay-text {
+  font-family: 'GT Super';
+  color: #fff;
+  font-size: 88px;
+  text-align: center;
+}
+
+
+/* responsive */
+@media (max-width: 900px) {
+  .mosaic-overlay .overlay-text { font-size: 2rem; }
 }
 
 
