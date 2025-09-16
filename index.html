@@ -17,16 +17,17 @@
         <!-- LOADER 
         UNBLOCK WHEN YOU WANT TO SEE THE ANIMATION !!! -->
 
-     <!-- <div class="loader">
+      <div class="loader">
         <div class="loader__title">
           <img src="logos/loader-logo.png" alt="" width="300px">
         </div>
         <div class="loader__item loader__item-1"></div>
         <div class="loader__item loader__item-2"></div>
         <div class="loader__item loader__item-3"></div>
-    </div>   -->
+    </div> 
 
-<!-- NAVIGATION -->
+
+    <!-- NAVIGATION -->
 <header class="navbar delayed" id="navbar">
   <a href="/" class="logo">
     <img src="logos/C in.png" alt="CAIN Archive Logo" />
@@ -58,7 +59,6 @@
 
 <!-- FULLSCREEN MENU -->
 <div class="fullscreen-menu" id="menu">
-  <!-- <button class="close-btn" id="closeBtn" aria-label="Close menu">✕</button> -->
 
   <div class="fullscreen-menu-content">
     <!-- LEFT: Navigation Links -->
@@ -96,20 +96,22 @@
 
 
 
+  <div id="smooth-wrapper">
+    <div id="smooth-content">
 
 
     <!-- Hero Section -->
 
     <section id="hero" class="hero">
       <video class="hero-video" autoplay muted loop playsinline>
-        <source src="/video/13165043_3840_2160_60fps.mp4" type="video/mp4" />
+        <source src="/video/CA.MP4" type="video/mp4" />
       </video>
 
       <div class="hero-overlay"></div>
 
       <div class="hero-content">
-        <h4>This is where memory becomes momentum</h4>
-        <h1><span>CAIN</span> archive</h1>
+        <!-- <h4>This is where memory becomes momentum</h4> -->
+        <h1>CAIN <span>archive</span></h1>
         <p>
           Step into a living archive of rare, authentic photographs—where the courage of World War II, the glamour of Hollywood's golden age, and the legacies of Churchill and Kennedy converge.
         </p>
@@ -129,6 +131,21 @@
         </svg>
       </div>
     </section>
+
+
+
+
+   <!-- QUOTE SECTION -->
+
+   <section class="quote">
+      <h3 class="quote-bold his">History’s</h3>
+      <h3 class="quote-italic fin">finest frames,</h3>
+      <h3 class="quote-bold res">Reserved</h3>
+      <h3 class="quote-bold for">for the</h3>
+      <h3 class="quote-italic dis">discerning.</h3>
+   </section>
+
+
 
 <!-- Highlights Section -->
 <section class="highlights-neomorph">
@@ -368,7 +385,14 @@
       </div>
    </div>
 </section> -->
-<section class="mosaic-section">
+
+
+
+
+
+
+
+<!-- <section class="mosaic-section">
    <div class="wrap">
       <div class="mosaic">
          <div class="column left">
@@ -424,7 +448,7 @@
          <div class="overlay-text">History That<br>Shapes Tomorrow</div>
       </div>
    </div>
-</section>
+</section> -->
 
 
 <!-- COLLECTIONS SECTION -->
@@ -477,13 +501,14 @@
 
 
 
+</div>
+</div>
 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.14.1/ScrollTrigger.min.js"></script>
     <script src="js/main.js"></script>
     <script src="js/loader.js"></script>
     <script src="js/highlights.js"></script>
@@ -491,6 +516,8 @@
     <script src="js/gallery.js"></script>
     <script src="js/dropdown.js"></script>
     <script src="js/collections.js"></script>
+    <script src="js/smooth.js"></script>
+
 
   </body>
 </html>

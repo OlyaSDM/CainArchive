@@ -28,6 +28,15 @@ body{
   padding: 0;
   box-sizing: border-box;
 }
+    #smooth-wrapper {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+    }
+    #smooth-content {
+      position: relative;
+      width: 100%;
+    }
 @font-face {
   font-family: 'GT Super';
   src: url('/fonts/GT-Super/GT-Super-Display-Light-Trial.otf') format('woff2');
@@ -100,7 +109,7 @@ body{
   transform: translateY(-30px); /* Start off-screen */
 }
 .navbar.scrolled {
-  background-color: var(--dark-blue);
+  background-color: rgb(2, 48, 71, 0.8);
   top: 0;
 }
 
@@ -543,7 +552,7 @@ body{
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgba(0, 31, 47, 0.7); 
+  background-color: rgb(29, 29, 29, 0.7); 
   z-index: -1;
 }
 
@@ -552,23 +561,26 @@ body{
   color: var(--background);
   z-index: 1;
 }
-.hero-content h4{
+/* .hero-content h4{
   font-family: "Libre Franklin", sans-serif;
   font-weight: 300;
-  font-size: 16px;
-}
+  font-size: 18px;
+} */
 .hero-content h1 {
-  font-family: 'GT Super';
-  font-size: 76px;
+  font-size: 90px;
   margin-bottom: 1rem;
-  font-weight: 300;
-  margin-top: 10px;
-  font-style: italic;
-}
-.hero-content h1 span{
+  font-weight: 800;
+  letter-spacing: 2px;
   color: var(--light-blue);
-  font-style: normal;
 }
+
+.hero-content h1 span{
+  font-style: italic;
+  color: var(--background);
+  font-family: 'GT Super';
+  font-weight: 200;
+}
+
 .hero-content p {
   font-family: "Libre Franklin", sans-serif;
   font-weight: 100;
@@ -576,7 +588,13 @@ body{
   margin-bottom: 2rem;
   line-height: 30px;
 }
-
+.hero-content h1,
+.hero-content p,
+.hero-cta,
+.hero-btn-text {
+  opacity: 0;
+  transform: translate(-30px); 
+}
 .hero-cta {
   text-decoration: none;
 }
@@ -737,6 +755,93 @@ body{
 
 
 
+/* QUOTE SECTION */
+
+.quote{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 150px 0;
+  color: var(--fonts);
+}
+.quote h3{
+  font-size: 100px;
+  text-align: center;
+  line-height: 90px;
+}
+.quote-bold {
+  color: var(--dark-blue);
+  text-transform: uppercase;
+  font-weight: bold;
+  /* font-family: "Libre Franklin", sans-serif; */
+}
+.quote-italic {
+  font-family: 'GT Super';
+  font-style: italic;
+  font-weight: 100;
+}
+ .his {
+  left: -150px;
+}
+.fin{
+  left: 100px;
+}
+.res{
+  left: 200px;
+}
+.for{
+  right: 130px;
+}
+.dis{
+    left: 200px;
+} 
+.his, .fin, .res, .for, .dis {
+  position: relative;
+  /* left: 0;
+  right: 0; */
+}
+
+/* Tablet */
+@media screen and (max-width: 1024px) {
+  .quote {
+    padding: 100px 40px;
+  }
+
+  .quote h3 {
+    font-size: 70px;
+    line-height: 75px;
+  }
+
+  .his { left: -100px; }
+  .fin { left: 100px; }
+  .res { left: 150px; }
+  .for { right: 80px; }
+  .dis { left: 120px; }
+}
+
+/* Mobile */
+@media screen and (max-width: 600px) {
+  .quote {
+    padding: 60px 20px;
+  }
+
+  .quote h3 {
+    font-size: 44px;
+    line-height: 48px;
+  }
+
+  .his { left: -50px; }
+  .fin { left: 50px; }
+  .res { left: 80px; }
+  .for { right: 40px; }
+  .dis { left: 60px; }
+}
+
+
+
+
+
 /* Highlights */
 .highlights-neomorph {
   display: flex;
@@ -859,7 +964,7 @@ body{
 .accordion-header .preview {
   margin-top: 8px;
   font-size: 19px;
-  color: var(--deer-dark-grey);
+  color: var(--dark-grey);
   opacity: 0.8;
 }
 

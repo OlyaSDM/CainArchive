@@ -32,6 +32,9 @@ tlLoader
 .to('.loader', {
     yPercent: -100,
     duration: 0.5,
+    onComplete: () => {
+    window.dispatchEvent(new Event("loaderFinished"));
+  }
 })
 
 //Animation - 4s delay for menu to appear AFTER loader
