@@ -244,7 +244,7 @@
 
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-// ===== Column Animation =====
+// Column Animation 
 const leftCol = document.querySelector(".column.left .column-inner") || document.querySelector(".column.left");
 const middleCol = document.querySelector(".column.middle .column-inner");
 const rightCol = document.querySelector(".column.right .column-inner");
@@ -265,71 +265,56 @@ ScrollTrigger.create({
   }
 });
 
-// ===== Overlay =====
+// Overlay 
 (function(){
   const overlay = document.querySelector('.mosaic-overlay');
   const overlayText = overlay && overlay.querySelector('.overlay-text');
+  const overlayPhoto = overlay && overlay.querySelector('.overlay-photo'); 
   if(!overlay || !overlayText) return;
 
   let overlayActive = false;
   let overlayTimer = null;
-  const overlayDelay = 11000; 
-  let userStartedScroll = false;
-  let disableAutoOverlay = false; 
   const mosaicSection = document.querySelector('.mosaic-section');
   if(!mosaicSection) return;
 
-  function showOverlayAndScroll(){
+  function showOverlay(){
     if(overlayActive) return;
     overlayActive = true;
 
-    const nextBlock = mosaicSection.nextElementSibling;
-    if(!nextBlock) return;
-
     const tl = gsap.timeline();
-    tl.set(overlay, {pointerEvents: 'auto'})
-      .to(overlay, {opacity: 1, duration: 1.5})
-      .to(overlayText, {opacity:1, y:0, duration:1.2, ease:'power3.out'}, '-=0.4')
-      .call(() => {
-        gsap.to(window, {duration: 1.6, scrollTo: nextBlock, ease:'power2.inOut'});
-      }, null, '+=1')
-      .to(overlay, {opacity: 0, pointerEvents: 'none', duration:0.8}, '+=0.3')
+    tl.set(overlay, {pointerEvents: 'auto', opacity: 1}) 
+      .fromTo(overlayText, {opacity:0, y:30}, {opacity:1, y:0, duration:1, ease:'power3.out'})
+      .fromTo(overlayPhoto, {opacity:0, scale:0.9}, {opacity:1, scale:1, duration:1.4, ease:'power3.out'}, '+=0.3')
+      .to({}, {duration: 6})
+      .to(overlay, {opacity: 0, pointerEvents:'none', duration:1.2, ease:'power2.inOut'})
       .call(()=>{ overlayActive = false; });
   }
 
-  //Listen to page scrolling
-  window.addEventListener('scroll', () => {
-    if(!userStartedScroll){
-      userStartedScroll = true;
-      if(!disableAutoOverlay){
-        overlayTimer = setTimeout(showOverlayAndScroll, overlayDelay);
-      }
-    }
+  // Launch overlay immediately on boot
+  window.addEventListener("load", () => {
+    showOverlay();
   });
 
-  // ScrollTrigger for mosaic-section
+  // ScrollTrigger to reappear the overlay when scrolling up
   ScrollTrigger.create({
     trigger: mosaicSection,
     start: 'top top',
     end: 'bottom bottom',
     onUpdate: self => {
-      // Scroll down → show overlay
-      if(self.direction === 1 && !overlayActive){
+      //if user scrolls up and overlay is hidden → show again
+      if(self.direction === -1 && !overlayActive){
         clearTimeout(overlayTimer);
-        showOverlayAndScroll();
-      }
-
-      // Scroll up → disable auto-appearance of overlay
-      if(self.direction === -1){
-        overlayActive = false;
-        userStartedScroll = false;
-        disableAutoOverlay = true; 
-        if(overlayTimer) clearTimeout(overlayTimer);
+        showOverlay();
       }
     }
   });
 
 })();
+
+
+
+
+
 
 
 

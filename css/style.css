@@ -1213,14 +1213,18 @@ body{
   height: 100vh;
   overflow: hidden;
   position: relative;
-  background-image: url("../img/bg.jpg");
+  background-image: url("../img/bg_g1.png");
+  background-size: cover;
+  background-position: center;
+  padding: 0 20px;
 }
 
 .mosaic {
-  display: flex;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); 
   gap: 30px;
-  margin-left: 140px;
-  margin-right: 140px;
+  margin: 0 auto;
+  max-width: 1600px;
   height: 100%;
 }
 
@@ -1233,6 +1237,7 @@ body{
   width: 100%;
   display: block;
   margin-top: 30px;
+  object-fit: cover;
 }
 
 .column.middle .column-inner,
@@ -1251,23 +1256,66 @@ body{
   inset: 0;
   background: rgba(0,0,0,0.8);
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   opacity: 0;
-  pointer-events: none; 
-}
-
-.mosaic-overlay .overlay-text {
-  font-family: 'GT Super';
-  color: #fff;
-  font-size: 88px;
+  pointer-events: none;
+  padding: 20px;
   text-align: center;
 }
 
+.mosaic-overlay .overlay-text {
+  font-family: 'GT Super', sans-serif;
+  color: #fff;
+  font-size: 88px;
+  line-height: 1.1;
+  max-width: 100%;
+  font-size: clamp(1.8rem, 6vw, 88px); 
 
-/* responsive */
+}
+
+/* Overlay photo */
+.mosaic-overlay .overlay-photo {
+  margin-top: 20px;
+  max-width: 80%;
+  border-radius: 12px;
+}
+
+/* Responsive */
+@media (max-width: 1200px) {
+  .mosaic {
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 20px;
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+}
+
 @media (max-width: 900px) {
-  .mosaic-overlay .overlay-text { font-size: 2rem; }
+  .mosaic {
+    grid-template-columns: 1fr; 
+    gap: 20px;
+    margin: 0;
+  }
+
+  .column img {
+    width: 100%;
+    margin-top: 20px;
+  }
+
+  .mosaic-overlay .overlay-photo {
+    max-width: 100%;
+  }
+    .mosaic-section {
+    height: 70vh; 
+  }
+}
+
+@media (max-width: 600px) {
+    .mosaic-section {
+    height: 50vh; 
+  }
 }
 
 
