@@ -843,207 +843,186 @@ body{
 
 
 /* Highlights */
-.highlights-neomorph {
+
+.highlights-section {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  padding: 40px 140px;
-  background: var(--background);
-  font-family: "Libre Franklin", sans-serif;
-  color: var(--fonts);
-  position: relative;
+  flex-direction: column; 
+  background-color: var(--background);
 }
 
-.highlights-container {
-  display: flex;
-  max-width: 1600px;
-  align-items: center;
-  gap: 140px;
+.container {
   width: 100%;
-  position: relative;
-  margin-bottom: 120px;
+  margin: 0 auto;
 }
 
-.highlight-photo {
-  position: relative;
-  width: 660px;
-  height: 460px;
-  overflow: hidden;
-  border-radius: 12px;
-      box-shadow: 1px 1px 1px rgba(20, 20, 20, 0.5);
-
-  box-shadow: 4px 4px 4px rgba(20, 20, 20, 0.5);
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.highlight-photo .photo {
-  position: absolute;
-  inset: 0;
-  background-size: cover;
-  background-position: center;
-  filter: grayscale(100%);
-}
-
-.highlight-photo .photo:first-child {
-  opacity: 1;
-}
-
-.highlights-right {
-  flex: 1;
+.all {
   display: flex;
-  flex-direction: column;
+}
+.highlights-header {
+  position: absolute;
+  justify-content: flex-end; 
+  align-items: flex-start;  
+  margin: 80px 0 40px; 
 }
 
 .highlights-title {
-  font-size: clamp(2.5rem, 5vw, 8rem);
-  font-weight: 300;
+  font-size: 100px;
+  font-weight: bold;
+  color: var(--dark-blue);
   text-transform: uppercase;
-    font-family: 'GT Super';
-  margin-bottom: 88px;
-  color: var(--fonts);
-  align-self: flex-start;
+  line-height: 1.05;
+  margin-left: 1100px;
 }
 
-.highlights-title .blue {
-  color: var(--light-blue);
-}
-
-/* Accordion */
-.accordion {
+.highlights-content {
   display: flex;
-  align-self: center;
-  flex-direction: column;
-  gap: 50px;
+  gap: 0; 
 }
 
-.accordion-item {
-  border-bottom: 1px solid var(--dark-grey);
+.highlights-left {
+  position: relative;
+  width: 50%;
+  height: 100vh;
+  overflow: hidden;
 }
 
-.accordion-toggle {
+.photo-stack {
+  position: relative;
   width: 100%;
-  padding: 16px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
+  height: 100%;
 }
 
-.accordion-header {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
+.photo-stack .photo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 1;
+  will-change: transform, top;
 }
 
-.accordion-header .title {
-  font-family: "Libre Franklin", sans-serif;
-  font-size: 40px;
-  font-weight: 300;
-  color: var(--fonts);
-  font-style: italic;
+.photo-stack .photo.active {
+  top: 0;
+  z-index: 2;
 }
 
-.accordion-header .title .italic.active {
-  color: var(--light-blue);
-}
-
-.italic {
-  font-family: "GT Super Ds Trial Rg";
-  margin-bottom: 1rem;
-  font-size: 36px;
-  font-weight: 600;
-  margin-top: 0;
-  font-style: italic;
-}
-
-.accordion-header .preview {
-  margin-top: 8px;
-  font-size: 19px;
-  color: var(--dark-grey);
-  opacity: 0.8;
-}
-
-/* arrow */
-.arrow_accardion {
-  width: 44px;
-  height: 44px;
+.highlights-right {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 50%;
+  position: relative;
+}
+
+.highlight-texts {
+  width: 100%;
+  position: relative;
+  height: 100%;
+}
+
+.highlight-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  max-width: 600px;
+  z-index: 1;
+}
+
+.highlight-text.active {
+  z-index: 2;
+}
+
+.highlight-subtitle {
+  font-size: 28px;
+  font-family: 'GT Super';
+  font-style: italic;
+  font-weight: 800;
+  margin-bottom: 10px;
   color: var(--fonts);
 }
 
-.arrow-icon {
-  width: 100%;
-  height: 100%;
-  stroke: var(--fonts);
-  stroke-width: 1.2;
-  transition: transform 0.4s ease;
+.highlight-paragraph {
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 200;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--fonts);
 }
-
-.accordion-item.active .arrow-icon {
-  transform: rotate(-45deg) translate(4px, -3px);
-}
-
-.accordion-item {
-  border-bottom: 1px solid var(--dark-grey);
-}
-
-.accordion-toggle {
-  width: 100%;
-  padding: 16px 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  background: none;
-  border: none;
-  cursor: pointer;
-  text-align: left;
-}
-
-.accordion-content {
-  height: 0;
-  overflow: hidden;
-  margin-bottom: 12px;
-}
-
-.accordion-item .preview {
-  transition: opacity 0.4s ease;
-}
-.accordion-item.active .preview { opacity: 0; }
 
 .read-more {
-  display: inline-block;
-  margin-top: 5px;
-  color: var(--light-blue);
-  text-decoration: underline;
-  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 16px;
+  color: var(--dark-blue);
+  margin-top: 12px;
+  position: relative;
 }
 
-.accordion-header .title .italic {
-  font-style: italic;
+.read-more .text::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 50%;
+  width: 100%;
+  height: 1px;
+  background-color: var(--blue);
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
+  transition: transform 0.3s ease;
 }
 
-@media (max-width: 1010px) {
-  .highlights-neomorph {
+.read-more .arrow {
+  margin-left: 8px;
+  transition: transform 0.3s ease;
+}
+
+.read-more:hover .text::after {
+  transform: translateX(-50%) scaleX(1);
+}
+
+.read-more:hover .arrow {
+  transform: translateX(5px);
+}
+
+@media (max-width: 1350px) {
+  .highlights-content {
     flex-direction: column;
   }
 
-  .highlights-container {
-    flex-direction: column;
-    gap: 40px;
-  }
-
-  .highlight-photo {
+  .highlights-left,
+  .highlights-right {
     width: 100%;
+    height: 500px;
+  }
+
+  .highlight-texts .highlight-text {
+    left: 50%;
+    width: 90%;
+  }
+}
+
+@media (max-width: 480px) {
+  .highlights-left,
+  .highlights-right {
     height: 300px;
   }
+
+  .highlights-section {
+    padding: 40px 16px;
+  }
 }
+
+
+.d {
+  height: 100px;
+  background-color: var(--background);
+}
+
 
 
 /* Gallery Section*/
