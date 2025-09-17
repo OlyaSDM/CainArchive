@@ -266,51 +266,46 @@ ScrollTrigger.create({
 });
 
 // Overlay 
-(function(){
+(function() {
   const overlay = document.querySelector('.mosaic-overlay');
-  const overlayText = overlay && overlay.querySelector('.overlay-text');
-  const overlayPhoto = overlay && overlay.querySelector('.overlay-photo'); 
-  if(!overlay || !overlayText) return;
+  if(!overlay) return;
 
-  let overlayActive = false;
+  const overlayText = overlay.querySelector('.overlay-text');
+  const overlayPhoto = overlay.querySelector('.overlay-photo'); 
+  if(!overlayText) return;
+
+  let overlayActive = true;
   let overlayTimer = null;
+
+  // Show overlay immediately
+  gsap.set(overlay, {opacity:1, pointerEvents:'auto'});
+  gsap.fromTo(overlayText, {opacity:0, y:30}, {opacity:1, y:0, duration:1, ease:'power3.out'});
+  if(overlayPhoto) {
+    gsap.fromTo(overlayPhoto, {opacity:0, scale:0.9}, {opacity:1, scale:1, duration:1.4, ease:'power3.out', delay:0.3});
+  }
+
+  // ScrollTrigger to start countdown when user reaches the section
   const mosaicSection = document.querySelector('.mosaic-section');
   if(!mosaicSection) return;
 
-  function showOverlay(){
-    if(overlayActive) return;
-    overlayActive = true;
-
-    const tl = gsap.timeline();
-    tl.set(overlay, {pointerEvents: 'auto', opacity: 1}) 
-      .fromTo(overlayText, {opacity:0, y:30}, {opacity:1, y:0, duration:1, ease:'power3.out'})
-      .fromTo(overlayPhoto, {opacity:0, scale:0.9}, {opacity:1, scale:1, duration:1.4, ease:'power3.out'}, '+=0.3')
-      .to({}, {duration: 6})
-      .to(overlay, {opacity: 0, pointerEvents:'none', duration:1.2, ease:'power2.inOut'})
-      .call(()=>{ overlayActive = false; });
-  }
-
-  // Launch overlay immediately on boot
-  window.addEventListener("load", () => {
-    showOverlay();
-  });
-
-  // ScrollTrigger to reappear the overlay when scrolling up
   ScrollTrigger.create({
     trigger: mosaicSection,
-    start: 'top top',
-    end: 'bottom bottom',
-    onUpdate: self => {
-      //if user scrolls up and overlay is hidden → show again
-      if(self.direction === -1 && !overlayActive){
-        clearTimeout(overlayTimer);
-        showOverlay();
+    start: 'top bottom', 
+    onEnter: () => {
+      if(overlayActive){
+        overlayTimer = setTimeout(() => {
+          gsap.to(overlay, {
+            opacity:0, 
+            pointerEvents:'none', 
+            duration:1.2, 
+            ease:'power2.inOut', 
+            onComplete: () => overlayActive = false
+          });
+        }, 6000); 
       }
     }
   });
-
 })();
-
 
 
 

@@ -1266,9 +1266,10 @@ body{
 }
 
 .mosaic-overlay .overlay-text {
-  font-family: 'GT Super', sans-serif;
+  font-size: 100px;
+  font-weight: bold;
+  text-transform: uppercase;
   color: #fff;
-  font-size: 88px;
   line-height: 1.1;
   max-width: 100%;
   font-size: clamp(1.8rem, 6vw, 88px); 
@@ -1317,7 +1318,6 @@ body{
     height: 50vh; 
   }
 }
-
 
 /* COLLECTION SECTION */
 
