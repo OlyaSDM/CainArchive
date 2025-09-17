@@ -240,18 +240,16 @@
 
 
 
-
-
 gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-// Column Animation 
+// --- Column Animation ---
 const leftCol = document.querySelector(".column.left .column-inner") || document.querySelector(".column.left");
 const middleCol = document.querySelector(".column.middle .column-inner");
 const rightCol = document.querySelector(".column.right .column-inner");
 
-const leftAnim = gsap.to(leftCol, { y: -leftCol.scrollHeight / 4, duration: 18, ease: "linear", repeat: -5 });
-const middleAnim = gsap.to(middleCol, { y: -middleCol.scrollHeight / 4, duration: 18, ease: "linear", repeat: -5 });
-const rightAnim = gsap.to(rightCol, { y: -rightCol.scrollHeight / 4, duration: 18, ease: "linear", repeat: -5 });
+const leftAnim = gsap.to(leftCol, { y: -leftCol.scrollHeight / 4, duration: 18, ease: "linear", repeat: -1 });
+const middleAnim = gsap.to(middleCol, { y: -middleCol.scrollHeight / 4, duration: 18, ease: "linear", repeat: -1 });
+const rightAnim = gsap.to(rightCol, { y: -rightCol.scrollHeight / 4, duration: 18, ease: "linear", repeat: -1 });
 
 ScrollTrigger.create({
   trigger: ".mosaic-section",
@@ -274,38 +272,53 @@ ScrollTrigger.create({
   const overlayPhoto = overlay.querySelector('.overlay-photo'); 
   if(!overlayText) return;
 
-  let overlayActive = true;
   let overlayTimer = null;
 
-  // Show overlay immediately
-  gsap.set(overlay, {opacity:1, pointerEvents:'auto'});
-  gsap.fromTo(overlayText, {opacity:0, y:30}, {opacity:1, y:0, duration:1, ease:'power3.out'});
-  if(overlayPhoto) {
-    gsap.fromTo(overlayPhoto, {opacity:0, scale:0.9}, {opacity:1, scale:1, duration:1.4, ease:'power3.out', delay:0.3});
-  }
+  // First, hide the overlay completely
+  gsap.set(overlay, {opacity: 0, pointerEvents: 'none'});
+  gsap.set(overlayText, {opacity: 0, y: 30});
+  if(overlayPhoto) gsap.set(overlayPhoto, {opacity: 0, scale: 0.9});
 
-  // ScrollTrigger to start countdown when user reaches the section
+  const showOverlay = () => {
+    gsap.to(overlay, {opacity: 1, pointerEvents: 'auto', duration: 0.8, ease: 'power2.out'});
+    gsap.to(overlayText, {opacity: 1, y: 0, duration: 1, ease: 'power3.out'});
+    if(overlayPhoto) gsap.to(overlayPhoto, {opacity: 1, scale: 1, duration: 1.4, ease: 'power3.out', delay: 0.3});
+    startHideTimer();
+  };
+
+  const hideOverlay = () => {
+    gsap.to(overlay, {opacity: 0, pointerEvents: 'none', duration: 1.2, ease: 'power2.inOut'});
+  };
+
+  const startHideTimer = () => {
+    clearTimeout(overlayTimer);
+    overlayTimer = setTimeout(hideOverlay, 6000);
+  };
+
+  // SscrollTrigger to show/hide the overlay
   const mosaicSection = document.querySelector('.mosaic-section');
   if(!mosaicSection) return;
 
   ScrollTrigger.create({
     trigger: mosaicSection,
-    start: 'top bottom', 
-    onEnter: () => {
-      if(overlayActive){
-        overlayTimer = setTimeout(() => {
-          gsap.to(overlay, {
-            opacity:0, 
-            pointerEvents:'none', 
-            duration:1.2, 
-            ease:'power2.inOut', 
-            onComplete: () => overlayActive = false
-          });
-        }, 6000); 
-      }
-    }
+    start: 'top center',
+    end: 'bottom top',
+    onEnter: () => showOverlay(),      
+    onEnterBack: () => showOverlay()   
   });
 })();
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

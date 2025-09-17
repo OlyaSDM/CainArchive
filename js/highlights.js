@@ -2,31 +2,57 @@ gsap.registerPlugin(ScrollTrigger);
 
 const photos = gsap.utils.toArray('.photo');
 const texts = gsap.utils.toArray('.highlight-text');
+const segments = document.querySelectorAll('.si-segment');
+const numSegments = segments.length;
 
-// Starting positions
+// Add fill for each segment
+segments.forEach(seg => {
+  const fill = document.createElement('div');
+  fill.classList.add('fill');
+  seg.appendChild(fill);
+});
+
+// Starting positions of photos and text
 photos.forEach((photo, i) => {
   gsap.set(photo, { yPercent: i === 0 ? 0 : -100, zIndex: i === 0 ? 2 : 1 });
-  if (i === 0) photo.classList.add('active');
 });
-
 texts.forEach((text, i) => {
   gsap.set(text, { yPercent: i === 0 ? 0 : 200, opacity: i === 0 ? 1 : 0 });
-  if (i === 0) text.classList.add('active');
 });
 
-// Timeline with pin and snap
+// Animation Timeline 
 const tl = gsap.timeline({
   scrollTrigger: {
     trigger: '.highlights-section',
     start: 'top top',
-    end: `+=${photos.length * 200}%`, 
-    scrub: 8,                        
+    end: `+=${photos.length * 150}%`,
+    scrub: 1,
     pin: true,
-    snap: 1 / (photos.length - 1)
+    snap: 1 / (photos.length - 1),
+    onUpdate: self => {
+      const totalProgress = self.progress;
+
+      segments.forEach((seg, i) => {
+        const fill = seg.querySelector('.fill');
+        const segStart = i / numSegments;
+        const segEnd = (i + 1) / numSegments;
+
+        let segProgress = (totalProgress - segStart) / (segEnd - segStart);
+        segProgress = Math.min(Math.max(segProgress, 0), 1);
+
+        fill.style.height = `${segProgress * 100}%`;
+
+        if (segProgress > 0) {
+          fill.style.background = "#0d3b66"; 
+        } else {
+          fill.style.background = "rgba(0,0,0,0.1)"; 
+        }
+      });
+    }
   }
 });
 
-// Photo + text animation
+// Photo and text animations
 photos.forEach((photo, i) => {
   if (i === 0) return;
 
@@ -34,7 +60,6 @@ photos.forEach((photo, i) => {
   const prevText = texts[i - 1];
   const currentText = texts[i];
 
-  // The photo enters from above
   tl.to(photo, {
     yPercent: 0,
     zIndex: 3,
@@ -45,7 +70,6 @@ photos.forEach((photo, i) => {
     }
   }, i);
 
-  // Text appears below
   tl.to(currentText, {
     yPercent: 0,
     opacity: 1,
@@ -56,13 +80,9 @@ photos.forEach((photo, i) => {
     }
   }, i + 0.2);
 
-  // Old text goes up
   tl.to(prevText, {
     yPercent: -200,
     opacity: 0,
     ease: "none"
   }, i + 0.2);
 });
-
-
- tl.to({}, { duration: 1.2 });
