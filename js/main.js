@@ -95,3 +95,48 @@ gsap.fromTo(".res",
     scrollTrigger: scrollSettings,
   }
 );
+
+
+
+
+//ANIMATION FOR COLLECTIONS 
+
+const collIntroSettings = {
+  trigger: ".coll-intro",
+  start: "top 80%",
+  end: "bottom 40%",
+  scrub: 1,
+};
+
+// Helper function for reusable animations
+function animateCollIntro(selector, direction = "left") {
+  const offset = 80;
+  gsap.fromTo(
+    selector,
+    {
+      x: direction === "left" ? -offset : offset,
+      opacity: 0,
+    },
+    {
+      x: 0,
+      opacity: 1,
+      ease: "power2.out",
+      scrollTrigger: collIntroSettings,
+    }
+  );
+}
+
+// Apply animations
+animateCollIntro(".unseen", "left");   // move left → right
+animateCollIntro(".unforg", "right"); // move right → left
+
+// "Untold" only fades in, stays in place
+gsap.fromTo(".untold",
+  { opacity: 0, y: 20 },
+  {
+    opacity: 1,
+    y: 0,
+    ease: "power2.out",
+    scrollTrigger: collIntroSettings,
+  }
+);

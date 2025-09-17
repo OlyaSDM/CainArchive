@@ -80,10 +80,10 @@ body{
     background: var(--dark-blue);
   }
   .loader__item-1 {
-    border-right: 1px solid #323232;
+    border-right: 1px solid var(--dark-blue);
   }
   .loader__item-2 {
-    border-right: 1px solid #323232;
+    border-right: 1px solid var(--dark-blue);
   }
 
 
@@ -782,7 +782,7 @@ body{
   font-weight: 100;
 }
  .his {
-  left: -150px;
+  left: -200px;
 }
 .fin{
   left: 100px;
@@ -791,7 +791,7 @@ body{
   left: 200px;
 }
 .for{
-  right: 130px;
+  right: 150px;
 }
 .dis{
     left: 200px;
@@ -1321,7 +1321,7 @@ body{
 
 /* COLLECTION SECTION */
 
-#horizontal .collection{
+/* #horizontal .collection{
   height: 100vh;
   width: 100vw; 
 	display: grid;
@@ -1355,13 +1355,13 @@ body{
   transform: translateY(40px);
 }
 #horizontal .collection .overlay{
-  position: absolute; /* ⭐ Fill the entire parent */
+  position: absolute; 
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(29, 29, 29, 0.4); /* Corrected syntax for rgba */
-    /* backdrop-filter: blur(2px); */
+  background: rgba(29, 29, 29, 0.4); 
+    
     display: flex;
   flex-direction: column;
   justify-content: center;
@@ -1385,4 +1385,185 @@ body{
 }
 #horizontal .collection:nth-child(4){
   background-image: url(/img/collections/hollywood.jpg);
+} */
+
+
+#collections{
+  display: flex;
+  flex-direction: column;
+}
+.coll-intro{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 150px 0 70px 0;
+  color: var(--fonts);
+}
+.coll-intro h3{
+  font-size: 100px;
+  text-align: center;
+  line-height: 90px;
+}
+.coll-bold {
+  color: var(--dark-blue);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.coll-italic {
+  font-family: 'GT Super';
+  font-style: italic;
+  font-weight: 100;
+}
+.unseen, .untold, .unforg {
+  position: relative;
+}
+.unseen{
+  right: 200px;
+}
+.unforg{
+  left: 200px;
+}
+.coll-p{
+  display: flex;
+  margin-top: 60px;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 20px;
+  font-weight: 100;
+  max-width: 800px;
+  text-align: center;
+    transform: none !important;
+  will-change: auto;
+}
+#collections .coll-background{
+  height: 100vh;
+  width: 100vw; 
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  place-items: center;
+  color: var(--background);
+  text-decoration: none;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+#collections .coll-background .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  z-index: -1;
+}
+.ww2 .bg {
+  background-image: url(/img/collections/ww2.jpg);
+}
+.churchill .bg {
+  background-image: url(/img/collections/churchill.jpg);
+}
+.kennedy .bg {
+  background-image: url(/img/collections/kennedy.jpg);
+}
+.hollywood .bg {
+  background-image: url(/img/collections/hollywood.jpg);
+}
+
+
+#collections .coll-background h3{
+  font-family: 'GT Super';
+  font-size: 88px;
+  font-weight: 600;
+  margin-bottom: 20px;
+}
+#collections .coll-background p{
+  font-size: 22px;
+  font-family: "Libre Franklin", sans-serif;
+  font-weight: 200;
+  max-width: 600px;
+}
+#collections .coll-background .overlay{
+  position: absolute; 
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(29, 29, 29, 0.5); 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Tablet screens (max-width: 1024px) */
+@media (max-width: 1024px) {
+  .coll-intro {
+    padding: 100px 20px 60px 20px;
+  }
+
+  .coll-intro h3 {
+    font-size: 70px;
+    line-height: 70px;
+  }
+
+  .unseen { right: 100px; }
+  .unforg { left: 100px; }
+
+  .coll-p {
+    font-size: 18px;
+    max-width: 90%;
+  }
+
+  #collections .coll-background h3 {
+    font-size: 60px;
+  }
+
+  #collections .coll-background p {
+    font-size: 18px;
+    padding: 0 20px;
+  }
+}
+
+/* Mobile screens (max-width: 600px) */
+@media (max-width: 600px) {
+  .coll-intro {
+    padding: 70px 15px 40px 15px;
+  }
+
+  .coll-intro h3 {
+    font-size: 40px;
+    line-height: 46px;
+  }
+
+  .unseen,
+  .untold,
+  .unforg {
+    left: 0;
+    right: 0;
+  }
+
+  .coll-p {
+    font-size: 16px;
+    line-height: 1.5;
+    margin-top: 40px;
+  }
+
+  #collections .coll-background {
+    height: 80vh; /* less tall on small screens */
+  }
+
+  #collections .coll-background h3 {
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+
+  #collections .coll-background p {
+    font-size: 16px;
+    padding: 0 15px;
+  }
+
+  #collections .coll-background .overlay {
+    padding: 20px;
+  }
 }
