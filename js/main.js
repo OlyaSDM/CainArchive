@@ -140,3 +140,59 @@ gsap.fromTo(".untold",
     scrollTrigger: collIntroSettings,
   }
 );
+
+
+// When collections section is in view here is "transparent" class on NAVBAR
+ScrollTrigger.create({
+  trigger: "#collections",
+  start: "top top",    
+  end: "bottom top",
+  toggleClass: { targets: ".navbar", className: "transparent" },
+  markers: false
+});
+
+
+//CURSOR-TOOLTIP
+
+const tooltip = document.querySelector(".cursor-tooltip");
+
+let mouseX = 0, mouseY = 0;
+let tooltipX = 0, tooltipY = 0;
+
+document.addEventListener("mousemove", (e) => {
+  mouseX = e.clientX + 35;
+  mouseY = e.clientY + 20;
+});
+
+function animateTooltip() {
+  tooltipX += (mouseX - tooltipX) * 0.15;
+  tooltipY += (mouseY - tooltipY) * 0.15;
+
+  gsap.set(tooltip, {
+    x: tooltipX,
+    y: tooltipY
+  });
+
+  requestAnimationFrame(animateTooltip);
+}
+animateTooltip();
+
+document.querySelectorAll(".coll-background").forEach((el) => {
+  el.addEventListener("mouseenter", () => {
+    gsap.to(tooltip, {
+      opacity: 1,
+      scale: 1.1,
+      duration: 0.3,
+      ease: "power3.out"
+    });
+  });
+
+  el.addEventListener("mouseleave", () => {
+    gsap.to(tooltip, {
+      opacity: 0,
+      scale: 0.9,
+      duration: 0.3,
+      ease: "power3.inOut"
+    });
+  });
+});
