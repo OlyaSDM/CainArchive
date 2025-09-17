@@ -86,3 +86,4 @@ photos.forEach((photo, i) => {
     ease: "none"
   }, i + 0.2);
 });
+
