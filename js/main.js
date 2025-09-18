@@ -196,3 +196,26 @@ document.querySelectorAll(".coll-background").forEach((el) => {
     });
   });
 });
+
+
+
+
+//ANIMATION FOR PRESS 
+
+
+gsap.set(".press-intro h3, .press-intro p", { opacity: 0, y: 50 });
+
+gsap.fromTo(".press-intro h3, .press-intro p",
+  { opacity: 0, y: 50 },
+  {
+    opacity: 1,
+    y: 0,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".press-intro",
+      start: "top 90%",
+      end: "top 30%",
+      scrub: true
+    }
+  }
+);

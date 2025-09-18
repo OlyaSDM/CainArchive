@@ -529,7 +529,7 @@ body{
 
 
 
-/* Hero Layout */
+/* HERO */
 .hero {
   position: relative;
   width: 100%;
@@ -604,7 +604,7 @@ body{
 .hero-buttons {
   display: flex;
 }
-  .hero-cta-btn{
+  /* .hero-cta-btn{
     background-image: linear-gradient(to right, #023047 0%, #219ebc  51%, #023047  100%);
     padding: 15px 35px;
     text-align: center;
@@ -615,7 +615,6 @@ body{
     border: none;
   font-family: "Libre Franklin", sans-serif;
     font-size: 15px;
-    border-radius: 50px;
   }
 
   .hero-cta-btn:hover {
@@ -624,7 +623,86 @@ body{
     text-decoration: none;
     border: none;
     cursor: pointer;
-  }
+  } */
+.hero-cta-btn {
+  position: relative;
+  padding: 15px 35px;
+  text-align: center;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--background);
+  color: var(--background);
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+/* .hero-cta-btn:hover {
+  color: var(--light-blue);
+} */
+
+/* Animated border overlay */
+.hero-cta-btn::before,
+.hero-cta-btn::after {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 0;
+  background: white;
+  transition: width 0.5s ease;
+  z-index: 2;
+}
+
+.hero-cta-btn::before {
+  top: 0;
+  left: 0;
+  transform-origin: left;
+}
+
+.hero-cta-btn::after {
+  bottom: 0;
+  right: 0;
+  transform-origin: right;
+}
+
+.hero-cta-btn:hover::before,
+.hero-cta-btn:hover::after {
+  width: 100%;
+}
+
+/* Vertical sides (left + right) */
+.hero-cta-btn .v-border {
+  position: absolute;
+  width: 1px;
+  height: 0;
+  background: white;
+  transition: height 0.5s ease;
+  z-index: 2;
+}
+
+.hero-cta-btn .v-left {
+  top: 0;
+  left: 0;
+  transform-origin: top;
+}
+
+.hero-cta-btn .v-right {
+  bottom: 0;
+  right: 0;
+  transform-origin: bottom;
+}
+
+.hero-cta-btn:hover .v-left,
+.hero-cta-btn:hover .v-right {
+  height: 100%;
+}
+
+
+
+
 .hero-cta-text{
   color: var(--background);
   text-decoration: none;
@@ -854,7 +932,7 @@ body{
 }
 
 .highlights-title {
-	font-size: 100px;
+	font-size: 80px;
 	font-weight: bold;
 	color: var(--dark-blue);
 	text-transform: uppercase;
@@ -926,7 +1004,7 @@ body{
 }
 
 .highlight-subtitle {
-	font-size: 28px;
+	font-size: 34px;
 	font-family: 'GT Super';
 	font-style: italic;
 	font-weight: 800;
@@ -948,7 +1026,7 @@ body{
 	font-family: "Libre Franklin", sans-serif;
 	font-size: 16px;
 	color: var(--dark-blue);
-	margin-top: 12px;
+	margin-top: 20px;
 	position: relative;
 }
 
@@ -1064,7 +1142,7 @@ body{
 
 
 .d {
-	height: 100px;
+	height: 200px;
 	background-color: var(--background);
 }
 
@@ -1636,14 +1714,50 @@ body{
 
 
 
-/* PRESS  */
+/* PRESS */
+
+.press-intro {
+  display: flex;
+  flex-direction: column;
+  margin: 200px 0 0 0;
+}
+.press-intro h3 {
+  font-size: 90px;
+  text-align: center;
+  line-height: 80px;
+  color: var(--dark-blue);
+  text-transform: uppercase;
+  font-weight: bold;
+}
+.press-intro p {
+  margin-top: 40px;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 22px;
+  font-weight: 100;
+  text-align: center;
+}
+.press-intro p span {
+  font-style: italic;
+}
 
 #press {
   padding: 100px 5vw;
   background: var(--background);
   color: var(--fonts);
+  position: relative;
+  min-height: 100vh;
+  overflow: hidden;
 }
 
+.press-intro,
+#press {
+  position: relative;
+  z-index: 2;
+  will-change: transform, opacity;
+}
+
+
+/* Grid */
 .press-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
@@ -1654,26 +1768,25 @@ body{
   display: flex;
   flex-direction: column;
 }
+
 .press-item-img {
   position: relative;      
   overflow: hidden;        
   aspect-ratio: 3 / 4;     
+  width: 100%;
+  height: auto;
+  display: block;      
+  text-decoration: none;
+  color: inherit;   
 }
+
 .press-item-img img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 0.5s ease;
+  transition: transform 0.5s ease, opacity 0.5s ease;
 }
-.press-item-img {
-  position: relative;
-  overflow: hidden;
-  width: 100%;
-  height: auto;
-  display: block;      /* make <a> behave like a block */
-  text-decoration: none;
-  color: inherit;      /* prevent link styling */
-}
+
 /* Overlay */
 .press-item-img::after {
   content: "Read More";
@@ -1683,7 +1796,7 @@ body{
   width: 100%;
   height: 100%;
   background: rgba(0, 0, 0, 0.4);
-  color: #fff;
+  color: var(--background);
   font-family: "Libre Franklin", sans-serif;
   font-size: 16px;
   font-weight: 400;
@@ -1700,13 +1813,13 @@ body{
 .press-item-img:hover img {
   transform: scale(1.1);
 }
-
 .press-item-img:hover::after {
   opacity: 1;
   transform: scale(1);
 }
+
 .press-category {
-  color: #0b5c5c; /* teal like in screenshot */
+  color: var(--dark-blue);
   text-transform: uppercase;
   font-family: "Libre Franklin", sans-serif;
   font-size: 14px;
