@@ -1021,41 +1021,45 @@ body{
 }
 
 .read-more {
-	text-decoration: none;
-	display: inline-flex;
-	font-family: "Libre Franklin", sans-serif;
-	font-size: 16px;
-	color: var(--dark-blue);
-	margin-top: 20px;
-	position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px; 
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 16px;
+  color: var(--dark-blue);
+  text-decoration: none;
+  margin-top: 12px;
+  position: relative;
+}
+
+.read-more .text {
+  position: relative; 
 }
 
 .read-more .text::after {
-	content: "";
-	position: absolute;
-	bottom: -3px;
-	left: 50%;
-	width: 100%;
-	height: 1px;
-	background-color: var(--blue);
-	transform: translateX(-50%) scaleX(0);
-	transform-origin: center;
-	transition: transform 0.3s ease;
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--blue);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
 }
 
 .read-more .arrow {
-	margin-left: 8px;
-	transition: transform 0.3s ease;
+  transition: transform 0.3s ease;
 }
 
 .read-more:hover .text::after {
-	transform: translateX(-50%) scaleX(1);
+  transform: scaleX(1);
 }
 
 .read-more:hover .arrow {
-	transform: translateX(5px);
+  transform: translateX(5px);
 }
-
 .scroll-indicator {
 	position: absolute;
 	right: 40px;
@@ -1710,6 +1714,163 @@ body{
   #collections .coll-background .overlay {
     padding: 20px;
   }
+}
+
+
+/*Rentals Section*/
+.contact-block {
+  display: flex;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.contact-left,
+.contact-right {
+  flex: 1;
+  position: relative;
+}
+
+.contact-block.active .contact-left {
+  transform: translateY(0);
+}
+
+.contact-block.active .contact-right {
+  transform: translateY(0);
+}
+
+.contact-left {
+    /* background-color: rgb(2, 48, 71, 0.8); */
+   background-color: var(--fonts); 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px;
+}
+
+.contact-form {
+  max-width: 500px;
+  width: 100%;
+}
+
+.contact-form h3 {
+  font-size: 70px;
+  font-weight: 900;
+  color: var(--white);
+  margin: 0;
+  line-height: 1;
+}
+
+.contact-form h2 {
+  font-family: 'GT Super';
+  font-style: italic;
+  font-size: 70px;
+  font-weight: 100;
+  margin-left: 30%;
+  color: var(--light-blue);
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  background: transparent;
+  border: 1px solid #444;
+  color: #fff;
+  padding: 12px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+
+.contact-form textarea {
+  height: 120px;
+  resize: none;
+}
+label {
+  color: var(--white);
+}
+.contact-form button {
+  background: transparent;
+  border: 1px solid #fff;
+  padding: 12px 30px;
+  color: #fff;
+  font-weight: bold;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.contact-form button:hover {
+  background: #fff;
+  color: #f3eeee;
+}
+
+.contact-right {
+  height: 100vh;
+  /* background-color: var(--background); */
+  background-image: url(/img/bg_g1.png);
+  background-position: center;
+  background-size: cover;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+padding: 0 20px  20px;
+  color: var(--mi);
+}
+
+.contact-info {
+  display: flex;
+  flex-direction: column;
+}
+.exhibitions {
+  max-width: 650px;
+  display: flex;        
+  flex-direction: column; 
+  gap: 30px;    
+}
+.contact-info .exhibitions h3 {
+	font-size: 60px;
+	font-weight: bold;
+	color: var(--dark-blue);
+	text-transform: uppercase;
+  text-align: center;
+	line-height: 1.05;
+
+}
+
+.contact-info .exhibitions h3 .rentals {
+
+}
+
+.contact-info .exhibitions p {
+	font-family: "Libre Franklin", sans-serif;
+	font-weight: 300;
+	font-size: 22px;
+	line-height: 1.5;
+	color: var(--fonts);
+}
+
+.contact-info .exhibitions p em {
+  font-style: italic;
+  font-weight: 500;
+}
+
+.hero-cta-btn {
+  position: absolute;
+  padding: 15px 35px;
+  text-align: center;
+  text-transform: uppercase;
+  background: transparent;
+  border: 1px solid var(--light-blue);
+  color: var(--light-blue);
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.3s ease;
+}
+
+.contact-info .exhibitions p strong {
+  font-weight: 600;
 }
 
 

@@ -87,3 +87,4 @@ photos.forEach((photo, i) => {
   }, i + 0.2);
 });
 
+

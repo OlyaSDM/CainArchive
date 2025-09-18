@@ -144,12 +144,21 @@ gsap.fromTo(".untold",
 
 // When collections section is in view here is "transparent" class on NAVBAR
 ScrollTrigger.create({
-  trigger: "#collections",
+  trigger: "#collections", 
   start: "top top",    
   end: "bottom top",
   toggleClass: { targets: ".navbar", className: "transparent" },
   markers: false
 });
+
+
+
+
+
+
+
+
+
 
 
 //CURSOR-TOOLTIP
