@@ -28,7 +28,7 @@ const tl = gsap.timeline({
     end: `+=${photos.length * 150}%`,
     scrub: 1,
     pin: true,
-    snap: 1 / (photos.length - 1),
+snap: false,
     onUpdate: self => {
       const totalProgress = self.progress;
 
@@ -60,15 +60,26 @@ photos.forEach((photo, i) => {
   const prevText = texts[i - 1];
   const currentText = texts[i];
 
-  tl.to(photo, {
-    yPercent: 0,
-    zIndex: 3,
-    ease: "none",
-    onStart: () => {
-      photo.classList.add('active');
-      prevPhoto.style.zIndex = 2;
-    }
-  }, i);
+tl.to(photo, {
+  yPercent: 0,
+  zIndex: 3,
+  scale: 1.2,         
+  ease: "power2.out",  
+  onStart: () => {
+    photo.classList.add('active');
+    prevPhoto.style.zIndex = 2;
+  },
+  onReverseComplete: () => {
+    gsap.to(photo, { scale: 1, duration: 0.3, ease: "power2.inOut" }); 
+  }
+}, i);
+
+
+tl.to(prevPhoto, {
+  scale: 1,
+  ease: "power2.inOut"
+}, i);
+
 
   tl.to(currentText, {
     yPercent: 0,
