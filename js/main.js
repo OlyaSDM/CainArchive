@@ -188,59 +188,6 @@ gsap.fromTo(".res",
 
 
 
-//ANIMATION FOR COLLECTIONS 
-
-const collIntroSettings = {
-  trigger: ".coll-intro",
-  start: "top 80%",
-  end: "bottom 40%",
-  scrub: 1,
-};
-
-// Helper function for reusable animations
-function animateCollIntro(selector, direction = "left") {
-  const offset = 80;
-  gsap.fromTo(
-    selector,
-    {
-      x: direction === "left" ? -offset : offset,
-      opacity: 0,
-    },
-    {
-      x: 0,
-      opacity: 1,
-      ease: "power2.out",
-      scrollTrigger: collIntroSettings,
-    }
-  );
-}
-
-// Apply animations
-animateCollIntro(".unseen", "left");   // move left → right
-animateCollIntro(".unforg", "right"); // move right → left
-
-// "Untold" only fades in, stays in place
-gsap.fromTo(".untold",
-  { opacity: 0, y: 20 },
-  {
-    opacity: 1,
-    y: 0,
-    ease: "power2.out",
-    scrollTrigger: collIntroSettings,
-  }
-);
-
-
-// When collections section is in view here is "transparent" class on NAVBAR
-ScrollTrigger.create({
-  trigger: "#collections", 
-  start: "top top",    
-  end: "bottom top",
-  toggleClass: { targets: ".navbar", className: "transparent" },
-  markers: false
-});
-
-
 
 
 
@@ -301,19 +248,19 @@ document.querySelectorAll(".coll-background").forEach((el) => {
 //ANIMATION FOR PRESS 
 
 
-gsap.set(".press-intro h3, .press-intro p", { opacity: 0, y: 50 });
+gsap.set(".press-intro h3, .press-intro p", { opacity: 0, y: 100 });
 
 gsap.fromTo(".press-intro h3, .press-intro p",
-  { opacity: 0, y: 50 },
+  { opacity: 0, y: 100 },
   {
     opacity: 1,
     y: 0,
     ease: "power2.out",
     scrollTrigger: {
       trigger: ".press-intro",
-      start: "top 90%",
+      start: "top 60%",
       end: "top 30%",
-      scrub: true
+      scrub: 0.2
     }
   }
 );

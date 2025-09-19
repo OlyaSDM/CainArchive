@@ -1,46 +1,67 @@
-// gsap.registerPlugin(ScrollTrigger);
-
-// const collections = gsap.utils.toArray("#horizontal .collection");
-
-// gsap.to(collections, {
-//     xPercent: - 100 * (collections.length - 1),
-//     scrollTrigger: {
-//         trigger: "#horizontal",
-//         pin: true,
-//         scrub: 3,
-//         end: () => "+=" + window.innerWidth * collections.length
-//     }
-// })
+gsap.registerPlugin(ScrollTrigger);
 
 
-// collections.forEach((section) => {
-//   const h3 = section.querySelector("h3");
-//   const p = section.querySelector("p");
-//   const overlay = section.querySelector(".overlay");
+const collIntroSettings = {
+  trigger: ".coll-intro",
+  start: "top 80%",
+  end: "bottom 40%",
+  scrub: 1,
+};
 
-//   const tl = gsap.timeline({
-//     scrollTrigger: {
-//       trigger: section,
-//       start: "left center",
-//       toggleActions: "play none none reverse"
-//     }
-//   });
+// Helper function for reusable animations
+function animateCollIntro(selector, direction = "left") {
+  const offset = 80;
+  gsap.fromTo(
+    selector,
+    {
+      x: direction === "left" ? -offset : offset,
+      opacity: 0,
+    },
+    {
+      x: 0,
+      opacity: 1,
+      ease: "power2.out",
+      scrollTrigger: collIntroSettings,
+    }
+  );
+}
 
-//   tl.to(overlay, {
-//     opacity: 1,
-//     duration: 0.5,
-//     ease: "power2.out"
-//   })
-//   .to(h3, {
-//     opacity: 1,
-//     y: 0,
-//     duration: 0.6,
-//     ease: "power2.out"
-//   }, "-=0.3")
-//   .to(p, {
-//     opacity: 1,
-//     y: 0,
-//     duration: 0.6,
-//     ease: "power2.out"
-//   }, "-=0.4");
-// });
+
+animateCollIntro(".unseen", "left");   
+animateCollIntro(".unforg", "right"); 
+
+// "Untold" only fades in, stays in place
+gsap.fromTo(".untold",
+  { opacity: 0, y: 20 },
+  {
+    opacity: 1,
+    y: 0,
+    ease: "power2.out",
+    scrollTrigger: collIntroSettings,
+  }
+);
+
+
+// When collections section is in view here is "transparent" class on NAVBAR
+ScrollTrigger.create({
+  trigger: "#collections", 
+  start: "top top",    
+  end: "bottom top",
+  toggleClass: { targets: ".navbar", className: "transparent" },
+  markers: false
+});
+
+
+// Animate background image scale on scroll for each .coll-background .bg
+document.querySelectorAll("#collections .coll-background .bg").forEach((bgEl) => {
+  gsap.to(bgEl, {
+    scale: 1.2,
+    ease: "none",
+    scrollTrigger: {
+      trigger: bgEl.parentElement,
+      start: "top bottom",
+      end: "bottom top",
+      scrub: true,
+    }
+  });
+});
