@@ -1779,6 +1779,8 @@ body{
 .contact-form input,
 .contact-form textarea {
   width: 100%;
+    font-family: 'GT Super';
+font-weight: 600;
   background: transparent;
   border: 1px solid #444;
   color: #fff;
@@ -1790,6 +1792,8 @@ body{
 .contact-form textarea {
   height: 120px;
   resize: none;
+  font-weight: 600;
+
 }
 
 .contact-form label {
@@ -1810,7 +1814,6 @@ body{
 
 .contact-form label span {
   position: relative;
-  top: -9px; 
 }
 
 .contact-form label a {
@@ -1825,8 +1828,8 @@ label {
 
 .contact-right {
   height: 100vh;
-  /* background-color: var(--background); */
-  background-image: url(/img/bg_g1.png);
+  background-color: var(--background);
+  /* background-image: url(/img/bg_g1.png); */
   background-position: center;
   background-size: cover;
   display: flex;
@@ -1871,6 +1874,34 @@ padding: 40px;
 .contact-info .exhibitions p strong {
   font-weight: 600;
 }
+
+
+/*form*/
+.form-group {
+  margin-bottom: 16px; 
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group input,
+.form-group textarea {
+  margin-bottom: 4px; 
+}
+
+.error-message {
+  display: none;
+  font-size: 13px;
+  color: #6e0404;
+  line-height: 1.2;
+
+}
+
+
+input.error,
+textarea.error {
+  border-color: #6e0404 !important;
+}
+
 
 @media (max-width: 1024px) {
   .contact-block {
@@ -1972,6 +2003,7 @@ padding: 40px;
 .contact-form label input[type="checkbox"]:hover {
   transform: scale(1.1);
 }
+
 
 
 /* PRESS */

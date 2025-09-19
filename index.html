@@ -516,27 +516,44 @@
       </div>
    </div>
    <div class="contact-left">
-      <form class="contact-form">
-         <div class="contact-title">
-            <h3>Get in</h3>
-            <h2>touch</h2>
-         </div>
-         <input type="text" placeholder="Your name">
-         <input type="email" placeholder="Your email address">
-         <textarea placeholder="What can I help you with?"></textarea>
-         <label>
-         <input type="checkbox">
-         <span>I've accepted the <a href="#">privacy policy</a>.</span>
-         </label>
-         <br><br>
-         <a href="#" class="hero-cta">
-         <button class="hero-cta-btn">
-         Submit message
-         <span class="v-border v-left"></span>
-         <span class="v-border v-right"></span>
-         </button>
-         </a>       
-      </form>
+<form class="contact-form" id="contactForm" method="POST" novalidate>
+  <div class="contact-title">
+    <h3>Get in</h3>
+    <h2>touch</h2>
+  </div>
+
+  <div class="form-group">
+    <input type="text" name="name" placeholder="Your name" required>
+    <small class="error-message"></small>
+  </div>
+
+  <div class="form-group">
+    <input type="email" name="email" placeholder="Your email address" required>
+    <small class="error-message"></small>
+  </div>
+
+  <div class="form-group">
+    <textarea name="message" placeholder="What can I help you with?" required></textarea>
+    <small class="error-message"></small>
+  </div>
+
+  <!-- Honeypot -->
+  <input type="text" name="company" style="display:none">
+
+  <div class="form-group checkbox-group">
+    <label>
+      <input type="checkbox" name="privacy" required>
+      <span>I've accepted the <a href="#">privacy policy</a>.</span>
+    </label>
+    <small class="error-message"></small>
+  </div>
+
+  <button type="submit" class="hero-cta-btn">
+    Submit message
+    <span class="v-border v-left"></span>
+    <span class="v-border v-right"></span>
+  </button>
+</form>
    </div>
 </section>
 
@@ -651,6 +668,7 @@
     <script src="js/dropdown.js"></script>
     <script src="js/collections.js"></script>
     <script src="js/rentals.js"></script>
+   <script src="js/gmail.js"></script>
     <script src="js/smooth.js"></script>
    <script src="js/blinds.js"></script>
 
