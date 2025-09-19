@@ -8,7 +8,7 @@ window.addEventListener("loaderFinished", () => {
     opacity: 0,
     x: -30
   });
-
+  
   const tl = gsap.timeline({
     delay: 0.5, // slight delay after loader
     scrollTrigger: {
@@ -47,6 +47,41 @@ window.addEventListener("loaderFinished", () => {
 
 
 
+// Hero Section Luxury Fade + Parallax
+gsap.timeline({
+  scrollTrigger: {
+    trigger: ".hero",
+    start: "top top",
+    end: "bottom top",
+    scrub: true,
+  }
+})
+// .to(".hero-content", {
+//   opacity: 0,
+//   y: -100,
+//   ease: "power2.out"
+// }, 0)
+.to(".hero-video", {
+  scale: 1.2,
+  // opacity: 0,
+  ease: "power2.out"
+}, 0);
+
+// Fade in next section smoothly
+gsap.from(".quote", {
+  opacity: 0,
+  y: 80,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".quote",
+    start: "top 80%",
+    end: "top 50%",
+    scrub: true,
+  }
+});
+
+
+
 
 
 
@@ -78,6 +113,8 @@ function animateQuote(selector, direction = "left") {
   );
 }
 
+
+
 // Animate each line
 animateQuote(".his", "left");  // History’s (left → right)
 animateQuote(".dis", "left");  // discerning. (left → right)
@@ -95,6 +132,58 @@ gsap.fromTo(".res",
     scrollTrigger: scrollSettings,
   }
 );
+
+// QUOTE TWO ANIMATION 
+
+
+  const quoteTwoScrollSettings = {
+    trigger: ".quote-two",
+    start: "top 70%",
+    end: "bottom 30%",
+    scrub: 1,
+  };
+
+  // Animate History (from left)
+  gsap.fromTo(".histor",
+    {
+      x: -80,
+      opacity: 0,
+    },
+    {
+      x: 0,
+      opacity: 1,
+      ease: "power2.out",
+      scrollTrigger: quoteTwoScrollSettings,
+    }
+  );
+
+  // Animate "that shapes" (fade and slight rise)
+  gsap.fromTo(".that",
+    {
+      y: 20,
+      opacity: 0,
+    },
+    {
+      y: 0,
+      opacity: 1,
+      ease: "power2.out",
+      scrollTrigger: quoteTwoScrollSettings,
+    }
+  );
+
+  // Animate "tomorrow" (from right)
+  gsap.fromTo(".tomw",
+    {
+      x: 80,
+      opacity: 0,
+    },
+    {
+      x: 0,
+      opacity: 1,
+      ease: "power2.out",
+      scrollTrigger: quoteTwoScrollSettings,
+    }
+  );
 
 
 
@@ -228,3 +317,6 @@ gsap.fromTo(".press-intro h3, .press-intro p",
     }
   }
 );
+
+
+

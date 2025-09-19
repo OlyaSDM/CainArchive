@@ -25,7 +25,7 @@ const tl = gsap.timeline({
   scrollTrigger: {
     trigger: '.highlights-section',
     start: 'top top',
-    end: `+=${photos.length * 150}%`,
+    end: `+=${(photos.length * 150) + 50}%`,
     scrub: 1,
     pin: true,
 snap: false,
@@ -99,3 +99,14 @@ tl.to(prevPhoto, {
 });
 
 
+// Scroll Zoom Effect on Active Photo in Highlights Section
+gsap.to(".photo-stack .photo.active", {
+  scale: 1.1,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".highlights-section",
+    start: "top bottom",
+    end: "bottom top",
+    scrub: true,
+  }
+});
