@@ -1,10 +1,10 @@
 gsap.registerPlugin(ScrollTrigger);
 
-//  Navbar 
-const navbar = document.querySelector(".navbar");
+// ==================== Navbar 
+const navbarg = document.querySelector(".navbar");
 
-navbar.classList.add("transparent");
-navbar.classList.remove("background-visible");
+navbarg.classList.add("transparent");
+navbarg.classList.remove("background-visible");
 
 function updateNavbarBackground() {
   const heroBlock = document.querySelector("#hero");
@@ -20,8 +20,8 @@ function updateNavbarBackground() {
   if (heroBlock) {
     const rect = heroBlock.getBoundingClientRect();
     if (rect.bottom > heroOffsetBottom) {
-      navbar.classList.add("transparent");
-      navbar.classList.remove("background-visible");
+      navbarg.classList.add("transparent");
+      navbarg.classList.remove("background-visible");
       return; 
     }
   }
@@ -33,11 +33,11 @@ function updateNavbarBackground() {
   });
 
   if (inOtherTransparent) {
-    navbar.classList.add("transparent");
-    navbar.classList.remove("background-visible");
+    navbarg.classList.add("transparent");
+    navbarg.classList.remove("background-visible");
   } else {
-    navbar.classList.remove("transparent");
-    navbar.classList.add("background-visible");
+    navbarg.classList.remove("transparent");
+    navbarg.classList.add("background-visible");
   }
 }
 
