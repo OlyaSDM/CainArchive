@@ -240,17 +240,112 @@
 
 
 
+// gsap.registerPlugin(ScrollTrigger);
+
+// const gallery = document.querySelector('.gallery');
+// const galleryHeight = window.innerHeight;
+// const galleryTotalHeight = gallery.scrollHeight;
+
+// const item1 = document.querySelector('.item1');
+// const item1OldImg = item1.querySelector('img:first-child');
+// const item1NewImg = item1.querySelector('img:last-child');
+
+// const scrollDuration = galleryHeight * 2.5;
+
+// // Animation of the remaining photos
+// const otherItems = gsap.utils.toArray('.gallery .item:not(.item1)');
+// otherItems.forEach(el => {
+//   const target = el.querySelector('.inner') || el;
+//   let x = 0, y = 0;
+
+//   if(el.classList.contains('item2')) x = '-50vw', y = '-50vh';
+//   if(el.classList.contains('item3')) x = '50vw', y = '-50vh';
+//   if(el.classList.contains('item4')) x = '-60vw', y = '-30vh';
+//   if(el.classList.contains('item4b')) x = '-40vw', y = '-30vh';
+//   if(el.classList.contains('item5')) x = '50vw', y = '50vh';
+
+//   gsap.to(target, {
+//     scrollTrigger: {
+//       trigger: '.gallery',
+//       start: 'top top',
+//       end: `+=${galleryHeight}`,
+
+//       scrub: 1
+//     },
+//     x: x,
+//     y: y,
+//     opacity: 0,
+//     ease: "power1.out"
+//   });
+// });
+
+// // The central photo is stretched
+// gsap.to(item1, {
+//   scrollTrigger: {
+//     trigger: '.gallery',
+//     start: 'top top',
+//     end: `+=${galleryHeight}`,
+
+//     scrub: 5,
+//     pin: true
+//   },
+//   width: '100vw',
+//   height: galleryTotalHeight + 'px',
+//   x: 0,
+//   y: 0
+// });
+
+// // Smooth photo transition with zoom
+// gsap.timeline({
+//   scrollTrigger: {
+//     trigger: '.gallery',
+//     start: 'top top+=50',
+
+//     end: 'top top+=600',
+
+//     scrub: 5
+
+//   }
+// })
+// .to(item1OldImg, { 
+//     opacity: 0, 
+//     scale: 1.05, 
+//     ease: "power2.out" 
+//   }, 0)
+// .fromTo(item1NewImg, 
+//   { opacity: 0, scale: 0.95 },
+//   { opacity: 1, scale: 1, ease: "power2.out" }, 
+//   0
+// );
+
+// // Animating new elements (item6–item9)
+// const newItems = gsap.utils.toArray('.item6, .item7, .item8, .item9');
+// newItems.forEach(el => {
+//   gsap.to(el, {
+//     scrollTrigger: {
+//       trigger: '.gallery',
+//       start: 'top top',
+//       end: `+=${galleryHeight}`,
+//       scrub: 1
+//     },
+//     y: '50vh',
+//     opacity: 0,
+//     ease: "power1.out"
+//   });
+// });
+
+
 gsap.registerPlugin(ScrollTrigger);
 
 const gallery = document.querySelector('.gallery');
 const galleryHeight = window.innerHeight;
-const galleryTotalHeight = gallery.scrollHeight;
+const scrollDuration = galleryHeight * 3; // Longer scroll = slower animation
 
 const item1 = document.querySelector('.item1');
 const item1OldImg = item1.querySelector('img:first-child');
 const item1NewImg = item1.querySelector('img:last-child');
 
-// Animation of the remaining photos
+// Animate other items (fly out and fade)
 const otherItems = gsap.utils.toArray('.gallery .item:not(.item1)');
 otherItems.forEach(el => {
   const target = el.querySelector('.inner') || el;
@@ -266,8 +361,8 @@ otherItems.forEach(el => {
     scrollTrigger: {
       trigger: '.gallery',
       start: 'top top',
-      end: `+=${galleryHeight}`,
-      scrub: 1
+      end: `+=${scrollDuration}`,
+      scrub: 2
     },
     x: x,
     y: y,
@@ -276,28 +371,28 @@ otherItems.forEach(el => {
   });
 });
 
-// The central photo is stretched
+// Pin and scale central item (item1)
 gsap.to(item1, {
   scrollTrigger: {
     trigger: '.gallery',
     start: 'top top',
-    end: `+=${galleryHeight}`,
-    scrub: 5,
+    end: `+=${scrollDuration}`,
+    scrub: 4,
     pin: true
   },
   width: '100vw',
-  height: galleryTotalHeight + 'px',
+  height: gallery.scrollHeight + 'px',
   x: 0,
   y: 0
 });
 
-// Smooth photo transition with zoom
+// Image transition in item1
 gsap.timeline({
   scrollTrigger: {
     trigger: '.gallery',
-    start: 'top top+=50',
-    end: 'top top+=600',
-    scrub: 5
+    start: 'top top+=100',
+    end: `top top+=${scrollDuration * 0.5}`,
+    scrub: 3
   }
 })
 .to(item1OldImg, { 
@@ -311,15 +406,15 @@ gsap.timeline({
   0
 );
 
-// Animating new elements (item6–item9)
+// Animate any new items (item6 to item9)
 const newItems = gsap.utils.toArray('.item6, .item7, .item8, .item9');
 newItems.forEach(el => {
   gsap.to(el, {
     scrollTrigger: {
       trigger: '.gallery',
       start: 'top top',
-      end: `+=${galleryHeight}`,
-      scrub: 1
+      end: `+=${scrollDuration}`,
+      scrub: 2
     },
     y: '50vh',
     opacity: 0,
@@ -327,7 +422,20 @@ newItems.forEach(el => {
   });
 });
 
-
+// ✅ PARALLAX EFFECT for all gallery items
+const parallaxItems = gsap.utils.toArray('.gallery .item img');
+parallaxItems.forEach(img => {
+  gsap.to(img, {
+    scrollTrigger: {
+      trigger: img,
+      start: 'top bottom',
+      end: 'bottom top',
+      scrub: true
+    },
+    y: '-10vh', // moves upward slightly
+    ease: 'none'
+  });
+});
 
 
 

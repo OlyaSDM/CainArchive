@@ -45,6 +45,6 @@ tlLoader
       opacity: 1,
       y: 0,
       ease: "power2.out",
-      delay: 4
+      delay: 2
     });
   });

@@ -18,6 +18,14 @@ window.addEventListener("loaderFinished", () => {
     }
   });
 
+//   ScrollTrigger.create({
+//   trigger: ".hero",
+//   start: "top top",
+//   end: "bottom top",
+//   onEnter: () => document.querySelector(".navbar").classList.add("background-visible"),
+//   onLeaveBack: () => document.querySelector(".navbar").classList.remove("background-visible"),
+// });
+
   // Animate H1 + span separately
   tl.to([".hero-content h1", ".hero-content h1 span"], {
     opacity: 1,
