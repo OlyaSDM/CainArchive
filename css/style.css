@@ -1285,7 +1285,7 @@ margin-top: 40px;
 /* Mobile */
 @media screen and (max-width: 480px) {
   .quote-two {
-    margin-top: 80px;
+    margin-top: 120px;
     padding: 100px 20px;
   }
 }
