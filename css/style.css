@@ -2128,6 +2128,8 @@ textarea.error {
 .carousel-btn {
   background-color: var(--fonts);
   border: 0.5px #585757 solid;
+    /* background-color: var(--grey);
+  border: none; */
   width: 48px;   
   height: 48px;  
   display: flex;
@@ -2138,6 +2140,7 @@ textarea.error {
   cursor: pointer;
   transition: all 0.4s ease;
   z-index: 2;
+  /* color: var(--white); */
   color: var(--light-blue); 
 
 
