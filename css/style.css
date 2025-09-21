@@ -661,7 +661,7 @@ body{
   position: absolute;
   height: 1px;
   width: 0;
-  background: white;
+  background: var(--background);
   transition: width 0.5s ease;
   z-index: 2;
 }
@@ -688,7 +688,7 @@ body{
   position: absolute;
   width: 1px;
   height: 0;
-  background: white;
+  background: var(--background);
   transition: height 0.5s ease;
   z-index: 2;
 }
