@@ -14,8 +14,8 @@ let lastScroll = 0;
 // Function for delay when scrolling up
 function getScrub(el) {
   const currentScroll = window.scrollY;
-  let scrubValue = 2.5; 
-  if(currentScroll < lastScroll && el === item1) scrubValue = 3; 
+  let scrubValue = 2.5;
+  if(currentScroll < lastScroll && el === item1) scrubValue = 3.5; // увеличиваем задержку
   lastScroll = currentScroll;
   return scrubValue;
 }
@@ -46,12 +46,12 @@ otherItems.forEach(el => {
   });
 });
 
-// Pin and scale item1 with a delay when scrolling up
+// Pin and scale item1 with extra delay at the end when scrolling up
 gsap.to(item1, {
   scrollTrigger: {
     trigger: '.gallery',
     start: 'top top',
-    end: `+=${scrollDuration}`,
+    end: `+=${scrollDuration + 500}`, 
     scrub: () => getScrub(item1), 
     pin: true
   },

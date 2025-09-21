@@ -1201,6 +1201,16 @@ body{
 	.highlights-right {
 		margin-top: -60px;
 	}
+
+  	.scroll-indicator {
+margin-top: 40px;
+		right: 20px;
+
+	}
+
+  .highlight-subtitle{
+    margin-top: 20px;
+  }
 }
 
 
@@ -1272,7 +1282,13 @@ body{
   .histor { left: -60px; }
   .tomw { left: 50px; }
 }
-
+/* Mobile */
+@media screen and (max-width: 480px) {
+  .quote-two {
+    margin-top: 80px;
+    padding: 100px 20px;
+  }
+}
 
 
 
@@ -1604,7 +1620,7 @@ body{
 .contact-title h3 {
   font-size: 70px;
   font-weight: 500;
-  color: var(--white);
+  color: var(--background);
   margin: 0;
   line-height: 1;
 }
@@ -1624,7 +1640,7 @@ body{
 font-weight: 600;
   background: transparent;
   border: 1px solid #444;
-  color: #fff;
+  color: var(--background);
   padding: 12px;
   margin-bottom: 20px;
   font-size: 16px;
@@ -1664,7 +1680,7 @@ font-weight: 600;
 }
 
 label {
-  color: var(--white);
+  color: var(--background);
 }
 
 .contact-right {
@@ -2758,12 +2774,12 @@ textarea.error {
 
 .footer {
   background-color: var(--dark-blue);
-  color: #fff;
+  color: var(--background);
   padding: 60px 20px 30px;
   font-family: 'Libre Franklin', sans-serif;
 
   a {
-    color: #fff;
+    color: var(--background);
     text-decoration: none;
     transition: color 0.3s;
 
