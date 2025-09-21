@@ -240,73 +240,95 @@
 
 
 
-gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+gsap.registerPlugin(ScrollTrigger);
 
-// --- Column Animation ---
-const leftCol = document.querySelector(".column.left .column-inner") || document.querySelector(".column.left");
-const middleCol = document.querySelector(".column.middle .column-inner");
-const rightCol = document.querySelector(".column.right .column-inner");
+const gallery = document.querySelector('.gallery');
+const galleryHeight = window.innerHeight;
+const galleryTotalHeight = gallery.scrollHeight;
 
-const leftAnim = gsap.to(leftCol, { y: -leftCol.scrollHeight / 4, duration: 18, ease: "linear", repeat: -1 });
-const middleAnim = gsap.to(middleCol, { y: -middleCol.scrollHeight / 4, duration: 18, ease: "linear", repeat: -1 });
-const rightAnim = gsap.to(rightCol, { y: -rightCol.scrollHeight / 4, duration: 18, ease: "linear", repeat: -1 });
+const item1 = document.querySelector('.item1');
+const item1OldImg = item1.querySelector('img:first-child');
+const item1NewImg = item1.querySelector('img:last-child');
 
-ScrollTrigger.create({
-  trigger: ".mosaic-section",
-  start: "top top",
-  end: "bottom bottom",
-  onUpdate: self => {
-    const dir = self.direction;
-    leftAnim.timeScale(dir === 1 ? 1 : -1);
-    middleAnim.timeScale(dir === 1 ? -1 : 1);
-    rightAnim.timeScale(dir === 1 ? 1 : -1);
-  }
+// Animation of the remaining photos
+const otherItems = gsap.utils.toArray('.gallery .item:not(.item1)');
+otherItems.forEach(el => {
+  const target = el.querySelector('.inner') || el;
+  let x = 0, y = 0;
+
+  if(el.classList.contains('item2')) x = '-50vw', y = '-50vh';
+  if(el.classList.contains('item3')) x = '50vw', y = '-50vh';
+  if(el.classList.contains('item4')) x = '-60vw', y = '-30vh';
+  if(el.classList.contains('item4b')) x = '-40vw', y = '-30vh';
+  if(el.classList.contains('item5')) x = '50vw', y = '50vh';
+
+  gsap.to(target, {
+    scrollTrigger: {
+      trigger: '.gallery',
+      start: 'top top',
+      end: `+=${galleryHeight}`,
+      scrub: 1
+    },
+    x: x,
+    y: y,
+    opacity: 0,
+    ease: "power1.out"
+  });
 });
 
-// Overlay 
-(function() {
-  const overlay = document.querySelector('.mosaic-overlay');
-  if(!overlay) return;
+// The central photo is stretched
+gsap.to(item1, {
+  scrollTrigger: {
+    trigger: '.gallery',
+    start: 'top top',
+    end: `+=${galleryHeight}`,
+    scrub: 5,
+    pin: true
+  },
+  width: '100vw',
+  height: galleryTotalHeight + 'px',
+  x: 0,
+  y: 0
+});
 
-  const overlayText = overlay.querySelector('.overlay-text');
-  const overlayPhoto = overlay.querySelector('.overlay-photo'); 
-  if(!overlayText) return;
+// Smooth photo transition with zoom
+gsap.timeline({
+  scrollTrigger: {
+    trigger: '.gallery',
+    start: 'top top+=50',
+    end: 'top top+=600',
+    scrub: 5
+  }
+})
+.to(item1OldImg, { 
+    opacity: 0, 
+    scale: 1.05, 
+    ease: "power2.out" 
+  }, 0)
+.fromTo(item1NewImg, 
+  { opacity: 0, scale: 0.95 },
+  { opacity: 1, scale: 1, ease: "power2.out" }, 
+  0
+);
 
-  let overlayTimer = null;
-
-  // First, hide the overlay completely
-  gsap.set(overlay, {opacity: 0, pointerEvents: 'none'});
-  gsap.set(overlayText, {opacity: 0, y: 30});
-  if(overlayPhoto) gsap.set(overlayPhoto, {opacity: 0, scale: 0.9});
-
-  const showOverlay = () => {
-    gsap.to(overlay, {opacity: 1, pointerEvents: 'auto', duration: 0.8, ease: 'power2.out'});
-    gsap.to(overlayText, {opacity: 1, y: 0, duration: 1, ease: 'power3.out'});
-    if(overlayPhoto) gsap.to(overlayPhoto, {opacity: 1, scale: 1, duration: 1.4, ease: 'power3.out', delay: 0.3});
-    startHideTimer();
-  };
-
-  const hideOverlay = () => {
-    gsap.to(overlay, {opacity: 0, pointerEvents: 'none', duration: 1.2, ease: 'power2.inOut'});
-  };
-
-  const startHideTimer = () => {
-    clearTimeout(overlayTimer);
-    overlayTimer = setTimeout(hideOverlay, 6000);
-  };
-
-  // SscrollTrigger to show/hide the overlay
-  const mosaicSection = document.querySelector('.mosaic-section');
-  if(!mosaicSection) return;
-
-  ScrollTrigger.create({
-    trigger: mosaicSection,
-    start: 'top center',
-    end: 'bottom top',
-    onEnter: () => showOverlay(),      
-    onEnterBack: () => showOverlay()   
+// Animating new elements (item6–item9)
+const newItems = gsap.utils.toArray('.item6, .item7, .item8, .item9');
+newItems.forEach(el => {
+  gsap.to(el, {
+    scrollTrigger: {
+      trigger: '.gallery',
+      start: 'top top',
+      end: `+=${galleryHeight}`,
+      scrub: 1
+    },
+    y: '50vh',
+    opacity: 0,
+    ease: "power1.out"
   });
-})();
+});
+
+
+
 
 
 
