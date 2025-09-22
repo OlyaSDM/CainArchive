@@ -1,234 +1,201 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cain Archive</title>
-    <link rel="stylesheet" href="css/style.css" />
-    <link type="image/png" sizes="16x16" rel="icon" href="#" />
-
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Cain Archive</title>
+      <link rel="stylesheet" href="css/style.css" />
+      <link type="image/png" sizes="16x16" rel="icon" href="#" />
       <!-- FONTS -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-   <link rel="preconnect" href="https://fonts.googleapis.com">
-   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-   <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<body>
-
-        <!-- LOADER 
-        UNBLOCK WHEN YOU WANT TO SEE THE ANIMATION !!! -->
-
-        <!-- <div class="loader">
-        <div class="loader__title">
-          <img src="logos/loader-logo.png" alt="" width="300px">
-        </div>
-        <div class="loader__item loader__item-1"></div>
-        <div class="loader__item loader__item-2"></div>
-        <div class="loader__item loader__item-3"></div>
-    </div>   -->
-
-
-    <!-- NAVIGATION -->
-<header class="navbar delayed" id="navbar">
-  <a href="/" class="logo">
-    <img src="logos/C in.png" alt="CAIN Archive Logo" />
-  </a>
-
-  <div class="nav-controls">
-    <!-- Language Switcher -->
-
-   <div class="lang-switcher" id="langSwitcher">
-   <button id="lang-toggle" aria-haspopup="true" aria-expanded="false">
-      <span id="lang-current">EN</span>
-      <i class="fa-solid fa-angle-down"></i>
-   </button>
-   <ul class="lang-options" role="menu">
-      <li role="menuitem" data-lang="en">English</li>
-      <li role="menuitem" data-lang="ja">日本語</li>
-      <li role="menuitem" data-lang="ar">العربية</li>
-   </ul>
-   </div>
-
-    <!-- Burger -->
-    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
-      <span class="bar bar-long"></span>
-      <span class="bar bar-middle"></span>
-      <span class="bar bar-short"></span>
-    </button>
-  </div>
-</header>
-
-<!-- FULLSCREEN MENU -->
-<div class="fullscreen-menu" id="menu">
-
-  <div class="fullscreen-menu-content">
-    <!-- LEFT: Navigation Links -->
-    <nav>
-      <a href="#mission" style="--i:1" data-index="01"><span>Our Mission</span></a>
-      <a href="#collections" style="--i:2" data-index="02"><span>Collections</span></a>
-      <a href="#press" style="--i:3" data-index="03"><span>Press</span></a>
-      <a href="#contact" style="--i:4" data-index="04"><span>Contact</span></a>
-      <a href="#history" style="--i:5" data-index="05"><span>History</span></a>
-    </nav>
-
-    <!-- DIVIDER -->
-    <div class="divider"></div>
-
-    <!-- RIGHT: Contact Info -->
-    <div class="menu-contact">
-      <div>
-            <p>John Cain</p>
-            <p>Founder & Director | Cain Archive</p>
-            <p>History That Shapes Tomorrow</p>
-      </div>
-      <a href="#" class="menu-contacts">john@cainarchive.com</a>
-      <a href="#" class="menu-contacts">+1 321 111 0101</a>
-      <div class="social-icons">
-        <ul>
-          <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-          <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
-          <li><a href="#" aria-label="X-twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
-          <li><a href="#" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></i></a></li>
-        </ul>
-      </div>
-    </div>
-  </div>
-</div>
-
-
-
-  <div id="smooth-wrapper">
-    <div id="smooth-content">
-
-
-    <!-- Hero Section -->
-
-    <section id="hero" class="hero">
-      <video class="hero-video" autoplay muted loop playsinline>
-        <source src="/video/CA.MP4" type="video/mp4" />
-      </video>
-
-      <div class="hero-overlay"></div>
-
-      <div class="hero-content" data-speed="1.3" data-lag="0.2">
-        <!-- <h4>This is where memory becomes momentum</h4> -->
-        <h1>CAIN <span>Archive</span></h1>
-        <p>
-          Step into a living archive of rare, authentic photographs—where the courage of World War II, the glamour of Hollywood's golden age, and the legacies of Winston Churchill and John F. Kennedy converge.
-        </p>
-        <div class="hero-buttons">
-            <a href="#" class="hero-cta">
-               <span class="hero-cta-btn">
-               Our Mission
-               <span class="v-border v-left"></span>
-               <span class="v-border v-right"></span>
-               </span>
-            </a>
-            <div class="hero-btn-text">
-                <a href="#" class="hero-cta-text">Start the Journey</a>
-                <img src="img/arrow.png" alt="arrow" class="arrow">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   <body>
+      <!-- LOADER 
+         UNBLOCK WHEN YOU WANT TO SEE THE ANIMATION !!! -->
+      <!-- <div class="loader">
+         <div class="loader__title">
+           <img src="logos/loader-logo.png" alt="" width="300px">
+         </div>
+         <div class="loader__item loader__item-1"></div>
+         <div class="loader__item loader__item-2"></div>
+         <div class="loader__item loader__item-3"></div>
+         </div>   -->
+      <!-- NAVIGATION -->
+      <header class="navbar delayed" id="navbar">
+         <a href="/" class="logo">
+         <img src="logos/C in.png" alt="CAIN Archive Logo" />
+         </a>
+         <div class="nav-controls">
+            <!-- Language Switcher -->
+            <div class="lang-switcher" id="langSwitcher">
+               <button id="lang-toggle" aria-haspopup="true" aria-expanded="false">
+               <span id="lang-current">EN</span>
+               <i class="fa-solid fa-angle-down"></i>
+               </button>
+               <ul class="lang-options" role="menu">
+                  <li role="menuitem" data-lang="en">English</li>
+                  <li role="menuitem" data-lang="ja">日本語</li>
+                  <li role="menuitem" data-lang="ar">العربية</li>
+               </ul>
             </div>
-        </div>
-      </div>
-      <div class="hero-arrow-down">
-        <svg class="arrows">
-          <path class="a1" d="M0 0 L30 32 L60 0"></path>
-          <path class="a2" d="M0 20 L30 52 L60 20"></path>
-          <path class="a3" d="M0 40 L30 72 L60 40"></path>
-        </svg>
-      </div>
-    </section>
-
-
-
-
-   <!-- QUOTE SECTION -->
-   <div class="quote">
-      <h3 class="quote-bold his">History’s</h3>
-      <h3 class="quote-italic fin">finest frames,</h3>
-      <h3 class="quote-bold res">Reserved</h3>
-      <h3 class="quote-bold for">for the</h3>
-      <h3 class="quote-italic dis">discerning.</h3>
-   </div>
-
-
-   <!-- Highlights Section -->
-<section class="highlights-section">
-   <div class="highlights-left">
-      <div class="photo-stack">
-         <img class="photo active" src="img/history.webp" alt="Highlight 1" />
-         <img class="photo" src="img/mission.webp" alt="Highlight 2" />
-         <img class="photo" src="img/collection.webp" alt="Highlight 3" />
-      </div>
-   </div>
-   <div class="highlights-right">
-      <div class="highlights-header">
-         <h2 class="highlights-title">Highlights</h2>
-      </div>
-      <div class="highlight-texts">
-         <div class="highlight-text active" data-photo="history">
-            <h3 class="highlight-subtitle">Our history</h3>
-            <p class="highlight-paragraph">
-               Cain Archive offers a glimpse into the past through unique photographs and rare materials, revealing stories
-               that shaped the world. Our collections cover significant historical events, cultural milestones, and legendary
-               figures, preserving moments that might otherwise be forgotten.
-            </p>
-            <a href="/history" class="read-more">
-               <span class="text">Read More</span>
-               <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="35" height="15" viewBox="0 0 40 20" fill="none">
-                  <path d="M0 10H36M36 10L28 2M36 10L28 18" stroke="currentColor" stroke-width="2"/>
-               </svg>
-            </a>
+            <!-- Burger -->
+            <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+            <span class="bar bar-long"></span>
+            <span class="bar bar-middle"></span>
+            <span class="bar bar-short"></span>
+            </button>
          </div>
-         <div class="highlight-text" data-photo="mission">
-            <h3 class="highlight-subtitle">Our mission</h3>
-            <p class="highlight-paragraph">
-               Our mission is to preserve and share the legacy of the past, making history accessible and inspiring for
-               future generations. We strive to collect, protect, and present rare photographs, documents, and artifacts
-               that tell the stories of people, events, and cultures that shaped our world.
-            </p>
-            <a href="/mission" class="read-more">
-               <span class="text">Read More</span>
-               <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="35" height="15" viewBox="0 0 40 20" fill="none">
-                  <path d="M0 10H36M36 10L28 2M36 10L28 18" stroke="currentColor" stroke-width="2"/>
-               </svg>
-            </a>
-         </div>
-         <div class="highlight-text" data-photo="collections">
-            <h3 class="highlight-subtitle">Our collections</h3>
-            <p class="highlight-paragraph">
-               Our collections showcase rare and iconic materials from world history and culture, spanning WWII, the Holocaust,
-               and Hollywood’s golden era. Each item has been carefully preserved to tell its own unique story, offering a
-               window into the events, people, and moments that shaped our world.
-            </p>
-            <a href="/collection" class="read-more">
-               <span class="text">Read More</span>
-               <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="35" height="15" viewBox="0 0 40 20" fill="none">
-                  <path d="M0 10H36M36 10L28 2M36 10L28 18" stroke="currentColor" stroke-width="2"/>
-               </svg>
-            </a>
+      </header>
+      <!-- FULLSCREEN MENU -->
+      <div class="fullscreen-menu" id="menu">
+         <div class="fullscreen-menu-content">
+            <!-- LEFT: Navigation Links -->
+            <nav>
+               <a href="#mission" style="--i:1" data-index="01"><span>Our Mission</span></a>
+               <a href="#collections" style="--i:2" data-index="02"><span>Collections</span></a>
+               <a href="#press" style="--i:3" data-index="03"><span>Press</span></a>
+               <a href="#contact" style="--i:4" data-index="04"><span>Contact</span></a>
+               <a href="#history" style="--i:5" data-index="05"><span>History</span></a>
+            </nav>
+            <!-- DIVIDER -->
+            <div class="divider"></div>
+            <!-- RIGHT: Contact Info -->
+            <div class="menu-contact">
+               <div>
+                  <p>John Cain</p>
+                  <p>Founder & Director | Cain Archive</p>
+                  <p>History That Shapes Tomorrow</p>
+               </div>
+               <a href="#" class="menu-contacts">john@cainarchive.com</a>
+               <a href="#" class="menu-contacts">+1 321 111 0101</a>
+               <div class="social-icons">
+                  <ul>
+                     <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                     <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
+                     <li><a href="#" aria-label="X-twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
+                     <li><a href="#" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></i></a></li>
+                  </ul>
+               </div>
+            </div>
          </div>
       </div>
-      <div class="scroll-indicator">
-         <div class="si-segment" data-index="0"></div>
-         <div class="si-segment" data-index="1"></div>
-         <div class="si-segment" data-index="2"></div>
-      </div>
-   </div>
-</section>
-
-
-   <!-- QUOTE 2 SECTION -->
-
-
-   <div class="quote-two">
-      <h3 class="quote-two-bold histor">History</h3>
-      <h3 class="quote-two-italic that">that shapes</h3>
-      <h3 class="quote-two-bold tomw">tomorrow</h3>
-   </div>
-
-
-<!-- Gallery Section -->
-
+      <div id="smooth-wrapper">
+         <div id="smooth-content">
+            <!-- Hero Section -->
+            <section id="hero" class="hero">
+               <video class="hero-video" autoplay muted loop playsinline>
+                  <source src="/video/CA.MP4" type="video/mp4" />
+               </video>
+               <div class="hero-overlay"></div>
+               <div class="hero-content" data-speed="1.3" data-lag="0.2">
+                  <!-- <h4>This is where memory becomes momentum</h4> -->
+                  <h1>CAIN <span>Archive</span></h1>
+                  <p>
+                     Step into a living archive of rare, authentic photographs—where the courage of World War II, the glamour of Hollywood's golden age, and the legacies of Winston Churchill and John F. Kennedy converge.
+                  </p>
+                  <div class="hero-buttons">
+                     <a href="#" class="hero-cta">
+                     <span class="hero-cta-btn">
+                     Our Mission
+                     <span class="v-border v-left"></span>
+                     <span class="v-border v-right"></span>
+                     </span>
+                     </a>
+                     <div class="hero-btn-text">
+                        <a href="#" class="hero-cta-text">Start the Journey</a>
+                        <img src="img/arrow.png" alt="arrow" class="arrow">
+                     </div>
+                  </div>
+               </div>
+               <div class="hero-arrow-down">
+                  <svg class="arrows">
+                     <path class="a1" d="M0 0 L30 32 L60 0"></path>
+                     <path class="a2" d="M0 20 L30 52 L60 20"></path>
+                     <path class="a3" d="M0 40 L30 72 L60 40"></path>
+                  </svg>
+               </div>
+            </section>
+            <!-- QUOTE SECTION -->
+            <div class="quote">
+               <h3 class="quote-bold his">History’s</h3>
+               <h3 class="quote-italic fin">finest frames,</h3>
+               <h3 class="quote-bold res">Reserved</h3>
+               <h3 class="quote-bold for">for the</h3>
+               <h3 class="quote-italic dis">discerning.</h3>
+            </div>
+            <!-- Highlights Section -->
+            <section class="highlights-section">
+               <div class="highlights-left">
+                  <div class="photo-stack">
+                     <img class="photo active" src="img/history.webp" alt="Highlight 1" />
+                     <img class="photo" src="img/mission.webp" alt="Highlight 2" />
+                     <img class="photo" src="img/collection.webp" alt="Highlight 3" />
+                  </div>
+               </div>
+               <div class="highlights-right">
+                  <div class="highlights-header">
+                     <h2 class="highlights-title">Highlights</h2>
+                  </div>
+                  <div class="highlight-texts">
+                     <div class="highlight-text active" data-photo="history">
+                        <h3 class="highlight-subtitle">Our history</h3>
+                        <p class="highlight-paragraph">
+                           Cain Archive offers a glimpse into the past through unique photographs and rare materials, revealing stories
+                           that shaped the world. Our collections cover significant historical events, cultural milestones, and legendary
+                           figures, preserving moments that might otherwise be forgotten.
+                        </p>
+                        <a href="/history" class="read-more">
+                           <span class="text">Read More</span>
+                           <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="35" height="15" viewBox="0 0 40 20" fill="none">
+                              <path d="M0 10H36M36 10L28 2M36 10L28 18" stroke="currentColor" stroke-width="2"/>
+                           </svg>
+                        </a>
+                     </div>
+                     <div class="highlight-text" data-photo="mission">
+                        <h3 class="highlight-subtitle">Our mission</h3>
+                        <p class="highlight-paragraph">
+                           Our mission is to preserve and share the legacy of the past, making history accessible and inspiring for
+                           future generations. We strive to collect, protect, and present rare photographs, documents, and artifacts
+                           that tell the stories of people, events, and cultures that shaped our world.
+                        </p>
+                        <a href="/mission" class="read-more">
+                           <span class="text">Read More</span>
+                           <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="35" height="15" viewBox="0 0 40 20" fill="none">
+                              <path d="M0 10H36M36 10L28 2M36 10L28 18" stroke="currentColor" stroke-width="2"/>
+                           </svg>
+                        </a>
+                     </div>
+                     <div class="highlight-text" data-photo="collections">
+                        <h3 class="highlight-subtitle">Our collections</h3>
+                        <p class="highlight-paragraph">
+                           Our collections showcase rare and iconic materials from world history and culture, spanning WWII, the Holocaust,
+                           and Hollywood’s golden era. Each item has been carefully preserved to tell its own unique story, offering a
+                           window into the events, people, and moments that shaped our world.
+                        </p>
+                        <a href="/collection" class="read-more">
+                           <span class="text">Read More</span>
+                           <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="35" height="15" viewBox="0 0 40 20" fill="none">
+                              <path d="M0 10H36M36 10L28 2M36 10L28 18" stroke="currentColor" stroke-width="2"/>
+                           </svg>
+                        </a>
+                     </div>
+                  </div>
+                  <div class="scroll-indicator">
+                     <div class="si-segment" data-index="0"></div>
+                     <div class="si-segment" data-index="1"></div>
+                     <div class="si-segment" data-index="2"></div>
+                  </div>
+               </div>
+            </section>
+            <!-- QUOTE 2 SECTION -->
+            <div class="quote-two">
+               <h3 class="quote-two-bold histor">History</h3>
+               <h3 class="quote-two-italic that">that shapes</h3>
+               <h3 class="quote-two-bold tomw">tomorrow</h3>
+            </div>
+            <!-- Gallery Section -->
             <section class="gallery">
                <div class="item1" style="position: relative; overflow: hidden;">
                   <img src="/img/photo7.jpg" alt="Фото 1" style="width:100%; height:100%; object-fit:cover; position:absolute; top:0; left:0;">
@@ -244,454 +211,392 @@
                </div>
                <div class="item5"><img src="img/photo5.jpg" alt="Фото 5"></div>
             </section>
-
-<!-- COLLECTIONS SECTION -->
-   <div class="coll-intro">
-      <h3 class="coll-italic unseen">Unseen.</h3>
-      <h3 class="coll-bold untold">Untold.</h3>
-      <h3 class="coll-italic unforg">Unforgettable.</h3>
-      <div class="coll-p">
-         <p>Step inside a vault of extraordinary photographs the world has never seen — from the battlefields of World War II to the charisma of Churchill, the vision of Kennedy, and the spellbinding allure of Hollywood’s golden age.</p>
-      </div>
-   </div>
-<section id="collections">
-   <a href="#" class="coll-background ww2" >
-      <div class="bg" data-speed="0.8"></div> 
-      <div class="overlay">
-         <h3 data-speed="1.2">World War II</h3>
-         <p data-speed="1.3" >Witness the unfiltered courage and quiet humanity of a world at war — captured in photographs the world has never seen.</p>
-      </div>
-   </a>
-
-      <a href="#" class="coll-background churchill" >
-         <div class="bg" data-speed="0.8"></div> 
-         <div class="overlay">
-            <h3 data-speed="1.2" >Winston Churchill</h3>
-            <p data-speed="1.3" >Step closer to the man behind the legend through rare, unseen portraits that reveal Churchill’s private resolve and public fire.</p>
-         </div>
-      </a>
-
-      <a href="#" class="coll-background kennedy" >
-         <div class="bg" data-speed="0.8"></div> 
-         <div class="overlay">
-            <h3 data-speed="1.2" >John F. Kennedy</h3>
-            <p data-speed="1.3" >Discover intimate glimpses of Kennedy’s rise — images that trace the making of an icon long before the world knew his name.</p>
-         </div>
-      </a>
-
-      <a href="#" class="coll-background hollywood">
-         <div class="bg" data-speed="0.8"></div> 
-         <div class="overlay">
-            <h3 data-speed="1.2" >Hollywood & Culture</h3>
-            <p data-speed="1.3" >Enter the luminous world of old Hollywood, where rare frames preserve the untamed glamour of stars who defined an era.</p>
-         </div>
-      </a>
-
-</section>
-
-
-
-
-<!-- INTERVIEWS -->
-
-<section id="interviews">
-   <div class="interviews-words">
-      <h3>Voices:</h3>
-      <p class="big-p">when photographs <span>speak</span> and historians <span>listen</span></p>
-   </div>
-
-   <div class="carousel-container">
-      <button id="prevBtn" class="carousel-btn" aria-label="Previous">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-         <polyline points="15 18 9 12 15 6"></polyline>
-      </svg>
-      </button>
-    
-      <div class="carousel">
-         <div class="carousel-viewport">
-            <div class="carousel-track">
-            <!-- 6 Video Slides -->
-               <div class="carousel-item"
-               data-name="Name Surname" 
-               data-title="CEO, Recording Academy®" 
-               data-description="Harvey Mason Jr., CEO of the Recording Academy®, drives positive change in music. He champions diversity, advocates for creators' rights, and led MusiCares® in distributing $40M in relief funds. A prolific songwriter and producer, his work spans industry legends and iconic soundtracks, shaping the global music landscape." 
-               data-avatar="img/interviews/1.jpg">
-                  <div class="video-wrapper">
-                     <!-- <video preload="none" poster="img/interviews/1.jpg">
-                        <source src="video1.mp4" type="video/mp4">
-                     </video> -->
-                     <iframe src="https://www.youtube.com/embed/cp1lprZUQcE?si=1Mlgub8UQ_LMk_dF"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                     <div class="video-overlay" data-play>
-                        <img src="img/interviews/1.jpg" alt="Thumbnail" />
-                        <button class="play-button" aria-label="Play video">
-                           <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                              <polygon points="8,5 19,12 8,19"></polygon>
-                           </svg>
-                        </button>
-                     </div>
-                  </div>
-                  <div class="carousel-item-name">Name Surname</div>
-                  <div class="carousel-item-description">CEO, Recording Academy®</div>
+            <!-- COLLECTIONS SECTION -->
+            <div class="coll-intro">
+               <h3 class="coll-italic unseen">Unseen.</h3>
+               <h3 class="coll-bold untold">Untold.</h3>
+               <h3 class="coll-italic unforg">Unforgettable.</h3>
+               <div class="coll-p">
+                  <p>Step inside a vault of extraordinary photographs the world has never seen — from the battlefields of World War II to the charisma of Churchill, the vision of Kennedy, and the spellbinding allure of Hollywood’s golden age.</p>
                </div>
-
-
-               <div class="carousel-item"
-                  data-name="Name Surname" 
-                  data-title="CEO, Recording Academy®" 
-                  data-description="Harvey Mason Jr., CEO of the Recording Academy®, drives positive change in music. He champions diversity, advocates for creators' rights, and led MusiCares® in distributing $40M in relief funds. A prolific songwriter and producer, his work spans industry legends and iconic soundtracks, shaping the global music landscape." 
-                  data-avatar="img/interviews/1.jpg">
-                  <div class="video-wrapper">
-                     <iframe src="https://www.youtube.com/embed/cp1lprZUQcE?si=1Mlgub8UQ_LMk_dF"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                     <div class="video-overlay" data-play>
-                        <img src="img/interviews/2.jpg" alt="Thumbnail" />
-                        <button class="play-button" aria-label="Play video">
-                           <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                              <polygon points="8,5 19,12 8,19"></polygon>
-                           </svg>
-                        </button>
-                     </div>
-                  </div>
-                  <div class="carousel-item-name">Name Surname</div>
-                  <div class="carousel-item-description">Dr. of Historical Sciences, Harvard University</div>
-               </div>
-
-               <div class="carousel-item"
-                  data-name="Name Surname" 
-                  data-title="CEO, Recording Academy®" 
-                  data-description="Harvey Mason Jr., CEO of the Recording Academy®, drives positive change in music. He champions diversity, advocates for creators' rights, and led MusiCares® in distributing $40M in relief funds. A prolific songwriter and producer, his work spans industry legends and iconic soundtracks, shaping the global music landscape." 
-                  data-avatar="img/interviews/1.jpg">
-                  <div class="video-wrapper">
-                     <iframe src="https://www.youtube.com/embed/cp1lprZUQcE?si=1Mlgub8UQ_LMk_dF"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                     <div class="video-overlay" data-play>
-                        <img src="img/interviews/3.jpg" alt="Thumbnail" />
-                        <button class="play-button" aria-label="Play video">
-                           <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                              <polygon points="8,5 19,12 8,19"></polygon>
-                           </svg>
-                        </button>
-                     </div>
-                  </div>
-                  <div class="carousel-item-name">Name Surname</div>
-                  <div class="carousel-item-description">Dr. of Historical Sciences, Harvard University</div>
-               </div>
-
-               <div class="carousel-item"
-                  data-name="Name Surname" 
-                  data-title="CEO, Recording Academy®" 
-                  data-description="Harvey Mason Jr., CEO of the Recording Academy®, drives positive change in music. He champions diversity, advocates for creators' rights, and led MusiCares® in distributing $40M in relief funds. A prolific songwriter and producer, his work spans industry legends and iconic soundtracks, shaping the global music landscape." 
-                  data-avatar="img/interviews/1.jpg">
-                  <div class="video-wrapper">
-                     <iframe src="https://www.youtube.com/embed/cp1lprZUQcE?si=1Mlgub8UQ_LMk_dF"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                     <div class="video-overlay" data-play>
-                        <img src="img/interviews/1.jpg" alt="Thumbnail" />
-                        <button class="play-button" aria-label="Play video">
-                           <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                              <polygon points="8,5 19,12 8,19"></polygon>
-                           </svg>
-                        </button>
-                     </div>
-                  </div>
-                  <div class="carousel-item-name">Name Surname</div>
-                  <div class="carousel-item-description">Dr. of Historical Sciences, Harvard University</div>
-               </div>
-
-               <div class="carousel-item"
-                  data-name="Name Surname" 
-                  data-title="CEO, Recording Academy®" 
-                  data-description="Harvey Mason Jr., CEO of the Recording Academy®, drives positive change in music. He champions diversity, advocates for creators' rights, and led MusiCares® in distributing $40M in relief funds. A prolific songwriter and producer, his work spans industry legends and iconic soundtracks, shaping the global music landscape." 
-                  data-avatar="img/interviews/1.jpg">
-                  <div class="video-wrapper">
-                     <iframe src="https://www.youtube.com/embed/cp1lprZUQcE?si=1Mlgub8UQ_LMk_dF"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                     <div class="video-overlay" data-play>
-                        <img src="img/interviews/2.jpg" alt="Thumbnail" />
-                        <button class="play-button" aria-label="Play video">
-                           <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                              <polygon points="8,5 19,12 8,19"></polygon>
-                           </svg>
-                        </button>
-                     </div>
-                  </div>
-                  <div class="carousel-item-name">Name Surname</div>
-                  <div class="carousel-item-description">Dr. of Historical Sciences, Harvard University</div>
-               </div>
-
-               <div class="carousel-item"
-                  data-name="Name Surname" 
-                  data-title="CEO, Recording Academy®" 
-                  data-description="Harvey Mason Jr., CEO of the Recording Academy®, drives positive change in music. He champions diversity, advocates for creators' rights, and led MusiCares® in distributing $40M in relief funds. A prolific songwriter and producer, his work spans industry legends and iconic soundtracks, shaping the global music landscape." 
-                  data-avatar="img/interviews/1.jpg">
-                  <div class="video-wrapper">
-                     <iframe src="https://www.youtube.com/embed/cp1lprZUQcE?si=1Mlgub8UQ_LMk_dF"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-                     <div class="video-overlay" data-play>
-                        <img src="img/interviews/3.jpg" alt="Thumbnail" />
-                        <button class="play-button" aria-label="Play video">
-                           <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                              <polygon points="8,5 19,12 8,19"></polygon>
-                           </svg>
-                        </button>
-                     </div>
-                  </div>
-                  <div class="carousel-item-name">Name Surname</div>
-                  <div class="carousel-item-description">Dr. of Historical Sciences, Harvard University</div>
-               </div>
-
             </div>
-      </div>
-   </div>
-
-      <button id="nextBtn" class="carousel-btn" aria-label="Next">
-         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
-         </svg>
-      </button>
-   </div>
-
-</section>
-
-
-
-
-
-<!-- Rentals Section -->
-<section class="contact-block" id="contactBlock">
-   <div class="contact-right">
-      <div class="contact-info">
-         <div class="exhibitions">
-            <h3>
-               Exhibitions & <span class="rentals">Rentals</span>
-            </h3>
-            <p>
-               The <strong>Cain Archive</strong> is a private collection of international importance, comprising original vintage photographs documenting 
-               <em>World War II, the Holocaust, Winston Churchill, John F. Kennedy, and Hollywood culture</em>.
-            </p>
-            <p>
-               Materials are available to museums and institutions under formal rentals and collaboration procedures.
-            </p>
-            <a href="/history" class="read-more">
-               <span class="text">Read More</span>
-               <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="35" height="15" viewBox="0 0 40 20" fill="none">
-                  <path d="M0 10H36M36 10L28 2M36 10L28 18" stroke="currentColor" stroke-width="2"/>
-               </svg>
-            </a>
+            <section id="collections">
+               <a href="#" class="coll-background ww2" >
+                  <div class="bg" data-speed="0.8"></div>
+                  <div class="overlay">
+                     <h3 data-speed="1.2">World War II</h3>
+                     <p data-speed="1.3" >Witness the unfiltered courage and quiet humanity of a world at war — captured in photographs the world has never seen.</p>
+                  </div>
+               </a>
+               <a href="#" class="coll-background churchill" >
+                  <div class="bg" data-speed="0.8"></div>
+                  <div class="overlay">
+                     <h3 data-speed="1.2" >Winston Churchill</h3>
+                     <p data-speed="1.3" >Step closer to the man behind the legend through rare, unseen portraits that reveal Churchill’s private resolve and public fire.</p>
+                  </div>
+               </a>
+               <a href="#" class="coll-background kennedy" >
+                  <div class="bg" data-speed="0.8"></div>
+                  <div class="overlay">
+                     <h3 data-speed="1.2" >John F. Kennedy</h3>
+                     <p data-speed="1.3" >Discover intimate glimpses of Kennedy’s rise — images that trace the making of an icon long before the world knew his name.</p>
+                  </div>
+               </a>
+               <a href="#" class="coll-background hollywood">
+                  <div class="bg" data-speed="0.8"></div>
+                  <div class="overlay">
+                     <h3 data-speed="1.2" >Hollywood & Culture</h3>
+                     <p data-speed="1.3" >Enter the luminous world of old Hollywood, where rare frames preserve the untamed glamour of stars who defined an era.</p>
+                  </div>
+               </a>
+            </section>
+            <!-- INTERVIEWS -->
+            <section id="interviews">
+               <div class="interviews-words">
+                  <h3>Voices:</h3>
+                  <p class="big-p">when photographs <span>speak</span> and historians <span>listen</span></p>
+               </div>
+               <div class="carousel-container">
+                  <button id="prevBtn" class="carousel-btn" aria-label="Previous">
+                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="15 18 9 12 15 6"></polyline>
+                     </svg>
+                  </button>
+                  <div class="carousel">
+                     <div class="carousel-viewport">
+                        <div class="carousel-track">
+                           <!-- 6 Video Slides -->
+                           <div class="carousel-item"
+                              data-name="Name Surname" 
+                              data-title="CEO, Recording Academy®" 
+                              data-description="Harvey Mason Jr., CEO of the Recording Academy®, drives positive change in music. He champions diversity, advocates for creators' rights, and led MusiCares® in distributing $40M in relief funds. A prolific songwriter and producer, his work spans industry legends and iconic soundtracks, shaping the global music landscape." 
+                              data-avatar="img/interviews/1.jpg">
+                              <div class="video-wrapper">
+                                 <!-- <video preload="none" poster="img/interviews/1.jpg">
+                                    <source src="video1.mp4" type="video/mp4">
+                                    </video> -->
+                                 <iframe src="https://www.youtube.com/embed/cp1lprZUQcE?si=1Mlgub8UQ_LMk_dF"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                 <div class="video-overlay" data-play>
+                                    <img src="img/interviews/1.jpg" alt="Thumbnail" />
+                                    <button class="play-button" aria-label="Play video">
+                                       <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                          <polygon points="8,5 19,12 8,19"></polygon>
+                                       </svg>
+                                    </button>
+                                 </div>
+                              </div>
+                              <div class="carousel-item-name">Name Surname</div>
+                              <div class="carousel-item-description">CEO, Recording Academy®</div>
+                           </div>
+                           <div class="carousel-item"
+                              data-name="Name Surname" 
+                              data-title="CEO, Recording Academy®" 
+                              data-description="Harvey Mason Jr., CEO of the Recording Academy®, drives positive change in music. He champions diversity, advocates for creators' rights, and led MusiCares® in distributing $40M in relief funds. A prolific songwriter and producer, his work spans industry legends and iconic soundtracks, shaping the global music landscape." 
+                              data-avatar="img/interviews/1.jpg">
+                              <div class="video-wrapper">
+                                 <iframe src="https://www.youtube.com/embed/cp1lprZUQcE?si=1Mlgub8UQ_LMk_dF"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                 <div class="video-overlay" data-play>
+                                    <img src="img/interviews/2.jpg" alt="Thumbnail" />
+                                    <button class="play-button" aria-label="Play video">
+                                       <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                          <polygon points="8,5 19,12 8,19"></polygon>
+                                       </svg>
+                                    </button>
+                                 </div>
+                              </div>
+                              <div class="carousel-item-name">Name Surname</div>
+                              <div class="carousel-item-description">Dr. of Historical Sciences, Harvard University</div>
+                           </div>
+                           <div class="carousel-item"
+                              data-name="Name Surname" 
+                              data-title="CEO, Recording Academy®" 
+                              data-description="Harvey Mason Jr., CEO of the Recording Academy®, drives positive change in music. He champions diversity, advocates for creators' rights, and led MusiCares® in distributing $40M in relief funds. A prolific songwriter and producer, his work spans industry legends and iconic soundtracks, shaping the global music landscape." 
+                              data-avatar="img/interviews/1.jpg">
+                              <div class="video-wrapper">
+                                 <iframe src="https://www.youtube.com/embed/cp1lprZUQcE?si=1Mlgub8UQ_LMk_dF"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                 <div class="video-overlay" data-play>
+                                    <img src="img/interviews/3.jpg" alt="Thumbnail" />
+                                    <button class="play-button" aria-label="Play video">
+                                       <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                          <polygon points="8,5 19,12 8,19"></polygon>
+                                       </svg>
+                                    </button>
+                                 </div>
+                              </div>
+                              <div class="carousel-item-name">Name Surname</div>
+                              <div class="carousel-item-description">Dr. of Historical Sciences, Harvard University</div>
+                           </div>
+                           <div class="carousel-item"
+                              data-name="Name Surname" 
+                              data-title="CEO, Recording Academy®" 
+                              data-description="Harvey Mason Jr., CEO of the Recording Academy®, drives positive change in music. He champions diversity, advocates for creators' rights, and led MusiCares® in distributing $40M in relief funds. A prolific songwriter and producer, his work spans industry legends and iconic soundtracks, shaping the global music landscape." 
+                              data-avatar="img/interviews/1.jpg">
+                              <div class="video-wrapper">
+                                 <iframe src="https://www.youtube.com/embed/cp1lprZUQcE?si=1Mlgub8UQ_LMk_dF"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                 <div class="video-overlay" data-play>
+                                    <img src="img/interviews/1.jpg" alt="Thumbnail" />
+                                    <button class="play-button" aria-label="Play video">
+                                       <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                          <polygon points="8,5 19,12 8,19"></polygon>
+                                       </svg>
+                                    </button>
+                                 </div>
+                              </div>
+                              <div class="carousel-item-name">Name Surname</div>
+                              <div class="carousel-item-description">Dr. of Historical Sciences, Harvard University</div>
+                           </div>
+                           <div class="carousel-item"
+                              data-name="Name Surname" 
+                              data-title="CEO, Recording Academy®" 
+                              data-description="Harvey Mason Jr., CEO of the Recording Academy®, drives positive change in music. He champions diversity, advocates for creators' rights, and led MusiCares® in distributing $40M in relief funds. A prolific songwriter and producer, his work spans industry legends and iconic soundtracks, shaping the global music landscape." 
+                              data-avatar="img/interviews/1.jpg">
+                              <div class="video-wrapper">
+                                 <iframe src="https://www.youtube.com/embed/cp1lprZUQcE?si=1Mlgub8UQ_LMk_dF"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                 <div class="video-overlay" data-play>
+                                    <img src="img/interviews/2.jpg" alt="Thumbnail" />
+                                    <button class="play-button" aria-label="Play video">
+                                       <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                          <polygon points="8,5 19,12 8,19"></polygon>
+                                       </svg>
+                                    </button>
+                                 </div>
+                              </div>
+                              <div class="carousel-item-name">Name Surname</div>
+                              <div class="carousel-item-description">Dr. of Historical Sciences, Harvard University</div>
+                           </div>
+                           <div class="carousel-item"
+                              data-name="Name Surname" 
+                              data-title="CEO, Recording Academy®" 
+                              data-description="Harvey Mason Jr., CEO of the Recording Academy®, drives positive change in music. He champions diversity, advocates for creators' rights, and led MusiCares® in distributing $40M in relief funds. A prolific songwriter and producer, his work spans industry legends and iconic soundtracks, shaping the global music landscape." 
+                              data-avatar="img/interviews/1.jpg">
+                              <div class="video-wrapper">
+                                 <iframe src="https://www.youtube.com/embed/cp1lprZUQcE?si=1Mlgub8UQ_LMk_dF"  title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                                 <div class="video-overlay" data-play>
+                                    <img src="img/interviews/3.jpg" alt="Thumbnail" />
+                                    <button class="play-button" aria-label="Play video">
+                                       <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                                          <polygon points="8,5 19,12 8,19"></polygon>
+                                       </svg>
+                                    </button>
+                                 </div>
+                              </div>
+                              <div class="carousel-item-name">Name Surname</div>
+                              <div class="carousel-item-description">Dr. of Historical Sciences, Harvard University</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  <button id="nextBtn" class="carousel-btn" aria-label="Next">
+                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <polyline points="9 18 15 12 9 6"></polyline>
+                     </svg>
+                  </button>
+               </div>
+            </section>
+            <!-- Rentals Section -->
+            <section class="contact-block" id="contactBlock">
+               <div class="contact-right">
+                  <div class="contact-info">
+                     <div class="exhibitions">
+                        <h3>
+                           Exhibitions & <span class="rentals">Rentals</span>
+                        </h3>
+                        <p>
+                           The <strong>Cain Archive</strong> is a private collection of international importance, comprising original vintage photographs documenting 
+                           <em>World War II, the Holocaust, Winston Churchill, John F. Kennedy, and Hollywood culture</em>.
+                        </p>
+                        <p>
+                           Materials are available to museums and institutions under formal rentals and collaboration procedures.
+                        </p>
+                        <a href="/history" class="read-more">
+                           <span class="text">Read More</span>
+                           <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="35" height="15" viewBox="0 0 40 20" fill="none">
+                              <path d="M0 10H36M36 10L28 2M36 10L28 18" stroke="currentColor" stroke-width="2"/>
+                           </svg>
+                        </a>
+                     </div>
+                  </div>
+               </div>
+               <div class="contact-left">
+                  <form class="contact-form" id="contactForm" method="POST" novalidate>
+                     <div class="contact-title">
+                        <h3>Get in</h3>
+                        <h2>touch</h2>
+                     </div>
+                     <div class="form-group">
+                        <input type="text" name="name" placeholder="Your name" required>
+                        <small class="error-message"></small>
+                     </div>
+                     <div class="form-group">
+                        <input type="email" name="email" placeholder="Your email address" required>
+                        <small class="error-message"></small>
+                     </div>
+                     <div class="form-group">
+                        <textarea name="message" placeholder="What can I help you with?" required></textarea>
+                        <small class="error-message"></small>
+                     </div>
+                     <!-- Honeypot -->
+                     <input type="text" name="company" style="display:none">
+                     <div class="form-group checkbox-group">
+                        <label>
+                        <input type="checkbox" name="privacy" required>
+                        <span>I've accepted the <a href="#">privacy policy</a>.</span>
+                        </label>
+                        <small class="error-message"></small>
+                     </div>
+                     <button type="submit" class="hero-cta-btn">
+                     Submit message
+                     <span class="v-border v-left"></span>
+                     <span class="v-border v-right"></span>
+                     </button>
+                  </form>
+               </div>
+            </section>
+            <!-- PRESS SECTION -->
+            <!-- <section class="press-intro">
+               <h3>Press on Us</h3>
+               <p>Discover what leading publications are saying about <span>Cain Archive</span></p>
+               </section>
+               
+               
+               <section id="press">
+               <div class="press-grid">
+                
+                <div class="press-item">
+                     <a href="#" class="press-item-img">
+                        <img src="img/press/1.jpg" loading="lazy" alt="Press 1">
+                     </a>
+                  <h4 class="press-category">Podcasts with Cain Archive</h4>
+                  <h3>Second World War: the Main Tragedy</h3>
+                  <p class="press-subtitle">Podcast</p>
+                  <p class="press-date">November 17, 2025</p>
+                </div>
+               
+                <div class="press-item">
+                     <a href="#"  class="press-item-img">
+                        <img src="img/press/2.jpg" loading="lazy" alt="Press 2">
+                     </a>
+                  <h4 class="press-category">Visits and Activities</h4>
+                  <h3>Our unique photos at the London Museum</h3>
+                  <p class="press-subtitle">Exhibition</p>
+                  <p class="press-date">September 12 - November 20, 2025</p>
+                </div>
+               
+                <div class="press-item">
+                     <a href="#"  class="press-item-img">
+                        <img src="img/press/3.jpg" loading="lazy" alt="Press 3">
+                     </a>
+                  <h4 class="press-category">Publications</h4>
+                  <h3>What the New York Times writes about our collection </h3>
+                  <p class="press-subtitle">Newspaper article</p>
+                  <p class="press-date">December 1, 2025</p>
+                </div>
+               
+                <div class="press-item">
+                     <a href="#"  class="press-item-img">
+                        <img src="img/press/4.jpg" loading="lazy" alt="Press 4">
+                     </a>
+                  <h4 class="press-category">Events</h4>
+                  <h3>Rare photo collectors gather in New York</h3>
+                  <p class="press-subtitle">One of a kind photographs from the early XX century</p>
+                  <p class="press-date">January 9, 2026</p>
+                </div>
+               
+                <div class="press-item">
+                     <a href="#"  class="press-item-img">
+                        <img src="img/press/5.jpg" loading="lazy" alt="Press 5">
+                     </a>
+                  <h4 class="press-category">Expositions</h4>
+                  <h3>Cain Archive collection of old Hollywood photos at the Tokyo Museum</h3>
+                  <p class="press-subtitle">A unique exhibition</p>
+                  <p class="press-date">November 1, 2025 - February 20, 2026</p>
+                </div>
+               
+                <div class="press-item">
+                     <a href="#" class="press-item-img">
+                        <img src="img/press/6.jpg" loading="lazy" alt="Press 6">
+                     </a>
+                  <h4 class="press-category">Expositions</h4>
+                  <h3>Visiting Florida</h3>
+                  <p class="press-subtitle">Our WWII photo collection is now in Florida museums</p>
+                  <p class="press-date">August 2 - November 15, 2025</p>
+                </div>
+               </div>
+               </section> -->
+            <!-- FOOTER -->
+            <footer class="footer">
+               <div class="footer-wrapper">
+                  <!-- Logo + tagline -->
+                  <div class="footer-logo">
+                     <img src="logos/C in.png" alt="Cain Archive Logo" />
+                     <p class="footer-tagline">History That Shapes Tomorrow</p>
+                  </div>
+                  <!-- Navigation -->
+                  <!-- <div class="footer-nav">
+                     <a href="#mission">Our Mission</a>
+                     <a href="#collections">Collections</a>
+                     <a href="#press">Press</a>
+                     <a href="#contact">Contact</a>
+                     <a href="#history">History</a>
+                     </div> -->
+                  <!-- Contact Info -->
+                  <div class="footer-contact">
+                     <p>John Cain</p>
+                     <p>Founder & Director | Cain Archive</p>
+                     <a href="mailto:john@cainarchive.com">john@cainarchive.com</a>
+                     <a href="tel:+13211110101">+1 321 111 0101</a>
+                  </div>
+                  <!-- Social Media -->
+                  <div class="footer-social">
+                     <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
+                     <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
+                     <a href="#" aria-label="X-twitter"><i class="fa-brands fa-x-twitter"></i></a>
+                     <a href="#" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
+                  </div>
+               </div>
+               <!-- Bottom copyright -->
+               <div class="footer-bottom">
+                  <p>© 2025 Cain Archive. All rights reserved.</p>
+               </div>
+            </footer>
          </div>
       </div>
-   </div>
-   <div class="contact-left">
-<form class="contact-form" id="contactForm" method="POST" novalidate>
-  <div class="contact-title">
-    <h3>Get in</h3>
-    <h2>touch</h2>
-  </div>
-
-  <div class="form-group">
-    <input type="text" name="name" placeholder="Your name" required>
-    <small class="error-message"></small>
-  </div>
-
-  <div class="form-group">
-    <input type="email" name="email" placeholder="Your email address" required>
-    <small class="error-message"></small>
-  </div>
-
-  <div class="form-group">
-    <textarea name="message" placeholder="What can I help you with?" required></textarea>
-    <small class="error-message"></small>
-  </div>
-
-  <!-- Honeypot -->
-  <input type="text" name="company" style="display:none">
-
-  <div class="form-group checkbox-group">
-    <label>
-      <input type="checkbox" name="privacy" required>
-      <span>I've accepted the <a href="#">privacy policy</a>.</span>
-    </label>
-    <small class="error-message"></small>
-  </div>
-
-  <button type="submit" class="hero-cta-btn">
-    Submit message
-    <span class="v-border v-left"></span>
-    <span class="v-border v-right"></span>
-  </button>
-</form>
-   </div>
-</section>
-
-
-
-<!-- PRESS SECTION -->
-
-<!-- <section class="press-intro">
-   <h3>Press on Us</h3>
-   <p>Discover what leading publications are saying about <span>Cain Archive</span></p>
-</section>
-
-
-<section id="press">
-  <div class="press-grid">
-    
-    <div class="press-item">
-         <a href="#" class="press-item-img">
-            <img src="img/press/1.jpg" loading="lazy" alt="Press 1">
-         </a>
-      <h4 class="press-category">Podcasts with Cain Archive</h4>
-      <h3>Second World War: the Main Tragedy</h3>
-      <p class="press-subtitle">Podcast</p>
-      <p class="press-date">November 17, 2025</p>
-    </div>
-
-    <div class="press-item">
-         <a href="#"  class="press-item-img">
-            <img src="img/press/2.jpg" loading="lazy" alt="Press 2">
-         </a>
-      <h4 class="press-category">Visits and Activities</h4>
-      <h3>Our unique photos at the London Museum</h3>
-      <p class="press-subtitle">Exhibition</p>
-      <p class="press-date">September 12 - November 20, 2025</p>
-    </div>
-
-    <div class="press-item">
-         <a href="#"  class="press-item-img">
-            <img src="img/press/3.jpg" loading="lazy" alt="Press 3">
-         </a>
-      <h4 class="press-category">Publications</h4>
-      <h3>What the New York Times writes about our collection </h3>
-      <p class="press-subtitle">Newspaper article</p>
-      <p class="press-date">December 1, 2025</p>
-    </div>
-
-    <div class="press-item">
-         <a href="#"  class="press-item-img">
-            <img src="img/press/4.jpg" loading="lazy" alt="Press 4">
-         </a>
-      <h4 class="press-category">Events</h4>
-      <h3>Rare photo collectors gather in New York</h3>
-      <p class="press-subtitle">One of a kind photographs from the early XX century</p>
-      <p class="press-date">January 9, 2026</p>
-    </div>
-
-    <div class="press-item">
-         <a href="#"  class="press-item-img">
-            <img src="img/press/5.jpg" loading="lazy" alt="Press 5">
-         </a>
-      <h4 class="press-category">Expositions</h4>
-      <h3>Cain Archive collection of old Hollywood photos at the Tokyo Museum</h3>
-      <p class="press-subtitle">A unique exhibition</p>
-      <p class="press-date">November 1, 2025 - February 20, 2026</p>
-    </div>
-
-    <div class="press-item">
-         <a href="#" class="press-item-img">
-            <img src="img/press/6.jpg" loading="lazy" alt="Press 6">
-         </a>
-      <h4 class="press-category">Expositions</h4>
-      <h3>Visiting Florida</h3>
-      <p class="press-subtitle">Our WWII photo collection is now in Florida museums</p>
-      <p class="press-date">August 2 - November 15, 2025</p>
-    </div>
-  </div>
-</section> -->
-
-
-
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="footer-wrapper">
-    <!-- Logo + tagline -->
-    <div class="footer-logo">
-      <img src="logos/C in.png" alt="Cain Archive Logo" />
-      <p class="footer-tagline">History That Shapes Tomorrow</p>
-    </div>
-
-    <!-- Navigation -->
-    <!-- <div class="footer-nav">
-      <a href="#mission">Our Mission</a>
-      <a href="#collections">Collections</a>
-      <a href="#press">Press</a>
-      <a href="#contact">Contact</a>
-      <a href="#history">History</a>
-    </div> -->
-
-    <!-- Contact Info -->
-    <div class="footer-contact">
-      <p>John Cain</p>
-      <p>Founder & Director | Cain Archive</p>
-      <a href="mailto:john@cainarchive.com">john@cainarchive.com</a>
-      <a href="tel:+13211110101">+1 321 111 0101</a>
-    </div>
-
-    <!-- Social Media -->
-    <div class="footer-social">
-      <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-      <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-      <a href="#" aria-label="X-twitter"><i class="fa-brands fa-x-twitter"></i></a>
-      <a href="#" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
-    </div>
-  </div>
-
-  <!-- Bottom copyright -->
-  <div class="footer-bottom">
-    <p>© 2025 Cain Archive. All rights reserved.</p>
-  </div>
-</footer>
-
-
-
-
-
-
-
-
-
-
-</div>
-</div>
-
-
-  <!-- Cursor tooltip (OUTSIDE smooth-wrapper) -->
-  <div class="cursor-tooltip">View</div>
-
-<!-- MODAL FOR CAROUSEL INTERVIEWS -->
-
-<div id="video-modal" class="video-modal">
-  <div class="video-modal-content">
-    <div class="video-modal-left">
-      <iframe id="modal-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-    </div>
-    <div class="video-modal-right">
-      <button id="modal-close" class="modal-close">✕</button>
-      <div class="modal-info">
-        <img id="modal-avatar" class="modal-avatar" src="" alt="Person">
-        <h2 id="modal-name"></h2>
-        <h4 id="modal-title"></h4>
-        <p id="modal-description"></p>
+      <!-- Cursor tooltip (OUTSIDE smooth-wrapper) -->
+      <div class="cursor-tooltip">View</div>
+      <!-- MODAL FOR CAROUSEL INTERVIEWS -->
+      <div id="video-modal" class="video-modal">
+         <div class="video-modal-content">
+            <div class="video-modal-left">
+               <iframe id="modal-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div>
+            <div class="video-modal-right">
+               <button id="modal-close" class="modal-close">✕</button>
+               <div class="modal-info">
+                  <img id="modal-avatar" class="modal-avatar" src="" alt="Person">
+                  <h2 id="modal-name"></h2>
+                  <h4 id="modal-title"></h4>
+                  <p id="modal-description"></p>
+               </div>
+            </div>
+         </div>
       </div>
-    </div>
-  </div>
-</div>
-<!-- Cursor tooltip for videos -->
-<div class="cursor-tooltip cursor-tooltip-play">Play</div>
-
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
-
-    <script src="js/main.js"></script>
-    <script src="js/loader.js"></script>
-    <script src="js/highlights.js"></script>
-    <script src="js/navbar.js"></script>
-    <script src="js/gallery.js"></script>
-    <script src="js/dropdown.js"></script>
-    <script src="js/collections.js"></script>
-    <script src="js/rentals.js"></script>
-   <script src="js/gmail.js"></script>
-    <script src="js/smooth.js"></script>
-    <script src="js/interviews.js"></script>
-    <script src="https://www.youtube.com/iframe_api"></script>
-
-
-  </body>
+      <!-- Cursor tooltip for videos -->
+      <div class="cursor-tooltip cursor-tooltip-play">Play</div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+      <script src="js/main.js"></script>
+      <script src="js/loader.js"></script>
+      <script src="js/highlights.js"></script>
+      <script src="js/navbar.js"></script>
+      <script src="js/gallery.js"></script>
+      <script src="js/dropdown.js"></script>
+      <script src="js/collections.js"></script>
+      <script src="js/rentals.js"></script>
+      <script src="js/gmail.js"></script>
+      <script src="js/smooth.js"></script>
+      <script src="js/interviews.js"></script>
+      <script src="https://www.youtube.com/iframe_api"></script>
+   </body>
 </html>

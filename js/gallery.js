@@ -8,29 +8,32 @@ const item1 = document.querySelector('.item1');
 const item1OldImg = item1.querySelector('img:first-child');
 const item1NewImg = item1.querySelector('img:last-child');
 
-// To track scroll direction
-let lastScroll = 0;
+// === Track scroll direction ===
+let lastScrollY = window.scrollY;
 
-// Function for delay when scrolling up
 function getScrub(el) {
   const currentScroll = window.scrollY;
-  let scrubValue = 2.5;
-  if(currentScroll < lastScroll && el === item1) scrubValue = 3.5; // увеличиваем задержку
-  lastScroll = currentScroll;
+  let scrubValue = 5.5; 
+
+  if(currentScroll < lastScrollY && el === item1) {
+    scrubValue = 5; 
+  }
+
+  lastScrollY = currentScroll;
   return scrubValue;
 }
 
-// Animation of other elements
+// === Animate other gallery items ===
 const otherItems = gsap.utils.toArray('.gallery .item:not(.item1)');
 otherItems.forEach(el => {
   const target = el.querySelector('.inner') || el;
   let x = 0, y = 0;
 
-  if(el.classList.contains('item2')) x = '-50vw', y = '-50vh';
-  if(el.classList.contains('item3')) x = '50vw', y = '-50vh';
-  if(el.classList.contains('item4')) x = '-60vw', y = '-30vh';
-  if(el.classList.contains('item4b')) x = '-40vw', y = '-30vh';
-  if(el.classList.contains('item5')) x = '50vw', y = '50vh';
+  if(el.classList.contains('item2')) { x = '-50vw'; y = '-50vh'; }
+  if(el.classList.contains('item3')) { x = '50vw'; y = '-50vh'; }
+  if(el.classList.contains('item4')) { x = '-60vw'; y = '-30vh'; }
+  if(el.classList.contains('item4b')) { x = '-40vw'; y = '-30vh'; }
+  if(el.classList.contains('item5')) { x = '50vw'; y = '50vh'; }
 
   gsap.to(target, {
     scrollTrigger: {
@@ -39,20 +42,20 @@ otherItems.forEach(el => {
       end: `+=${scrollDuration}`,
       scrub: 2.5
     },
-    x: x,
-    y: y,
+    x,
+    y,
     opacity: 0,
     ease: "power1.out"
   });
 });
 
-// Pin and scale item1 with extra delay at the end when scrolling up
+// === Pin and scale item1 with delay when scrolling up ===
 gsap.to(item1, {
   scrollTrigger: {
     trigger: '.gallery',
     start: 'top top',
-    end: `+=${scrollDuration + 500}`, 
-    scrub: () => getScrub(item1), 
+    end: `+=${scrollDuration + 500}`,
+    scrub: () => getScrub(item1),
     pin: true
   },
   width: '100vw',
@@ -61,27 +64,19 @@ gsap.to(item1, {
   y: 0
 });
 
-//Transition of images to item1
+// === Image transition in item1 ===
 gsap.timeline({
   scrollTrigger: {
     trigger: '.gallery',
     start: 'top top+=100',
-    end: `top top+=${scrollDuration * 0.5}`,
+    end: `top top+=${scrollDuration * 1.5}`,
     scrub: () => getScrub(item1)
   }
 })
-.to(item1OldImg, { 
-    opacity: 0, 
-    scale: 1.05, 
-    ease: "power2.out" 
-  }, 0)
-.fromTo(item1NewImg, 
-  { opacity: 0, scale: 0.95 },
-  { opacity: 1, scale: 1, ease: "power2.out" }, 
-  0
-);
+.to(item1OldImg, { opacity: 0, scale: 1.05, ease: "power2.out" }, 0)
+.fromTo(item1NewImg, { opacity: 0, scale: 0.95 }, { opacity: 1, scale: 1, ease: "power2.out" }, 0);
 
-// New elements
+// === Animate new items ===
 const newItems = gsap.utils.toArray('.item6, .item7, .item8, .item9');
 newItems.forEach(el => {
   gsap.to(el, {
@@ -97,7 +92,7 @@ newItems.forEach(el => {
   });
 });
 
-// Parallax for all images
+// === Parallax effect for all images ===
 const parallaxItems = gsap.utils.toArray('.gallery .item img');
 parallaxItems.forEach(img => {
   gsap.to(img, {
