@@ -60,9 +60,14 @@ gsap.to(item1, {
   },
   width: '100vw',
   height: gallery.scrollHeight + 'px',
-  x: 0,
-  y: 0
+  x: () => {
+    return window.innerWidth <= 750 ? '-2.7%' : '-1%';
+  },
+  y: 0,
+  ease: 'power1.out'
 });
+
+
 
 // === Image transition in item1 ===
 gsap.timeline({

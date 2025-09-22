@@ -3,9 +3,6 @@ gsap.registerPlugin(ScrollTrigger);
 // ==================== Navbar 
 const navbarg = document.querySelector(".navbar");
 
-navbarg.classList.add("transparent");
-navbarg.classList.remove("background-visible");
-
 function updateNavbarBackground() {
   const heroBlock = document.querySelector("#hero");
   const otherBlocks = [
@@ -17,27 +14,38 @@ function updateNavbarBackground() {
   const heroOffsetBottom = 900;
   const otherOffsetBottom = 500;
 
+  let forceTransparent = false;
+
+  // Проверка hero
   if (heroBlock) {
     const rect = heroBlock.getBoundingClientRect();
     if (rect.bottom > heroOffsetBottom) {
-      navbarg.classList.add("transparent");
-      navbarg.classList.remove("background-visible");
-      return; 
+      forceTransparent = true;
     }
   }
 
+  // Проверка других прозрачных блоков
   const inOtherTransparent = otherBlocks.some(block => {
     if (!block) return false;
     const rect = block.getBoundingClientRect();
     return rect.bottom > otherOffsetBottom && rect.top < window.innerHeight - otherOffsetBottom;
   });
 
-  if (inOtherTransparent) {
+  if (inOtherTransparent) forceTransparent = true;
+
+  // Состояние скролла
+  const scrolled = window.scrollY > 50;
+
+  if (forceTransparent) {
     navbarg.classList.add("transparent");
     navbarg.classList.remove("background-visible");
-  } else {
+  } else if (scrolled) {
     navbarg.classList.remove("transparent");
     navbarg.classList.add("background-visible");
+  } else {
+    // Если не проскроллили вниз и не в исключениях → прозрачный
+    navbarg.classList.add("transparent");
+    navbarg.classList.remove("background-visible");
   }
 }
 
