@@ -218,6 +218,60 @@ body{
   cursor: pointer;
 }
 
+.burger .bar {
+  height: 1px;
+  background: var(--background);
+  border-radius: 3px;
+  transition: transform 0.4s ease, width 0.4s ease, opacity 0.4s ease;
+  transform-origin: center;
+}
+
+.bar-long { width: 100%; }
+.bar-middle { width: 70%; }
+.bar-short { width: 40%; }
+
+.burger:not(.open):hover .bar-long { width: 40%; }
+.burger:not(.open):hover .bar-short { width: 100%; }
+
+.burger.open .bar {
+  width: 100%;
+}
+.burger.open .bar:nth-child(1) {
+  transform: rotate(45deg) translateY(15px);
+}
+.burger.open .bar:nth-child(2) {
+  opacity: 0;
+}
+.burger.open .bar:nth-child(3) {
+  transform: rotate(-45deg) translateY(-15px);
+}
+
+.burger.open:hover .bar:nth-child(1),
+.burger.open:hover .bar:nth-child(3) {
+  animation: none;
+}
+
+.burger.open:hover {
+  filter: brightness(1.2);
+  transition: filter 0.3s ease;
+}
+
+
+
+
+/* .burger {
+  background: none;
+  border: none;
+  width: 36px;
+  height: 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1101;
+  cursor: pointer;
+}
+
 
 .burger .bar {
   height: 1px;
@@ -241,10 +295,10 @@ body{
 }
 .burger:hover .bar-short {
   width: 100%;
-}
+} */
 
 /* Burger Open State */
-.burger.open .bar {
+/* .burger.open .bar {
   width: 100%;
 }
  .burger.open .bar:nth-child(1) {
@@ -285,7 +339,7 @@ body{
 .burger.open:hover {
   filter: brightness(1.2);
   transition: filter 0.3s ease;
-}
+} */
 
 /* ===================== */
 /* FULLSCREEN MENU       */
