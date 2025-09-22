@@ -13,10 +13,10 @@ let lastScrollY = window.scrollY;
 
 function getScrub(el) {
   const currentScroll = window.scrollY;
-  let scrubValue = 5.5; 
+  let scrubValue = 3.5; 
 
   if(currentScroll < lastScrollY && el === item1) {
-    scrubValue = 5; 
+    scrubValue = 4; 
   }
 
   lastScrollY = currentScroll;
