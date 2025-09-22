@@ -61,7 +61,7 @@ gsap.to(item1, {
   width: '100vw',
   height: gallery.scrollHeight + 'px',
   x: () => {
-    return window.innerWidth <= 750 ? '-2.4%' : '-0.6%';
+    return window.innerWidth <= 750 ? '-2.9%' : '-0.6%';
   },
   y: 0,
   ease: 'power1.out'
