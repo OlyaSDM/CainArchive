@@ -1688,9 +1688,10 @@ margin-top: 200px;
 .contact-title h2 {
   font-family: 'GT Super';
   font-style: italic;
+      color: #722F37;
+
   font-size: 60px;
   font-weight: 100;
-  color: var(--light-blue);
   margin: 0;
 }
 .contact-form input,
