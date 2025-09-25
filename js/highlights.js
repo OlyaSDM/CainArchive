@@ -1,12 +1,14 @@
 gsap.registerPlugin(ScrollTrigger);
 
-// ==================== Navbar 
+// Navbar 
 const navbarg = document.querySelector(".navbar");
+let isHighlightsActive = false; 
 
 function updateNavbarBackground() {
+  if (isHighlightsActive) return;
+
   const heroBlock = document.querySelector("#hero");
   const otherBlocks = [
-    document.querySelector(".highlights-section"),
     document.querySelector(".gallery"),
     document.querySelector("#collections")
   ];
@@ -16,7 +18,6 @@ function updateNavbarBackground() {
 
   let forceTransparent = false;
 
-  // Проверка hero
   if (heroBlock) {
     const rect = heroBlock.getBoundingClientRect();
     if (rect.bottom > heroOffsetBottom) {
@@ -24,7 +25,6 @@ function updateNavbarBackground() {
     }
   }
 
-  // Проверка других прозрачных блоков
   const inOtherTransparent = otherBlocks.some(block => {
     if (!block) return false;
     const rect = block.getBoundingClientRect();
@@ -33,7 +33,6 @@ function updateNavbarBackground() {
 
   if (inOtherTransparent) forceTransparent = true;
 
-  // Состояние скролла
   const scrolled = window.scrollY > 50;
 
   if (forceTransparent) {
@@ -43,10 +42,10 @@ function updateNavbarBackground() {
     navbarg.classList.remove("transparent");
     navbarg.classList.add("background-visible");
   } else {
-    // Если не проскроллили вниз и не в исключениях → прозрачный
     navbarg.classList.add("transparent");
     navbarg.classList.remove("background-visible");
   }
+
 }
 
 window.addEventListener("scroll", updateNavbarBackground);
@@ -73,7 +72,7 @@ texts.forEach((text, i) => {
   gsap.set(text, { yPercent: i === 0 ? 0 : 200, opacity: i === 0 ? 1 : 0 });
 });
 
-// Timeline animation with ScrollTrigger
+// Timeline animation with ScrollTrigger 
 const tl = gsap.timeline({
   scrollTrigger: {
     trigger: '.highlights-section',
@@ -81,6 +80,29 @@ const tl = gsap.timeline({
     end: `+=${photos.length * 120}%`, 
     scrub: 1.5,
     pin: true,
+
+    onEnter: () => {
+      isHighlightsActive = true;
+      navbarg.classList.add("dark-text", "transparent");
+      navbarg.classList.remove("background-visible");
+    },
+    onEnterBack: () => {
+      isHighlightsActive = true;
+      navbarg.classList.add("dark-text", "transparent");
+      navbarg.classList.remove("background-visible");
+    },
+    
+    onLeave: () => {
+      isHighlightsActive = false;
+      navbarg.classList.remove("dark-text");
+      updateNavbarBackground();
+    },
+    onLeaveBack: () => {
+      isHighlightsActive = false;
+      navbarg.classList.remove("dark-text");
+      updateNavbarBackground();
+    },
+
     onUpdate: self => {
       const progress = self.progress;
 
