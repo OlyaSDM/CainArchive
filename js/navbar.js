@@ -1,25 +1,14 @@
-// Sticky Navbar
-const navbar = document.getElementById('navbar');
-window.addEventListener('scroll', () => {
-  navbar.classList.toggle('scrolled', window.scrollY > 50);
-});
 
-// Elements
+// ===== Burger wiring (kept minimal; modal menu will come later) =====
 const burger = document.getElementById('burger');
-const menu = document.getElementById('menu');
+const menu   = document.getElementById('menu'); // you’ll add this later as fullscreen modal
 
-
-// Burger Menu Toggle
 function toggleMenu(open) {
+  if (!burger || !menu) return;      // safe if #menu not present yet
   menu.classList.toggle('open', open);
   burger.classList.toggle('open', open);
-  burger.setAttribute('aria-expanded', open);
+  burger.setAttribute('aria-expanded', String(open));
 }
-burger.addEventListener('click', () => toggleMenu(!menu.classList.contains('open')));
-
-document.querySelectorAll('.fullscreen-menu nav a')
-  .forEach(link => link.addEventListener('click', () => toggleMenu(false)));
-
-
+burger?.addEventListener('click', () => toggleMenu(!menu.classList.contains('open')));
 
 

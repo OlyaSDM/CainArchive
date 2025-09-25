@@ -37,7 +37,7 @@ tlLoader
   }
 })
 
-//Animation - 4s delay for menu to appear AFTER loader
+//Animation - 2s delay for menu to appear AFTER loader
 
   window.addEventListener('load', () => {
     gsap.to(".delayed", {
