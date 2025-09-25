@@ -76,19 +76,28 @@ gsap.timeline({
 }, 0);
 
 // Fade in next section smoothly
-gsap.from(".quote", {
-  opacity: 0,
-  y: 80,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: ".quote",
-    start: "top 80%",
-    end: "top 50%",
-    scrub: true,
-  }
+// gsap.from(".quote", {
+//   opacity: 0,
+//   y: 80,
+//   ease: "power2.out",
+//   scrollTrigger: {
+//     trigger: ".quote",
+//     start: "top 80%",
+//     end: "top 50%",
+//     scrub: true,
+//   }
+// });
+
+// ANIMATION FOR SCROLL DOWN BUTTON ON HERO
+document.getElementById('scrollDownBtn').addEventListener('click', function () {
+  const target = document.getElementById('highlights');
+  const offsetTop = target.getBoundingClientRect().top + window.scrollY;
+
+  window.scrollTo({
+    top: offsetTop,
+    behavior: 'smooth'
+  });
 });
-
-
 
 
 
@@ -96,50 +105,56 @@ gsap.from(".quote", {
 // SCROLL TRIGGER FOR QUOTE SECTION
 
 
-const scrollSettings = {
-  trigger: ".quote",
-  start: "top 70%",
-  end: "bottom 30%",
-  scrub: 1,
-};
+// const scrollSettings = {
+//   trigger: ".quote",
+//   start: "top 70%",
+//   end: "bottom 30%",
+//   scrub: 1,
+// };
 
-// Helper function to animate subtle motion into final CSS position
-function animateQuote(selector, direction = "left") {
-  const offset = 80; 
-  gsap.fromTo(
-    selector,
-    {
-      x: direction === "left" ? -offset : offset,
-      opacity: 0,
-    },
-    {
-      x: 0, 
-      opacity: 1,
-      ease: "power2.out",
-      scrollTrigger: scrollSettings,
-    }
-  );
-}
+// // Helper function to animate subtle motion into final CSS position
+// function animateQuote(selector, direction = "left") {
+//   const offset = 80; 
+//   gsap.fromTo(
+//     selector,
+//     {
+//       x: direction === "left" ? -offset : offset,
+//       opacity: 0,
+//     },
+//     {
+//       x: 0, 
+//       opacity: 1,
+//       ease: "power2.out",
+//       scrollTrigger: scrollSettings,
+//     }
+//   );
+// }
 
 
 
-// Animate each line
-animateQuote(".his", "left");  // History’s (left → right)
-animateQuote(".dis", "left");  // discerning. (left → right)
+// // Animate each line
+// animateQuote(".his", "left");  // History’s (left → right)
+// animateQuote(".dis", "left");  // discerning. (left → right)
 
-animateQuote(".fin", "right"); // finest frames, (right → left)
-animateQuote(".for", "right"); // for the (right → left)
+// animateQuote(".fin", "right"); // finest frames, (right → left)
+// animateQuote(".for", "right"); // for the (right → left)
 
-// Reserved stays subtle (slight fade-in only)
-gsap.fromTo(".res",
-  { opacity: 0, y: 20 },
-  {
-    opacity: 1,
-    y: 0,
-    ease: "power2.out",
-    scrollTrigger: scrollSettings,
-  }
-);
+// // Reserved stays subtle (slight fade-in only)
+// gsap.fromTo(".res",
+//   { opacity: 0, y: 20 },
+//   {
+//     opacity: 1,
+//     y: 0,
+//     ease: "power2.out",
+//     scrollTrigger: scrollSettings,
+//   }
+// );
+
+
+
+
+
+
 
 // QUOTE TWO ANIMATION 
 
@@ -272,6 +287,8 @@ gsap.fromTo(".press-intro h3, .press-intro p",
     }
   }
 );
+
+
 
 
 
