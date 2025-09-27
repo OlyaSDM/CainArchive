@@ -1155,27 +1155,99 @@ body{
   text-transform: uppercase;
   background: linear-gradient(135deg, rgba(4,56,75,0.9), rgba(4,56,75,0.9));
   border: 1px solid var(--fonts);
-  color: var(--background);
+  color: var(--background); 
   font-family: "Libre Franklin", sans-serif;
   font-size: 15px;
   cursor: pointer;
   overflow: hidden;
   z-index: 1;
-  transition: all 1.2s ease-in-out;
+  transition: 
+    color 0.5s ease-in-out, 
+    box-shadow 0.6s ease-in-out, 
+    border-color 0.6s ease-in-out;
+}
+
+.highlights-cta-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, var(--sandy), rgba(4,56,75,0.05)); 
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 1.5s cubic-bezier(0.77, 0, 0.175, 1);
+  z-index: 0;
+}
+
+.highlights-cta-btn:hover::before {
+  transform: scaleX(1);
+}
+
+.highlights-cta-btn::after,
+.highlights-cta-btn .h-line {
+  content: "";
+  position: absolute;
+  height: 1px;
+  width: 0;
+  background: var(--fonts);
+  transition: width 0.5s ease-in-out;
+  z-index: 2;
+}
+
+.highlights-cta-btn::after {
+  top: 0;
+  left: 0;
+  transform-origin: left;
+}
+
+.highlights-cta-btn .h-line {
+  bottom: 0;
+  right: 0;
+  transform-origin: right;
+}
+
+.highlights-cta-btn:hover::after,
+.highlights-cta-btn:hover .h-line {
+  width: 100%;
+}
+
+.highlights-cta-btn .v-border {
+  position: absolute;
+  width: 1px;
+  height: 0;
+  background: var(--fonts);
+  transition: height 0.5s ease-in-out;
+  z-index: 2;
+}
+
+.highlights-cta-btn .v-left {
+  top: 0;
+  left: 0;
+  transform-origin: top;
+}
+
+.highlights-cta-btn .v-right {
+  bottom: 0;
+  right: 0;
+  transform-origin: bottom;
+}
+
+.highlights-cta-btn:hover .v-left,
+.highlights-cta-btn:hover .v-right {
+  height: 100%;
 }
 
 .highlights-cta-btn:hover {
-  color: var(--fonts);
-  border-color: transparent;
-  box-shadow: 0 0 25px rgba(255, 215, 160, 0.4);
-  background: linear-gradient(135deg, var(--sandy), rgba(4,56,75,0.9));
-  transition: all 0.6s ease-in-out; 
+  color: var(--white); 
 }
 
-
-
-
-
+.highlights-cta-btn span {
+  position: relative;
+  z-index: 2;
+  transition: color 0.5s ease-in-out;
+}
 
 
 
@@ -1871,7 +1943,6 @@ label {
 .contact-right {
   height: 100vh;
   background-color: var(--background);
-  /* background-image: url(/img/bg_g1.png); */
   background-position: center;
   background-size: cover;
   display: flex;
@@ -1895,7 +1966,7 @@ padding: 40px;
 	font-size: 60px;
 	font-weight: 300;
   font-family: 'GT Super';
-	color: var(--accent-bright);
+	color: var(--fonts);
 	text-transform: uppercase;
   text-align: center;
 	line-height: 1.5;
