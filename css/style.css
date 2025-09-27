@@ -1116,7 +1116,8 @@ body{
 	font-style: italic;
   font-weight: 300;
 	margin-bottom: 20px;
-	color: var(--accent-bright);
+  color: var(--fonts);
+	/* color: var(--accent-bright); */
 }
 
 .highlight-paragraph {
