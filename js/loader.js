@@ -37,6 +37,10 @@ tlLoader
   }
 })
 
+
+
+
+
 //Animation - 2s delay for menu to appear AFTER loader
 
   window.addEventListener('load', () => {
@@ -48,3 +52,15 @@ tlLoader
       delay: 2
     });
   });
+
+window.addEventListener("loaderFinished", () => {
+  gsap.to(".scroll-btn", {
+    opacity: 1,
+    duration: 1,
+    delay: 0.3,
+    ease: "power2.out",
+    onStart: () => {
+      document.querySelector(".scroll-btn").style.pointerEvents = "auto";
+    }
+  });
+});

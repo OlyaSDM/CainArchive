@@ -9,11 +9,19 @@
   --dark-blue: #023047; */
   /* --white: #fff;
   --burgundi: #641B2E; */
-  --fonts: #0f0f10;
-  --background: #fff9f2;
-  --burgundi: #7d0000;
+  /* --fonts: #073035;
+  --background: #f9f8f5;
+  --okra: #8b4f2f;
   --accent: #77ad90;
   --white: white;
+  --light-okra: #d9822b; */
+
+  --background: #eee0d7;
+  --fonts: #04384b;
+  --accent-bright: #03607e;
+  --accent: #48cae4;
+  --white: white;
+  --sandy: #e7c9af;
 
 
 }
@@ -81,13 +89,13 @@ body{
   .loader__item {
     flex: 1 1 auto;
     z-index: 7;
-    background: var(--fonts);
+    background: var(--accent-bright);
   }
   .loader__item-1 {
-    border-right: 1px solid var(--fonts);
+    border-right: 1px solid var(--accent-bright);
   }
   .loader__item-2 {
-    border-right: 1px solid var(--fonts);
+    border-right: 1px solid var(--accent-bright);
   }
 
 
@@ -126,7 +134,7 @@ body{
   transform: translateY(-30px); 
 }
 .navbar.scrolled {
-  background-color:  rgb(15, 15, 16, 0.8) ;
+  background-color:  rgb(4, 56, 75, 0.9);
   top: 0;
 }
 .navbar.transparent {
@@ -134,7 +142,7 @@ body{
 } 
 
 .navbar.background-visible {
-  background-color:  rgb(15, 15, 16, 0.8) ;
+  background-color: rgb(4, 56, 75, 0.9)  ;
 }
 
 .navbar.transparent {
@@ -172,7 +180,7 @@ body{
 .nav-divider {
   width: 1px;
   height: 25px;
-  background-color: white;
+  background-color: var(--accent);
   margin: 0 2rem;
 }
 
@@ -204,7 +212,7 @@ body{
   }
 
   .navbar.dark-text a:hover {
-    color: var(--dark-grey);
+    color: var(--fonts);
   }
 }
 
@@ -251,7 +259,7 @@ body{
   top: calc(100% + 10px);
   right: 0; 
   min-width: 160px;
-  background: rgb(15, 15, 16, 0.9);
+  background: rgb(4, 56, 75, 0.9) ;
   backdrop-filter: saturate(140%) blur(4px);
   list-style: none;
   padding: 8px;
@@ -464,7 +472,7 @@ body{
     font-size: 14px;
 }
 .menu-contacts{
-  color: var(--background);
+  color: var(--accent);
     font-family: "Libre Franklin", sans-serif;
     font-weight: 200;
     text-decoration: none;
@@ -598,7 +606,7 @@ body{
   justify-content: flex-start;
   padding-left: 5vw;
   box-sizing: border-box;
-  background-image: url(/img/bg_d2.png);
+  /* background-image: url(/img/bg_d2.png); */
   background-position: center;
   background-size: cover;
 }
@@ -619,7 +627,7 @@ body{
   position: absolute;
   top: 0; left: 0;
   width: 100%; height: 100%;
-  background-color: rgb(29, 29, 29, 0.3); 
+  background-color: rgb(29, 29, 29, 0.7); 
   z-index: -1;
 }
 
@@ -684,7 +692,8 @@ body{
 
 .hero-cta-btn:hover {
   border: 1px solid transparent;
-  background-color: rgb(119, 173, 144, 0.2);
+  background-color: rgb(238, 224, 215, 0.1);
+  color: var(--accent);
 }  
 
 /* Animated border overlay */
@@ -758,7 +767,7 @@ body{
   margin: auto;
   width: 0;
   height: 1px;
-  background-color: var(--white);
+  background-color: var(--accent);
   transition: width 0.3s ;
 }
 .hero-cta-text:hover::after {
@@ -839,65 +848,104 @@ body{
     .scroll-btn {
       position: absolute;
       left: 50%;
-      bottom: 40px;
-      /* transform: translateX(-50%); */
-      width: 60px;
-      height: 60px;
-      border-radius: 50%;
-      border: 1px solid rgba(255, 255, 255, 0.3);
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      bottom: 30px;
+      transform: translateX(-50%);
+      width: 46px;
+      height: 46px;
+      border-radius: 999px;
+      display: grid;
+      place-items: center;
       cursor: pointer;
-      transition: border 0.3s ease, transform 0.3s ease;
-      z-index: 2; 
+
+      background: transparent;
+      border: 1px solid rgba(255,255,255,0.45);
+      backdrop-filter: saturate(140%) blur(4px);
+      -webkit-backdrop-filter: saturate(140%) blur(4px);
+
+      box-shadow: 0 8px 28px rgba(0,0,0,0.28);
+      transition: background .25s ease, border-color .25s ease, box-shadow .25s ease, transform .15s ease;
+      z-index: 3;
     }
 
-    .scroll-btn:hover {
-      border-color: rgba(255, 255, 255, 0.6);
-      animation: bounce 0.6s ease infinite;
-    }
+/* subtle pulsing ring */
+.scroll-btn::before{
+  content:"";
+  position:absolute;
+  inset: -8px;
+  border-radius: inherit;
+  border: 1px solid rgba(255,255,255,0.25);
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(.7);
+  animation: scrollRing 2s ease-out infinite;
+}
 
-    .scroll-btn svg {
-      width: 24px;
-      height: 24px;
-      stroke: white;
-      stroke-width: 2;
-      fill: none;
-      transition: transform 0.3s ease;
-    }
-        @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-8px);
-      }
-    }
+@keyframes scrollRing{
+  0%   { opacity:.45; transform: scale(.7); }
+  80%  { opacity:0;   transform: scale(1.15); }
+  100% { opacity:0;   transform: scale(1.15); }
+}
 
+/* icon */
+.scroll-btn svg{
+  width: 22px;
+  height: 22px;
+  stroke: var(--white);        /* matches your site palette */
+  stroke-width: 2;
+  fill: none;
+  /* animate only the SVG (not the container) to avoid transform conflicts with GSAP */
+  animation: arrowBob 1.4s ease-in-out infinite;
+}
+
+@keyframes arrowBob{
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(4px); }
+}
+
+/* hover/active states */
+@media (hover: hover){
+  .scroll-btn:hover{
+    background: rgb(72, 202, 228, 0.2);
+    border-color: rgba(255,255,255,0.75);
+    box-shadow: 0 10px 34px rgba(0,0,0,0.34);
+    transform: translateX(-50%) translateY(-1px);
+  }
+}
+.scroll-btn:active{
+  transform: translateX(-50%) translateY(0);
+}
+
+/* respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .scroll-btn::before,
+  .scroll-btn svg{
+    animation: none !important;
+  }
+}
 
 /* QUOTE SECTION */
 
-/* .quote{
+ .quote{
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 250px 0;
+  padding: 150px 0;
   color: var(--fonts);
 }
 .quote h3{
-  font-size: 100px;
+  font-size: 87px;
   text-align: center;
   line-height: 90px;
 
 }
 .quote-bold {
-  color: var(--burgundi);
+  color: var(--accent-bright);
   text-transform: uppercase;
   font-weight: bold;
-  /* font-family: "Libre Franklin", sans-serif; 
-}*/
+  font-family: 'GT Super';
+
+}
 .quote-italic {
   font-family: 'GT Super';
   font-style: italic;
@@ -965,7 +1013,7 @@ body{
   .res { left: 80px; }
   .for { right: 40px; }
   .dis { left: 60px; }
-} */
+} 
 
 
 
@@ -987,13 +1035,13 @@ body{
 }
 
 .highlights-title {
-	color: var(--dark-blue);
+	color: var(--fonts);
 	text-transform: uppercase;
   font-family: 'GT Super';
   font-size: 66px;
     font-weight: 300;
-  line-height: 90px;
-	margin-top: 80px;
+  line-height: 80px;
+	margin-top: 150px;
 }
 
 .highlights-content {
@@ -1063,12 +1111,12 @@ body{
 }
 
 .highlight-subtitle {
-	font-size: 30px;
+	font-size: 32px;
 	font-family: 'GT Super';
 	font-style: italic;
   font-weight: 300;
 	margin-bottom: 20px;
-	color: var(--fonts);
+	color: var(--accent-bright);
 }
 
 .highlight-paragraph {
@@ -1076,19 +1124,51 @@ body{
   font-weight: 100;
   font-size:16px;
 	line-height: 1.5;
-	color: var(--fonts);
+	color: black;
+  margin-bottom: 40px;
 }
 
-.read-more {
+.read-more{
+    text-decoration: none;
+}
+
+.highlights-cta-btn {
+  position: relative;
+  padding: 15px 35px;
+  text-align: center;
+  text-transform: uppercase;
+  background: rgb(4, 56, 75, 0.9);
+  border: 1px solid var(--fonts);
+  color: var(--background);
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 15px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+  transition: all 0.5s ease;
+}
+
+.highlights-cta-btn:hover {
+  border: 1px solid var(--fonts);
+  background-color: var(--sandy);
+  color: var(--fonts);
+}  
+
+
+
+
+
+
+/* .read-more {
   display: inline-flex;
   align-items: center;
+  font-family: "Libre Franklin", sans-serif;
   gap: 8px; 
-	font-family: "Libre Franklin", sans-serif;
   font-weight: 300;
   font-size:16px;
 	line-height: 1.5;
-  color: var(--dark-blue);
-  text-decoration: none;
+  color: var(--accent-bright);
+  text-decoration: none; 
   margin-top: 12px;
   position: relative;
 }
@@ -1104,7 +1184,7 @@ body{
   left: 0;
   width: 100%;
   height: 1px;
-  background-color: var(--dark-blue);
+  background-color: var(--accent-bright);
   transform: scaleX(0);
   transform-origin: left;
   transition: transform 0.3s ease;
@@ -1120,7 +1200,10 @@ body{
 
 .read-more:hover .arrow {
   transform: translateX(5px);
-}
+} */
+
+
+
 .scroll-indicator {
 	position: absolute;
 	right: 20px;
@@ -1261,23 +1344,23 @@ margin-top: 200px;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  padding: 200px 0 80px 0;
+  padding: 150px 0 80px 0;
   color: var(--fonts);
 }
 .quote-two h3{
-  font-size: 100px;
+  font-size: 87px;
   text-align: center;
   line-height: 90px;
+  font-family: 'GT Super';
+    font-weight: 100;
 }
 .quote-two-bold{
-  color: var(--dark-blue);
   text-transform: uppercase;
   font-weight: bold;
 }
 .quote-two-italic{
-  font-family: 'GT Super';
   font-style: italic;
-  font-weight: 100;
+  color: var(--accent-bright);
 }
 .histor{
     left: -200px;
@@ -1357,12 +1440,12 @@ margin-top: 200px;
 
 .mosaic-section::before {
   top: 0;
-  background: linear-gradient(to bottom, rgb(240, 238, 220, 1) 0%, rgba(255,255,255,0) 100%);
+  /* background: linear-gradient(to bottom, #eee0d7 50%, rgba(255,255,255,0) 100%); */
 }
 
 .mosaic-section::after {
   bottom: 0;
-    background: linear-gradient(to top, rgb(240, 238, 220, 1) 0%, rgba(255,255,255,0) 100%);
+    /* background: linear-gradient(to top, #eee0d7 50%, rgba(255,255,255,0) 100%); */
 
   /* background: linear-gradient(to top, rgba(245, 240, 213) 0%, rgba(255,255,255,0) 100%); */
 }
@@ -1450,18 +1533,18 @@ margin-top: 200px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 150px 0 70px 0;
+  padding: 100px 0 70px 0;
   color: var(--fonts);
 }
 .coll-intro h3{
-  font-size: 100px;
+  font-size: 87px;
   text-align: center;
   line-height: 90px;
 }
 .coll-bold {
-  color: var(--dark-blue);
+  color: var(--accent-bright);
   text-transform: uppercase;
-  font-weight: bold;
+    font-weight: 100;
 }
 .coll-italic {
   font-family: 'GT Super';
@@ -1528,14 +1611,16 @@ margin-top: 200px;
 #collections .coll-background h3{
   font-family: 'GT Super';
   font-size: 96px;
-  font-weight: 600;
+  font-weight: 200;
   margin-bottom: 20px;
+  color: var(--accent);
 }
 #collections .coll-background p{
   font-size: 22px;
   font-family: "Libre Franklin", sans-serif;
   font-weight: 200;
   max-width: 600px;
+  color: var(--white);
 }
 #collections .coll-background .overlay{
   position: absolute; 
@@ -1707,8 +1792,7 @@ margin-top: 200px;
 .contact-title h2 {
   font-family: 'GT Super';
   font-style: italic;
-      color: #722F37;
-
+  color: var(--accent);
   font-size: 60px;
   font-weight: 100;
   margin: 0;
@@ -1719,7 +1803,7 @@ margin-top: 200px;
 	font-family: "Libre Franklin", sans-serif;
 font-weight: 300;
   background: transparent;
-  border: 1px solid #444;
+  border: 1px solid rgb(238, 224, 215, 0.7);
   color: var(--background);
   padding: 12px;
   margin-bottom: 20px;
@@ -1756,7 +1840,7 @@ font-weight: 100;
 }
 
 .contact-form label a {
-  color: var(--light-blue);
+  color: var(--background);
   text-decoration: underline;
   margin-left: 4px;
 }
@@ -1775,7 +1859,7 @@ label {
   align-items: center;
   justify-content: center;
 padding: 40px;
-  color: var(--mi);
+  color: var(--fonts);
 }
 
 .contact-info {
@@ -1791,8 +1875,8 @@ padding: 40px;
 .contact-info .exhibitions h3 {
 	font-size: 60px;
 	font-weight: 300;
-    font-family: 'GT Super';
-	color: var(--dark-blue);
+  font-family: 'GT Super';
+	color: var(--accent-bright);
 	text-transform: uppercase;
   text-align: center;
 	line-height: 1.5;
@@ -1814,6 +1898,56 @@ padding: 40px;
 .contact-info .exhibitions p strong {
   font-weight: 600;
 }
+
+.read-more-rentals {
+  display: inline-flex;
+  align-items: center;
+  font-family: "Libre Franklin", sans-serif;
+  gap: 5px; 
+  font-weight: 400;
+  font-size:16px;
+	line-height: 1.5;
+  color: var(--accent-bright);
+  text-decoration: none; 
+  position: relative;
+}
+
+.read-more-rentals .text {
+  position: relative; 
+}
+
+.read-more-rentals .text::after {
+  content: "";
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background-color: var(--accent-bright);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.3s ease;
+}
+
+.read-more-rentals .arrow {
+  transition: transform 0.3s ease;
+}
+
+.read-more-rentals:hover .text::after {
+  transform: scaleX(1);
+}
+
+.read-more-rentals:hover .arrow {
+  transform: translateX(5px);
+} 
+
+
+
+
+
+
+
+
 
 
 /*form*/
@@ -1951,14 +2085,15 @@ textarea.error {
 .press-intro {
   display: flex;
   flex-direction: column;
-  margin: 200px 0 0 0;
+  margin: 100px 0 0 0;
 }
 .press-intro h3 {
   font-family: 'GT Super';
   font-size: 78px;
   text-align: center;
   line-height: 90px;
-  font-weight: 300;
+  font-weight: 100;
+  color: var(--fonts);
 }
 .press-intro p {
   margin-top: 20px;
@@ -2146,7 +2281,7 @@ textarea.error {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--background);
+  color: var(--white);
 }
 
 .interviews-words{
@@ -2155,18 +2290,19 @@ textarea.error {
 .interviews-words h3{
   font-size: 70px;
   text-align: center;
-  font-weight: 300;
+  font-weight: 100;
   text-transform: uppercase;
+    font-family: 'GT Super', serif;
 }
 .big-p{
   font-family: 'GT Super', serif;
-  font-size: 38px;
+  font-size: 30px;
   text-align: center;
   font-weight: 100;
 }
 .big-p span{
   font-style: italic;
-  color: var(--light-blue);
+  color: var(--accent);
 }
 
 /* Tablet layout */
@@ -2223,7 +2359,7 @@ textarea.error {
 }
 .carousel-btn {
   background-color: var(--fonts);
-  border: 0.5px #585757 solid;
+  border: 0.5px rgb(238, 224, 215, 0.7) solid;
     /* background-color: var(--grey);
   border: none; */
   width: 48px;   
@@ -2237,11 +2373,7 @@ textarea.error {
   transition: all 0.4s ease;
   z-index: 2;
   /* color: var(--white); */
-  color: var(--light-blue); 
-
-
-
-
+  color: var(--background); 
   position: absolute;
   top: 50%;
   transform: translateY(-50%); 
@@ -2251,7 +2383,7 @@ textarea.error {
   pointer-events: none;
 }
 .carousel-btn:hover {
-  background-color: var(--dark-grey);
+  background-color: var(--accent-bright);
   color: var(--background);
 }
 .carousel-btn svg {
@@ -2320,7 +2452,7 @@ textarea.error {
 
 .carousel-item-name,
 .carousel-item-description {
-  color: var(--background);
+  color: var(--white);
   transition: opacity 0.4s ease, filter 0.4s ease;
 }
 

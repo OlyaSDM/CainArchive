@@ -3,14 +3,21 @@
 gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener("loaderFinished", () => {
-  // Ensure hero elements start hidden
-  gsap.set([".hero-content h1", ".hero-content h1 span", ".hero-content p", ".hero-buttons > *"], {
+
+  gsap.set([
+    ".hero-content h1",
+    ".hero-content h1 span",
+    ".hero-content p",
+    ".hero-cta",        
+    ".hero-btn-text" 
+    // ".scroll-btn"      
+  ], {
     opacity: 0,
     x: -30
   });
-  
+
   const tl = gsap.timeline({
-    delay: 0.5, // slight delay after loader
+    delay: 0.5,
     scrollTrigger: {
       trigger: ".hero",
       start: "top 80%",
@@ -18,15 +25,7 @@ window.addEventListener("loaderFinished", () => {
     }
   });
 
-//   ScrollTrigger.create({
-//   trigger: ".hero",
-//   start: "top top",
-//   end: "bottom top",
-//   onEnter: () => document.querySelector(".navbar").classList.add("background-visible"),
-//   onLeaveBack: () => document.querySelector(".navbar").classList.remove("background-visible"),
-// });
-
-  // Animate H1 + span separately
+  // H1 + span
   tl.to([".hero-content h1", ".hero-content h1 span"], {
     opacity: 1,
     x: 0,
@@ -34,17 +33,15 @@ window.addEventListener("loaderFinished", () => {
     ease: "power2.out",
     stagger: 0.4
   })
-
-  // Animate paragraph
+  // Paragraph
   .to(".hero-content p", {
     opacity: 1,
     x: 0,
     duration: 1,
     ease: "power2.out"
   }, "-=0.4")
-
-  // Animate buttons separately
-  .to([".hero-cta", ".hero-btn-text "], {
+  // Buttons (the two children you actually want to reveal)
+  .to([".hero-cta", ".hero-btn-text"], {  
     opacity: 1,
     x: 0,
     duration: 1,
@@ -52,7 +49,6 @@ window.addEventListener("loaderFinished", () => {
     stagger: 0.3
   }, "-=0.3");
 });
-
 
 
 // Hero Section Luxury Fade + Parallax
@@ -64,29 +60,13 @@ gsap.timeline({
     scrub: true,
   }
 })
-// .to(".hero-content", {
-//   opacity: 0,
-//   y: -100,
-//   ease: "power2.out"
-// }, 0)
+
 .to(".hero-video", {
   scale: 1.2,
   // opacity: 0,
   ease: "power2.out"
 }, 0);
 
-// Fade in next section smoothly
-// gsap.from(".quote", {
-//   opacity: 0,
-//   y: 80,
-//   ease: "power2.out",
-//   scrollTrigger: {
-//     trigger: ".quote",
-//     start: "top 80%",
-//     end: "top 50%",
-//     scrub: true,
-//   }
-// });
 
 // ANIMATION FOR SCROLL DOWN BUTTON ON HERO
 document.getElementById('scrollDownBtn').addEventListener('click', function () {
@@ -105,50 +85,50 @@ document.getElementById('scrollDownBtn').addEventListener('click', function () {
 // SCROLL TRIGGER FOR QUOTE SECTION
 
 
-// const scrollSettings = {
-//   trigger: ".quote",
-//   start: "top 70%",
-//   end: "bottom 30%",
-//   scrub: 1,
-// };
+const scrollSettings = {
+  trigger: ".quote",
+  start: "top 70%",
+  end: "bottom 30%",
+  scrub: 1,
+};
 
-// // Helper function to animate subtle motion into final CSS position
-// function animateQuote(selector, direction = "left") {
-//   const offset = 80; 
-//   gsap.fromTo(
-//     selector,
-//     {
-//       x: direction === "left" ? -offset : offset,
-//       opacity: 0,
-//     },
-//     {
-//       x: 0, 
-//       opacity: 1,
-//       ease: "power2.out",
-//       scrollTrigger: scrollSettings,
-//     }
-//   );
-// }
+// Helper function to animate subtle motion into final CSS position
+function animateQuote(selector, direction = "left") {
+  const offset = 80; 
+  gsap.fromTo(
+    selector,
+    {
+      x: direction === "left" ? -offset : offset,
+      opacity: 0,
+    },
+    {
+      x: 0, 
+      opacity: 1,
+      ease: "power2.out",
+      scrollTrigger: scrollSettings,
+    }
+  );
+}
 
 
 
-// // Animate each line
-// animateQuote(".his", "left");  // History’s (left → right)
-// animateQuote(".dis", "left");  // discerning. (left → right)
+// Animate each line
+animateQuote(".his", "left");  // History’s (left → right)
+animateQuote(".dis", "left");  // discerning. (left → right)
 
-// animateQuote(".fin", "right"); // finest frames, (right → left)
-// animateQuote(".for", "right"); // for the (right → left)
+animateQuote(".fin", "right"); // finest frames, (right → left)
+animateQuote(".for", "right"); // for the (right → left)
 
-// // Reserved stays subtle (slight fade-in only)
-// gsap.fromTo(".res",
-//   { opacity: 0, y: 20 },
-//   {
-//     opacity: 1,
-//     y: 0,
-//     ease: "power2.out",
-//     scrollTrigger: scrollSettings,
-//   }
-// );
+// Reserved stays subtle (slight fade-in only)
+gsap.fromTo(".res",
+  { opacity: 0, y: 20 },
+  {
+    opacity: 1,
+    y: 0,
+    ease: "power2.out",
+    scrollTrigger: scrollSettings,
+  }
+);
 
 
 
