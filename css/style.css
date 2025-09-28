@@ -1141,6 +1141,7 @@ body{
 	display: flex;
 	flex-direction: row;
 	background-color: var(--background);
+  height: 100vh;
 }
 
 .highlights-title {
