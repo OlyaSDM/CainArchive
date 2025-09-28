@@ -12,7 +12,6 @@
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
    <body>
-
       <!-- LOADER 
          UNBLOCK WHEN YOU WANT TO SEE THE ANIMATION !!! -->
       <div class="loader">
@@ -22,59 +21,48 @@
          <div class="loader__item loader__item-1"></div>
          <div class="loader__item loader__item-2"></div>
          <div class="loader__item loader__item-3"></div>
-      </div>  
-
-
-
-         <!-- NAVIGATION -->
-
-
+      </div>
+      <!-- NAVIGATION -->
       <header class="navbar delayed" id="navbar">
-      <!-- Logos  -->
-      <a href="index.html" class="logo">
+         <!-- Logos  -->
+         <a href="index.html" class="logo">
          <img src="logos/logo-white.png" alt="Logo" class="round-logo">
          <img src="logos/logo-words.png" alt="CAIN Archive Logo" class="words-logo">
-      </a>
-
-      <!-- Right side cluster -->
-      <div class="nav-right">
-         <!-- Inline links (desktop) -->
-         <nav class="nav-links" aria-label="Primary">
-            <a href="#">Our Mission</a>
-            <a href="#">Collections</a>
-            <a href="#">Voices of Advocacy</a>
-            <a href="#">Exhibitions & Rentals</a>
-            <a href="#">Press</a>
-         </nav>
-
-         <!-- Burger (tablet/phone) -->
-         <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
+         </a>
+         <!-- Right side cluster -->
+         <div class="nav-right">
+            <!-- Inline links (desktop) -->
+            <nav class="nav-links" aria-label="Primary">
+               <a href="#">Our Mission</a>
+               <a href="#">Collections</a>
+               <a href="#">Voices of Advocacy</a>
+               <a href="#">Exhibitions & Rentals</a>
+               <a href="#">Press</a>
+            </nav>
+            <!-- Burger (tablet/phone) -->
+            <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
             <span class="bar bar-long"></span>
             <span class="bar bar-middle"></span>
             <span class="bar bar-short"></span>
-         </button>
-
-         <!-- Divider -->
-         <div class="nav-divider" aria-hidden="true"></div>
-
-         <!-- Language Switcher -->
-         <div class="lang-switcher" id="langSwitcher">
-            <button id="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu">
-            <span id="lang-current">EN</span>
-            <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
             </button>
-            <ul class="lang-options" id="lang-menu" role="menu">
-            <li role="menuitem" data-lang="en">English</li>
-            <li role="menuitem" data-lang="ar">العربية</li>
-            <li role="menuitem" data-lang="ja">日本語</li>
-            <li role="menuitem" data-lang="es">Español</li>
-            <li role="menuitem" data-lang="zh">中文</li>
-            </ul>
+            <!-- Divider -->
+            <div class="nav-divider" aria-hidden="true"></div>
+            <!-- Language Switcher -->
+            <div class="lang-switcher" id="langSwitcher">
+               <button id="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu">
+               <span id="lang-current">EN</span>
+               <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+               </button>
+               <ul class="lang-options" id="lang-menu" role="menu">
+                  <li role="menuitem" data-lang="en">English</li>
+                  <li role="menuitem" data-lang="ar">العربية</li>
+                  <li role="menuitem" data-lang="ja">日本語</li>
+                  <li role="menuitem" data-lang="es">Español</li>
+                  <li role="menuitem" data-lang="zh">中文</li>
+               </ul>
+            </div>
          </div>
-      </div>
       </header>
-
-
       <!-- FULLSCREEN MENU -->
       <div class="fullscreen-menu" id="menu">
          <div class="fullscreen-menu-content">
@@ -113,12 +101,8 @@
             </div>
          </div>
       </div>
-
-
       <div id="smooth-wrapper">
          <div id="smooth-content">
-
-
             <!-- Hero Section -->
             <section id="hero" class="hero">
                <video class="hero-video" autoplay muted loop playsinline>
@@ -148,28 +132,35 @@
                   <svg viewBox="0 0 24 24">
                   <polyline points="6 9 12 15 18 9" />
                   </svg>
-               </div> -->
+                  </div> -->
                <div class="scroll-btn" id="scrollDownBtn" aria-label="Scroll Down" style="opacity: 0; pointer-events: none;">
                   <svg viewBox="0 0 24 24">
                      <polyline points="6 9 12 15 18 9" />
                   </svg>
                </div>
             </section>
-
-
-
             <!-- QUOTE SECTION -->
-            <div class="quote">
+            <!-- <div class="quote">
                <h3 class="quote-bold his">History’s</h3>
                <h3 class="quote-italic fin">finest frames,</h3>
                <h3 class="quote-bold res">Reserved</h3>
                <h3 class="quote-bold for">for the</h3>
                <h3 class="quote-italic dis">discerning.</h3>
-            </div> 
-
-
-
-
+               </div>  -->
+            <!-- Cain Section -->
+            <div class="cain-section">
+               <div class="cain-title">
+                  <span><span data-desc="C-Culture & Continuity: Photographs as part of the world’s heritage: connecting past, present, and future to show how history shapes tomorrow." class="letter-inner">C</span></span>
+                  <span><span data-desc="A-Accountability: Our duty is to preserve and transmit testimony so that new generations hear the voice of history and avoid repeating its errors." class="letter-inner a">A</span></span>
+                  <span><span data-desc="I-Inheritance: Each photograph is an inheritance of truth — preserved with respect and carried forward as part of humanity’s cultural and moral legacy. It is not only a window into the past but also a responsibility toward the future." class="letter-inner">I</span></span>
+                  <span><span data-desc="N-New Hope: Memory in service of life — affirming freedom, culture, dignity, love, and the unfolding of human potential." class="letter-inner">N</span></span>
+               </div>
+               <div class="cain-description" id="cain-desc">
+                  <div class="desc-title"></div>
+                  <div class="desc-text"></div>
+               </div>
+               <div class="cain-tooltip" id="cain-tooltip">Point</div>
+            </div>
             <!-- Highlights Section -->
             <section class="highlights-section" id="highlights">
                <div class="highlights-left">
@@ -196,13 +187,13 @@
                            <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="35" height="15" viewBox="0 0 40 20" fill="none">
                               <path d="M0 10H36M36 10L28 2M36 10L28 18" stroke="currentColor" stroke-width="2"/>
                            </svg>
-                        </a> -->
+                           </a> -->
                         <a href="#" class="read-more">
-                           <span class="highlights-cta-btn">
-                              Read more
-                              <span class="v-border v-left"></span>
-                              <span class="v-border v-right"></span>
-                           </span>
+                        <span class="highlights-cta-btn">
+                        Read more
+                        <span class="v-border v-left"></span>
+                        <span class="v-border v-right"></span>
+                        </span>
                         </a>
                      </div>
                      <div class="highlight-text" data-photo="mission">
@@ -217,13 +208,13 @@
                            <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="35" height="15" viewBox="0 0 40 20" fill="none">
                               <path d="M0 10H36M36 10L28 2M36 10L28 18" stroke="currentColor" stroke-width="2"/>
                            </svg>
-                        </a> -->
+                           </a> -->
                         <a href="#" class="read-more">
-                           <span class="highlights-cta-btn">
-                              Read more
-                              <span class="v-border v-left"></span>
-                              <span class="v-border v-right"></span>
-                           </span>
+                        <span class="highlights-cta-btn">
+                        Read more
+                        <span class="v-border v-left"></span>
+                        <span class="v-border v-right"></span>
+                        </span>
                         </a>
                      </div>
                      <div class="highlight-text" data-photo="collections">
@@ -238,13 +229,13 @@
                            <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="35" height="15" viewBox="0 0 40 20" fill="none">
                               <path d="M0 10H36M36 10L28 2M36 10L28 18" stroke="currentColor" stroke-width="2"/>
                            </svg>
-                        </a> -->
+                           </a> -->
                         <a href="#" class="read-more">
-                           <span class="highlights-cta-btn">
-                              Read more
-                              <span class="v-border v-left"></span>
-                              <span class="v-border v-right"></span>
-                           </span>
+                        <span class="highlights-cta-btn">
+                        Read more
+                        <span class="v-border v-left"></span>
+                        <span class="v-border v-right"></span>
+                        </span>
                         </a>
                      </div>
                   </div>
@@ -262,58 +253,58 @@
                <h3 class="quote-two-bold tomw">tomorrow</h3>
             </div>
             <!-- Gallery Section -->
-             <section class="mosaic-section">
-   <div class="wrap">
-      <div class="mosaic">
-         <div class="column left">
-            <img src="/img/photo14.jpg" alt="">
-            <img src="/img/photo15.jpg" alt="">
-            <img src="/img/photo16.jpg" alt="">
-            <img src="/img/photo14.jpg" alt="">
-            <img src="/img/photo15.jpg" alt="">
-            <img src="/img/photo16.jpg" alt="">
-            <img src="/img/photo14.jpg" alt="">
-            <img src="/img/photo15.jpg" alt="">
-            <img src="/img/photo16.jpg" alt="">
-            <img src="/img/photo14.jpg" alt="">
-            <img src="/img/photo15.jpg" alt="">
-            <img src="/img/photo16.jpg" alt="">
-         </div>
-         <div class="column middle">
-            <div class="column-inner">
-               <img src="/img/photo5.jpg" alt="">
-               <img class="img_top" src="/img/photo4.jpg" alt="">
-               <img src="/img/photo10.jpg" alt="">
-               <img src="/img/photo5.jpg" alt="">
-               <img class="img_top" src="/img/photo4.jpg" alt="">
-               <img src="/img/photo10.jpg" alt="">
-               <img src="/img/photo5.jpg" alt="">
-               <img class="img_top" src="/img/photo4.jpg" alt="">
-               <img src="/img/photo10.jpg" alt="">
-               <img src="/img/photo5.jpg" alt="">
-               <img class="img_top" src="/img/photo4.jpg" alt="">
-               <img src="/img/photo10.jpg" alt="">
-            </div>
-         </div>
-         <div class="column right">
-            <div class="column-inner">
-               <img src="/img/photo6.jpg" alt="">
-               <img src="/img/photo7.jpg" alt="">
-               <img src="/img/photo8.jpg" alt="">
-               <img src="/img/photo6.jpg" alt="">
-               <img src="/img/photo7.jpg" alt="">
-               <img src="/img/photo8.jpg" alt="">
-               <img src="/img/photo6.jpg" alt="">
-               <img src="/img/photo7.jpg" alt="">
-               <img src="/img/photo8.jpg" alt="">
-               <img src="/img/photo6.jpg" alt="">
-               <img src="/img/photo7.jpg" alt="">
-               <img src="/img/photo8.jpg" alt="">
-            </div>
-         </div>
-      </div>
-   </div>
-   </section>
+            <section class="mosaic-section">
+               <div class="wrap">
+                  <div class="mosaic">
+                     <div class="column left">
+                        <img src="/img/photo14.jpg" alt="">
+                        <img src="/img/photo15.jpg" alt="">
+                        <img src="/img/photo16.jpg" alt="">
+                        <img src="/img/photo14.jpg" alt="">
+                        <img src="/img/photo15.jpg" alt="">
+                        <img src="/img/photo16.jpg" alt="">
+                        <img src="/img/photo14.jpg" alt="">
+                        <img src="/img/photo15.jpg" alt="">
+                        <img src="/img/photo16.jpg" alt="">
+                        <img src="/img/photo14.jpg" alt="">
+                        <img src="/img/photo15.jpg" alt="">
+                        <img src="/img/photo16.jpg" alt="">
+                     </div>
+                     <div class="column middle">
+                        <div class="column-inner">
+                           <img src="/img/photo5.jpg" alt="">
+                           <img class="img_top" src="/img/photo4.jpg" alt="">
+                           <img src="/img/photo10.jpg" alt="">
+                           <img src="/img/photo5.jpg" alt="">
+                           <img class="img_top" src="/img/photo4.jpg" alt="">
+                           <img src="/img/photo10.jpg" alt="">
+                           <img src="/img/photo5.jpg" alt="">
+                           <img class="img_top" src="/img/photo4.jpg" alt="">
+                           <img src="/img/photo10.jpg" alt="">
+                           <img src="/img/photo5.jpg" alt="">
+                           <img class="img_top" src="/img/photo4.jpg" alt="">
+                           <img src="/img/photo10.jpg" alt="">
+                        </div>
+                     </div>
+                     <div class="column right">
+                        <div class="column-inner">
+                           <img src="/img/photo6.jpg" alt="">
+                           <img src="/img/photo7.jpg" alt="">
+                           <img src="/img/photo8.jpg" alt="">
+                           <img src="/img/photo6.jpg" alt="">
+                           <img src="/img/photo7.jpg" alt="">
+                           <img src="/img/photo8.jpg" alt="">
+                           <img src="/img/photo6.jpg" alt="">
+                           <img src="/img/photo7.jpg" alt="">
+                           <img src="/img/photo8.jpg" alt="">
+                           <img src="/img/photo6.jpg" alt="">
+                           <img src="/img/photo7.jpg" alt="">
+                           <img src="/img/photo8.jpg" alt="">
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
             <!-- COLLECTIONS SECTION -->
             <div class="coll-intro">
                <h3 class="coll-italic unseen">Unseen.</h3>
@@ -353,10 +344,6 @@
                   </div>
                </a>
             </section>
-
-
-
-
             <!-- INTERVIEWS -->
             <section id="interviews">
                <div class="interviews-words">
@@ -500,8 +487,6 @@
                   </button>
                </div>
             </section>
-
-
             <!-- Rentals Section -->
             <section class="contact-block" id="contactBlock">
                <div class="contact-right">
@@ -561,93 +546,79 @@
                   </form>
                </div>
             </section>
-            
-
             <!-- PRESS SECTION -->
-             <section class="press-intro">
+            <section class="press-intro">
                <h3>Press on Us</h3>
                <p>Discover what leading publications are saying about <span>Cain Archive</span></p>
-               </section>
-               
-               
-               <section id="press">
+            </section>
+            <section id="press">
                <div class="press-grid">
-                
-                <div class="press-item">
+                  <div class="press-item">
                      <a href="#" class="press-item-img">
-                        <img src="img/press/1.jpg" loading="lazy" alt="Press 1">
+                     <img src="img/press/1.jpg" loading="lazy" alt="Press 1">
                      </a>
-                  <h4 class="press-category">Podcasts with Cain Archive</h4>
-                  <h3>Second World War: the Main Tragedy</h3>
-                  <p class="press-subtitle">Podcast</p>
-                  <p class="press-date">November 17, 2025</p>
-                </div>
-               
-                <div class="press-item">
+                     <h4 class="press-category">Podcasts with Cain Archive</h4>
+                     <h3>Second World War: the Main Tragedy</h3>
+                     <p class="press-subtitle">Podcast</p>
+                     <p class="press-date">November 17, 2025</p>
+                  </div>
+                  <div class="press-item">
                      <a href="#"  class="press-item-img">
-                        <img src="img/press/2.jpg" loading="lazy" alt="Press 2">
+                     <img src="img/press/2.jpg" loading="lazy" alt="Press 2">
                      </a>
-                  <h4 class="press-category">Visits and Activities</h4>
-                  <h3>Our unique photos at the London Museum</h3>
-                  <p class="press-subtitle">Exhibition</p>
-                  <p class="press-date">September 12 - November 20, 2025</p>
-                </div>
-               
-                <div class="press-item">
+                     <h4 class="press-category">Visits and Activities</h4>
+                     <h3>Our unique photos at the London Museum</h3>
+                     <p class="press-subtitle">Exhibition</p>
+                     <p class="press-date">September 12 - November 20, 2025</p>
+                  </div>
+                  <div class="press-item">
                      <a href="#"  class="press-item-img">
-                        <img src="img/press/3.jpg" loading="lazy" alt="Press 3">
+                     <img src="img/press/3.jpg" loading="lazy" alt="Press 3">
                      </a>
-                  <h4 class="press-category">Publications</h4>
-                  <h3>What the New York Times writes about our collection </h3>
-                  <p class="press-subtitle">Newspaper article</p>
-                  <p class="press-date">December 1, 2025</p>
-                </div>
-               
-                <div class="press-item">
+                     <h4 class="press-category">Publications</h4>
+                     <h3>What the New York Times writes about our collection </h3>
+                     <p class="press-subtitle">Newspaper article</p>
+                     <p class="press-date">December 1, 2025</p>
+                  </div>
+                  <div class="press-item">
                      <a href="#"  class="press-item-img">
-                        <img src="img/press/4.jpg" loading="lazy" alt="Press 4">
+                     <img src="img/press/4.jpg" loading="lazy" alt="Press 4">
                      </a>
-                  <h4 class="press-category">Events</h4>
-                  <h3>Rare photo collectors gather in New York</h3>
-                  <p class="press-subtitle">One of a kind photographs from the early XX century</p>
-                  <p class="press-date">January 9, 2026</p>
-                </div>
-               
-                <div class="press-item">
+                     <h4 class="press-category">Events</h4>
+                     <h3>Rare photo collectors gather in New York</h3>
+                     <p class="press-subtitle">One of a kind photographs from the early XX century</p>
+                     <p class="press-date">January 9, 2026</p>
+                  </div>
+                  <div class="press-item">
                      <a href="#"  class="press-item-img">
-                        <img src="img/press/5.jpg" loading="lazy" alt="Press 5">
+                     <img src="img/press/5.jpg" loading="lazy" alt="Press 5">
                      </a>
-                  <h4 class="press-category">Expositions</h4>
-                  <h3>Cain Archive collection of old Hollywood photos at the Tokyo Museum</h3>
-                  <p class="press-subtitle">A unique exhibition</p>
-                  <p class="press-date">November 1, 2025 - February 20, 2026</p>
-                </div>
-               
-                <div class="press-item">
+                     <h4 class="press-category">Expositions</h4>
+                     <h3>Cain Archive collection of old Hollywood photos at the Tokyo Museum</h3>
+                     <p class="press-subtitle">A unique exhibition</p>
+                     <p class="press-date">November 1, 2025 - February 20, 2026</p>
+                  </div>
+                  <div class="press-item">
                      <a href="#" class="press-item-img">
-                        <img src="img/press/6.jpg" loading="lazy" alt="Press 6">
+                     <img src="img/press/6.jpg" loading="lazy" alt="Press 6">
                      </a>
-                  <h4 class="press-category">Expositions</h4>
-                  <h3>Visiting Florida</h3>
-                  <p class="press-subtitle">Our WWII photo collection is now in Florida museums</p>
-                  <p class="press-date">August 2 - November 15, 2025</p>
-                </div>
+                     <h4 class="press-category">Expositions</h4>
+                     <h3>Visiting Florida</h3>
+                     <p class="press-subtitle">Our WWII photo collection is now in Florida museums</p>
+                     <p class="press-date">August 2 - November 15, 2025</p>
+                  </div>
                </div>
-               </section>
-
-
-
+            </section>
             <!-- FOOTER -->
             <footer class="footer">
                <div class="footer-wrapper">
                   <!-- Logo + tagline -->
-                     <a href="index.html" class="-footer-logo">
-         <img src="logos/logo-white.png" alt="Logo" class="round-logo">
-         <img src="logos/logo-words.png" alt="CAIN Archive Logo" class="words-logo">
-                              <p class="footer-tagline">History That Shapes Tomorrow</p>
-
-      </a>
-                         <!-- Contact Info -->
+                  <a href="index.html" class="-footer-logo">
+                     <img src="logos/logo-white.png" alt="Logo" class="round-logo">
+                     <img src="logos/logo-words.png" alt="CAIN Archive Logo" class="words-logo">
+                     <p class="footer-tagline">History That Shapes Tomorrow</p>
+                  </a>
+                  <!-- Contact Info -->
                   <div class="footer-contact">
                      <p>John Cain</p>
                      <p>Founder & Director | Cain Archive</p>
@@ -688,15 +659,8 @@
             </div>
          </div>
       </div>
-
-
-
       <!-- Cursor tooltip for videos -->
       <div class="cursor-tooltip cursor-tooltip-play">Play</div>
-
-
-
-
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
@@ -714,5 +678,7 @@
       <script src="js/interviews.js"></script>
       <script src="https://www.youtube.com/iframe_api"></script>
       <script src="js/cards.js"></script>
+      <script src="js/cain.js"></script>
+
    </body>
 </html>

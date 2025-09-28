@@ -997,6 +997,133 @@ body{
 } 
 
 
+/* Cain Section */
+.cain-section {
+  background: var(--background);
+  padding: 180px 40px;
+  text-align: center;
+  position: relative;
+
+}
+
+.cain-title {
+  display: flex;
+  justify-content: center;
+  gap: clamp(8px, 2vw, 18px);
+  font-size: clamp(60px, 15vw, 300px);
+  font-family: 'GT Super';
+  font-weight: 300;
+}
+
+
+.cain-title span {
+  display: inline-block;
+  position: relative;
+  width: 1.2ch;
+  height: 1em;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.cain-title .letter-inner.a {
+  color: var(--accent);
+}
+
+.cain-title .letter-inner {
+  display: inline-block;
+  transform: translateY(100%);
+  color: var(--fonts);
+}
+
+.cain-title span:hover .letter-inner {
+  color: var(--accent);
+}
+
+.cain-description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: start;
+  margin-left: auto;
+  margin-right: auto;
+  font-size: clamp(14px, 2.2vw, 20px);
+  color: var(--fonts);
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 100;
+  min-height: 40px;
+  margin-top: 120px;
+  line-height: 1.4;
+  max-width: 650px;
+  overflow: hidden;
+  position: relative;
+}
+
+.cain-tooltip {
+  position: absolute;
+  width: clamp(50px, 12vw, 80px);
+  height: clamp(50px, 12vw, 80px);
+  border-radius: 50%;
+  background: rgba(157, 157, 157, 0.5);
+  color: var(--fonts);
+  font-family: "Libre Franklin", sans-serif;
+  font-size: clamp(12px, 2.5vw, 16px);
+  font-weight: bolder;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transform: translate(-50%, -50%) scale(0.9);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 10;
+  backdrop-filter: blur(4px);
+}
+
+.desc-title {
+  font-weight: 500;
+  color: var(--fonts);
+    font-size: clamp(16px, 3vw, 24px);
+  margin-bottom: 10px;
+}
+
+.desc-text {
+  font-size: clamp(14px, 2.2vw, 20px);
+  color: var(--fonts);
+  font-family: 'Libre Franklin', sans-serif;
+  font-weight: 100;
+  line-height: 1.4;
+  max-width: 650px;
+}
+
+.cain-title .letter-inner.a {
+  color: var(--accent);
+}
+
+.cain-title span:hover .letter-inner {
+}
+
+.cain-title span .letter-inner.a:hover {
+  color: var(--fonts);
+}
+
+@media (max-width: 1024px) {
+  .cain-title .letter-inner {
+    transform: translateY(0); 
+  }
+}
+
+@media (max-width: 768px) {
+  .cain-section {
+    padding: 80px 15px;
+  }
+  .cain-title .letter-inner {
+    transform: translateY(20%);
+  }
+  .cain-description {
+    text-align: center;
+    margin-top: 50px;
+  }
+}
 
 
 
