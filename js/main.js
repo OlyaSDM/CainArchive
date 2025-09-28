@@ -81,12 +81,7 @@ document.getElementById('scrollDownBtn').addEventListener('click', function () {
 
 
 
-
-
-
-
-// QUOTE TWO ANIMATION + COLL-INTRO 
-
+// QUOTE TWO, CALL-INTRO, PRESS-INTRO ANIMATIONS + BACKGROUND TRANSITIONS + COLL-P FIX
 
 window.addEventListener("loaderFinished", () => {
   // --- Split text into letters ---
@@ -96,25 +91,23 @@ window.addEventListener("loaderFinished", () => {
     text.split("").forEach(char => {
       const span = document.createElement("span");
       span.textContent = char;
-      if (char !== " ") span.classList.add("letter-inner"); 
+      if (char !== " ") span.classList.add("letter-inner");
       el.appendChild(span);
     });
   }
 
-  // --- Auto-apply animation to all letter-sections ---
+  // --- Animate all sections with class "letter-section" ---
   document.querySelectorAll(".letter-section").forEach(section => {
-
+    // Animate H3 headline (letter by letter)
     section.querySelectorAll("h3").forEach(h3 => {
       splitTextToLetters(h3);
-      h3.style.visibility = "visible"; 
+      h3.style.visibility = "visible";
     });
-
 
     gsap.set(section.querySelectorAll(".letter-inner"), {
       y: "100%",
       opacity: 0
     });
-
 
     gsap.to(section.querySelectorAll(".letter-inner"), {
       y: "0%",
@@ -130,7 +123,7 @@ window.addEventListener("loaderFinished", () => {
       }
     });
 
-
+    // Animate Paragraph(s)
     const paragraphs = section.querySelectorAll("p");
     if (paragraphs.length) {
       gsap.fromTo(paragraphs,
@@ -151,9 +144,29 @@ window.addEventListener("loaderFinished", () => {
     }
   });
 
-  // Background transition between .quote-two and .mosaic-section
+  // --- Animate .coll-p paragraph independently ---
+  const collParagraph = document.querySelector(".coll-intro .coll-p p");
+if (collParagraph) {
+  gsap.fromTo(collParagraph,
+    { y: 30, opacity: 0 },
+    {
+      y: 0,
+      opacity: 1,
+      duration: 1,
+      ease: "power2.out",
+      scrollTrigger: {
+        trigger: ".coll-intro .coll-p",
+        start: "top 80%",
+        end: "top 60%",
+        scrub: 1
+      }
+    }
+  );
+}
+
+  // --- Background transition between .quote-two and .mosaic-section ---
   gsap.to("body", {
-    backgroundColor: "var(--fonts)",
+    backgroundColor: "var(--sandy)",
     ease: "none",
     scrollTrigger: {
       trigger: ".quote-two",
@@ -164,20 +177,18 @@ window.addEventListener("loaderFinished", () => {
     }
   });
 
-  // Fade back after .mosaic-section
+  // --- Fade background back after .mosaic-section ---
   gsap.to("body", {
     backgroundColor: "var(--background)",
     ease: "none",
     scrollTrigger: {
-      trigger: ".mosaic-section",
+      trigger: "#collections",
       start: "bottom center",
-      end: "bottom top", // fade until it's completely gone
+      end: "bottom top",
       scrub: true
     }
   });
 
-
-  
   ScrollTrigger.refresh();
 });
 
@@ -234,22 +245,22 @@ document.querySelectorAll(".coll-background").forEach((el) => {
 //ANIMATION FOR PRESS 
 
 
-gsap.set(".press-intro h3, .press-intro p", { opacity: 0, y: 100 });
+// gsap.set(".press-intro h3, .press-intro p", { opacity: 0, y: 100 });
 
-gsap.fromTo(".press-intro h3, .press-intro p",
-  { opacity: 0, y: 100 },
-  {
-    opacity: 1,
-    y: 0,
-    ease: "power2.out",
-    scrollTrigger: {
-      trigger: ".press-intro",
-      start: "top 60%",
-      end: "top 30%",
-      scrub: 0.2
-    }
-  }
-);
+// gsap.fromTo(".press-intro h3, .press-intro p",
+//   { opacity: 0, y: 100 },
+//   {
+//     opacity: 1,
+//     y: 0,
+//     ease: "power2.out",
+//     scrollTrigger: {
+//       trigger: ".press-intro",
+//       start: "top 60%",
+//       end: "top 30%",
+//       scrub: 0.2
+//     }
+//   }
+// );
 
 
 
