@@ -1,55 +1,45 @@
 gsap.registerPlugin(ScrollTrigger);
 
+// // --- Helper: Split text into letters ---
+// function splitTextToLetters(selector) {
+//   document.querySelectorAll(selector).forEach(el => {
+//     const text = el.textContent;
+//     el.textContent = "";
+//     text.split("").forEach(char => {
+//       const span = document.createElement("span");
+//       span.textContent = char;
+//       if (char !== " ") span.classList.add("letter-inner"); // only animate letters
+//       el.appendChild(span);
+//     });
+//   });
+// }
 
-const collIntroSettings = {
-  trigger: ".coll-intro",
-  start: "top 80%",
-  end: "bottom 40%",
-  scrub: 1,
-};
+// // --- Apply splitting to coll-intro headings ---
+// splitTextToLetters(".coll-intro h3");
 
-// Helper function for reusable animations
-function animateCollIntro(selector, direction = "left") {
-  const offset = 80;
-  gsap.fromTo(
-    selector,
-    {
-      x: direction === "left" ? -offset : offset,
-      opacity: 0,
-    },
-    {
-      x: 0,
-      opacity: 1,
-      ease: "power2.out",
-      scrollTrigger: collIntroSettings,
-    }
-  );
-}
-
-
-animateCollIntro(".unseen", "left");   
-animateCollIntro(".unforg", "right"); 
-
-// "Untold" only fades in, stays in place
-gsap.fromTo(".untold",
-  { opacity: 0, y: 20 },
-  {
-    opacity: 1,
-    y: 0,
-    ease: "power2.out",
-    scrollTrigger: collIntroSettings,
-  }
-);
+// // --- Animate letters and paragraph ---
+// gsap.timeline({
+//   scrollTrigger: {
+//     trigger: ".coll-intro",
+//     start: "top 80%",
+//     toggleActions: "play none none reverse"
+//   }
+// })
+// .to(".coll-intro .letter-inner", {
+//   y: "0%",
+//   opacity: 1,
+//   duration: 1.2,
+//   ease: "power3.out",
+//   stagger: 0.05
+// })
+// .fromTo(".coll-p", { y: 20, opacity: 0 }, {
+//   y: 0,
+//   opacity: 1,
+//   duration: 1,
+//   ease: "power2.out"
+// }, "-=0.4"); // paragraph fades in slightly before letters finish
 
 
-// When collections section is in view here is "transparent" class on NAVBAR
-// ScrollTrigger.create({
-//   trigger: "#collections", 
-//   start: "top top",    
-//   end: "bottom top",
-//   toggleClass: { targets: ".navbar", className: "transparent" },
-//   markers: false
-// });
 
 
 // Animate background image scale on scroll for each .coll-background .bg

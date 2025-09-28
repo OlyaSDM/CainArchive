@@ -82,121 +82,104 @@ document.getElementById('scrollDownBtn').addEventListener('click', function () {
 
 
 
-// SCROLL TRIGGER FOR QUOTE SECTION
-
-
-const scrollSettings = {
-  trigger: ".quote",
-  start: "top 70%",
-  end: "bottom 30%",
-  scrub: 1,
-};
-
-// Helper function to animate subtle motion into final CSS position
-function animateQuote(selector, direction = "left") {
-  const offset = 80; 
-  gsap.fromTo(
-    selector,
-    {
-      x: direction === "left" ? -offset : offset,
-      opacity: 0,
-    },
-    {
-      x: 0, 
-      opacity: 1,
-      ease: "power2.out",
-      scrollTrigger: scrollSettings,
-    }
-  );
-}
 
 
 
-// Animate each line
-animateQuote(".his", "left");  // History’s (left → right)
-animateQuote(".dis", "left");  // discerning. (left → right)
+// QUOTE TWO ANIMATION + COLL-INTRO 
 
-animateQuote(".fin", "right"); // finest frames, (right → left)
-animateQuote(".for", "right"); // for the (right → left)
 
-// Reserved stays subtle (slight fade-in only)
-gsap.fromTo(".res",
-  { opacity: 0, y: 20 },
-  {
-    opacity: 1,
-    y: 0,
-    ease: "power2.out",
-    scrollTrigger: scrollSettings,
+window.addEventListener("loaderFinished", () => {
+  // --- Split text into letters ---
+  function splitTextToLetters(el) {
+    const text = el.textContent;
+    el.textContent = "";
+    text.split("").forEach(char => {
+      const span = document.createElement("span");
+      span.textContent = char;
+      if (char !== " ") span.classList.add("letter-inner"); 
+      el.appendChild(span);
+    });
   }
-);
+
+  // --- Auto-apply animation to all letter-sections ---
+  document.querySelectorAll(".letter-section").forEach(section => {
+
+    section.querySelectorAll("h3").forEach(h3 => {
+      splitTextToLetters(h3);
+      h3.style.visibility = "visible"; 
+    });
 
 
+    gsap.set(section.querySelectorAll(".letter-inner"), {
+      y: "100%",
+      opacity: 0
+    });
 
 
-
-
-
-// QUOTE TWO ANIMATION 
-
-
-  const quoteTwoScrollSettings = {
-    trigger: ".quote-two",
-    start: "top 70%",
-    end: "bottom 30%",
-    scrub: 1,
-  };
-
-  // Animate History (from left)
-  gsap.fromTo(".histor",
-    {
-      x: -80,
-      opacity: 0,
-    },
-    {
-      x: 0,
+    gsap.to(section.querySelectorAll(".letter-inner"), {
+      y: "0%",
       opacity: 1,
-      ease: "power2.out",
-      scrollTrigger: quoteTwoScrollSettings,
+      duration: 1.2,
+      ease: "power3.out",
+      stagger: 0.05,
+      scrollTrigger: {
+        trigger: section,
+        start: "top 70%",
+        end: "bottom 60%",
+        scrub: 1
+      }
+    });
+
+
+    const paragraphs = section.querySelectorAll("p");
+    if (paragraphs.length) {
+      gsap.fromTo(paragraphs,
+        { y: 20, opacity: 0 },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          ease: "power2.out",
+          scrollTrigger: {
+            trigger: section,
+            start: "top 65%",
+            end: "bottom 50%",
+            scrub: 1
+          }
+        }
+      );
     }
-  );
+  });
 
-  // Animate "that shapes" (fade and slight rise)
-  gsap.fromTo(".that",
-    {
-      y: 20,
-      opacity: 0,
-    },
-    {
-      y: 0,
-      opacity: 1,
-      ease: "power2.out",
-      scrollTrigger: quoteTwoScrollSettings,
+  // Background transition between .quote-two and .mosaic-section
+  gsap.to("body", {
+    backgroundColor: "var(--fonts)",
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".quote-two",
+      start: "bottom center",
+      endTrigger: ".mosaic-section",
+      end: "top center",
+      scrub: true
     }
-  );
+  });
 
-  // Animate "tomorrow" (from right)
-  gsap.fromTo(".tomw",
-    {
-      x: 80,
-      opacity: 0,
-    },
-    {
-      x: 0,
-      opacity: 1,
-      ease: "power2.out",
-      scrollTrigger: quoteTwoScrollSettings,
+  // Fade back after .mosaic-section
+  gsap.to("body", {
+    backgroundColor: "var(--background)",
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".mosaic-section",
+      start: "bottom center",
+      end: "bottom top", // fade until it's completely gone
+      scrub: true
     }
-  );
+  });
 
 
-
-
-
-
-
-
-
-
+  
+  ScrollTrigger.refresh();
+});
 
 
 
@@ -271,15 +254,6 @@ gsap.fromTo(".press-intro h3, .press-intro p",
 
 
 
-        // gsap.to("h2", {
-        //     scale: 300,
-            
-        //     scrollTrigger: {
-        //         trigger: ".container",
-        //         scrub: 1,
-        //         pin: true,
-        //         start: "top top",
-        //         end: "+=1000",
-        //         ease: "none"
-        //     },
-        // });
+        // Animate both sections
+animateLetterSection(".quote-two");
+animateLetterSection(".coll-intro");
