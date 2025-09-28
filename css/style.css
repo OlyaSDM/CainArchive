@@ -1133,6 +1133,146 @@ body{
 
 
 
+
+.page-wrapper {
+  position: relative;
+}
+
+.rec2-img {
+  position: absolute;
+bottom: 0;
+  left: 50%;
+  transform: translateX(-50%) rotate(0deg);
+  z-index: 1;
+  width: 180px;
+}
+
+.rec-img, .rec1-img {
+  position: absolute;
+  width: 180px;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.rec-img { right: -1%; top: 400px; }
+.rec1-img { left: -2%; top: 200px; }
+
+
+.rec3-img {
+  position: absolute;
+  left: -2%; 
+  top: 46%;
+  transform: translateY(-50%); 
+  width: 180px; 
+  z-index: 26;
+}
+
+.rec4-img {
+  position: absolute;
+  bottom: 5%;      
+  right: -1%;      
+  width: 180px;   
+  z-index: 3;    
+}
+
+.rec5-img {
+  position: absolute;
+  top: 5%;
+  left: -2.5%;
+  width: 180px; 
+  z-index: 3;
+}
+
+.rec6-img {
+  position: absolute;
+  bottom: -10px;  
+  left: 70%;
+  width: 180px;  
+  z-index: 6;     
+}
+
+@media (max-width: 1400px) {
+  .rec2-img {
+    width: 120px;
+    bottom: 20px;
+  }
+
+  .rec-img, .rec1-img {
+    width: 120px;
+  }
+
+  .rec-img {
+    right: -2%;
+    top: 350px;
+  }
+  
+  .rec1-img {
+    left: -2%;
+    top: 250px;
+  }
+
+  .rec3-img {
+    left: -2%;
+    top: 10%;
+    width: 120px;
+  }
+
+  .rec4-img {
+    right: -2.5%;
+    bottom: 10%;
+    width: 120px;
+  }
+
+  .rec5-img {
+    top: 10%;
+    left: -3.5%;
+    width: 120px;
+  }
+}
+
+
+@media (max-width: 1024px) {
+  .rec2-img {
+    width: 100px;
+    bottom: 20px;
+  }
+
+  .rec-img, .rec1-img {
+    width: 100px;
+  }
+
+  .rec-img {
+    right: -2%;
+    top: 350px;
+  }
+  
+  .rec1-img {
+    left: -2%;
+    top: 250px;
+  }
+
+  .rec3-img {
+    left: -2%;
+    top: 10%;
+    width: 100px;
+  }
+
+  .rec4-img {
+    right: -2.5%;
+    bottom: 10%;
+    width: 100px;
+  }
+
+  .rec5-img {
+    top: 10%;
+    left: -3.5%;
+    width: 100px;
+  }
+}
+
+
+
+
 /* Highlights */
 
 .photo,
@@ -1706,6 +1846,7 @@ margin-top: 200px;
 .coll-intro{
   display: flex;
   flex-direction: column;
+  position: relative;
   align-items: center;
   padding: 100px 0 70px 0;
   color: var(--fonts);
@@ -2338,6 +2479,8 @@ textarea.error {
 .press-intro {
   display: flex;
   flex-direction: column;
+    position: relative;
+
   margin: 100px 0 0 0;
 }
 .press-intro h3 {
@@ -2534,6 +2677,8 @@ textarea.error {
 /* INTERVIEWS */
 #interviews{
   background-color: var(--fonts);
+      position: relative; 
+
   padding: 100px ;
   display: flex;
   flex-direction: column;
