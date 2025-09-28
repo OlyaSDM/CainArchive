@@ -271,4 +271,15 @@ gsap.fromTo(".press-intro h3, .press-intro p",
 
 
 
-
+        // gsap.to("h2", {
+        //     scale: 300,
+            
+        //     scrollTrigger: {
+        //         trigger: ".container",
+        //         scrub: 1,
+        //         pin: true,
+        //         start: "top top",
+        //         end: "+=1000",
+        //         ease: "none"
+        //     },
+        // });

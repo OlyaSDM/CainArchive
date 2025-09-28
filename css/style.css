@@ -1,29 +1,10 @@
 :root{
-  /* --fonts: #23201e;  */
-  /* --background: #f0eedc; */
-  /* --background: #f5f3ef;
-  --dark-grey: #858585;
-  --grey: #ADADAD; */
-	/* --light-blue: #219ebc;
-	--blue:#457b9d;
-  --dark-blue: #023047; */
-  /* --white: #fff;
-  --burgundi: #641B2E; */
-  /* --fonts: #073035;
-  --background: #f9f8f5;
-  --okra: #8b4f2f;
-  --accent: #77ad90;
-  --white: white;
-  --light-okra: #d9822b; */
-
   --background: #eee0d7;
   --fonts: #04384b;
   --accent-bright: #03607e;
   --accent: #48cae4;
   --white: white;
   --sandy: #e7c9af;
-
-
 }
 body{
   margin: 0;
@@ -2364,6 +2345,11 @@ textarea.error {
 
 
 
+
+
+
+
+
 /* INTERVIEWS */
 #interviews{
   background-color: var(--fonts);
@@ -2937,7 +2923,7 @@ p{
     transition: color 0.3s;
 
     &:hover {
-      color: var(--light-blue); 
+      color: var(--accent); 
     }
   }
 
@@ -2997,3 +2983,5 @@ p{
     }
   }
 }
+
+
