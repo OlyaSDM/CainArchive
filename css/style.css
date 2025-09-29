@@ -1603,7 +1603,7 @@ margin-top: 200px;
 /* Mobile */
 @media screen and (max-width: 480px) {
   .quote-two {
-    margin-top: 20px;
+    margin-top: -15px;
     padding: 40px 20px;
   }
 }
