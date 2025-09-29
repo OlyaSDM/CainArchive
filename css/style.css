@@ -2588,7 +2588,7 @@ textarea.error {
 
 /* INTERVIEWS */
 #interviews{
-  background-color: var(--fonts);
+  background-color: var(--background);
       position: relative; 
 
   padding: 100px ;
@@ -2596,7 +2596,7 @@ textarea.error {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  color: var(--white);
+  color: var(--fonts);
 }
 
 .interviews-words{
@@ -2673,8 +2673,8 @@ textarea.error {
   position: relative;
 }
 .carousel-btn {
-  background-color: var(--fonts);
-  border: 0.5px rgb(238, 224, 215, 0.7) solid;
+background-color: transparent;
+    border: 0.5px rgb(4, 56, 75, 0.7) solid;
     /* background-color: var(--grey);
   border: none; */
   width: 48px;   
@@ -2688,7 +2688,7 @@ textarea.error {
   transition: all 0.4s ease;
   z-index: 2;
   /* color: var(--white); */
-  color: var(--background); 
+  color: var(--fonts); 
   position: absolute;
   top: 50%;
   transform: translateY(-50%); 
@@ -2698,8 +2698,8 @@ textarea.error {
   pointer-events: none;
 }
 .carousel-btn:hover {
-  background-color: var(--accent-bright);
-  color: var(--background);
+  background-color: var(--sandy);
+  color: var(--fonts);
 }
 .carousel-btn svg {
   width: 20px;
@@ -2767,7 +2767,7 @@ textarea.error {
 
 .carousel-item-name,
 .carousel-item-description {
-  color: var(--white);
+  color: var(--fonts);
   transition: opacity 0.4s ease, filter 0.4s ease;
 }
 
