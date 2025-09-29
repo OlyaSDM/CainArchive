@@ -50,31 +50,6 @@ gsap.to(".rec3-img", {
   }
 });
 
-gsap.to(".re4-img", {
-  rotation: 180,
-  transformOrigin: "center center",
-  ease: "power2.out",
-  duration: 2,
-  scrollTrigger: {
-    trigger: "#interviews",
-    start: "top 70%",  
-    end: "center 30%", 
-    scrub: true
-  }
-});
-
-gsap.to(".re5-img", {
-  rotation: 180,
-  ease: "power2.out",
-  duration: 2,
-  scrollTrigger: {
-    trigger: "#interviews",
-    start: "top 80%",   
-    end: "center 30%",  
-    scrub: true
-  }
-});
-
 
 gsap.to(".rec6-img", {
   y: -200,
