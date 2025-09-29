@@ -320,7 +320,7 @@
             </section>
             <!-- INTERVIEWS -->
             <section id="interviews">
-               <div class="interviews-words">
+               <div class="interviews-words letter-section">
                   <h3>Voices:</h3>
                   <p class="big-p">when photographs <span>speak</span> and historians <span>listen</span></p>
                </div>
@@ -630,8 +630,23 @@
       <!-- MODAL FOR CAROUSEL INTERVIEWS -->
       <div id="video-modal" class="video-modal">
          <div class="video-modal-content">
-            <div class="video-modal-left">
+            <!-- <div class="video-modal-left">
                <iframe id="modal-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+            </div> -->
+            <div class="video-modal-left">
+               <!-- The overlay -->
+               <div class="modal-video-overlay" id="modal-video-overlay">
+                  <img id="modal-thumbnail" src="" alt="Video thumbnail" />
+                  <button id="modal-play-btn" class="modal-play-button" aria-label="Play video">
+                     <svg viewBox="0 0 24 24" fill="currentColor">
+                     <polygon points="8,5 19,12 8,19"></polygon>
+                     </svg>
+                  </button>
+               </div>
+               <!-- The iframe wrapper (initially hidden) -->
+               <div class="modal-video-frame" id="modal-video-frame" style="display: none;">
+                  <iframe id="modal-iframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+               </div>
             </div>
             <div class="video-modal-right">
                <button id="modal-close" class="modal-close">✕</button>

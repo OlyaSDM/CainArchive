@@ -2549,8 +2549,7 @@ textarea.error {
 /* INTERVIEWS */
 #interviews{
   background-color: var(--background);
-      position: relative; 
-
+  position: relative; 
   padding: 100px ;
   display: flex;
   flex-direction: column;
@@ -2945,61 +2944,84 @@ background-color: transparent;
 }
 
 /* MODAL INTERVIEWS */
-.video-modal {
+
+/* === Base Modal === */
+
+#video-modal {
   position: fixed;
-  inset: 0;
-  background: var(--dark-blue);
+  top: 80px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 12000;
+  background-color: var(--fonts);
   display: none;
   justify-content: center;
   align-items: center;
-  z-index: 9999;
+  transition: opacity 0.3s ease-in-out, visibility 0.3s;
+  backdrop-filter: blur(8px);
+  overflow-y: auto;
 }
 
-.video-modal.active {
+#video-modal.active {
   display: flex;
+  opacity: 1;
 }
+
+#video-modal:not(.active) {
+  opacity: 0;
+  pointer-events: none;
+}
+
+body.modal-open .navbar,
+body.modal-open .fullscreen-menu {
+  pointer-events: none;
+}
+
+/* === Content Layout === */
 
 .video-modal-content {
   display: flex;
   width: 100%;
-  height: 100%;
-  background: var(--fonts); 
-  overflow: hidden;
+  max-width: 1200px;
+  height: auto;
+  background: var(--fonts);
+  z-index: 12001;
+  gap: 2rem;
+  padding: 2rem;
+  flex-wrap: wrap; 
 }
 
 .video-modal-left {
-  flex: 2;
-  background: var(--fonts);
+  flex: 2 1 600px; 
   position: relative;
-  margin: 100px 50px;
-}
-
-.video-modal-left iframe {
-  width: 100%;
-  height: 100%;
 }
 
 .video-modal-right {
-  flex: 1;
-  padding: 100px 50px 0 0;
+  flex: 1 1 300px;
   position: relative;
   color: var(--background);
 }
 
 .modal-close {
   position: absolute;
-  top: 20px;
-  right: 25px;
+  top: 1rem;
+  right: 1rem;
   background: transparent;
   border: none;
   font-size: 28px;
   color: var(--background);
   cursor: pointer;
   transition: all 0.4s ease;
+  z-index: 12002;
 }
-.modal-close:hover{
-  color: var(--grey);
+
+.modal-close:hover {
+  color: var(--accent);
 }
+
 .modal-avatar {
   width: 70px;
   height: 70px;
@@ -3028,53 +3050,120 @@ background-color: transparent;
   font-family: 'GT Super';
   font-weight: 100;
 }
-/* === Responsive Modal === */
 
+/* === Video / Thumbnail Overlay === */
+
+.modal-video-overlay,
+.modal-video-frame {
+  width: 100%;
+  aspect-ratio: 16 / 9; /* keeps correct video proportion */
+  position: relative;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.modal-video-overlay {
+  background: var(--fonts);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.modal-video-overlay img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* fills nicely */
+  opacity: 0.85;
+}
+
+.modal-play-button {
+  position: absolute;
+  width: 80px;
+  height: 80px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 11;
+  transition: transform 0.2s ease;
+}
+
+.modal-play-button:hover {
+  transform: scale(1.1);
+}
+
+.modal-play-button svg {
+  width: 36px;
+  height: 36px;
+  fill: #000;
+}
+
+.modal-video-frame iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* === Responsive Modal === */
 @media (max-width: 1024px) {
-  .video-modal-content {
-    flex-direction: column;
+.video-modal-content {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 1.5rem 1rem 2rem;
+  gap: 2rem;
+}
+
+.video-modal-right {
+  text-align: center;
+  margin: 0;
+  padding: 0;
+}
+.video-modal-right .description {
+  margin-top: 0.75rem;
+  line-height: 1.5;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+  .video-modal-left {
     width: 100%;
-    height: 100%;
+    max-width: 100%;
+  }
+
+.video-modal-left iframe,
+.video-modal-left video {
+  width: 100%;
+  max-width: 700px;
+  aspect-ratio: 16 / 9;
+  height: auto;
+  border: none;
+  display: block;
+  margin: 0 auto;
+}
+
+}
+
+
+@media (max-width: 768px) {
+  .video-modal-content {
+    padding: 1rem;
   }
 
   .video-modal-left {
-    margin: 20px 20px 50px 20px;
-    height: 50vh;
     order: 1;
   }
 
   .video-modal-right {
-    padding: 50px 20px 0 20px;
-    order: 0;
-  }
-
-  .modal-info h2 {
-    font-size: 22px;
-  }
-  .modal-info h4 {
-    font-size: 16px;
-  }
-  .modal-info p {
-    font-size: 14px;
-  }
-}
-
-@media (max-width: 768px) {
-
-  .video-modal-left {
-    margin: 0 0 100px 0;    
-    width: 90%;
-    height: 40vh;   
-    flex: 1; 
-    align-self: center;       
-  }
-
-  .video-modal-right {
-    margin-top: 50px;
-    padding: 20px;
-    width: 100%;
-    max-height: 50vh;
-    overflow-y: auto;    
+    order: 2;
+    padding: 1rem 0;
   }
 
   .modal-close {
