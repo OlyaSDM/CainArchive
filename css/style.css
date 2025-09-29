@@ -1603,8 +1603,8 @@ margin-top: 200px;
 /* Mobile */
 @media screen and (max-width: 480px) {
   .quote-two {
-    margin-top: 140px;
-    padding: 60px 20px;
+    margin-top: 20px;
+    padding: 40px 20px;
   }
 }
 .letter-inner {
