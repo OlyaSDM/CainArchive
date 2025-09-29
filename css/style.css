@@ -1052,7 +1052,7 @@ body{
 
 .rec2-img {
   position: absolute;
-bottom: -5%;
+bottom: -3%;
   left: 50%;
   transform: translateX(-50%) rotate(0deg);
   z-index: 1;
