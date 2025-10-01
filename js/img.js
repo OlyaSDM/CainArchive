@@ -1,13 +1,13 @@
 gsap.registerPlugin(ScrollTrigger);
 
 gsap.to(".rec-img", {
-  y: 250,
+  y: 220,
   ease: "power2.out", 
   duration: 2,         
   scrollTrigger: {
     trigger: ".cain-section",
     start: "top top",
-    endTrigger: ".highlights-section",
+    endTrigger: ".mosaic-section",
     end: "top top",
     scrub: true 
   }
@@ -18,8 +18,10 @@ gsap.to(".rec1-img", {
   ease: "power2.out", 
   duration: 2,         
   scrollTrigger: {
-    trigger: ".highlights-section",
-    start: "top bottom",
+    trigger: ".cain-section",
+    start: "top top",
+        endTrigger: ".mosaic-section",
+
     end: "top top",
     scrub: true 
   }
@@ -27,15 +29,16 @@ gsap.to(".rec1-img", {
 
 gsap.to(".rec2-img", {
   rotation: 180,
-  ease: "power2.out",  
-  duration: 2,        
+  ease: "power2.out",
+  duration: 2,
   scrollTrigger: {
     trigger: ".quote-two",
-    start: "top bottom",  
-    end: "top center",    
+    start: "top 80%", 
+    end: "top 50%",   
     scrub: true
   }
 });
+
 
 gsap.to(".rec3-img", {
   rotation: 90,
