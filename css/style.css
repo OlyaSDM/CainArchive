@@ -138,7 +138,7 @@ body{
   gap: 2px;
   text-decoration: none;
 }
-.round-logo{ height: 80px; }
+.round-logo{ height: 55px; }
 .words-logo{ 
   height: 60px;
   margin-left: -10px;
@@ -947,7 +947,7 @@ margin-left: -4%;
   font-weight: 300;
   color: var(--fonts);
   z-index: 1; 
-  letter-spacing: -0.05em; /* ещё плотнее буквы */
+  letter-spacing: -0.05em; 
 }
 
 .cain-title span {
