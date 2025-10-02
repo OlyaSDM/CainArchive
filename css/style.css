@@ -809,6 +809,14 @@ body{
   }
 }
 
+@media (max-width: 876px) {
+    .hero-content h1 {
+
+      line-height: 70px;
+
+  }
+}
+
 @media (max-width: 600px) {
     .hero {
     justify-content: center;
@@ -817,6 +825,7 @@ body{
   }
   .hero-content h1 {
     font-size: 48px;
+      line-height: 65px;
   }
   .hero-content h4{
     font-size: 14px;
