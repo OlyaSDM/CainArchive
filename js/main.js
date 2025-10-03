@@ -70,7 +70,7 @@ gsap.timeline({
 
 // ANIMATION FOR SCROLL DOWN BUTTON ON HERO
 document.getElementById('scrollDownBtn').addEventListener('click', function () {
-  const target = document.getElementById('highlights');
+  const target = document.getElementById('cain-section');
   const offsetTop = target.getBoundingClientRect().top + window.scrollY;
 
   window.scrollTo({
