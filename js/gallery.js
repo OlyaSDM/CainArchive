@@ -38,7 +38,7 @@ function initMosaicAnimation() {
 
   if (!leftCol || !middleCol || !rightCol) return;
 
-  const DURATION = 30; 
+  const DURATION = 60; 
   const cols = [
     { el: leftCol, dirFactor:  1, offset: 0, height: 0, shift: 0, speed: 0 },
     { el: middleCol, dirFactor:-1, offset: 0, height: 0, shift: 0, speed: 0 },
