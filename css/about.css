@@ -47,9 +47,60 @@ body{
   font-display: swap;
 }
 
+:root {
+  --background: #eee0d7;
+  --fonts: #04384b;
+  --accent-bright: #03607e;
+  --accent: #48cae4;
+  --white: #ffffff;
+  --sandy: #e7c9af;
+  --red: #8f0707;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: var(--background);
+  height: 100%;
+  overflow-x: hidden;
+  font-family: "Libre Franklin", sans-serif;
+  transition: background-color 0.4s ease;
+}
+
+#smooth-wrapper {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+}
+
+#smooth-content {
+  position: relative;
+  width: 100%;
+}
+
+@font-face {
+  font-family: 'GT Super';
+  src: url('/fonts/GT-Super/GT-Super-Display-Light-Trial.otf') format('woff2');
+  font-weight: 300; 
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'GT Super';
+  src: url('/fonts/GT-Super/GT-Super-Display-Light-Italic-Trial.otf') format('woff2');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+
 .sections {
   position: relative;
-  height: calc(100vh * 4); 
+  height: calc(100vh * 4);
 }
 
 .panel {
@@ -73,26 +124,51 @@ body{
 
 .content {
   display: grid;
-  grid-template-columns: 1fr 1fr; 
-  grid-template-rows: auto 1fr;   
-  gap: 20px 180px; 
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: auto 1fr;
+  gap: 20px 180px;
   height: 100%;
   padding: 140px;
 }
 
 .title {
-    grid-column: 1;
+  grid-column: 1;
   grid-row: 1;
   display: flex;
-    text-align: left;
+  text-align: left;
   align-self: start;
-  font-size: 100px;
+  font-size: clamp(40px, 8vw, 100px);
   font-weight: 300; 
-    font-family: 'GT Super';
-text-transform: uppercase;
+  font-family: 'GT Super';
+  text-transform: uppercase;
   color: var(--fonts);
   overflow: hidden;
   margin-bottom: 100px;
+}
+
+.title .letter {
+  display: inline-block;
+  transform: translateY(100%);
+  opacity: 0;
+}
+
+.content .text {
+  grid-column: 2;
+  grid-row: 2;
+  font-size: clamp(16px, 1.2vw, 18px);
+  color: var(--fonts);
+  max-width: 750px;
+  font-weight: 200;
+  align-self: center;  
+  line-height: 26px;
+}
+
+.text p {
+  padding-top: 18px;
+}
+
+.text_white {
+  color: var(--background);
 }
 
 .content .image {
@@ -103,34 +179,77 @@ text-transform: uppercase;
 
 .content .image img {
   width: 100%;
-max-height: 450px;
+  max-height: 450px;
   object-fit: cover;
   display: block;
+  border-radius: 10px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.15);
 }
 
-.content .text {
-  grid-column: 2;
-  grid-row: 2;
-  font-size: 18px;
-  color: var(--fonts);
-  max-width: 750px;
-  font-weight: 200;
-  align-self: center;  
-      font-family: "Libre Franklin", sans-serif;
-
+.rec_all {
+  position: relative;
 }
 
-.text p{
-  padding-top: 18px;
+.rec_about,
+.rec_about2,
+.rec_about3 {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  max-width: clamp(200px, 15vw, 400px);
+  height: auto;
+  z-index: 2;
 }
 
-.title .letter {
-  display: inline-block;
-  transform: translateY(100%);
-  opacity: 0;
+@media (max-width: 1200px) {
+  .content {
+    grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    gap: 40px 0;
+    padding: 80px 20px;
+  }
+
+  .content .text {
+    grid-column: 1;
+    grid-row: 3;
+    max-width: 100%;
+  }
+
+  .content .image {
+    grid-column: 1;
+    grid-row: 2;
+  }
+
+  .title {
+    font-size: clamp(32px, 8vw, 70px);
+    margin-bottom: 30px;
+  }
+
+  .rec_about,
+  .rec_about2,
+  .rec_about3 {
+    top: 10px;
+    right: 10px;
+    max-width: 200px;
+  }
 }
 
-.text_white{
-  color: var(--background);
-}
+@media (max-width: 768px) {
+  .title {
+    font-size: clamp(28px, 10vw, 50px);
+  }
 
+  .content {
+    padding: 60px 15px;
+  }
+
+  .content .image img {
+    max-height: 300px;
+  }
+
+  .rec_about,
+  .rec_about2,
+  .rec_about3 {
+    max-width: 150px;
+  }
+}

@@ -1,76 +1,3 @@
-// gsap.registerPlugin(ScrollTrigger);
-
-// const panels = gsap.utils.toArray(".panel");
-
-// gsap.set(panels[0], { y: "0%", width: "100%" });
-
-// panels.forEach((panel, i) => {
-//   if (i === 0) return;
-
-//   gsap.fromTo(panel,
-//     { y: "100%", width: "80%" },
-//     {
-//       y: "0%",
-//       width: "100%",
-//       ease: "power2.out",
-//       scrollTrigger: {
-//         trigger: panel,
-//         start: "top bottom", 
-//         end: "top top",      
-//         scrub: 0.3,          
-//       }
-//     }
-//   );
-// });
-
-// gsap.utils.toArray(".panel").forEach(panel => {
-//   const letters = panel.querySelectorAll(".title .letter");
-//   const text = panel.querySelector(".text");
-//   const image = panel.querySelector(".image");
-
-//   // --- Заголовок ---
-//   gsap.set(letters, { y: "100%", opacity: 0 });
-
-//   // --- Текст и фото ---
-//   gsap.set([text, image], { y: 50, opacity: 0 }); // стартовое состояние снизу
-
-//   // --- Анимация ---
-//   const tl = gsap.timeline({
-//     scrollTrigger: {
-//       trigger: panel,
-//       start: "top 80%",
-//       end: "top 40%",
-//       toggleActions: "play none none none"
-//     }
-//   });
-
-//   // Сначала буквы заголовка
-//   tl.to(letters, {
-//     y: "0%",
-//     opacity: 1,
-//     duration: 1.2,
-//     ease: "power3.out",
-//     stagger: 0.1
-//   });
-
-//   // Потом текст
-//   tl.to(text, {
-//     y: 0,
-//     opacity: 1,
-//     duration: 1,
-//     ease: "power3.out"
-//   }, "-=0.5"); // запускаем текст с перекрытием заголовка
-
-//   // Потом фото
-//   tl.to(image, {
-//     y: 0,
-//     opacity: 1,
-//     duration: 1,
-//     ease: "power3.out"
-//   }, "-=0.7"); // фото начинается чуть раньше, чтобы все плавно
-// });
-
-
 gsap.registerPlugin(ScrollTrigger);
 
 const panels = gsap.utils.toArray(".panel");
@@ -108,19 +35,20 @@ panels.forEach((panel, i) => {
     let scrubValue = i === 0 ? false : 1.5; 
 
 
-  if (i === 1) { 
-    letterDuration = 2.5;
-    textDuration = 2;
-    imageDuration = 2;
-    endTriggerOffset = "top -20%"; 
-    
-  }
-  if (i === 2) { 
-    letterDuration = 2.5;
-    textDuration = 2;
-    imageDuration = 2;
-    endTriggerOffset = "top 40%";
-  }
+if (i === 1) { 
+  letterDuration = 2.5;
+  textDuration = 2.5;
+  imageDuration = 2.5;
+  endTriggerOffset = "top top"; 
+}
+
+if (i === 2) { 
+  letterDuration = 2.5;
+  textDuration = 2;
+  imageDuration = 2;
+  endTriggerOffset = "top 20%"; 
+}
+
 
   const tl = gsap.timeline({
     scrollTrigger: {
@@ -136,3 +64,35 @@ panels.forEach((panel, i) => {
     .to(text, { y: 0, opacity: 1, duration: textDuration, ease: "power3.out" }, "-=0.5")
     .to(image, { y: 0, opacity: 1, duration: imageDuration, ease: "power3.out" }, "-=0.7");
 });  
+
+
+
+
+gsap.from(".rec_about2", {
+  opacity: 0,
+  y: 50,           
+  duration: 1,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: ".history", 
+    start: "top 10%",  
+    end: "top 50%",       
+    scrub: true,          
+    markers: false        
+  }
+});
+
+gsap.from(".rec_about3", {
+  opacity: 0,
+  y: 50,             
+  duration: 1,
+  ease: "power3.out",
+  scrollTrigger: {
+    trigger: ".mission",  
+    start: "top 15%",     
+    end: "bottom top",    
+    scrub: true,           
+    markers: false        
+  }
+});
+
