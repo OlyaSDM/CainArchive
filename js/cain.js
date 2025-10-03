@@ -149,72 +149,52 @@ document.addEventListener("DOMContentLoaded", () => {
   let scrollIntroFinished = false;
 
   // --- Setup Initial State ---
-  gsap.set(letters, { y: "100%", opacity: 0 });
-  gsap.set([titleDiv, textDiv], { y: 10, opacity: 0 });
+  letters.forEach(l => {
+    l.style.transform = "translateY(100%)";
+    l.style.opacity = "0";
+  });
+  titleDiv.style.opacity = "0";
+  textDiv.style.opacity = "0";
 
-  const defaultDesc = letters[1].dataset.desc || "";
+  const defaultDesc = letters[1]?.dataset.desc || "";
   const splitIndex = defaultDesc.indexOf(":") + 1;
   const defaultTitle = defaultDesc.slice(0, splitIndex).trim();
   const defaultText = defaultDesc.slice(splitIndex).trim();
 
-  // --- Scroll-in Animations ---
+  // --- Scroll-in Animation (GSAP) ---
   const tlLetters = gsap.timeline({ paused: true });
-  tlLetters.to(letters, {
-    y: "0%",
-    opacity: 1,
-    duration: 1.5,
-    ease: "power3.out",
-    stagger: 0.15
-  });
+  tlLetters.to(letters, { y: "0%", opacity: 1, duration: 1.2, ease: "power3.out", stagger: 0.1 });
 
   const tlDesc = gsap.timeline({ paused: true });
-  tlDesc.to(titleDiv, {
-    textContent: defaultTitle,
-    y: 0,
-    opacity: 1,
-    duration: 0.6,
-    ease: "power3.out"
-  });
-  tlDesc.to(textDiv, {
-    textContent: defaultText,
-    y: 0,
-    opacity: 1,
-    duration: 0.6,
-    ease: "power3.out"
-  }, "-=0.4");
+  tlDesc.to(titleDiv, { textContent: defaultTitle, y: 0, opacity: 1, duration: 0.5 })
+        .to(textDiv, { textContent: defaultText, y: 0, opacity: 1, duration: 0.5 }, "-=0.3");
 
-  // --- Scroll Trigger Logic ---
-  window.addEventListener("scroll", () => {
+  function updateScrollProgress() {
     const rect = cainSection.getBoundingClientRect();
     const windowHeight = window.innerHeight;
     let progress = 1 - rect.top / (windowHeight * 0.6);
     progress = Math.min(Math.max(progress, 0), 1);
 
-    gsap.to(tlLetters, { progress, duration: 1.5, ease: "power3.out" });
-    gsap.to(tlDesc, { progress, duration: 0.6, ease: "power3.out" });
+    gsap.to(tlLetters, { progress, duration: 0.2 });
+    gsap.to(tlDesc, { progress, duration: 0.1 });
 
-    // 🚨 Only allow hover interactions AFTER scroll reveal
     if (progress >= 0.99 && !scrollIntroFinished) {
       scrollIntroFinished = true;
-
-      // Activate A after scroll completes
       letters.forEach(l => l.classList.remove("active"));
-      letters[1].classList.add("active");
+      letters[1]?.classList.add("active");
     }
-  });
+  }
+
+  updateScrollProgress();
+  window.addEventListener("scroll", updateScrollProgress);
 
   // --- Tooltip Tracking ---
-  let mouseX = 0, mouseY = 0;
-  let tooltipX = 0, tooltipY = 0;
-  const speed = 0.15;
-  const offsetX = 25;
-  const offsetY = 20;
-
-  document.addEventListener("mousemove", (e) => {
+  let mouseX = 0, mouseY = 0, tooltipX = 0, tooltipY = 0;
+  const speed = 0.15, offsetX = 25, offsetY = 20;
+  document.addEventListener("mousemove", e => {
     mouseX = e.clientX + offsetX;
     mouseY = e.clientY + offsetY;
   });
-
   function animateTooltip() {
     tooltipX += (mouseX - tooltipX) * speed;
     tooltipY += (mouseY - tooltipY) * speed;
@@ -224,89 +204,64 @@ document.addEventListener("DOMContentLoaded", () => {
   }
   animateTooltip();
 
-  // --- Tooltip Show/Hide ---
   let showTimeout, hideTimeout;
   hoverZone.addEventListener("mouseenter", () => {
     clearTimeout(hideTimeout);
-    showTimeout = setTimeout(() => {
-      tooltip.classList.add("visible");
-    }, 100);
+    showTimeout = setTimeout(() => tooltip.classList.add("visible"), 100);
   });
-
   hoverZone.addEventListener("mouseleave", () => {
     clearTimeout(showTimeout);
-    hideTimeout = setTimeout(() => {
-      tooltip.classList.remove("visible");
-    }, 60);
+    hideTimeout = setTimeout(() => tooltip.classList.remove("visible"), 60);
   });
 
-  // --- Letter Hover Interactions ---
+  // --- Letter Hover / Click (Instant, без анимаций) ---
   letters.forEach(letter => {
     const wrapper = letter.parentElement;
+
+    const updateDesc = (fullText) => {
+      const splitIndex = fullText.indexOf(":") + 1;
+      const title = fullText.slice(0, splitIndex).trim();
+      const rest = fullText.slice(splitIndex).trim();
+
+      // мгновенно меняем текст и стиль
+      titleDiv.textContent = title;
+      textDiv.textContent = rest;
+      titleDiv.style.opacity = "1";
+      textDiv.style.opacity = "1";
+      titleDiv.style.transform = "translateY(0)";
+      textDiv.style.transform = "translateY(0)";
+    };
 
     if (isDesktop) {
       wrapper.addEventListener("mouseenter", () => {
         if (!scrollIntroFinished) return;
-
         letters.forEach(l => l.classList.remove("active"));
         letter.classList.add("active");
-
-        const fullText = letter.dataset.desc || "";
-        const splitIndex = fullText.indexOf(":") + 1;
-        const title = fullText.slice(0, splitIndex).trim();
-        const rest = fullText.slice(splitIndex).trim();
-
-        gsap.killTweensOf([titleDiv, textDiv]);
-        const tlText = gsap.timeline();
-        tlText.to([titleDiv, textDiv], { y: 10, opacity: 0, duration: 0.3 });
-        tlText.to(titleDiv, {
-          textContent: title,
-          y: 0,
-          opacity: 1,
-          duration: 0.4,
-          ease: "power2.out"
-        });
-        tlText.to(textDiv, {
-          textContent: rest,
-          y: 0,
-          opacity: 1,
-          duration: 0.4,
-          ease: "power2.out"
-        }, "-=0.3");
+        updateDesc(letter.dataset.desc || "");
       });
-
-      // 🔥 Do NOT hide on mouseleave anymore — active state handles that
-      wrapper.addEventListener("mouseleave", () => {});
     } else {
-      // Mobile
+      // Mobile click
       letter.style.cursor = "pointer";
       wrapper.addEventListener("click", () => {
+        letters.forEach(l => l.classList.remove("active"));
+        letter.classList.add("active");
         const fullText = letter.dataset.desc || "";
         const splitIndex = fullText.indexOf(":") + 1;
-        const title = fullText.slice(0, splitIndex).trim();
-        const rest = fullText.slice(splitIndex).trim();
-
-        titleDiv.textContent = title;
-        textDiv.textContent = rest;
+        titleDiv.textContent = fullText.slice(0, splitIndex).trim();
+        textDiv.textContent = fullText.slice(splitIndex).trim();
         infoBox.style.opacity = "1";
-
-        tooltip.textContent = "click the letter";
       });
     }
   });
 
-  // --- Mobile Init Fallback ---
+  // --- Mobile fallback ---
   if (!isDesktop && letters[1]) {
     titleDiv.textContent = defaultTitle;
     textDiv.textContent = defaultText;
     infoBox.style.opacity = "1";
-    tooltip.textContent = "click the letter";
+    letters[1]?.classList.add("active");
   }
 });
-
-
-
-
 
 
 
