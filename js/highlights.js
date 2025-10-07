@@ -7,7 +7,6 @@ function updateNavbarBackground() {
 
   const heroBlock = document.querySelector("#hero");
   const otherBlocks = [
-    document.querySelector(".gallery"),
     document.querySelector("#collections")
   ];
 
@@ -45,7 +44,6 @@ function updateNavbarBackground() {
   }
 }
 
-// События скролла и ресайза
 window.addEventListener("scroll", updateNavbarBackground);
 window.addEventListener("resize", updateNavbarBackground);
 updateNavbarBackground();

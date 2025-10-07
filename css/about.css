@@ -1,52 +1,3 @@
-:root{
-  --background: #eee0d7;
-  --fonts: #04384b;
-  --accent-bright: #03607e;
-  --accent: #48cae4;
-  --white: white;
-  --sandy: #e7c9af;
-  --red: #8f0707;
-}
-body{
-  margin: 0;
-  padding: 0;
-  background-color: var(--background);
-  height: 100%;
-  overflow-x:hidden;
-  background: var(--background);
-  transition: background-color 0.4s ease;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-    #smooth-wrapper {
-      position: relative;
-      overflow: hidden;
-      width: 100%;
-    }
-    #smooth-content {
-      position: relative;
-      width: 100%;
-    }
-@font-face {
-  font-family: 'GT Super';
-  src: url('/fonts/GT-Super/GT-Super-Display-Light-Trial.otf') format('woff2');
-  font-weight: 300; 
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'GT Super';
-  src: url('/fonts/GT-Super/GT-Super-Display-Light-Italic-Trial.otf') format('woff2');
-  font-weight: 300;
-  font-style: italic;
-  font-display: swap;
-}
-
 :root {
   --background: #eee0d7;
   --fonts: #04384b;
@@ -120,30 +71,34 @@ body {
 
 .about   { background: var(--background); z-index: 1; }
 .history { background: var(--accent-bright); z-index: 2; }
-.mission  { background: var(--background); z-index: 3; }
+.mission { background: var(--background); z-index: 3; }
 
 .content {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: auto 1fr;
-  gap: 20px 180px;
+  display: flex;
+  flex-direction: column;
   height: 100%;
-  padding: 140px;
+  width: 100%;
+}
+
+.content_all {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 120px;
 }
 
 .title {
-  grid-column: 1;
-  grid-row: 1;
   display: flex;
   text-align: left;
   align-self: start;
   font-size: clamp(40px, 8vw, 100px);
-  font-weight: 300; 
+  font-weight: 300;
   font-family: 'GT Super';
   text-transform: uppercase;
   color: var(--fonts);
   overflow: hidden;
-  margin-bottom: 100px;
+  margin-bottom: 80px;
+  max-width: 100%; 
 }
 
 .title .letter {
@@ -153,11 +108,9 @@ body {
 }
 
 .content .text {
-  grid-column: 2;
-  grid-row: 2;
   font-size: clamp(16px, 1.2vw, 18px);
   color: var(--fonts);
-  max-width: 750px;
+  max-width: 700px;
   font-weight: 200;
   align-self: center;  
   line-height: 26px;
@@ -172,9 +125,8 @@ body {
 }
 
 .content .image {
-  grid-column: 1;
-  grid-row: 2;
   align-self: center;  
+  width: 100%;
 }
 
 .content .image img {
@@ -199,55 +151,137 @@ body {
   z-index: 2;
 }
 
-@media (max-width: 1200px) {
-  .content {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto auto auto;
-    gap: 40px 0;
-    padding: 80px 20px;
-  }
-
+@media (max-width: 1724px) {
   .content .text {
-    grid-column: 1;
-    grid-row: 3;
-    max-width: 100%;
+  max-width: 650px;
+}
+}
+@media (max-width: 1624px) {
+  .content .text {
+  max-width: 550px;
+}
+
+.content_all {
+  gap: 80px;
+}
+}
+
+@media (max-width: 1324px) {
+  .content .text {
+  max-width: 450px;
+}
+}
+
+@media (max-width: 1224px) {
+  .content {
+    padding: 80px 40px;
+    height: 100%;
   }
 
-  .content .image {
-    grid-column: 1;
-    grid-row: 2;
+  .content_all {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 60px;
+    height: 80%;
   }
-
+  .content .text {
+max-width: 850px;
+margin-top: 5%; 
+}
   .title {
-    font-size: clamp(32px, 8vw, 70px);
-    margin-bottom: 30px;
+    font-size: clamp(32px, 6vw, 80px);
+    margin-bottom: 10px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .content .image img {
+    width: 100%;
+    max-height: 300px;
+    margin-bottom: -10%;
   }
 
   .rec_about,
   .rec_about2,
   .rec_about3 {
-    top: 10px;
-    right: 10px;
     max-width: 200px;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 968px) {
+    .rec_about,
+  .rec_about2,
+  .rec_about3 {
+    display: none; 
   }
 }
 
 @media (max-width: 768px) {
-  .title {
-    font-size: clamp(28px, 10vw, 50px);
+  .panel {
+    width: 100%;
+    font-size: 2rem;
   }
 
   .content {
-    padding: 60px 15px;
+    padding: 40px 20px;
+  }
+
+  .content_all {
+    flex-direction: column;
+    gap: 30px;
+    text-align: center;
+  }
+
+  .title {
+    font-size: clamp(28px, 8vw, 60px);
+    align-self: center;
+    text-align: center;
+    margin-bottom: 30px;
+  }
+
+  .content .text {
+    font-size: 16px;
+    line-height: 24px;
+    max-width: 100%;
+    align-self: center;
+    text-align: start;
   }
 
   .content .image img {
-    max-height: 300px;
-  }
-
-  .rec_about,
-  .rec_about2,
-  .rec_about3 {
-    max-width: 150px;
+    max-height: 250px;
   }
 }
+
+@media (max-width: 480px) {
+  .title {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .content {
+    padding: 30px 15px;
+  }
+
+  .content_all {
+    gap: 20px;
+  }
+
+  .content .text {
+    font-size: 14px;
+    line-height: 22px;
+  }
+
+  .content .image img {
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 4px) {
+  .title {
+    margin-top: 40px;
+  }
+}
+

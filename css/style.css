@@ -15,7 +15,19 @@ body{
   overflow-x:hidden;
   background: var(--background);
   transition: background-color 0.4s ease;
+             user-select: none;
+      -webkit-user-drag: none; 
 }
+
+/*перенести в главный код*/
+    body, canvas {
+      -webkit-user-select: none;
+      -webkit-touch-callout: none;
+    }
+    canvas {
+      display: none;
+    }
+    /**/
 
 * {
   margin: 0;
@@ -1356,7 +1368,6 @@ top: -7%;
   bottom: 0;
 }
 
-
 .mosaic {
   display: grid;
   grid-template-columns: repeat(3, 1fr); 
@@ -1408,14 +1419,33 @@ top: -7%;
 
 @media (max-width: 900px) {
   .mosaic {
-    grid-template-columns: 1fr; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
     gap: 20px;
     margin: 0;
   }
 
+  .column {
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    width: 100%;
+  }
+
+  .image-wrapper {
+    width: 90%;             
+    max-width: 400px;      
+    margin: 10px 0;          
+  }
+
   .column img {
     width: 100%;
-    margin-top: 20px;
+    height: auto;
+    object-fit: cover;
+    object-position: center; 
+    display: block;
   }
 
   .mosaic-section {
@@ -1436,7 +1466,27 @@ top: -7%;
   }
 }
 
+/*перенести в главный код */
+.image-wrapper {
+  position: relative;
+  display: inline-block;
+}
 
+.image-wrapper img {
+  display: block;
+  max-width: 100%;
+}
+
+.watermark {
+  position: absolute;
+  bottom: 30px;       
+  left: 20px;         
+  font-size: 30px;
+  color: rgba(229, 240, 241, 0.5); 
+  pointer-events: none;
+  user-select: none;    
+}
+/* */
 
 /* COLLECTION SECTION */
 #collections{
