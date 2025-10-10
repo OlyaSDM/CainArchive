@@ -638,7 +638,7 @@ body{
   z-index: 1;
 }
 
-.hero-content h1 {
+.hero-content .h1 {
   font-size: 78px;
   margin-bottom: 1rem;
   font-weight: 300;
@@ -647,11 +647,16 @@ body{
       color: var(--white);
 
 }
-.hero-content h1 span{
+
+.span {
     font-style: italic;
+      font-size: 78px;
+  margin-bottom: 1rem;
+  font-weight: 300;
+  line-height: 90px;
+  font-family: 'GT Super';
       color: var(--accent);
 }
-
 .hero-content p {
   font-family: "Libre Franklin", sans-serif;
   font-weight: 100;
@@ -659,7 +664,7 @@ body{
   margin-bottom: 2rem;
   line-height: 22px;
 }
-.hero-content h1,
+.hero-content .h1,
 .hero-content p,
 .hero-cta,
 .hero-btn-text {
@@ -809,7 +814,7 @@ body{
   .hero-content {
     max-width: 90%;
   }
-  .hero-content h1 {
+  .hero-content .h1 {
     font-size: 60px;
   }
   .hero-content p {
@@ -822,7 +827,7 @@ body{
 }
 
 @media (max-width: 876px) {
-    .hero-content h1 {
+    .hero-content .h1 {
 
       line-height: 70px;
 
@@ -835,7 +840,7 @@ body{
     padding: 0 4vw;
     text-align: center;
   }
-  .hero-content h1 {
+  .hero-content .h1 {
     font-size: 48px;
       line-height: 65px;
   }

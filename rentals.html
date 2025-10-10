@@ -4,7 +4,7 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Cain Archive</title>
-      <link rel="stylesheet" href="css/about.css" />
+      <link rel="stylesheet" href="css/rentals.css" />
       <link rel="stylesheet" href="css/style.css" />
       <link type="image/png" sizes="16x16" rel="icon" href="#" />
       <!-- FONTS -->
@@ -24,10 +24,10 @@
          <div class="nav-right">
             <!-- Inline links (desktop) -->
             <nav class="nav-links" aria-label="Primary">
+               <a href="/aboutus.html"  data-key="nav.mission">Our Mission</a>
                <a href="/#collections" data-key="nav.collections">Collections</a>
                <a href="#" data-key="nav.voices">Voices of Advocacy</a>
-               <a href="/rentals.html" data-key="nav.rentals">Exhibitions & Rentals</a>
-               <a href="#" data-key="nav.press">Press</a>
+               <a href="#"  data-key="nav.press">Press</a>
             </nav>
             <!-- Burger (tablet/phone) -->
             <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
@@ -58,10 +58,10 @@
          <div class="fullscreen-menu-content">
             <!-- LEFT: Navigation Links -->
             <nav>
+               <a href="/aboutus.html" style="--i:1" data-index="01"  data-key="nav.mission"><span>Our Mission</span></a>
                <a href="/#collections" style="--i:2" data-index="02" data-key="nav.collections"><span>Collections</span></a>
                <a href="#" style="--i:3" data-index="03" data-key="nav.voices"><span>Voices of Advocacy</span></a>
-               <a href="/rentals.html" style="--i:4" data-index="04" data-key="nav.rentals"><span>Exhibitions & Rentals</span></a>
-               <a href="#" style="--i:5" data-index="05" data-key="nav.press"><span>Press</span></a>
+               <a href="#" style="--i:5" data-index="05"  data-key="nav.press"><span>Press</span></a>
             </nav>
             <!-- DIVIDER -->
             <div class="divider"></div>
@@ -90,92 +90,75 @@
             </div>
          </div>
       </div>
-      <div class="sections">
-         <section class="panel about">
-            <img class="rec_about" src="img/Rec_about.png" alt="rectangle">
-            <div class="rec_all">
-               <div class="content">
-                  <h2 class="title">
-                     <span class="letter">A</span>
-                     <span class="letter">b</span>
-                     <span class="letter">o</span>
-                     <span class="letter">u</span>
-                     <span class="letter">t</span>
-                     &nbsp;
-                     <span class="letter">u</span>
-                     <span class="letter">s</span>
-                  </h2>
-                  <div class="content_all">
-                     <div class="image">
-                        <img src="/img/gallery/4.JPEG" alt="About image">
-                     </div>
-                     <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                     </div>
-                  </div>
+      <section class="section-hero">
+         <div class="hero-left">
+            <h1 class="hero-title left">
+               <span class="hero-letter">R</span>
+               <span class="hero-letter">e</span>
+               <span class="hero-letter">n</span>
+               <span class="hero-letter">t</span>
+               <span class="hero-letter">a</span>
+               <span class="hero-letter">l</span>
+               <span class="hero-letter">s</span>
+            </h1>
+         </div>
+         <div class="hero-center">
+            <span class="ampersand ">&amp;</span>
+         </div>
+         <div class="hero-right">
+            <h1 class="hero-title right">
+               <span class="hero-letter">E</span>
+               <span class="hero-letter">x</span>
+               <span class="hero-letter">h</span>
+               <span class="hero-letter">i</span>
+               <span class="hero-letter">b</span>
+               <span class="hero-letter">i</span>
+               <span class="hero-letter">t</span>
+               <span class="hero-letter">i</span>
+               <span class="hero-letter">o</span>
+               <span class="hero-letter">n</span>
+               <span class="hero-letter">s</span>
+            </h1>
+         </div>
+         <video class="hero-video" src="video.mp4" muted autoplay loop></video>
+         <div class="scroll-down">
+            <span></span>
+         </div>
+      </section>
+      <section class="terms">
+         <div class="container">
+            <h2>Rental & Exhibition Terms</h2>
+            <div class="terms-wrapper">
+               <div class="term">
+                  <h3>Rental</h3>
+                  <ul>
+                     <li>Rental period: from 1 to 30 days.</li>
+                     <li>Prepayment: 50% of the total cost.</li>
+                     <li>Return the premises in their original condition.</li>
+                     <li>Support and technical assistance included.</li>
+                     <li>Rental period: from 1 to 30 days.</li>
+                     <li>Prepayment: 50% of the total cost.</li>
+                     <li>Return the premises in their original condition.</li>
+                     <li>Support and technical assistance included.</li>
+                  </ul>
+               </div>
+               <div class="term">
+                  <h3>Exhibitions</h3>
+                  <ul>
+                     <li>Exhibition applications are accepted 2 months in advance.</li>
+                     <li>Installation and dismantling of exhibits are the organizer's responsibility.</li>
+                     <li>Technical support is provided by agreement.</li>
+                     <li>Use of premises only at the agreed time.</li>
+                     <li>Exhibition applications are accepted 2 months in advance.</li>
+                     <li>Installation and dismantling of exhibits are the organizer's responsibility.</li>
+                     <li>Technical support is provided by agreement.</li>
+                     <li>Use of premises only at the agreed time.</li>
+                  </ul>
                </div>
             </div>
-         </section>
-         <section class="panel history">
-            <div class="rec_all">
-               <div class="content ">
-                  <h2 class="title text_white">
-                     <span class="letter">O</span>
-                     <span class="letter">u</span>
-                     <span class="letter">r</span>
-                     &nbsp;
-                     <span class="letter">h</span>
-                     <span class="letter">i</span>
-                     <span class="letter">s</span>
-                     <span class="letter">t</span>
-                     <span class="letter">o</span>
-                     <span class="letter">r</span>
-                     <span class="letter">y</span>
-                  </h2>
-                  <div class="content_all">
-                     <div class="image">
-                        <img src="/img/gallery/4.JPEG" alt="History image">
-                     </div>
-                     <div class="text ">
-                        <p class="text_white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <p class="text_white">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-            <img class="rec_about2" src="img/Rec_about2.png" alt="rectangle">
-         </section>
-         <section class="panel mission">
-            <img class="rec_about3" src="img/Rec_about3.png" alt="rectangle">
-            <div class="rec_all">
-               <div class="content">
-                  <h2 class="title">
-                     <span class="letter">O</span>
-                     <span class="letter">u</span>
-                     <span class="letter">r</span>
-                     &nbsp;
-                     <span class="letter">m</span>
-                     <span class="letter">i</span>
-                     <span class="letter">s</span>
-                     <span class="letter">s</span>
-                     <span class="letter">i</span>
-                     <span class="letter">o</span>
-                     <span class="letter">n</span>
-                  </h2>
-                  <div class="content_all">
-                     <div class="image">
-                        <img src="/img/gallery/4.JPEG" alt="Mission image">
-                     </div>
-                     <div class="text">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-                     </div>
-                  </div>
-               </div>
-            </div>
-         </section>
-      </div>
+         </div>
+      </section>
+      <!-- FOOTER -->
       <footer class="footer">
          <p class="footer-heading" data-key="footer.heading"></p>
          <hr class="footer-divider" />
@@ -208,11 +191,13 @@
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
-      <script src="js/about.js"></script>
+      <script src="js/rentals_exhibitions.js"></script>
       <script src="js/main.js"></script>
       <script src="js/loader.js"></script>
       <script src="js/highlights.js"></script>
       <script src="js/navbar.js"></script>
-      <script src="js/lang_about_rentals.js"></script>
+            <script src="js/lang_about_rentals.js"></script>
+
+            <!-- <script src="js/lang_rentals.js"></script> -->
    </body>
 </html>

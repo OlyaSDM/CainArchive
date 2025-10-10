@@ -19,7 +19,7 @@
          <div class="loader__title">
             <img src="logos/loader-logo.png" alt="" width="300px">
          </div>
-      </div> 
+      </div>
       <!-- NAVIGATION -->
       <header class="navbar delayed" id="navbar">
          <!-- Logos  -->
@@ -31,11 +31,11 @@
          <div class="nav-right">
             <!-- Inline links (desktop) -->
             <nav class="nav-links" aria-label="Primary">
-               <a href="/aboutus.html">Our Mission</a>
-               <a href="#collections">Collections</a>
-               <a href="#">Voices of Advocacy</a>
-               <a href="#">Exhibitions & Rentals</a>
-               <a href="#">Press</a>
+               <a href="/aboutus.html" data-key="nav.mission">Our Mission</a>
+               <a href="#collections" data-key="nav.collections">Collections</a>
+               <a href="#"  data-key="nav.voices">Voices of Advocacy</a>
+               <a href="/rentals.html" data-key="nav.rentals">Exhibitions & Rentals</a>
+               <a href="#"  data-key="nav.press">Press</a>
             </nav>
             <!-- Burger (tablet/phone) -->
             <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
@@ -66,11 +66,11 @@
          <div class="fullscreen-menu-content">
             <!-- LEFT: Navigation Links -->
             <nav>
-               <a href="/aboutus.html" style="--i:1" data-index="01"><span>Our Mission</span></a>
-               <a href="#collections" style="--i:2" data-index="02"><span>Collections</span></a>
-               <a href="#" style="--i:3" data-index="03"><span>Voices of Advocacy</span></a>
-               <a href="#" style="--i:4" data-index="04"><span>Exhibitions & Rentals</span></a>
-               <a href="#" style="--i:5" data-index="05"><span>Press</span></a>
+               <a href="/aboutus.html" style="--i:1" data-index="01" ><span data-key="nav.mission">Our Mission</span></a>
+               <a href="#collections" style="--i:2" data-index="02" ><span data-key="nav.collections">Collections</span></a>
+               <a href="#" style="--i:3" data-index="03" ><span data-key="nav.voices">Voices of Advocacy</span></a>
+               <a href="/rentals.html" style="--i:4" data-index="04"><span  data-key="nav.rentals">Exhibitions & Rentals</span></a>
+               <a href="#" style="--i:5" data-index="05" ><span data-key="nav.press">Press</span></a>
             </nav>
             <!-- DIVIDER -->
             <div class="divider"></div>
@@ -87,7 +87,7 @@
                   <p>Institutional & Archive Coordinator | Cain Archive</p>
                   <a href="mailto:dina.kriukova@cainarchive.com" class="menu-contacts">dina.kriukova@cainarchive.com</a>
                   <!-- <a href="+351910654922" class="menu-contacts">+351 910 654 922</a> -->
-               </div> 
+               </div>
                <div class="social-icons">
                   <ul>
                      <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
@@ -108,22 +108,23 @@
             </video>
             <div class="hero-overlay"></div>
             <div class="hero-content" data-speed="1.3" data-lag="0.2">
-                              <h1>History that shapes <span>Tomorrow</span></h1>
-
-               <!-- <h1>Cain <span>Archive</span></h1> -->
-               <p>
+               <h1>
+                  <span class="h1" data-key="heroQuote.heading"> History that shapes</span>
+                  <span class="span" data-key="heroQuote.tomorrow">Tomorrow</span>
+               </h1>
+               <p data-key="hero.description">
                   Step into a living archive of rare, authentic photographs—where the courage of World War II, the glamour of Hollywood's golden age, and the legacies of Winston Churchill and John F. Kennedy converge.
                </p>
                <div class="hero-buttons">
                   <a href="/aboutus.html" class="hero-cta">
                   <span class="hero-cta-btn">
-                  About Us
+                  <span class="hero-cta-btn-text" data-key="hero.aboutUsText">About Us</span>
                   <span class="v-border v-left"></span>
                   <span class="v-border v-right"></span>
                   </span>
                   </a>
                   <div class="hero-btn-text">
-                     <a href="#" class="hero-cta-text">Start the Journey</a>
+                     <a href="#" class="hero-cta-text" data-key="hero.startJourney">Start the Journey</a>
                      <img src="img/arrow.png" alt="arrow" class="arrow">
                   </div>
                </div>
@@ -138,532 +139,572 @@
          <div class="page-wrapper">
             <div class="cain-section" id="cain-section">
                <div class="cain_center">
-               <div class="cain-title">
-                  <span><span data-desc="C - Culture & Continuity: Photographs as part of the world’s heritage: connecting past, present, and future to show how history shapes tomorrow." class="letter-inner">C</span></span>
-                  <span><span data-desc="A - Accountability: Our duty is to preserve and transmit testimony so that new generations hear the voice of history and avoid repeating its errors." class="letter-inner big-a">A</span></span>
-                  <span><span data-desc="I - Inheritance: Each photograph is an inheritance of truth — preserved with respect and carried forward as part of humanity’s cultural and moral legacy. It is not only a window into the past but also a responsibility toward the future." class="letter-inner">I</span></span>
-                  <span><span data-desc="N - New Hope: Memory in service of life — affirming freedom, culture, dignity, love, and the unfolding of human potential." class="letter-inner">N</span></span>
-               </div>
-               <div class="archive-title">
-                   <span><span  class="letter-inner">A</span></span> 
-                  <span><span  class="letter-inner">R</span></span>
-                  <span><span  class="letter-inner">C</span></span>
-                  <span><span class="letter-inner">H</span></span>
-                  <span><span class="letter-inner">I</span></span>
-                  <span><span class="letter-inner">V</span></span>
-                  <span><span class="letter-inner">E</span></span>
-               </div>
-               <div class="cain-description" id="cain-desc">
-                  <div class="desc-title"></div>
-                  <div class="desc-text"></div>
-               </div>
+                  <div class="cain-title">
+                     <span>
+                     <span class="letter-inner">
+                     C
+                     <span class="letter-desc">
+                     <span class="desc-title" data-key="cainSection.C.title">C - Culture & Continuity:</span>
+                     <span class="desc-text" data-key="cainSection.C.text">
+                     Photographs as part of the world’s heritage: connecting past, present, and future to show how history shapes tomorrow.
+                     </span>
+                     </span>
+                     </span>
+                     </span>
+                     <span>
+                     <span class="letter-inner big-a">
+                     A
+                     <span class="letter-desc">
+                     <span class="desc-title" data-key="cainSection.A.title">A - Accountability:</span>
+                     <span class="desc-text" data-key="cainSection.A.text">
+                     Our duty is to preserve and transmit testimony so that new generations hear the voice of history and avoid repeating its errors.
+                     </span>
+                     </span>
+                     </span>
+                     </span>
+                     <span>
+                     <span class="letter-inner">
+                     I
+                     <span class="letter-desc">
+                     <span class="desc-title" data-key="cainSection.I.title">I - Inheritance:</span>
+                     <span class="desc-text" data-key="cainSection.I.text">
+                     Each photograph is an inheritance of truth — preserved with respect and carried forward as part of humanity’s cultural and moral legacy. It is not only a window into the past but also a responsibility toward the future.
+                     </span>
+                     </span>
+                     </span>
+                     </span>
+                     <span>
+                     <span class="letter-inner">
+                     N
+                     <span class="letter-desc">
+                     <span class="desc-title" data-key="cainSection.N.title">N - New Hope:</span>
+                     <span class="desc-text" data-key="cainSection.N.text">
+                     Memory in service of life — affirming freedom, culture, dignity, love, and the unfolding of human potential.
+                     </span>
+                     </span>
+                     </span>
+                     </span>
+                  </div>
+                  <div class="archive-title" data-key="cain.archive">
+                     <span><span class="letter-inner">A</span></span>
+                     <span><span class="letter-inner">R</span></span>
+                     <span><span class="letter-inner">C</span></span>
+                     <span><span class="letter-inner">H</span></span>
+                     <span><span class="letter-inner">I</span></span>
+                     <span><span class="letter-inner">V</span></span>
+                     <span><span class="letter-inner">E</span></span>
+                  </div>
+                  <div class="cain-description" id="cain-desc">
+                     <div class="desc-title" data-key="cain.title"></div>
+                     <div class="desc-text" data-key="cain.text"></div>
+                  </div>
                </div>
             </div>
             <img class="rec-img" src="img/Rec.png" alt="">
             <img class="rec1-img" src="img/Rec1.png" alt="">
             <!-- Gallery Section -->
-<section class="mosaic-section" id="gallery">
-   <div class="wrap">
-      <div class="mosaic">
-         <div class="column left">
-            <div class="image-wrapper">
-               <img src="/img/gallery/1.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/2.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/3.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/4.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/5.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/6.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/7.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/8.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/9.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/10.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/1.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/2.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/3.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/4.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/5.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/6.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/7.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/8.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/9.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/10.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/1.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/2.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/3.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/4.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/5.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/6.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/7.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/8.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/9.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-            <div class="image-wrapper">
-               <img src="/img/gallery/10.JPEG" alt="photo">
-               <div class="watermark">© CainArchive</div>
-            </div>
-         </div>
-         <div class="column middle">
-            <div class="column-inner">
-               <div class="image-wrapper">
-                  <img src="/img/gallery/11.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/12.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/13.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/14.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/15.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/16.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/17.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/18.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/19.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/20.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/11.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/12.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/13.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/14.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/15.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/16.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/17.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/18.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/19.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/20.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/11.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/12.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/13.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/14.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/15.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/16.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/17.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/18.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/19.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/20.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-            </div>
-         </div>
-         <div class="column right">
-            <div class="column-inner">
-               <div class="image-wrapper">
-                  <img src="/img/gallery/21.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/22.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/23.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/24.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/25.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/26.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/27.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/28.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/29.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/30.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/21.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/22.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/23.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/24.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/25.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/26.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/27.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/28.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/29.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/30.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/21.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/22.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/23.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/24.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/25.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/26.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/27.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/28.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/29.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/30.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/21.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/22.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/23.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/24.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/25.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/26.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/27.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/28.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/29.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/30.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/21.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/22.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/23.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/24.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/25.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/26.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/27.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/28.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/29.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/30.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/21.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/22.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/23.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/24.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/25.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/26.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/27.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/28.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/29.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-               <div class="image-wrapper">
-                  <img src="/img/gallery/30.JPEG" alt="photo">
-                  <div class="watermark">© CainArchive</div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</section>
+            <section class="mosaic-section" id="gallery">
+               <div class="wrap">
+                  <div class="mosaic">
+                     <div class="column left">
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/1.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/2.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/3.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/4.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/5.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/6.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/7.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/8.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/9.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/10.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/1.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/2.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/3.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/4.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/5.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/6.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/7.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/8.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/9.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/10.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/1.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/2.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/3.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/4.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/5.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/6.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/7.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/8.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/9.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                        <div class="image-wrapper">
+                           <img src="/img/gallery/10.JPEG" alt="photo">
+                           <div class="watermark">© CainArchive</div>
+                        </div>
+                     </div>
+                     <div class="column middle">
+                        <div class="column-inner">
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/11.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/12.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/13.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/14.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/15.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/16.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/17.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/18.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/19.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/20.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/11.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/12.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/13.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/14.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/15.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/16.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/17.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/18.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/19.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/20.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/11.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/12.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/13.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/14.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/15.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/16.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/17.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/18.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/19.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/20.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                        </div>
+                     </div>
+                     <div class="column right">
+                        <div class="column-inner">
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/21.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/22.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/23.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/24.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/25.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/26.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/27.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/28.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/29.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/30.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/21.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/22.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/23.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/24.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/25.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/26.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/27.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/28.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/29.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/30.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/21.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/22.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/23.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/24.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/25.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/26.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/27.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/28.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/29.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/30.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/21.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/22.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/23.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/24.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/25.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/26.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/27.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/28.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/29.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/30.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/21.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/22.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/23.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/24.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/25.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/26.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/27.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/28.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/29.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/30.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/21.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/22.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/23.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/24.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/25.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/26.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/27.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/28.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/29.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                           <div class="image-wrapper">
+                              <img src="/img/gallery/30.JPEG" alt="photo">
+                              <div class="watermark">© CainArchive</div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+            </section>
             <!-- QUOTE 2 SECTION -->
             <div class="quote-two letter-section">
                <img class="rec2-img" src="img/Rec2.png" alt="">
-               <h3 class="quote-two-bold histor">History</h3>
-               <h3 class="quote-two-italic that">that shapes</h3>
-               <h3 class="quote-two-bold tomw">tomorrow</h3>
+               <h3 class="quote-two-bold histor" data-key="quoteTwo.history">History</h3>
+               <h3 class="quote-two-italic that" data-key="quoteTwo.that">that shapes</h3>
+               <h3 class="quote-two-bold tomw" data-key="quoteTwo.tomorrow">tomorrow</h3>
             </div>
             <!-- COLLECTIONS SECTION -->
             <!-- <div class="coll-intro letter-section">
@@ -676,32 +717,40 @@
                </div>
                </div> -->
             <section id="collections">
-               <a href="WW2.html" class="coll-background ww2" >
+               <a href="/WW2.html" class="coll-background ww2">
                   <div class="bg" data-speed="0.8"></div>
                   <div class="overlay">
-                     <h3 data-speed="1.2">World War II</h3>
-                     <p data-speed="1.3" >Witness the unfiltered courage and quiet humanity of a world at war — captured in photographs the world has never seen.</p>
+                     <h3 data-key="collections.ww2.title" data-speed="1.2">World War II</h3>
+                     <p data-key="collections.ww2.text" data-speed="1.3">
+                        Witness the unfiltered courage and quiet humanity of a world at war — captured in photographs the world has never seen.
+                     </p>
                   </div>
                </a>
-               <a href="#" class="coll-background kennedy" >
+               <a href="#" class="coll-background kennedy">
                   <div class="bg" data-speed="0.8"></div>
                   <div class="overlay">
-                     <h3 data-speed="1.2" >John F. Kennedy</h3>
-                     <p data-speed="1.3" >Discover intimate glimpses of Kennedy’s rise — images that trace the making of an icon long before the world knew his name.</p>
+                     <h3 data-key="collections.kennedy.title" data-speed="1.2">John F. Kennedy</h3>
+                     <p data-key="collections.kennedy.text" data-speed="1.3">
+                        Discover intimate glimpses of Kennedy’s rise — images that trace the making of an icon long before the world knew his name.
+                     </p>
                   </div>
                </a>
-               <a href="#" class="coll-background churchill" >
+               <a href="#" class="coll-background churchill">
                   <div class="bg" data-speed="0.8"></div>
                   <div class="overlay">
-                     <h3 data-speed="1.2" >Winston Churchill</h3>
-                     <p data-speed="1.3" >Step closer to the man behind the legend through rare, unseen portraits that reveal Churchill’s private resolve and public fire.</p>
+                     <h3 data-key="collections.churchill.title" data-speed="1.2">Winston Churchill</h3>
+                     <p data-key="collections.churchill.text" data-speed="1.3">
+                        Step closer to the man behind the legend through rare, unseen portraits that reveal Churchill’s private resolve and public fire.
+                     </p>
                   </div>
                </a>
                <a href="#" class="coll-background hollywood">
                   <div class="bg" data-speed="0.8"></div>
                   <div class="overlay">
-                     <h3 data-speed="1.2" >Hollywood & Culture</h3>
-                     <p data-speed="1.3" >Enter the luminous world of old Hollywood, where rare frames preserve the untamed glamour of stars who defined an era.</p>
+                     <h3 data-key="collections.hollywood.title" data-speed="1.2">Hollywood & Culture</h3>
+                     <p data-key="collections.hollywood.text" data-speed="1.3">
+                        Enter the luminous world of old Hollywood, where rare frames preserve the untamed glamour of stars who defined an era.
+                     </p>
                   </div>
                </a>
             </section>
@@ -843,24 +892,28 @@
                      </svg>
                   </button>
                </div>
-            </section> -->
+               </section> -->
             <!-- Rentals Section -->
             <section class="contact-block" id="contactBlock">
                <div class="contact-right">
                   <div class="contact-info">
                      <div class="exhibitions">
                         <h3>
-                           Exhibitions & <span class="rentals">Rentals</span>
+                           <span data-key="contactBlock.exhibitions.title">Exhibitions & Rentals</span>
                         </h3>
                         <p>
+                           <span data-key="contactBlock.exhibitions.text1">
                            The <strong>Cain Archive</strong> is a private collection of international importance, comprising original vintage photographs documenting 
                            <em>World War II, the Holocaust, Winston Churchill, John F. Kennedy, and Hollywood culture</em>.
+                           </span>
                         </p>
                         <p>
+                           <span data-key="contactBlock.exhibitions.text2">
                            Materials are available to museums and institutions under formal rentals and collaboration procedures.
+                           </span>
                         </p>
-                        <a href="/history" class="read-more-rentals">
-                           <span class="text">Read More</span>
+                        <a href="/rentals.html" class="read-more-rentals">
+                           <span class="text" data-key="contactBlock.exhibitions.readMore">Read More</span>
                            <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="35" height="15" viewBox="0 0 40 20" fill="none">
                               <path d="M0 10H36M36 10L28 2M36 10L28 18" stroke="currentColor" stroke-width="2"/>
                            </svg>
@@ -871,19 +924,19 @@
                <div class="contact-left">
                   <form class="contact-form" id="contactForm" method="POST" novalidate>
                      <div class="contact-title">
-                        <h3>Get in</h3>
-                        <h2>touch</h2>
+                        <h3 data-key="contactBlock.form.titleLine1">Get in</h3>
+                        <h2 data-key="contactBlock.form.titleLine2">touch</h2>
                      </div>
                      <div class="form-group">
-                        <input type="text" name="name" placeholder="Your name" required>
+                        <input type="text" name="name" placeholder="" data-key="contactBlock.form.name" required>
                         <small class="error-message"></small>
                      </div>
                      <div class="form-group">
-                        <input type="email" name="email" placeholder="Your email address" required>
+                        <input type="email" name="email" placeholder="" data-key="contactBlock.form.email" required>
                         <small class="error-message"></small>
                      </div>
                      <div class="form-group">
-                        <textarea name="message" placeholder="What can I help you with?" required></textarea>
+                        <textarea name="message" placeholder="" data-key="contactBlock.form.message" required></textarea>
                         <small class="error-message"></small>
                      </div>
                      <!-- Honeypot -->
@@ -891,12 +944,12 @@
                      <div class="form-group checkbox-group">
                         <label>
                         <input type="checkbox" name="privacy" required>
-                        <span>I've accepted the <a href="#">privacy policy</a>.</span>
+                        <span data-key="contactBlock.form.privacy">I've accepted the <a href="#">privacy policy</a>.</span>
                         </label>
                         <small class="error-message"></small>
                      </div>
                      <button type="submit" class="hero-cta-btn">
-                     Submit message
+                     <span class="btn-text" data-key="contactBlock.form.submit">Submit message</span>
                      <span class="v-border v-left"></span>
                      <span class="v-border v-right"></span>
                      </button>
@@ -907,8 +960,8 @@
             <!-- <section class="press-intro letter-section">
                <h3>Press on Us</h3>
                <p>Discover what leading publications are saying about <span>Cain Archive</span></p>
-            </section>
-            <section id="press">
+               </section>
+               <section id="press">
                <img class="rec6-img" src="img/Rec6.png" alt="">
                <div class="press-grid">
                   <div class="press-item">
@@ -967,10 +1020,10 @@
                      <p class="press-date">August 2 - November 15, 2025</p>
                      </div> 
                </div>
-            </section> -->
+               </section> -->
             <!-- FOOTER -->
             <footer class="footer">
-               <p class="footer-heading">History that shapes <span>Tomorrow</span></p>
+               <p class="footer-heading" data-key="footer.heading"></p>
                <hr class="footer-divider" />
                <div class="footer-wrapper">
                   <!-- Logo + tagline -->
@@ -980,36 +1033,27 @@
                   </a>
                   <!-- Contact Info -->
                   <div class="footer-contact">
-                     <p>John Cain</p>
-                     <p>Founder & Director | Cain Archive</p>
-                     <a href="mailto:john@cainarchive.com">john@cainarchive.com</a>
-                     <a href="tel:+15167876432">+1 516 787 6432</a>
+                     <p data-key="footer.founder.name"></p>
+                     <p data-key="footer.founder.title"></p>
+                     <a href="mailto:john@cainarchive.com" data-key="footer.founder.email"></a>
+                     <a href="tel:+15167876432" data-key="footer.founder.phone"></a>
                   </div>
                   <div class="footer-contact">
-                     <p>Dina Kriukova-Lichman</p>
-                     <p>Institutional & Archive Coordinator | Cain Archive</p>
-                     <a href="mailto:dina.kriukova@cainarchive.com">dina.kriukova@cainarchive.com</a>
-                     <!-- <a href="tel:+351910654922">+351 910 654 922</a> -->
-                  </div>
-                  <!-- Social Media -->
-                  <div class="footer-social">
-                     <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-                     <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-                     <a href="#" aria-label="X-twitter"><i class="fa-brands fa-x-twitter"></i></a>
-                     <a href="#" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
+                     <p data-key="footer.coordinator.name"></p>
+                     <p data-key="footer.coordinator.title"></p>
+                     <a href="mailto:dina.kriukova@cainarchive.com" data-key="footer.coordinator.email"></a>
                   </div>
                </div>
-               <!-- Bottom copyright -->
                <div class="footer-bottom">
-                  <p>© 2025 Cain Archive. All rights reserved.</p>
+                  <p data-key="footer.copyright"></p>
                </div>
             </footer>
          </div>
       </div>
       <!-- Outside smooth-wrapper CAIN TOOLTIP-->
-      <div class="cain-tooltip">Point</div>
+      <div class="cain-tooltip" data-key="tooltips.cain"></div>
       <!-- Cursor tooltip (OUTSIDE smooth-wrapper) -->
-      <div class="cursor-tooltip">View</div>
+      <div class="cursor-tooltip" data-key="tooltips.cursor"></div>
       <!-- MODAL FOR CAROUSEL INTERVIEWS -->
       <div id="video-modal" class="video-modal">
          <div class="video-modal-content">
@@ -1064,6 +1108,6 @@
       <script src="js/cain.js"></script>
       <script src="js/img.js"></script>
       <script src="js/block_copy.js"></script>
-
+      <script src="/js/lang.js"></script>
    </body>
 </html>
