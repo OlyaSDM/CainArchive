@@ -56,3 +56,55 @@ tl.to(".video-wrapper", {
 });
 
 
+// GALLERY SECTION
+
+document.addEventListener("DOMContentLoaded", () => {
+  const modal = document.getElementById("imageModal");
+  const modalImg = document.getElementById("modalImg");
+  const modalClose = document.getElementById("modalClose");
+  const modalPrev = document.getElementById("modalPrev");
+  const modalNext = document.getElementById("modalNext");
+
+  const allImages = Array.from(document.querySelectorAll(".gallery-grid img"));
+  let currentIndex = 0;
+
+  const openModal = (index) => {
+    currentIndex = index;
+    modalImg.src = allImages[currentIndex].src;
+    modal.style.display = "flex";
+  };
+
+  const closeModal = () => {
+    modal.style.display = "none";
+  };
+
+  const showPrev = () => {
+    currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
+    modalImg.src = allImages[currentIndex].src;
+  };
+
+  const showNext = () => {
+    currentIndex = (currentIndex + 1) % allImages.length;
+    modalImg.src = allImages[currentIndex].src;
+  };
+
+  allImages.forEach((img, i) => {
+    img.addEventListener("click", () => openModal(i));
+  });
+
+  modalClose.addEventListener("click", closeModal);
+  modalPrev.addEventListener("click", showPrev);
+  modalNext.addEventListener("click", showNext);
+
+  modal.addEventListener("click", (e) => {
+    if (e.target === modal) closeModal();
+  });
+
+  document.addEventListener("keydown", (e) => {
+    if (modal.style.display === "flex") {
+      if (e.key === "ArrowRight") showNext();
+      if (e.key === "ArrowLeft") showPrev();
+      if (e.key === "Escape") closeModal();
+    }
+  });
+});
