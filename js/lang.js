@@ -17,7 +17,9 @@ const translations = {
     },
     hero: {
       description: "Collected across the world, Cain Archive reveals untold moments of the twentieth century — war and rebirth, fear and resilience, loss and faith. Each photograph preserves the fragile truth of its time — so that memory never fades, and history remains human.",
-    startJourney: "Explore the Archive"
+    startJourney: "Explore the Archive",
+        aboutUsText: "About Us"  
+
     },
     cainSection: {
       C: {
@@ -122,7 +124,9 @@ const translations = {
     },
     hero: {
       description: "تم جمعها من جميع أنحاء العالم، يكشف أرشيف كاين عن لحظات غير مروية من القرن العشرين — الحرب والبعث، الخوف والمرونة، الفقدان والإيمان. كل صورة تحفظ الحقيقة الهشة لزمانها — حتى لا تتلاشى الذاكرة، ويظل التاريخ إنسانيًا.",
-    startJourney: "استكشف الأرشيف"
+    startJourney: "استكشف الأرشيف",
+        aboutUsText: "حولنا"
+
     },
     cainSection: {
       C: {
@@ -227,7 +231,9 @@ const translations = {
     },
     hero: {
        description: "世界中から集められたカイン・アーカイブは、20世紀の語られざる瞬間 — 戦争と再生、恐怖と回復力、喪失と信仰 — を明らかにする。各写真はその時代のかけがえのない真実を保存し、記憶が薄れず、歴史が人間らしさを保ち続けるようにしている。",
-    startJourney: "アーカイブを探索する"
+    startJourney: "アーカイブを探索する",
+        aboutUsText: "私たちについて"
+
     },
     cainSection: {
       C: {
@@ -332,7 +338,9 @@ const translations = {
     },
     hero: {
       description: "Recogido en todo el mundo, el Archivo Cain revela momentos no contados del siglo XX — guerra y renacimiento, miedo y resiliencia, pérdida y fe. Cada fotografía conserva la frágil verdad de su tiempo — para que la memoria nunca se desvanezca y la historia siga siendo humana.",
-    startJourney: "Explora el Archivo"
+    startJourney: "Explora el Archivo",
+        aboutUsText: "Sobre Nosotros"
+
     },
     cainSection: {
       C: {
@@ -437,7 +445,9 @@ const translations = {
     },
     hero: {
        description: "凯恩档案馆收集自世界各地，揭示20世纪未被讲述的瞬间 — 战争与重生，恐惧与韧性，失落与信念。每张照片都保存着当时的脆弱真相 — 让记忆永不消逝，历史保持人性。",
-    startJourney: "探索档案馆"
+    startJourney: "探索档案馆",
+        aboutUsText: "关于我们"
+
     },
     cainSection: {
       C: {
