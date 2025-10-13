@@ -3,8 +3,8 @@ const translations = {
     nav: {
       mission: "Our Mission",
       collections: "Collections",
-      voices: "Voices of Advocacy",
-      rentals: "Exhibitions & Rentals",
+      voices: "Voices & Dialogues",
+      rentals: "Exhibitions & Collaborations",
       press: "Press",
     },
     contact: {

@@ -3,8 +3,8 @@ const translations = {
     nav: {
       mission: "Our Mission",
       collections: "Collections",
-      voices: "Voices of Advocacy",
-      rentals: "Exhibitions & Rentals",
+      voices: "Voices & Dialogues",
+      rentals: "Exhibitions & Collaborations",
       press: "Press",
     },
     contact: {
@@ -18,7 +18,7 @@ heroQuote: {
   hero: {
     description: "Collected across the world, Cain Archive reveals untold moments of the twentieth century — war and rebirth, fear and resilience, loss and faith. Each photograph preserves the fragile truth of its time — so that memory never fades, and history remains human.",
     aboutUsText: "About Us",
-    startJourney: "Start the Journey"
+    startJourney: "Explore the Archive"
   },
     cainSection: {
   C: {
@@ -67,8 +67,8 @@ cain: {
     contactBlock: {
       exhibitions: {
         title: "Exhibitions & Rentals",
-        text1: "The Cain Archive is a private collection of international importance, comprising original vintage photographs documenting World War II, the Holocaust, Winston Churchill, John F. Kennedy, and Hollywood culture.",
-        text2: "Materials are available to museums and institutions under formal rentals and collaboration procedures.",
+        text1: "The Cain Archive is a private collection of international significance, preserving original vintage photography that chronicles the defining moments, leaders, and human stories of the twentieth century.",
+        text2: "Materials are available to museums and cultural institutions worldwide through formal exhibition loans and research collaborations.",
         readMore: "Read More"
       },
       form: {
@@ -76,9 +76,9 @@ cain: {
         titleLine2: "touch",
         name: "Your name",
         email: "Your email address",
-        message: "What can I help you with?",
+        message: "Please include your institution’s name and exhibition concept.",
         privacy: "I've accepted the privacy policy.",
-        submit: "Submit message"
+        submit: "Submit Inquiry"
       }
     }, 
 footer: {
@@ -94,7 +94,7 @@ footer: {
     title: 'Institutional & Archive Coordinator | Cain Archive',
     email: 'dina.kriukova@cainarchive.com'
   },
-  copyright: '© 2025 Cain Archive. All rights reserved.'
+  copyright: '© 2025 Cain Archive. All rights reserved. All images and materials on this website are protected under international copyright. Unauthorized reproduction, distribution, or display is strictly prohibited.'
 },
 tooltips: {
   cain: 'Point',
