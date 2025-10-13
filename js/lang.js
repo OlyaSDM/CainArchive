@@ -3,7 +3,7 @@ const translations = {
     nav: {
       mission: "Our Mission",
       collections: "Collections",
-      voices: "Voices & Dialogues",
+      voices: "Voices of Advocacy",
       rentals: "Exhibitions & Collaborations",
       press: "Press",
     },
@@ -11,40 +11,40 @@ const translations = {
       founderTitle: "Founder & Director | Cain Archive",
       coordinatorTitle: "Institutional & Archive Coordinator | Cain Archive",
     },
-heroQuote: {
-    heading: "History that shapes",
-    tomorrow: "Tomorrow"
-  },
-  hero: {
-    description: "Collected across the world, Cain Archive reveals untold moments of the twentieth century — war and rebirth, fear and resilience, loss and faith. Each photograph preserves the fragile truth of its time — so that memory never fades, and history remains human.",
-    aboutUsText: "About Us",
+    heroQuote: {
+      heading: "History that shapes",
+      tomorrow: "Tomorrow"
+    },
+    hero: {
+      description: "Collected across the world, Cain Archive reveals untold moments of the twentieth century — war and rebirth, fear and resilience, loss and faith. Each photograph preserves the fragile truth of its time — so that memory never fades, and history remains human.",
     startJourney: "Explore the Archive"
-  },
+    },
     cainSection: {
-  C: {
-    title: "C - Culture & Continuity:",
-    text: "Photographs as part of the world’s heritage: connecting past, present, and future to show how history shapes tomorrow."
-  },
-  A: {
-    title: "A - Accountability:",
-    text: "Our duty is to preserve and transmit testimony so that new generations hear the voice of history and avoid repeating its errors."
-  },
-  I: {
-    title: "I - Inheritance:",
-    text: "Each photograph is an inheritance of truth — preserved with respect and carried forward as part of humanity’s cultural and moral legacy. It is not only a window into the past but also a responsibility toward the future."
-  },
-  N: {
-    title: "N - New Hope:",
-    text: "Memory in service of life — affirming freedom, culture, dignity, love, and the unfolding of human potential."
-  }
-},
-cain: {
-  archive:"ARCHIVE",
-},
+      C: {
+        title: "C - Culture & Continuity:",
+        text: "Photographs as part of the world’s heritage: connecting past, present, and future to show how history shapes tomorrow."
+      },
+      A: {
+        title: "A - Accountability:",
+        text: "Our duty is to preserve and transmit testimony so that new generations hear the voice of history and avoid repeating its errors."
+      },
+      I: {
+        title: "I - Inheritance:",
+        text: "Each photograph is an inheritance of truth — preserved with respect and carried forward as part of humanity’s cultural and moral legacy. It is not only a window into the past but also a responsibility toward the future."
+      },
+      N: {
+        title: "N - New Hope:",
+        text: "Memory in service of life — affirming freedom, culture, dignity, love, and the unfolding of human potential."
+      }
+    },
+    cain: {
+      archive: "ARCHIVE",
+    },
     quoteTwo: {
       history: "History",
       that: "that shapes",
-      tomorrow: "tomorrow"
+      tomorrow: "tomorrow",
+      text: "An archive of memory, built to preserve what must never be lost. They remind us not only of WHAT happened — but WHY it matters."
     },
     collections: {
       ww2: {
@@ -66,7 +66,7 @@ cain: {
     },
     contactBlock: {
       exhibitions: {
-        title: "Exhibitions & Rentals",
+        title: "Exhibitions & Collaborations",
         text1: "The Cain Archive is a private collection of international significance, preserving original vintage photography that chronicles the defining moments, leaders, and human stories of the twentieth century.",
         text2: "Materials are available to museums and cultural institutions worldwide through formal exhibition loans and research collaborations.",
         readMore: "Read More"
@@ -80,27 +80,28 @@ cain: {
         privacy: "I've accepted the privacy policy.",
         submit: "Submit Inquiry"
       }
-    }, 
-footer: {
-  heading: 'History that shapes <span>Tomorrow</span>',
-  founder: {
-    name: 'John Cain',
-    title: 'Founder & Director | Cain Archive',
-    email: 'john@cainarchive.com',
-    phone: '+1 561 884 0648'
-  },
-  coordinator: {
-    name: 'Dina Kriukova-Lichman',
-    title: 'Institutional & Archive Coordinator | Cain Archive',
-    email: 'dina.kriukova@cainarchive.com'
-  },
-  copyright: '© 2025 Cain Archive. All rights reserved. All images and materials on this website are protected under international copyright. Unauthorized reproduction, distribution, or display is strictly prohibited.'
-},
-tooltips: {
-  cain: 'Point',
-  cursor: 'View'
-},
+    },
+    footer: {
+      heading: 'History that shapes <span>Tomorrow</span>',
+      founder: {
+        name: 'John Cain',
+        title: 'Founder & Director | Cain Archive',
+        email: 'john@cainarchive.com',
+        phone: '+1 561 884 0648'
+      },
+      coordinator: {
+        name: 'Dina Kriukova-Lichman',
+        title: 'Institutional & Archive Coordinator | Cain Archive',
+        email: 'dina.kriukova@cainarchive.com'
+      },
+      copyright: '© 2025 Cain Archive. All rights reserved.',
+        protectedText: 'All images and materials on this website are protected under international copyright. Unauthorized reproduction, distribution, or display is strictly prohibited.'
 
+    },
+    tooltips: {
+      cain: 'Point',
+      cursor: 'View'
+    },
   },
 
   ar: {
@@ -108,71 +109,71 @@ tooltips: {
       mission: "مهمتنا",
       collections: "المجموعات",
       voices: "أصوات المناصرة",
-      rentals: "المعارض والإيجارات",
+      rentals: "المعارض والتعاون",
       press: "الصحافة",
     },
     contact: {
       founderTitle: "المؤسس والمدير | أرشيف كاين",
       coordinatorTitle: "منسق المؤسسات والأرشيف | أرشيف كاين",
     },
-  heroQuote: {
-    heading: "التاريخ",
-    tomorrow: "الغد"
-  },
-  hero: {
-    description: "ادخل إلى أرشيف حي من الصور النادرة والأصيلة — حيث تلتقي شجاعة الحرب العالمية الثانية، وسحر هوليوود في عصرها الذهبي، وإرث وينستون تشرشل وجون ف. كينيدي.",
-    aboutUsText: "من نحن",
-    startJourney: "ابدأ الرحلة"
-  },
-cainSection: {
-  C: {
-    title: "C - الثقافة والاستمرارية:",
-    text: "الصور كجزء من التراث العالمي: ربط الماضي والحاضر والمستقبل لإظهار كيف يشكل التاريخ الغد."
-  },
-  A: {
-    title: "A - المسؤولية:",
-    text: "واجبنا هو حفظ ونقل الشهادة حتى يسمع الجيل الجديد صوت التاريخ ويتجنب تكرار أخطائه."
-  },
-  I: {
-    title: "I - الإرث:",
-    text: "كل صورة هي إرث للحقيقة — محفوظة باحترام ومستمرة كجزء من الإرث الثقافي والأخلاقي للبشرية. إنها ليست مجرد نافذة للماضي، بل مسؤولية تجاه المستقبل."
-  },
-  N: {
-    title: "N - أمل جديد:",
-    text: "الذاكرة في خدمة الحياة — مؤكدة على الحرية والثقافة والكرامة والحب وتطور الإمكانيات البشرية."
-  }
-},
-  cain: {
-    archive: "الأرشيف"
-  },
+    heroQuote: {
+      heading: "التاريخ",
+      tomorrow: "الغد"
+    },
+    hero: {
+      description: "تم جمعها من جميع أنحاء العالم، يكشف أرشيف كاين عن لحظات غير مروية من القرن العشرين — الحرب والبعث، الخوف والمرونة، الفقدان والإيمان. كل صورة تحفظ الحقيقة الهشة لزمانها — حتى لا تتلاشى الذاكرة، ويظل التاريخ إنسانيًا.",
+    startJourney: "استكشف الأرشيف"
+    },
+    cainSection: {
+      C: {
+        title: "C - الثقافة والاستمرارية:",
+        text: "الصور كجزء من التراث العالمي: ربط الماضي والحاضر والمستقبل لإظهار كيف يشكل التاريخ الغد."
+      },
+      A: {
+        title: "A - المسؤولية:",
+        text: "واجبنا هو حفظ ونقل الشهادة حتى يسمع الجيل الجديد صوت التاريخ ويتجنب تكرار أخطائه."
+      },
+      I: {
+        title: "I - الإرث:",
+        text: "كل صورة هي إرث للحقيقة — محفوظة باحترام ومستمرة كجزء من الإرث الثقافي والأخلاقي للبشرية. إنها ليست مجرد نافذة للماضي، بل مسؤولية تجاه المستقبل."
+      },
+      N: {
+        title: "N - أمل جديد:",
+        text: "الذاكرة في خدمة الحياة — مؤكدة على الحرية والثقافة والكرامة والحب وتطور الإمكانيات البشرية."
+      }
+    },
+    cain: {
+      archive: "الأرشيف"
+    },
     quoteTwo: {
       history: "التاريخ",
       that: "الذي يشكل",
-      tomorrow: "الغد"
+      tomorrow: "الغد",
+      text: "أرشيف للذاكرة، بُني للحفاظ على ما يجب ألا يُفقد أبدًا. إنها تذكّرنا ليس فقط بما حدث — بل لماذا يهم."
     },
     collections: {
       ww2: {
         title: "الحرب العالمية الثانية",
-        text: "شاهدوا الشجاعة الصافية والإنسانية الهادئة لعالم في الحرب — ملتقطة في صور لم يسبق للعالم أن رآها."
+        text: "الهولوكوست والحرب العالمية الثانية — شهادة على صمود الإنسان، والفقدان، والإرادة في التذكّر."
       },
       kennedy: {
         title: "جون ف. كينيدي",
-        text: "اكتشف لمحات حميمة عن صعود كينيدي — صور تتتبع صناعة أيقونة قبل أن يعرف العالم اسمه."
+        text: "جون ف. كينيدي — شذرات من الشباب والرؤية والعزم التي عرّفت حقبة وأعادت تعريف القيادة."
       },
       churchill: {
         title: "وينستون تشرشل",
-        text: "اقترب أكثر من الرجل وراء الأسطورة من خلال صور نادرة لم تُر من قبل تكشف عن عزيمة تشرشل الخاصة وناره العامة."
+        text: "وينستون تشرشل — الرجل الذي حمل أمته خلال أحلك ساعاتها، حيث أصبح الشجاعة قدرًا."
       },
       hollywood: {
         title: "هوليوود والثقافة",
-        text: "ادخل عالم هوليوود القديم المشرق، حيث تحافظ الإطارات النادرة على سحر النجوم الذي عرف حقبة بأكملها."
+        text: "هوليوود والثقافة — الأشخاص الذين حوّلوا الحياة إلى فن، والفن إلى إرث خالد."
       }
     },
     contactBlock: {
       exhibitions: {
-        title: "المعارض والإيجارات",
-        text1: "أرشيف كاين هو مجموعة خاصة ذات أهمية دولية، تشمل صورًا أصلية قديمة توثق الحرب العالمية الثانية، والهولوكوست، ووينستون تشرشل، وجون ف. كينيدي، وثقافة هوليوود.",
-        text2: "المواد متاحة للمتاحف والمؤسسات ضمن إجراءات الإيجارات والتعاون الرسمية.",
+        title: "المعارض والتعاون",
+        text1: "أرشيف كاين هو مجموعة خاصة ذات أهمية دولية، تشمل صورًا أصلية قديمة توثق اللحظات الحاسمة والقادة والقصص الإنسانية للقرن العشرين.",
+        text2: "المواد متاحة للمتاحف والمؤسسات الثقافية حول العالم من خلال الإعارات الرسمية للمعارض والتعاون البحثي.",
         readMore: "اقرأ المزيد"
       },
       form: {
@@ -180,31 +181,32 @@ cainSection: {
         titleLine2: "معنا",
         name: "اسمك",
         email: "عنوان بريدك الإلكتروني",
-        message: "كيف يمكنني مساعدتك؟",
+        message: "يرجى تضمين اسم مؤسستك ومفهوم المعرض.",
         privacy: "لقد قبلت سياسة الخصوصية.",
         submit: "إرسال الرسالة"
       }
     },
     footer: {
-  heading: 'التاريخ <span>الذي يشكل الغد</span>',
-  founder: {
-    name: 'جون كاين',
-    title: 'المؤسس والمدير | أرشيف كاين',
-    email: 'john@cainarchive.com',
-    phone: '+1 561 884 0648'
-  },
-  coordinator: {
-    name: 'دينا كريوكوفا-ليتشمان',
-    title: 'منسق المؤسسات والأرشيف | أرشيف كاين',
-    email: 'dina.kriukova@cainarchive.com'
-  },
-  copyright: '© 2025 أرشيف كاين. جميع الحقوق محفوظة.'
-},
-tooltips: {
-  cain: 'نقطة',
-  cursor: 'عرض'
-},
+      heading: 'التاريخ <span>الذي يشكل الغد</span>',
+      founder: {
+        name: 'جون كاين',
+        title: 'المؤسس والمدير | أرشيف كاين',
+        email: 'john@cainarchive.com',
+        phone: '+1 561 884 0648'
+      },
+      coordinator: {
+        name: 'دينا كريوكوفا-ليتشمان',
+        title: 'منسق المؤسسات والأرشيف | أرشيف كاين',
+        email: 'dina.kriukova@cainarchive.com'
+      },
+      copyright: '© 2025 أرشيف كاين. جميع الحقوق محفوظة.',
+          protectedText: 'جميع الصور والمواد على هذا الموقع محمية بموجب حقوق الطبع والنشر الدولية. يُحظر الاستنساخ أو التوزيع أو العرض دون إذن.'
 
+    },
+    tooltips: {
+      cain: 'نقطة',
+      cursor: 'عرض'
+    }
   },
 
   ja: {
@@ -212,7 +214,7 @@ tooltips: {
       mission: "私たちの使命",
       collections: "コレクション",
       voices: "アドボカシーの声",
-      rentals: "展示会とレンタル",
+      rentals: "展示会と協力",
       press: "プレス",
     },
     contact: {
@@ -220,62 +222,62 @@ tooltips: {
       coordinatorTitle: "機関およびアーカイブコーディネーター | カインアーカイブ",
     },
     heroQuote: {
-    heading: "歴史",
-    tomorrow: "明日"
-  },
-  hero: {
-    description: "希少で本物の写真の生きたアーカイブに足を踏み入れよう — 第二次世界大戦の勇気、ハリウッド黄金時代の華やかさ、ウィンストン・チャーチルやジョン・F・ケネディの遺産が交差する。",
-    aboutUsText: "私たちについて",
-    startJourney: "旅を始める"
-  },
-cainSection: {
-  C: {
-    title: "C - 文化と継続性:",
-    text: "世界遺産の一部としての写真: 過去、現在、未来をつなぎ、歴史が明日を形作ることを示す。"
-  },
-  A: {
-    title: "A - 責任:",
-    text: "新しい世代が歴史の声を聞き、その過ちを繰り返さないように、証言を保存し伝える義務があります。"
-  },
-  I: {
-    title: "I - 継承:",
-    text: "各写真は真実の継承物です — 尊重して保存され、人類の文化的・道徳的遺産の一部として未来に伝えられます。過去への窓であるだけでなく、未来への責任でもあります。"
-  },
-  N: {
-    title: "N - 新しい希望:",
-    text: "生命に奉仕する記憶 — 自由、文化、尊厳、愛、人間の可能性の展開を肯定します。"
-  }
-},
-  cain: {
-    archive: "アーカイブ"
-  },
+      heading: "歴史",
+      tomorrow: "明日"
+    },
+    hero: {
+       description: "世界中から集められたカイン・アーカイブは、20世紀の語られざる瞬間 — 戦争と再生、恐怖と回復力、喪失と信仰 — を明らかにする。各写真はその時代のかけがえのない真実を保存し、記憶が薄れず、歴史が人間らしさを保ち続けるようにしている。",
+    startJourney: "アーカイブを探索する"
+    },
+    cainSection: {
+      C: {
+        title: "C - 文化と継続性:",
+        text: "世界遺産の一部としての写真: 過去、現在、未来をつなぎ、歴史が明日を形作ることを示す。"
+      },
+      A: {
+        title: "A - 責任:",
+        text: "新しい世代が歴史の声を聞き、その過ちを繰り返さないように、証言を保存し伝える義務があります。"
+      },
+      I: {
+        title: "I - 継承:",
+        text: "各写真は真実の継承物です — 尊重して保存され、人類の文化的・道徳的遺産の一部として未来に伝えられます。過去への窓であるだけでなく、未来への責任でもあります。"
+      },
+      N: {
+        title: "N - 新しい希望:",
+        text: "生命に奉仕する記憶 — 自由、文化、尊厳、愛、人間の可能性の展開を肯定します。"
+      }
+    },
+    cain: {
+      archive: "アーカイブ"
+    },
     quoteTwo: {
       history: "歴史",
       that: "を形作る",
-      tomorrow: "明日"
+      tomorrow: "明日",
+      text: "失われてはならないものを保存するために作られた記憶のアーカイブ。何が起こったかだけでなく、なぜそれが重要かを思い出させる。"
     },
     collections: {
       ww2: {
         title: "第二次世界大戦",
-        text: "戦争下の世界の生々しい勇気と静かな人間性を目撃する — 世界が見たことのない写真で捉えられた。"
+        text: "ホロコーストと第二次世界大戦 — 人間の忍耐、喪失、そして記憶しようとする意志の証。"
       },
       kennedy: {
         title: "ジョン・F・ケネディ",
-        text: "ケネディの台頭を垣間見る — 世界が彼の名前を知る前に、アイコンが作られる過程を追った写真。"
+        text: "ジョン・F・ケネディ — 若さ、ビジョン、そして決意の断片が一つの時代を定義し、リーダーシップを再定義した。"
       },
       churchill: {
         title: "ウィンストン・チャーチル",
-        text: "伝説の背後にいる人物に近づく — チャーチルの私的な決意と公の情熱を示す、これまで見られなかった希少な肖像写真。"
+        text: "ウィンストン・チャーチル — 国が最も暗い時を迎えたとき、その国を導いた男。勇気が運命となった場所で。"
       },
       hollywood: {
         title: "ハリウッドと文化",
-        text: "古きハリウッドの輝かしい世界に入る — 希少な写真が時代を定義したスターたちの荒々しい魅力を保存。"
+        text: "ハリウッドと文化 — 人生を芸術に、そして芸術を遺産に変えた人々。"
       }
     },
     contactBlock: {
       exhibitions: {
-        title: "展示会とレンタル",
-        text1: "カインアーカイブは、第二次世界大戦、ホロコースト、ウィンストン・チャーチル、ジョン・F・ケネディ、ハリウッド文化を記録したオリジナルのヴィンテージ写真を含む、国際的重要性を持つプライベートコレクションです。",
+        title: "展示会と協力",
+        text1: "カインアーカイブは、20世紀の重要な瞬間、指導者、人間の物語を記録したオリジナルのヴィンテージ写真を保存する、国際的重要性を持つプライベートコレクションです。",
         text2: "資料は、正式なレンタルおよび協力手続きに基づき、博物館や機関に提供されます。",
         readMore: "もっと読む"
       },
@@ -284,30 +286,32 @@ cainSection: {
         titleLine2: "",
         name: "お名前",
         email: "メールアドレス",
-        message: "どのようにお手伝いできますか？",
+        message: "所属機関名と展示コンセプトを記入してください。",
         privacy: "プライバシーポリシーに同意します。",
         submit: "メッセージを送信"
       }
     },
     footer: {
-  heading: '歴史 <span>が明日を形作る</span>',
-  founder: {
-    name: 'ジョン・ケイン',
-    title: '創設者兼ディレクター | カインアーカイブ',
-    email: 'john@cainarchive.com',
-    phone: '+1 561 884 0648'
-  },
-  coordinator: {
-    name: 'ディナ・クリュコヴァ＝リチマン',
-    title: '機関およびアーカイブコーディネーター | カインアーカイブ',
-    email: 'dina.kriukova@cainarchive.com'
-  },
-  copyright: '© 2025 カインアーカイブ。無断転載を禁じます。'
-},
-tooltips: {
-  cain: 'ポイント',
-  cursor: '表示'
-},
+      heading: '歴史 <span>が明日を形作る</span>',
+      founder: {
+        name: 'ジョン・ケイン',
+        title: '創設者兼ディレクター | カインアーカイブ',
+        email: 'john@cainarchive.com',
+        phone: '+1 561 884 0648'
+      },
+      coordinator: {
+        name: 'ディナ・クリュコヴァ＝リチマン',
+        title: '機関およびアーカイブコーディネーター | カインアーカイブ',
+        email: 'dina.kriukova@cainarchive.com'
+      },
+      copyright: '© 2025 カインアーカイブ。無断転載を禁じます。',
+          protectedText: 'このウェブサイトのすべての画像および資料は国際著作権法で保護されています。無断での複製、配布、表示は禁止されています。'
+
+    },
+    tooltips: {
+      cain: 'ポイント',
+      cursor: '表示'
+    }
   },
 
   es: {
@@ -315,7 +319,7 @@ tooltips: {
       mission: "Nuestra misión",
       collections: "Colecciones",
       voices: "Voces de defensa",
-      rentals: "Exposiciones y alquileres",
+      rentals: "Exposiciones y colaboraciones",
       press: "Prensa",
     },
     contact: {
@@ -323,63 +327,62 @@ tooltips: {
       coordinatorTitle: "Coordinadora Institucional y de Archivo | Archivo Cain",
     },
     heroQuote: {
-    heading: "Historia",
-    tomorrow: "mañana"
-  },
-  hero: {
-    description: "Sumérgete en un archivo vivo de fotografías raras y auténticas — donde el coraje de la Segunda Guerra Mundial, el glamour de la edad de oro de Hollywood y el legado de Winston Churchill y John F. Kennedy convergen.",
-    aboutUsText: "Sobre nosotros",
-    startJourney: "Comienza el viaje"
-  },
-cainSection: {
-  C: {
-    title: "C - Cultura y Continuidad:",
-    text: "Fotografías como parte del patrimonio mundial: conectando pasado, presente y futuro para mostrar cómo la historia da forma al mañana."
-  },
-  A: {
-    title: "A - Responsabilidad:",
-    text: "Nuestro deber es preservar y transmitir testimonios para que las nuevas generaciones escuchen la voz de la historia y eviten repetir sus errores."
-  },
-  I: {
-    title: "I - Herencia:",
-    text: "Cada fotografía es una herencia de la verdad — preservada con respeto y transmitida como parte del legado cultural y moral de la humanidad. No es solo una ventana al pasado, sino también una responsabilidad hacia el futuro."
-  },
-  N: {
-    title: "N - Nueva Esperanza:",
-    text: "La memoria al servicio de la vida — afirmando la libertad, la cultura, la dignidad, el amor y el desarrollo del potencial humano."
-  }
-} ,
-  cain: {
-    archive: "ARCHIVO"
-  },
-
+      heading: "Historia",
+      tomorrow: "mañana"
+    },
+    hero: {
+      description: "Recogido en todo el mundo, el Archivo Cain revela momentos no contados del siglo XX — guerra y renacimiento, miedo y resiliencia, pérdida y fe. Cada fotografía conserva la frágil verdad de su tiempo — para que la memoria nunca se desvanezca y la historia siga siendo humana.",
+    startJourney: "Explora el Archivo"
+    },
+    cainSection: {
+      C: {
+        title: "C - Cultura y Continuidad:",
+        text: "Fotografías como parte del patrimonio mundial: conectando pasado, presente y futuro para mostrar cómo la historia da forma al mañana."
+      },
+      A: {
+        title: "A - Responsabilidad:",
+        text: "Nuestro deber es preservar y transmitir testimonios para que las nuevas generaciones escuchen la voz de la historia y eviten repetir sus errores."
+      },
+      I: {
+        title: "I - Herencia:",
+        text: "Cada fotografía es una herencia de la verdad — preservada con respeto y transmitida como parte del legado cultural y moral de la humanidad. No es solo una ventana al pasado, sino también una responsabilidad hacia el futuro."
+      },
+      N: {
+        title: "N - Nueva Esperanza:",
+        text: "La memoria al servicio de la vida — afirmando la libertad, la cultura, la dignidad, el amor y el desarrollo del potencial humano."
+      }
+    },
+    cain: {
+      archive: "ARCHIVO"
+    },
     quoteTwo: {
       history: "Historia",
       that: "que da forma",
-      tomorrow: "mañana"
+      tomorrow: "mañana",
+      text: "Un archivo de la memoria, construido para preservar lo que nunca debe perderse. Nos recuerda no solo QUÉ sucedió, sino POR QUÉ importa."
     },
     collections: {
       ww2: {
         title: "Segunda Guerra Mundial",
-        text: "Sé testigo del coraje sin filtros y la tranquila humanidad de un mundo en guerra — capturado en fotografías que el mundo nunca había visto."
+        text: "El Holocausto y la Segunda Guerra Mundial — un testimonio de la resistencia humana, la pérdida y la voluntad de recordar."
       },
       kennedy: {
         title: "John F. Kennedy",
-        text: "Descubre íntimas visiones del ascenso de Kennedy — imágenes que trazan la creación de un ícono mucho antes de que el mundo conociera su nombre."
+        text: "John F. Kennedy — fragmentos de juventud, visión y determinación que definieron una era y redefinieron el liderazgo."
       },
       churchill: {
         title: "Winston Churchill",
-        text: "Acércate al hombre detrás de la leyenda a través de retratos raros e inéditos que revelan la resolución privada y el fuego público de Churchill."
+        text: "Winston Churchill — el hombre que guió a una nación en su hora más oscura, donde el valor se convirtió en destino."
       },
       hollywood: {
         title: "Hollywood y Cultura",
-        text: "Adéntrate en el luminoso mundo del viejo Hollywood, donde marcos raros preservan el glamour indomable de las estrellas que definieron una época."
+        text: "Hollywood y Cultura — las personas que convirtieron la vida en arte, y el arte en legado."
       }
     },
     contactBlock: {
       exhibitions: {
-        title: "Exposiciones y alquileres",
-        text1: "El Archivo Cain es una colección privada de importancia internacional, que comprende fotografías originales antiguas que documentan la Segunda Guerra Mundial, el Holocausto, Winston Churchill, John F. Kennedy y la cultura de Hollywood.",
+        title: "Exposiciones y colaboraciones",
+        text1: "El Archivo Cain es una colección privada de importancia internacional, que comprende fotografías originales antiguas que documentan los momentos decisivos, líderes y relatos humanos del siglo XX.",
         text2: "Los materiales están disponibles para museos e instituciones bajo procedimientos formales de alquiler y colaboración.",
         readMore: "Leer más"
       },
@@ -388,31 +391,32 @@ cainSection: {
         titleLine2: "contacto",
         name: "Tu nombre",
         email: "Tu correo electrónico",
-        message: "¿En qué puedo ayudarte?",
+        message: "Por favor incluye el nombre de tu institución y el concepto de la exposición.",
         privacy: "He aceptado la política de privacidad.",
         submit: "Enviar mensaje"
       }
     },
     footer: {
-  heading: 'Historia que da forma <span>al mañana</span>',
-  founder: {
-    name: 'John Cain',
-    title: 'Fundador y Director | Archivo Cain',
-    email: 'john@cainarchive.com',
-    phone: '+1 561 884 0648'
-  },
-  coordinator: {
-    name: 'Dina Kriukova-Lichman',
-    title: 'Coordinadora Institucional y de Archivo | Archivo Cain',
-    email: 'dina.kriukova@cainarchive.com'
-  },
-  copyright: '© 2025 Archivo Cain. Todos los derechos reservados.'
-},
-tooltips: {
-  cain: 'Punto',
-  cursor: 'Ver'
-},
+      heading: 'Historia <span>que da forma al mañana</span>',
+      founder: {
+        name: 'John Cain',
+        title: 'Fundador y Director | Archivo Cain',
+        email: 'john@cainarchive.com',
+        phone: '+1 561 884 0648'
+      },
+      coordinator: {
+        name: 'Dina Kriukova-Lichman',
+        title: 'Coordinadora Institucional y de Archivo | Archivo Cain',
+        email: 'dina.kriukova@cainarchive.com'
+      },
+      copyright: '© 2025 Archivo Cain. Todos los derechos reservados.',
+          protectedText: 'Todas las imágenes y materiales en este sitio web están protegidos por derechos de autor internacionales. Se prohíbe la reproducción, distribución o exhibición no autorizada.'
 
+    },
+    tooltips: {
+      cain: 'Punto',
+      cursor: 'Ver'
+    }
   },
 
   zh: {
@@ -420,72 +424,71 @@ tooltips: {
       mission: "我们的使命",
       collections: "藏品",
       voices: "倡导之声",
-      rentals: "展览与租赁",
+      rentals: "展览与合作",
       press: "媒体",
     },
     contact: {
-      founderTitle: "创始人兼主任 | 凯恩档案馆",
-      coordinatorTitle: "机构与档案协调员 | 凯恩档案馆",
+      founderTitle: "创始人兼董事 | 凯恩档案馆",
+      coordinatorTitle: "机构及档案协调员 | 凯恩档案馆",
     },
     heroQuote: {
-    heading: "历史",
-    tomorrow: "明天"
-  },
-  hero: {
-    description: "走进一个珍稀真实照片的活档案 — 在这里，二战的勇气、好莱坞黄金时代的魅力，以及温斯顿·丘吉尔和约翰·F·肯尼迪的遗产汇聚。",
-    aboutUsText: "关于我们",
-    startJourney: "开始旅程"
-  },
-cainSection: {
-  C: {
-    title: "C - 文化与延续性:",
-    text: "作为世界遗产的一部分的照片：连接过去、现在和未来，展示历史如何塑造明天。"
-  },
-  A: {
-    title: "A - 责任:",
-    text: "我们的职责是保存并传递证据，让新一代听到历史的声音，避免重蹈覆辙。"
-  },
-  I: {
-    title: "I - 遗产:",
-    text: "每张照片都是真理的遗产——以尊重的态度保存，并作为人类文化和道德遗产的一部分传承。它不仅是通往过去的窗口，也是对未来的责任。"
-  },
-  N: {
-    title: "N - 新希望:",
-    text: "服务于生命的记忆——肯定自由、文化、尊严、爱和人类潜力的发展。"
-  }
-},
-  cain: {
-    archive: "档案"
-  },
-
+      heading: "历史",
+      tomorrow: "塑造未来"
+    },
+    hero: {
+       description: "凯恩档案馆收集自世界各地，揭示20世纪未被讲述的瞬间 — 战争与重生，恐惧与韧性，失落与信念。每张照片都保存着当时的脆弱真相 — 让记忆永不消逝，历史保持人性。",
+    startJourney: "探索档案馆"
+    },
+    cainSection: {
+      C: {
+        title: "C - 文化与延续：",
+        text: "作为世界遗产的一部分的照片：连接过去、现在与未来，展示历史如何塑造明天。"
+      },
+      A: {
+        title: "A - 责任：",
+        text: "我们的职责是保存并传递见证，让新一代听到历史的声音，避免重复错误。"
+      },
+      I: {
+        title: "I - 遗产：",
+        text: "每张照片都是真相的遗产 — 被尊重地保存，并作为人类文化与道德遗产的一部分传承下去。它不仅是通往过去的窗口，也是对未来的责任。"
+      },
+      N: {
+        title: "N - 新希望：",
+        text: "为生命服务的记忆 — 肯定自由、文化、尊严、爱与人类潜能的发展。"
+      }
+    },
+    cain: {
+      archive: "档案"
+    },
     quoteTwo: {
       history: "历史",
       that: "塑造",
-      tomorrow: "明天"
+      tomorrow: "未来",
+      text: "一个记忆档案，旨在保存永不应被遗失的事物。它提醒我们不仅要记住发生了什么，也要明白为什么重要。"
     },
     collections: {
       ww2: {
         title: "第二次世界大战",
-        text: "见证战争世界中未经修饰的勇气与平静的人性——通过世界从未见过的照片捕捉。"
+        text: "大屠杀与二战 — 人类坚韧、失落与记忆意志的见证。"
       },
       kennedy: {
         title: "约翰·F·肯尼迪",
-        text: "发现肯尼迪崛起的亲密瞬间——展示这位偶像在世界知晓其名字之前的成长轨迹。"
+        text: "约翰·F·肯尼迪 — 青春、愿景与决心的片段，定义了一个时代，并重新定义了领导力。"
       },
       churchill: {
         title: "温斯顿·丘吉尔",
-        text: "通过罕见的未见肖像，更接近传奇背后的人物，展现丘吉尔的私人决心与公众激情。"
+        text: "温斯顿·丘吉尔 — 在国家最黑暗的时刻引领民族的人，勇气成为命运。"
       },
       hollywood: {
         title: "好莱坞与文化",
-        text: "进入旧好莱坞的光辉世界，罕见的影像保留了定义一个时代的明星们的狂野魅力。"
+        text: "好莱坞与文化 — 将生活变为艺术，将艺术变为遗产的人们。"
       }
     },
-        contactBlock: {
+    contactBlock: {
       exhibitions: {
-        title: "展览与租赁",
-        text1: "凯恩档案馆是一份具有国际重要性的私人收藏，包括记录二战、大屠杀、温斯顿·丘吉尔、约翰·F·肯尼迪和好莱坞文化的原版老照片。",
-        text2: "资料可根据正式的租赁和合作程序提供给博物馆和机构。",
+        title: "展览与合作",
+        text1: "凯恩档案馆是一份具有国际重要性的私人收藏，保存记录20世纪关键时刻、领导者及人类故事的原版老照片。",
+        text2: "资料可通过正式的展览借用和研究合作提供给全球的博物馆和文化机构。",
         readMore: "阅读更多"
       },
       form: {
@@ -493,30 +496,32 @@ cainSection: {
         titleLine2: "",
         name: "您的姓名",
         email: "您的电子邮箱",
-        message: "我能为您提供什么帮助？",
+        message: "请包括您的机构名称及展览概念。",
         privacy: "我已接受隐私政策。",
         submit: "提交信息"
       }
     },
     footer: {
-  heading: '塑造 <span>明天</span> 的历史',
-  founder: {
-    name: '约翰·凯恩',
-    title: '创始人兼主任 | 凯恩档案馆',
-    email: 'john@cainarchive.com',
-    phone: '+1 561 884 0648'
-  },
-  coordinator: {
-    name: '迪娜·克里乌科娃-利奇曼',
-    title: '机构与档案协调员 | 凯恩档案馆',
-    email: 'dina.kriukova@cainarchive.com'
-  },
-  copyright: '© 2025 凯恩档案馆。版权所有。'
-},
-tooltips: {
-  cain: '点',
-  cursor: '查看'
-}
+      heading: '历史 <span>塑造未来</span>',
+      founder: {
+        name: '约翰·凯恩',
+        title: '创始人兼董事 | 凯恩档案馆',
+        email: 'john@cainarchive.com',
+        phone: '+1 561 884 0648'
+      },
+      coordinator: {
+        name: '迪娜·克里乌科娃-里奇曼',
+        title: '机构及档案协调员 | 凯恩档案馆',
+        email: 'dina.kriukova@cainarchive.com'
+      },
+      copyright: '© 2025 凯恩档案馆。保留所有权利。',
+          protectedText: '本网站上的所有图片和材料均受国际版权保护。未经授权，严禁复制、分发或展示。'
+
+    },
+    tooltips: {
+      cain: '点',
+      cursor: '查看'
+    }
   }
 };
 

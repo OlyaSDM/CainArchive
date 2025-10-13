@@ -95,4 +95,3 @@ gsap.from(".rec_about3", {
     markers: false        
   }
 });
-

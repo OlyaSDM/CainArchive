@@ -25,6 +25,8 @@ const translations = {
         email: 'dina.kriukova@cainarchive.com',
       },
       copyright: '© 2025 Cain Archive. All rights reserved.',
+              protectedText: 'All images and materials on this website are protected under international copyright. Unauthorized reproduction, distribution, or display is strictly prohibited.'
+
     },
   },
 
@@ -54,6 +56,8 @@ const translations = {
         email: 'dina.kriukova@cainarchive.com',
       },
       copyright: '© 2025 أرشيف كاين. جميع الحقوق محفوظة.',
+                protectedText: 'جميع الصور والمواد على هذا الموقع محمية بموجب حقوق الطبع والنشر الدولية. يُحظر الاستنساخ أو التوزيع أو العرض دون إذن.'
+
     },
   },
 
@@ -83,6 +87,8 @@ const translations = {
         email: 'dina.kriukova@cainarchive.com',
       },
       copyright: '© 2025 カインアーカイブ。無断転載を禁じます。',
+          protectedText: 'このウェブサイトのすべての画像および資料は国際著作権法で保護されています。無断での複製、配布、表示は禁止されています。'
+
     },
   },
 
@@ -112,6 +118,8 @@ const translations = {
         email: 'dina.kriukova@cainarchive.com',
       },
       copyright: '© 2025 Archivo Cain. Todos los derechos reservados.',
+                protectedText: 'Todas las imágenes y materiales en este sitio web están protegidos por derechos de autor internacionales. Se prohíbe la reproducción, distribución o exhibición no autorizada.'
+
     },
   },
 
@@ -141,6 +149,8 @@ const translations = {
         email: 'dina.kriukova@cainarchive.com',
       },
       copyright: '© 2025 凯恩档案馆。版权所有。',
+                protectedText: '本网站上的所有图片和材料均受国际版权保护。未经授权，严禁复制、分发或展示。'
+
     },
   },
 };
