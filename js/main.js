@@ -124,28 +124,28 @@ window.addEventListener("loaderFinished", () => {
     });
 
     // Animate Paragraph(s)
-    const paragraphs = section.querySelectorAll("p");
-    if (paragraphs.length) {
-      gsap.fromTo(paragraphs,
-        { y: 20, opacity: 0 },
-        {
-          y: 0,
-          opacity: 1,
-          duration: 1,
-          ease: "power2.out",
-          scrollTrigger: {
-            trigger: section,
-            start: "top 65%",
-            end: "bottom 50%",
-            scrub: 1
-          }
-        }
-      );
-    }
+    // const paragraphs = section.querySelectorAll("p");
+    // if (paragraphs.length) {
+    //   gsap.fromTo(paragraphs,
+    //     { y: 20, opacity: 0 },
+    //     {
+    //       y: 0,
+    //       opacity: 1,
+    //       duration: 1,
+    //       ease: "power2.out",
+    //       scrollTrigger: {
+    //         trigger: section,
+    //         start: "top 65%",
+    //         end: "bottom 50%",
+    //         scrub: 1
+    //       }
+    //     }
+    //   );
+    // }
   });
 
   // --- Animate .coll-p paragraph independently ---
-  const collParagraph = document.querySelector(".coll-intro .coll-p p");
+  const collParagraph = document.querySelector(".quote-two .coll-p p");
 if (collParagraph) {
   gsap.fromTo(collParagraph,
     { y: 30, opacity: 0 },
@@ -155,7 +155,7 @@ if (collParagraph) {
       duration: 1,
       ease: "power2.out",
       scrollTrigger: {
-        trigger: ".coll-intro .coll-p",
+        trigger: ".quote-two .coll-p",
         start: "top 80%",
         end: "top 60%",
         scrub: 1
@@ -163,6 +163,11 @@ if (collParagraph) {
     }
   );
 }
+
+
+
+
+
 
   // --- Background transition between .quote-two and .mosaic-section ---
   gsap.to("body", {

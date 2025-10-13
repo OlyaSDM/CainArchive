@@ -657,6 +657,10 @@ body{
   font-family: 'GT Super';
       color: var(--accent);
 }
+.preload-hidden {
+  opacity: 0;
+  transform: translateX(-30px);
+}
 .hero-content p {
   font-family: "Libre Franklin", sans-serif;
   font-weight: 100;
@@ -1565,10 +1569,11 @@ top: -7%;
   max-width: 800px;
   text-align: center;
 }
-.coll-p p {
-  opacity: 0;
+/* .coll-p p {
+  opacity: 0 !important;
   transform: translateY(30px);
-}
+  will-change: transform, opacity;  
+} */
 
 .letter-section h3 {
   visibility: hidden;

@@ -26,7 +26,7 @@ const images = [
     "img/gallery/25.JPEG",
     "img/gallery/26.JPEG",
     "img/gallery/27.JPEG",
-    "img/gallery/28.JPEG",
+    "img/gallery/28.jpg",
     "img/gallery/29.JPEG",
     "img/gallery/30.JPEG",
   ];

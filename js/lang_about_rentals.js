@@ -17,7 +17,7 @@ const translations = {
         name: 'John Cain',
         title: 'Founder & Director | Cain Archive',
         email: 'john@cainarchive.com',
-        phone: '+1 516 787 6432',
+        phone: '+1 561 884 06 48',
       },
       coordinator: {
         name: 'Dina Kriukova-Lichman',
@@ -46,7 +46,7 @@ const translations = {
         name: 'جون كاين',
         title: 'المؤسس والمدير | أرشيف كاين',
         email: 'john@cainarchive.com',
-        phone: '+1 516 787 6432',
+        phone: '+1 561 884 0648',
       },
       coordinator: {
         name: 'دينا كريوكوفا-ليتشمان',
@@ -75,7 +75,7 @@ const translations = {
         name: 'ジョン・ケイン',
         title: '創設者兼ディレクター | カインアーカイブ',
         email: 'john@cainarchive.com',
-        phone: '+1 516 787 6432',
+        phone: '+1 561 884 0648',
       },
       coordinator: {
         name: 'ディナ・クリュコヴァ＝リチマン',
@@ -104,7 +104,7 @@ const translations = {
         name: 'John Cain',
         title: 'Fundador y Director | Archivo Cain',
         email: 'john@cainarchive.com',
-        phone: '+1 516 787 6432',
+        phone: '+1 561 884 0648',
       },
       coordinator: {
         name: 'Dina Kriukova-Lichman',
@@ -133,7 +133,7 @@ const translations = {
         name: '约翰·凯恩',
         title: '创始人兼主任 | 凯恩档案馆',
         email: 'john@cainarchive.com',
-        phone: '+1 516 787 6432',
+        phone: '+1 561 884 0648',
       },
       coordinator: {
         name: '迪娜·克里乌科娃-利奇曼',

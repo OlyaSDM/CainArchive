@@ -34,7 +34,17 @@
     }
 
 
+.navbar{
+  background-color:  rgb(4, 56, 75, 0.9);
+    opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.4s ease;
+}
 
+.navbar.visible {
+  opacity: 1;
+  pointer-events: auto;
+}
 
     .container {
     position: relative;
@@ -97,17 +107,17 @@
 }
 
 .gallery-words h3 {
-  font-size: clamp(32px, 6vw, 72px);
+  font-size: clamp(32px, 6vw, 82px);
   font-weight: 300;
   font-family: "GT Super";
+  color: var(--fonts);
 }
-.gallery-words h3  span{
-  color: var(--accent-bright);
-}
+
 .gallery-words p{
   font-size: 18px;
   font-family: "Libre Franklin", sans-serif;
   margin-top: 20px;
+  font-weight: 200;
 }
 .gallery-section {
   padding: 1rem;
@@ -116,12 +126,12 @@
 
 .gallery-grid {
   column-count: 3;
-  column-gap: 12px;
+  column-gap: 20px;
 }
 
 .img-wrapper {
   width: 100%;
-  margin-bottom: 12px;
+  margin-bottom: 20px;
   overflow: hidden;
   border-radius: 0;
 }
@@ -129,7 +139,7 @@
 .img-wrapper img {
   width: 100%;
   display: block;
-  transition: transform 0.5s ease-in-out 0.1s; 
+  transition: transform 0.3s ease-in-out 0.1s; 
   transform-origin: center center;
   cursor: pointer;
 }
@@ -160,7 +170,7 @@
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: rgba(0,0,0,0.95);
+  background-color: rgb(4, 56, 75, 0.95);
   justify-content: center;
   align-items: center;
 }
@@ -173,10 +183,10 @@
 
 .modal-close {
   position: absolute;
-  top: 20px;
-  right: 30px;
+  top: 40px;
+  right: 50px;
   font-size: 2rem;
-  color: white;
+  color: var(--background);
   cursor: pointer;
 }
 
@@ -186,11 +196,11 @@
   top: 50%;
   transform: translateY(-50%);
   font-size: 2rem;
-  color: white;
+  color: var(--background);
   cursor: pointer;
   user-select: none;
 }
 
-.modal-nav .prev { left: 20px; }
-.modal-nav .next { right: 20px; }
+.modal-nav .prev { left: 16%; }
+.modal-nav .next { right: 16%; }
 

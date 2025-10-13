@@ -16,7 +16,7 @@ heroQuote: {
     tomorrow: "Tomorrow"
   },
   hero: {
-    description: "Step into a living archive of rare, authentic photographs—where the courage of World War II, the glamour of Hollywood's golden age, and the legacies of Winston Churchill and John F. Kennedy converge.",
+    description: "Collected across the world, Cain Archive reveals untold moments of the twentieth century — war and rebirth, fear and resilience, loss and faith. Each photograph preserves the fragile truth of its time — so that memory never fades, and history remains human.",
     aboutUsText: "About Us",
     startJourney: "Start the Journey"
   },
@@ -49,19 +49,19 @@ cain: {
     collections: {
       ww2: {
         title: "World War II",
-        text: "Witness the unfiltered courage and quiet humanity of a world at war — captured in photographs the world has never seen."
+        text: "Holocaust and the World War II — a testament to human endurance, loss, and the will to remember."
       },
       kennedy: {
         title: "John F. Kennedy",
-        text: "Discover intimate glimpses of Kennedy’s rise — images that trace the making of an icon long before the world knew his name."
+        text: "John F. Kennedy — fragments of youth, vision, and resolve that defined an era and redefined leadership."
       },
       churchill: {
         title: "Winston Churchill",
-        text: "Step closer to the man behind the legend through rare, unseen portraits that reveal Churchill’s private resolve and public fire."
+        text: "Winston Churchill — the man who carried a nation through its darkest hour, where courage became destiny."
       },
       hollywood: {
-        title: "Hollywood & Culture",
-        text: "Enter the luminous world of old Hollywood, where rare frames preserve the untamed glamour of stars who defined an era."
+        title: "Icons & Culture",
+        text: "Icons & Culture — the people who turned life into art, and art into legacy."
       }
     },
     contactBlock: {
@@ -87,7 +87,7 @@ footer: {
     name: 'John Cain',
     title: 'Founder & Director | Cain Archive',
     email: 'john@cainarchive.com',
-    phone: '+1 516 787 6432'
+    phone: '+1 561 884 0648'
   },
   coordinator: {
     name: 'Dina Kriukova-Lichman',
@@ -191,7 +191,7 @@ cainSection: {
     name: 'جون كاين',
     title: 'المؤسس والمدير | أرشيف كاين',
     email: 'john@cainarchive.com',
-    phone: '+1 516 787 6432'
+    phone: '+1 561 884 0648'
   },
   coordinator: {
     name: 'دينا كريوكوفا-ليتشمان',
@@ -295,7 +295,7 @@ cainSection: {
     name: 'ジョン・ケイン',
     title: '創設者兼ディレクター | カインアーカイブ',
     email: 'john@cainarchive.com',
-    phone: '+1 516 787 6432'
+    phone: '+1 561 884 0648'
   },
   coordinator: {
     name: 'ディナ・クリュコヴァ＝リチマン',
@@ -399,7 +399,7 @@ cainSection: {
     name: 'John Cain',
     title: 'Fundador y Director | Archivo Cain',
     email: 'john@cainarchive.com',
-    phone: '+1 516 787 6432'
+    phone: '+1 561 884 0648'
   },
   coordinator: {
     name: 'Dina Kriukova-Lichman',
@@ -504,7 +504,7 @@ cainSection: {
     name: '约翰·凯恩',
     title: '创始人兼主任 | 凯恩档案馆',
     email: 'john@cainarchive.com',
-    phone: '+1 516 787 6432'
+    phone: '+1 561 884 0648'
   },
   coordinator: {
     name: '迪娜·克里乌科娃-利奇曼',

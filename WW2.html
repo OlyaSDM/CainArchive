@@ -15,24 +15,10 @@
    </head>
    <body>
 
-<!-- MASKED -->
-   <section class="container">
-      <div class="video-wrapper">
-         <video autoplay loop muted playsinline>
-            <source src="/video/ww ИИ.mp4" type="video/mp4">
-         </video>
-      </div>
-
-      <div class="mask">
-         <h2 id="ww2-title">WORLD WAR II</h2>
-      </div> 
-   </section>
-
-
 
 
     <!-- NAVIGATION -->
-    <header class="navbar delayed" id="navbar">
+    <header class="navbar " id="navbar">
       <!-- Logos  -->
       <a href="index.html" class="logo">
         <img src="logos/logo-white.png" alt="Logo" class="round-logo" />
@@ -45,8 +31,8 @@
         <nav class="nav-links" aria-label="Primary">
           <a href="#">Our Mission</a>
           <a href="#">Collections</a>
-          <a href="#">Voices of Advocacy</a>
-          <a href="#">Exhibitions & Rentals</a>
+          <a href="#">Voices & Dialogues</a>
+          <a href="#">Exhibitions & Collaborations</a>
           <a href="#">Press</a>
         </nav>
         <!-- Burger (tablet/phone) -->
@@ -82,8 +68,8 @@
         <nav>
           <a href="#" style="--i:1" data-index="01"><span>Our Mission</span></a>
           <a href="#" style="--i:2" data-index="02"><span>Collections</span></a>
-          <a href="#" style="--i:3" data-index="03"><span>Voices of Advocacy</span></a>
-          <a href="#" style="--i:4" data-index="04"><span>Exhibitions & Rentals</span></a>
+          <a href="#" style="--i:3" data-index="03"><span>Voices & Dialogues</span></a>
+          <a href="#" style="--i:4" data-index="04"><span>Exhibitions & Collaborations</span></a>
           <a href="#" style="--i:5" data-index="05"><span>Press</span></a>
         </nav>
         <!-- DIVIDER -->
@@ -94,7 +80,7 @@
             <p>John Cain</p>
             <p>Founder & Director | Cain Archive</p>
             <a href="mailto:john@cainarchive.com" class="menu-contacts">john@cainarchive.com</a>
-            <a href="tel:+15167876432" class="menu-contacts">+1 516 787 6432</a>
+            <a href="tel:+15618840648" class="menu-contacts">+1 561 884 0648</a>
           </div>
           <div>
             <p>Dina Kriukova-Lichman</p>
@@ -116,24 +102,42 @@
 
 
 
+      <div id="smooth-wrapper">
+      <div id="smooth-content">
+    <!-- MASKED -->
+      <section class="container">
+          <div class="video-wrapper">
+            <video autoplay loop muted playsinline>
+                <source src="/video/ww2.MP4" type="video/mp4">
+            </video>
+          </div>
+
+          <div class="mask">
+            <h2 id="ww2-title">WORLD WAR II</h2>
+          </div> 
+      </section>
+
+
+
+
 
 
 <!-- GALLERY -->
-        <section class="gallery-words" id="gallery-words">
-          <h3>World War II <span>Collection</span></h3>
-          <p>Witness the unfiltered courage and quiet humanity of a world at war — captured in photographs the world has never seen.</p>
+        <section class="gallery-words letter-section" id="gallery-words">
+          <h3 data-speed="1.1">World War II </h3>
+          <p data-speed="1.1">Witness the unfiltered courage and quiet humanity of a world at war — captured in photographs the world has never seen.</p>
         </section>
 
 
   <section class="gallery-section">
     <div class="gallery-grid">
-      <div class="img-wrapper">
+      <div class="img-wrapper" >
         <img src="/img/gallery/1.JPEG" alt="Gallery 1" />
       </div>
-      <div class="img-wrapper">
+      <div class="img-wrapper" >
         <img src="/img/gallery/2.JPEG" alt="Gallery 1" />
       </div>
-      <div class="img-wrapper">
+      <div class="img-wrapper" >
         <img src="/img/gallery/3.JPEG" alt="Gallery 1" />
       </div>
       <div class="img-wrapper">
@@ -164,15 +168,6 @@
     </div>
   </section>
 
-  <!-- Modal -->
-  <div class="modal" id="imageModal">
-    <span class="modal-close" id="modalClose">&times;</span>
-    <img class="modal-content" id="modalImg" alt="" />
-    <div class="modal-nav">
-      <span class="prev" id="modalPrev">&#10094;</span>
-      <span class="next" id="modalNext">&#10095;</span>
-    </div>
-  </div>
 
 
 
@@ -191,7 +186,7 @@
               <p>John Cain</p>
               <p>Founder & Director | Cain Archive</p>
               <a href="mailto:john@cainarchive.com">john@cainarchive.com</a>
-              <a href="tel:+15167876432">+1 516 787 6432</a>
+              <a href="tel:+15618840648">+1 561 884 0648</a>
             </div>
             <div class="footer-contact">
               <p>Dina Kriukova-Lichman</p>
@@ -212,9 +207,18 @@
           </div>
         </footer>
 
+  </div>
+</div>
 
-
-
+  <!-- Modal GALLERY-->
+  <div class="modal" id="imageModal">
+    <span class="modal-close" id="modalClose">&times;</span>
+    <img class="modal-content" id="modalImg" alt="" />
+    <div class="modal-nav">
+      <span class="prev" id="modalPrev">&#10094;</span>
+      <span class="next" id="modalNext">&#10095;</span>
+    </div>
+  </div>
 
 
 
@@ -227,6 +231,7 @@
       <script src="js/navbar.js"></script>
       <script src="js/dropdown.js"></script>
       <script src="js/smooth.js"></script>
+      <script src="js/main.js"></script>
 
    </body>
 </html>
