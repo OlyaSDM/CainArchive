@@ -87,7 +87,7 @@ html, body {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: clamp(28px, 3vw, 30px); /* теперь одинаковый размер */
+  font-size: clamp(28px, 3vw, 30px); 
 }
 
 .hero-ampersand {
@@ -95,7 +95,8 @@ html, body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  font-size: clamp(28px, 3vw, 40px); /* совпадает с буквами */
+  margin-top: -20px;
+    font-family: 'GT Super';
   display: flex;
   justify-content: center;
   align-items: center;
@@ -104,8 +105,10 @@ html, body {
 .hero-letter {
   display: inline-block;
   transform: translateY(100%);
+    font-size: clamp(32px, 3vw, 60px);
   opacity: 0;
 }
+
 
 
 .hero-video {
@@ -116,8 +119,6 @@ html, body {
   opacity: 0;
   transform: translateY(50px);
   z-index: 1;
-}
-.ampersand {
 }
 
 .terms {

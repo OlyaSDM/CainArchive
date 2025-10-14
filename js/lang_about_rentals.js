@@ -25,18 +25,11 @@ const translations = {
         email: 'dina.kriukova@cainarchive.com',
       },
       copyright: '© 2025 Cain Archive. All rights reserved.',
-              protectedText: 'All images and materials on this website are protected under international copyright. Unauthorized reproduction, distribution, or display is strictly prohibited.'
-
+      protectedText: 'All images and materials on this website are protected under international copyright. Unauthorized reproduction, distribution, or display is strictly prohibited.'
     },
-    about: {
-      title: "About us",
-    },
-    history: {
-      title: "Our history",
-    },
-    mission:{
-      title: "Our mission",
-    }
+    about: { title: "About us" },
+    history: { title: "Our history" },
+    mission: { title: "Our mission" }
   },
 
   ar: {
@@ -48,35 +41,28 @@ const translations = {
       press: "الصحافة",
     },
     contact: {
-      founderTitle: "المؤسس والمدير | أرشيف كاين",
-      coordinatorTitle: "منسق المؤسسات والأرشيف | أرشيف كاين",
+      founderTitle: "المؤسس والمدير | Cain أرشيف",
+      coordinatorTitle: "منسق المؤسسات والأرشيف | Cain أرشيف",
     },
     footer: {
       heading: 'التاريخ <span>الذي يشكل الغد</span>',
       founder: {
-        name: 'جون كاين',
-        title: 'المؤسس والمدير | أرشيف كاين',
+        name: 'John Cain',
+        title: 'المؤسس والمدير | Cain أرشيف',
         email: 'john@cainarchive.com',
         phone: '+1 561 884 0648',
       },
       coordinator: {
-        name: 'دينا كريوكوفا-ليتشمان',
-        title: 'منسق المؤسسات والأرشيف | أرشيف كاين',
+        name: 'Dina Kriukova-Lichman',
+        title: 'منسق المؤسسات والأرشيف | Cain أرشيف',
         email: 'dina.kriukova@cainarchive.com',
       },
-      copyright: '© 2025 أرشيف كاين. جميع الحقوق محفوظة.',
-                protectedText: 'جميع الصور والمواد على هذا الموقع محمية بموجب حقوق الطبع والنشر الدولية. يُحظر الاستنساخ أو التوزيع أو العرض دون إذن.'
-
+      copyright: '© 2025 Cain أرشيف. جميع الحقوق محفوظة.',
+      protectedText: 'جميع الصور والمواد على هذا الموقع محمية بموجب حقوق الطبع والنشر الدولية. يُحظر الاستنساخ أو التوزيع أو العرض دون إذن.'
     },
-    about: {
-  title: "معلومات عنا",
-},
-history: {
-  title: "تاريخنا",
-},
-mission: {
-  title: "مهمتنا",
-},
+    about: { title: "معلومات عنا" },
+    history: { title: "تاريخنا" },
+    mission: { title: "مهمتنا" }
   },
 
   ja: {
@@ -88,35 +74,28 @@ mission: {
       press: "プレス",
     },
     contact: {
-      founderTitle: "創設者兼ディレクター | カインアーカイブ",
-      coordinatorTitle: "機関およびアーカイブコーディネーター | カインアーカイブ",
+      founderTitle: "創設者兼ディレクター | Cain アーカイブ",
+      coordinatorTitle: "機関およびアーカイブコーディネーター | Cain アーカイブ",
     },
     footer: {
       heading: '歴史 <span>が明日を形作る</span>',
       founder: {
-        name: 'ジョン・ケイン',
-        title: '創設者兼ディレクター | カインアーカイブ',
+        name: 'John Cain',
+        title: '創設者兼ディレクター | Cain アーカイブ',
         email: 'john@cainarchive.com',
         phone: '+1 561 884 0648',
       },
       coordinator: {
-        name: 'ディナ・クリュコヴァ＝リチマン',
-        title: '機関およびアーカイブコーディネーター | カインアーカイブ',
+        name: 'Dina Kriukova-Lichman',
+        title: '機関およびアーカイブコーディネーター | Cain アーカイブ',
         email: 'dina.kriukova@cainarchive.com',
       },
-      copyright: '© 2025 カインアーカイブ。無断転載を禁じます。',
-          protectedText: 'このウェブサイトのすべての画像および資料は国際著作権法で保護されています。無断での複製、配布、表示は禁止されています。'
-
+      copyright: '© 2025 Cain アーカイブ。無断転載を禁じます。',
+      protectedText: 'このウェブサイトのすべての画像および資料は国際著作権法で保護されています。無断での複製、配布、表示は禁止されています。'
     },
-    about: {
-  title: "私たちについて",
-},
-history: {
-  title: "私たちの歴史",
-},
-mission: {
-  title: "私たちの使命",
-},
+    about: { title: "私たちについて" },
+    history: { title: "私たちの歴史" },
+    mission: { title: "私たちの使命" }
   },
 
   es: {
@@ -128,35 +107,28 @@ mission: {
       press: "Prensa",
     },
     contact: {
-      founderTitle: "Fundador y Director | Archivo Cain",
-      coordinatorTitle: "Coordinadora Institucional y de Archivo | Archivo Cain",
+      founderTitle: "Fundador y Director | Cain Archivo",
+      coordinatorTitle: "Coordinadora Institucional y de Archivo | Cain Archivo",
     },
     footer: {
       heading: 'Historia que da forma <span>al mañana</span>',
       founder: {
         name: 'John Cain',
-        title: 'Fundador y Director | Archivo Cain',
+        title: 'Fundador y Director | Cain Archivo',
         email: 'john@cainarchive.com',
         phone: '+1 561 884 0648',
       },
       coordinator: {
         name: 'Dina Kriukova-Lichman',
-        title: 'Coordinadora Institucional y de Archivo | Archivo Cain',
+        title: 'Coordinadora Institucional y de Archivo | Cain Archivo',
         email: 'dina.kriukova@cainarchive.com',
       },
-      copyright: '© 2025 Archivo Cain. Todos los derechos reservados.',
-                protectedText: 'Todas las imágenes y materiales en este sitio web están protegidos por derechos de autor internacionales. Se prohíbe la reproducción, distribución o exhibición no autorizada.'
-
+      copyright: '© 2025 Cain Archivo. Todos los derechos reservados.',
+      protectedText: 'Todas las imágenes y materiales en este sitio web están protegidos por derechos de autor internacionales. Se prohíbe la reproducción, distribución o exhibición no autorizada.'
     },
-    about: {
-  title: "Sobre nosotros",
-},
-history: {
-  title: "Nuestra historia",
-},
-mission: {
-  title: "Nuestra misión",
-},
+    about: { title: "Sobre nosotros" },
+    history: { title: "Nuestra historia" },
+    mission: { title: "Nuestra misión" }
   },
 
   zh: {
@@ -168,35 +140,28 @@ mission: {
       press: "媒体",
     },
     contact: {
-      founderTitle: "创始人兼主任 | 凯恩档案馆",
-      coordinatorTitle: "机构与档案协调员 | 凯恩档案馆",
+      founderTitle: "创始人兼主任 | Cain 档案馆",
+      coordinatorTitle: "机构与档案协调员 | Cain 档案馆",
     },
     footer: {
       heading: '塑造 <span>明天</span> 的历史',
       founder: {
-        name: '约翰·凯恩',
-        title: '创始人兼主任 | 凯恩档案馆',
+        name: 'John Cain',
+        title: '创始人兼主任 | Cain 档案馆',
         email: 'john@cainarchive.com',
         phone: '+1 561 884 0648',
       },
       coordinator: {
-        name: '迪娜·克里乌科娃-利奇曼',
-        title: '机构与档案协调员 | 凯恩档案馆',
+        name: 'Dina Kriukova-Lichman',
+        title: '机构与档案协调员 | Cain 档案馆',
         email: 'dina.kriukova@cainarchive.com',
       },
-      copyright: '© 2025 凯恩档案馆。版权所有。',
-                protectedText: '本网站上的所有图片和材料均受国际版权保护。未经授权，严禁复制、分发或展示。'
-
+      copyright: '© 2025 Cain 档案馆。版权所有。',
+      protectedText: '本网站上的所有图片和材料均受国际版权保护。未经授权，严禁复制、分发或展示。'
     },
-    about: {
-  title: "关于我们",
-},
-history: {
-  title: "我们的历史",
-},
-mission: {
-  title: "我们的使命",
-},
+    about: { title: "关于我们" },
+    history: { title: "我们的历史" },
+    mission: { title: "我们的使命" }
   },
 };
 
@@ -223,11 +188,17 @@ const applyLetterAnimation = (el, text) => {
 
 const applyText = (el, text) => {
   if (!el || text == null) return;
+
+  // Обновление для элементов с атрибутом data-attr
   if (el.dataset?.attr) {
     el.setAttribute(el.dataset.attr, text);
-  } else if (["input", "textarea"].includes(el.tagName.toLowerCase())) {
+  } 
+  // Обновление для input и textarea
+  else if (["input", "textarea"].includes(el.tagName.toLowerCase())) {
     el.placeholder = text;
-  } else {
+  } 
+  // Обновление для обычных элементов, включая заголовки
+  else {
     el.innerHTML = text;
   }
 };
