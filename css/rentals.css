@@ -53,7 +53,7 @@ html, body {
   justify-content: center;
   align-items: center;
   font-family: 'GT Super';
-  font-size: clamp(20px, 2vw, 40px);
+  font-size: clamp(20px, 2vw, 34px);
   font-weight: 300;
   color: var(--sandy);
   z-index: 2;
@@ -70,22 +70,35 @@ html, body {
   right: 0;
 }
 
-.hero-center {
-  position: fixed;
-  top: 40%; 
-  left: 50%;
-  transform: translate(-50%, -50%);
+.hero-left, .hero-right, .hero-ampersand {
   font-family: 'GT Super';
-  font-size: clamp(40px, 10vw, 105px); 
+  font-weight: 300;
   color: var(--sandy);
-  z-index: 5; 
-  pointer-events: none;
-  line-height: 1;
-  margin-left: -2%;
+  text-transform: uppercase;
+  overflow: hidden;
+  z-index: 2;
 }
 
-.hero-title {
-  overflow: hidden;
+.hero-left, .hero-right {
+  position: fixed;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: clamp(28px, 3vw, 30px); /* теперь одинаковый размер */
+}
+
+.hero-ampersand {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: clamp(28px, 3vw, 40px); /* совпадает с буквами */
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .hero-letter {
@@ -93,6 +106,7 @@ html, body {
   transform: translateY(100%);
   opacity: 0;
 }
+
 
 .hero-video {
   position: relative;
@@ -190,7 +204,6 @@ html, body {
   opacity: 0.6;   
   z-index: 5;         
   pointer-events: none;
-    margin-left: -2%;
   
 }
 
