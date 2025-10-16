@@ -23,11 +23,20 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ===== Smooth Scroll Scaling =====
+
+// // Step 3: Scale the video in subtly, fade it in if needed
+// tl.to(".video-wrapper", {
+//   scale: 0.93,
+//   opacity: 1,
+//   ease: "power4.out",
+//   duration: 1.6
+// }, "<0.3"); // starts slightly after mask begins fading
+
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".container",
         start: "top top",
-        end: "+=5000",
+        end: "+=2000",
         scrub: 1,
         pin: true
       }
@@ -36,22 +45,46 @@ document.addEventListener("DOMContentLoaded", () => {
     tl.to(".mask h2", {
       scale: 30,
       ease: "none",
-      duration: 0.7
+      duration: 1.3
     });
 
     tl.to(".mask", {
       opacity: 0,
       ease: "power1.inOut",
-      duration: 0.3
+      duration: 1.4
     }, ">");
 
     tl.to({}, { duration: 0.3 });
 
-    tl.to(".video-wrapper", {
+    tl.fromTo("#collection-text", {
       opacity: 0,
+      y: 30
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 1.2,
+      ease: "power2.out"
+    }, "-=1.2");
+
+    // Animate "photos in our collection"
+    tl.fromTo(".collection-text-p", {
+      opacity: 0,
+      y: 40
+    }, {
+      opacity: 1,
+      y: 0,
+      duration: 1.4,
+      ease: "power2.out"
+    }, "-=1");
+
+    tl.to(".video-wrapper", {
+      scale: 0.85, 
       ease: "power2.out",
-      duration: 0.6
-    });
+      duration: 1
+    })
+
+
+
 
     // ===== NAVBAR VISIBILITY CONTROL =====
     const navbar = document.getElementById("navbar");
