@@ -292,7 +292,7 @@ margin-top: 5%;
 @media (max-width: 480px) {
   .title {
     font-size: 38px;
-    margin-bottom: 16px;
+    margin-bottom: 20px;
   }
 
   .content {
@@ -312,6 +312,7 @@ margin-top: 5%;
 
   .content .image img {
     max-height: 200px;
+    margin-bottom: -8%;
   }
 }
 
