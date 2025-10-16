@@ -1837,7 +1837,6 @@ top: -7%;
 }
 
 .contact-left {
-    /* background-color: rgb(2, 48, 71, 0.8); */
    background-color: var(--fonts); 
   display: flex;
   align-items: center;
@@ -2019,20 +2018,10 @@ padding: 40px;
   transform: translateX(5px);
 } 
 
-
-
-
-
-
-
-
-
-
 /*form*/
 .form-group {
   margin-bottom: 16px; 
   display: flex;
-  flex-direction: column;
 }
 
 .form-group input,
@@ -2091,7 +2080,10 @@ textarea.error {
 
 .privacy-link{
 margin-left: 6px;
+  	font-family: "Libre Franklin", sans-serif;
+font-weight: 100;
 color: var(--background);
+font-size: 16px;
 }
 
 @media (max-width: 1024px) {
