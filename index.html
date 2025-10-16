@@ -898,69 +898,70 @@
                </div>
                </section> -->
             <!-- Rentals Section -->
-            <section class="contact-block" id="contactBlock">
-               <div class="contact-right">
-                  <div class="contact-info">
-                     <div class="exhibitions">
-                        <h3>
-                           <span data-key="contactBlock.exhibitions.title">Exhibitions & Rentals</span>
-                        </h3>
-                        <p>
-                           <span data-key="contactBlock.exhibitions.text1">
-                              The Cain Archive is a private collection of international significance, preserving original vintage photography that chronicles the defining moments, leaders, and human stories of the twentieth century.
-                           <!-- The <strong>Cain Archive</strong> is a private collection of international importance, comprising original vintage photographs documenting 
-                           <em>World War II, the Holocaust, Winston Churchill, John F. Kennedy, and Hollywood culture</em>. -->
-                           </span>
-                        </p>
-                        <p>
-                           <span data-key="contactBlock.exhibitions.text2">
-                           Materials are available to museums and cultural institutions worldwide through formal exhibition loans and research collaborations.
-                           </span>
-                        </p>
-                        <a href="/rentals.html" class="read-more-rentals">
-                           <span class="text" data-key="contactBlock.exhibitions.readMore">Read More</span>
-                           <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="35" height="15" viewBox="0 0 40 20" fill="none">
-                              <path d="M0 10H36M36 10L28 2M36 10L28 18" stroke="currentColor" stroke-width="2"/>
-                           </svg>
-                        </a>
-                     </div>
-                  </div>
-               </div>
-               <div class="contact-left">
-                  <form class="contact-form" id="contactForm" method="POST" novalidate>
-                     <div class="contact-title">
-                        <h3 data-key="contactBlock.form.titleLine1">Get in</h3>
-                        <h2 data-key="contactBlock.form.titleLine2">touch</h2>
-                     </div>
-                     <div class="form-group">
-                        <input type="text" name="name" placeholder="" data-key="contactBlock.form.name" required>
-                        <small class="error-message"></small>
-                     </div>
-                     <div class="form-group">
-                        <input type="email" name="email" placeholder="" data-key="contactBlock.form.email" required>
-                        <small class="error-message"></small>
-                     </div>
-                     <div class="form-group">
-                        <textarea name="message" placeholder="" data-key="contactBlock.form.message" required></textarea>
-                        <small class="error-message"></small>
-                     </div>
-                     <!-- Honeypot -->
-                     <input type="text" name="company" style="display:none">
-                     <div class="form-group checkbox-group">
-                        <label>
-                        <input type="checkbox" name="privacy" required>
-                        <span data-key="contactBlock.form.privacy">I've accepted the <a href="#">privacy policy</a>.</span>
-                        </label>
-                        <small class="error-message"></small>
-                     </div>
-                     <button type="submit" class="hero-cta-btn">
-                     <span class="btn-text" data-key="contactBlock.form.submit">Submit Inquiry</span>
-                     <span class="v-border v-left"></span>
-                     <span class="v-border v-right"></span>
-                     </button>
-                  </form>
-               </div>
-            </section>
+<section class="contact-block" id="contactBlock">
+   <div class="contact-right">
+      <div class="contact-info">
+         <div class="exhibitions">
+            <h3>
+               <span data-key="contactBlock.exhibitions.title">Exhibitions & Rentals</span>
+            </h3>
+            <p>
+               <span data-key="contactBlock.exhibitions.text1">
+                  The Cain Archive is a private collection of international significance, preserving original vintage photography that chronicles the defining moments, leaders, and human stories of the twentieth century.
+                  <!-- The <strong>Cain Archive</strong> is a private collection of international importance, comprising original vintage photographs documenting 
+                     <em>World War II, the Holocaust, Winston Churchill, John F. Kennedy, and Hollywood culture</em>. -->
+               </span>
+            </p>
+            <p>
+               <span data-key="contactBlock.exhibitions.text2">
+               Materials are available to museums and cultural institutions worldwide through formal exhibition loans and research collaborations.
+               </span>
+            </p>
+            <a href="/rentals.html" class="read-more-rentals">
+               <span class="text" data-key="contactBlock.exhibitions.readMore">Read More</span>
+               <svg class="arrow" xmlns="http://www.w3.org/2000/svg" width="35" height="15" viewBox="0 0 40 20" fill="none">
+                  <path d="M0 10H36M36 10L28 2M36 10L28 18" stroke="currentColor" stroke-width="2"/>
+               </svg>
+            </a>
+         </div>
+      </div>
+   </div>
+   <div class="contact-left">
+      <form class="contact-form" id="contactForm" method="POST" novalidate>
+         <div class="contact-title">
+            <h3 data-key="contactBlock.form.titleLine1">Get in</h3>
+            <h2 data-key="contactBlock.form.titleLine2">touch</h2>
+         </div>
+         <div class="form-group">
+            <input type="text" name="name" placeholder="" data-key="contactBlock.form.name" required>
+            <small class="error-message"></small>
+         </div>
+         <div class="form-group">
+            <input type="email" name="email" placeholder="" data-key="contactBlock.form.email" required>
+            <small class="error-message"></small>
+         </div>
+         <div class="form-group">
+            <textarea name="message" placeholder="" data-key="contactBlock.form.message" required></textarea>
+            <small class="error-message"></small>
+         </div>
+         <!-- Honeypot -->
+         <input type="text" name="company" style="display:none">
+         <div class="form-group checkbox-group">
+            <label>
+            <input type="checkbox" name="privacy" required>
+            <span data-key="contactBlock.form.privacyText">I've accepted the</span>
+            </label>
+            <a href="#" class="privacy-link" data-key="contactBlock.form.privacyLink">privacy policy</a>.
+            <small class="error-message"></small>
+         </div>
+         <button type="submit" class="hero-cta-btn">
+         <span class="btn-text" data-key="contactBlock.form.submit">Submit Inquiry</span>
+         <span class="v-border v-left"></span>
+         <span class="v-border v-right"></span>
+         </button>
+      </form>
+   </div>
+</section>
             <!-- PRESS SECTION -->
             <!-- <section class="press-intro letter-section">
                <h3>Press on Us</h3>
@@ -1101,6 +1102,15 @@
       </div>
       <!-- Cursor tooltip for videos -->
       <div class="cursor-tooltip cursor-tooltip-play">Play</div>
+      <a href="#" class="privacy-link">Open Privacy Policy</a>
+<div id="privacyModal" class="modal">
+  <div class="modal-content">
+    <span class="close-modal">&times;</span>
+    <h2 data-key="modal.privacyPolicy.title">Privacy Policy</h2>
+    <p data-key="modal.privacyPolicy.p1">We value your privacy. This policy explains how we handle your data responsibly.</p>
+    <p data-key="modal.privacyPolicy.p2">Your data will not be shared with third parties.</p>
+  </div>
+</div>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>

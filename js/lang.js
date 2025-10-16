@@ -50,19 +50,19 @@ const translations = {
     collections: {
       ww2: {
         title: "World War II",
-        text: "A testament to human endurance, loss, and the will to remember."
+        text: "Holocaust and the World War II — a testament to human endurance, loss, and the will to remember."
       },
       kennedy: {
         title: "John F. Kennedy",
-        text: "Fragments of youth, vision, and resolve that defined an era and redefined leadership."
+        text: "John F. Kennedy — fragments of youth, vision, and resolve that defined an era and redefined leadership."
       },
       churchill: {
         title: "Winston Churchill",
-        text: "The man who carried a nation through its darkest hour, where courage became destiny."
+        text: "Winston Churchill — the man who carried a nation through its darkest hour, where courage became destiny."
       },
       hollywood: {
         title: "Icons & Culture",
-        text: "The people who turned life into art, and art into legacy."
+        text: "Icons & Culture — the people who turned life into art, and art into legacy."
       }
     },
     contactBlock: {
@@ -78,7 +78,8 @@ const translations = {
         name: "Your name",
         email: "Your email address",
         message: "Please include your institution’s name and exhibition concept.",
-        privacy: "I've accepted the privacy policy.",
+  privacyText: "I've accepted the",
+  privacyLink: "privacy policy",
         submit: "Submit Inquiry"
       }
     },
@@ -102,8 +103,15 @@ const translations = {
       cain: 'Point',
       cursor: 'View'
     },
+    modal: {
+      privacyPolicy: {
+        title: "Privacy Policy",
+        p1: "We value your privacy. This policy explains how we handle your data responsibly.",
+        p2: "Your data will not be shared with third parties.",
+        p3: "For more details, please contact us via the form above."
+      }
   },
-
+  },
   ar: {
     nav: {
       mission: "مهمتنا",
@@ -183,7 +191,8 @@ const translations = {
         name: "اسمك",
         email: "عنوان بريدك الإلكتروني",
         message: "يرجى تضمين اسم مؤسستك ومفهوم المعرض.",
-        privacy: "لقد قبلت سياسة الخصوصية.",
+privacyText: "لقد قبلت الـ",
+privacyLink: "سياسة الخصوصية",
         submit: "إرسال الرسالة"
       }
     },
@@ -206,6 +215,14 @@ const translations = {
     tooltips: {
       cain: 'نقطة',
       cursor: 'عرض'
+    },
+    modal: {
+      privacyPolicy: {
+        title: "سياسة الخصوصية",
+        p1: "نحن نحترم خصوصيتك. تشرح هذه السياسة كيفية تعاملنا مع بياناتك بمسؤولية.",
+        p2: "لن يتم مشاركة بياناتك مع أطراف ثالثة.",
+        p3: "لمزيد من التفاصيل، يرجى التواصل معنا عبر النموذج أعلاه."
+      }
     }
   },
 
@@ -288,7 +305,8 @@ const translations = {
         name: "お名前",
         email: "メールアドレス",
         message: "所属機関名と展示コンセプトを含めてください。",
-        privacy: "プライバシーポリシーに同意しました。",
+privacyText: "",
+privacyLink: "プライバシーポリシー",
         submit: "送信"
       }
     },
@@ -311,6 +329,14 @@ const translations = {
     tooltips: {
       cain: 'ポイント',
       cursor: '表示'
+    },
+     modal: {
+      privacyPolicy: {
+        title: "プライバシーポリシー",
+        p1: "私たちはプライバシーを重視しています。このポリシーは、データを責任を持って扱う方法を説明します。",
+        p2: "お客様のデータは第三者と共有されません。",
+        p3: "詳細については、上記のフォームからお問い合わせください。"
+      }
     }
   },
 
@@ -393,7 +419,8 @@ const translations = {
         name: "Tu nombre",
         email: "Tu correo electrónico",
         message: "Incluya el nombre de su institución y el concepto de la exposición.",
-        privacy: "He aceptado la política de privacidad.",
+privacyText: "He aceptado la",
+privacyLink: "política de privacidad",
         submit: "Enviar Consulta"
       }
     },
@@ -416,6 +443,14 @@ const translations = {
     tooltips: {
       cain: 'Punto',
       cursor: 'Ver'
+    },
+    modal: {
+      privacyPolicy: {
+        title: "Política de Privacidad",
+        p1: "Valoramos su privacidad. Esta política explica cómo manejamos sus datos de manera responsable.",
+        p2: "Sus datos no se compartirán con terceros.",
+        p3: "Para más detalles, contáctenos a través del formulario anterior."
+      }
     }
   },
 
@@ -498,7 +533,8 @@ const translations = {
         name: "您的姓名",
         email: "您的电子邮箱",
         message: "请包括您的机构名称和展览概念。",
-        privacy: "我已接受隐私政策。",
+privacyText: "我已接受",
+privacyLink: "隐私政策",
         submit: "提交咨询"
       }
     },
@@ -521,6 +557,14 @@ const translations = {
     tooltips: {
       cain: '点',
       cursor: '查看'
+    },
+    modal: {
+      privacyPolicy: {
+        title: "隐私政策",
+        p1: "我们重视您的隐私。本政策说明我们如何负责任地处理您的数据。",
+        p2: "您的数据不会与第三方共享。",
+        p3: "如需更多详情，请通过上方表单联系我们。"
+      }
     }
   }
 };
