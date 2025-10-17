@@ -5,7 +5,7 @@
   --accent: #48cae4;
   --white: white;
   --sandy: #e7c9af;
-  --red: #8f0707;
+  --red: #cc0303;
 }
 body{
   margin: 0;
@@ -2022,8 +2022,11 @@ padding: 40px;
 .form-group {
   margin-bottom: 16px; 
   display: flex;
+  flex-direction: column;
 }
-
+.form-flex{
+  display: flex;
+}
 .form-group input,
 .form-group textarea {
   margin-bottom: 4px; 
