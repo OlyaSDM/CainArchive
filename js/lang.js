@@ -49,8 +49,8 @@ const translations = {
     },
     collections: {
       ww2: {
-        title: "World War II",
-        text: "Holocaust and the World War II — a testament to human endurance, loss, and the will to remember."
+        title: "Holocaust & WWII",
+        text: "A testament to human endurance, loss, and the will to remember."
       },
       kennedy: {
         title: "John F. Kennedy",

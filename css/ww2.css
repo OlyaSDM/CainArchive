@@ -90,13 +90,82 @@
     text-transform: uppercase;
     line-height: 1; 
     }  
+    .mask .kennedy-title{
+    font-size: clamp(60px, 10vw, 150px);
+    }
+.scroll-down {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 30px;
+  height: 50px;
+  border: 2px solid var(--fonts);
+  border-radius: 25px;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding-top: 8px;
+  opacity: 1;
+  z-index: 4;
+  pointer-events: none;
+}
+
+.scroll-down span {
+  display: block;
+  width: 6px;
+  height: 6px;
+  background-color: var(--fonts);
+  border-radius: 50%;
+  opacity: 1;
+  animation: scrollBounce 1.8s infinite;
+}
+
+@keyframes scrollBounce {
+  0%, 20%, 50%, 80%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(12px);
+  }
+  60% {
+    transform: translateY(6px);
+  }
+}
 
 
+.collection-caption {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  pointer-events: none;
+}
+
+#collection-text {
+  font-size: 170px;
+    font-family: 'GT Super', serif; 
+  font-weight: 200;
+  opacity: 0;
+  transform: translateY(20px);
+  text-align: center;
+  color: var(--accent);
+}
+
+.collection-text-p{
+    color: white;
+    font-size: 30px;
+    font-family: 'GT Super', serif; 
+    margin-top: -30px;
+      font-style: italic;
+}
 
 /* ===== GALLERY SECTION ===== */
 
 .gallery-words {
-  /* min-height: 100vh; */
   background: var(--background);
   display: flex;
   flex-direction: column;
@@ -153,33 +222,56 @@
 .img-wrapper img:hover {
   transform: scale(1.05); 
 }
-.collection-caption {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  pointer-events: none;
-}
 
-#collection-text {
-  font-size: 170px;
-  font-family: 'GT Super', serif; 
-  font-weight: 200;
-  opacity: 0;
-  transform: translateY(20px);
+.gallery-chapter-title {
+  font-family: "GT Super", serif;
+  font-size: clamp(32px, 6vw, 60px);
+  font-weight: 300;
+  color: var(--fonts);
   text-align: center;
-  color: var(--accent);
+  margin: 60px 0 40px;
+  position: relative;
 }
 
-.collection-text-p{
-    color: white;
-    font-size: 28px;
-    font-family: 'GT Super', serif; 
-
+.gallery-chapter-title::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent-bright);
+  margin: 10px auto 0;
 }
+ .gallery-nav {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  margin: 60px 0 30px;
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 20px;
+  font-weight: 300;
+  z-index: 10;
+  position: relative;
+}
+
+.gallery-nav a {
+  color: var(--fonts);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.gallery-nav a:hover {
+  color: var(--accent-bright);
+  border-color: var(--accent-bright);
+} 
+
+
+
+
+
+
+
+
 /* Responsive */
 @media (max-width: 1024px) {
   .gallery-grid {

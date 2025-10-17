@@ -24,19 +24,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // ===== Smooth Scroll Scaling =====
 
-// // Step 3: Scale the video in subtly, fade it in if needed
-// tl.to(".video-wrapper", {
-//   scale: 0.93,
-//   opacity: 1,
-//   ease: "power4.out",
-//   duration: 1.6
-// }, "<0.3"); // starts slightly after mask begins fading
-
     const tl = gsap.timeline({
       scrollTrigger: {
         trigger: ".container",
         start: "top top",
-        end: "+=2000",
+        end: "+=1000",
         scrub: 1,
         pin: true
       }
@@ -45,13 +37,13 @@ document.addEventListener("DOMContentLoaded", () => {
     tl.to(".mask h2", {
       scale: 30,
       ease: "none",
-      duration: 1.3
+      duration: 1
     });
 
     tl.to(".mask", {
       opacity: 0,
       ease: "power1.inOut",
-      duration: 1.4
+      duration: 1
     }, ">");
 
     tl.to({}, { duration: 0.3 });
@@ -78,12 +70,20 @@ document.addEventListener("DOMContentLoaded", () => {
     }, "-=1");
 
     tl.to(".video-wrapper", {
-      scale: 0.85, 
+      scale: 0.9, 
       ease: "power2.out",
       duration: 1
     })
 
-
+document.querySelectorAll(".gallery-nav a").forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    const target = document.querySelector(this.getAttribute("href"));
+    if (target) {
+      ScrollSmoother.get().scrollTo(target, true);
+    }
+  });
+});
 
 
     // ===== NAVBAR VISIBILITY CONTROL =====
@@ -94,7 +94,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     ScrollTrigger.create({
       trigger: ".container",
-      start: "bottom bottom",   // when bottom of container hits bottom of viewport
+      start: "bottom bottom ",   
       onEnter: () => {
         gsap.to(navbar, { opacity: 1, pointerEvents: "auto", duration: 0.5, ease: "power2.out" });
       },
@@ -106,6 +106,31 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   };
+
+// ===== SCROLL DOWN BUTTON CONTROL =====
+const scrollDown = document.getElementById("scrollDown");
+
+if (scrollDown) {
+  gsap.to(scrollDown, {
+    opacity: 0,
+    y: 30,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".container",
+      start: "top top+=50", // starts hiding early as user scrolls
+      end: "center top",
+      scrub: true,
+      onLeaveBack: () => {
+        gsap.to(scrollDown, {
+          opacity: 1,
+          y: 0,
+          duration: 0.6,
+          ease: "power2.out",
+        });
+      },
+    },
+  });
+}
 
   // Wait for ScrollSmoother before triggering animation
   if (ScrollSmoother.get()) {
@@ -169,6 +194,10 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   });
 
+
+
+
+
   // ===== LETTER-SECTION ANIMATION =====
   function splitTextToLetters(el) {
     const text = el.textContent;
@@ -207,3 +236,5 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 });
+
+
