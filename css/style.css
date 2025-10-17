@@ -150,10 +150,12 @@ body{
   gap: 2px;
   text-decoration: none;
 }
-.round-logo{ height: 55px; }
+.round-logo
+  { height: 40px; 
+  }
 .words-logo{ 
   height: 60px;
-  margin-left: -10px;
+  margin-left: 0;
 }
 
 .nav-right{

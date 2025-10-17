@@ -54,15 +54,15 @@ const translations = {
       },
       kennedy: {
         title: "John F. Kennedy",
-        text: "John F. Kennedy — fragments of youth, vision, and resolve that defined an era and redefined leadership."
+        text: "Fragments of youth, vision, and resolve that defined an era and redefined leadership."
       },
       churchill: {
         title: "Winston Churchill",
-        text: "Winston Churchill — the man who carried a nation through its darkest hour, where courage became destiny."
+        text: "The man who carried a nation through its darkest hour, where courage became destiny."
       },
       hollywood: {
         title: "Icons & Culture",
-        text: "Icons & Culture — the people who turned life into art, and art into legacy."
+        text: "The people who turned life into art, and art into legacy."
       }
     },
     contactBlock: {
