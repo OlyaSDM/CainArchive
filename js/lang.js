@@ -162,20 +162,21 @@ const translations = {
     },
     collections: {
       ww2: {
-        title: "الحرب العالمية الثانية",
-        text: "الهولوكوست والحرب العالمية الثانية — شهادة على صمود الإنسان، والفقدان، والإرادة في التذكّر."
+        title: "الهولوكوست والحرب العالمية الثانية",
+        text: "شهادة على صمود الإنسان وخسارته وإرادته في التذكّر.",
+
       },
       kennedy: {
         title: "John F. Kennedy",
-        text: "John F. Kennedy — شذرات من الشباب والرؤية والعزم التي عرّفت حقبة وأعادت تعريف القيادة."
+        text: "شظايا من الشباب والرؤية والعزم التي عرّفت حقبة وأعادت تعريف القيادة.",
       },
       churchill: {
         title: "Winston Churchill",
-        text: "Winston Churchill — الرجل الذي حمل أمته خلال أحلك ساعاتها، حيث أصبح الشجاعة قدرًا."
+        text: "الرجل الذي حمل أمة خلال أحلك ساعاتها، حيث أصبح الشجاعة مصيرًا.",
       },
       hollywood: {
-        title: "هوليوود والثقافة",
-        text: "هوليوود والثقافة — الأشخاص الذين حوّلوا الحياة إلى فن، والفن إلى إرث خالد."
+        title: "الرموز والثقافة",
+        text: "الأشخاص الذين حوّلوا الحياة إلى فن، والفن إلى إرث خالد.",
       }
     },
     contactBlock: {
@@ -276,20 +277,20 @@ privacyLink: "سياسة الخصوصية",
     },
     collections: {
       ww2: {
-        title: "第二次世界大戦",
-        text: "ホロコーストと第二次世界大戦 — 人間の忍耐、喪失、そして記憶しようとする意志の証。"
+        title: "ホロコーストと第二次世界大戦",
+        text: "人間の忍耐、喪失、そして記憶し続ける意志の証です。"
       },
       kennedy: {
         title: "John F. Kennedy",
-        text: "John F. Kennedy — 若さ、ビジョン、そして決意の断片が一つの時代を定義し、リーダーシップを再定義した。"
+        text: "若さ、ビジョン、そして決意の断片が、一つの時代を形作り、リーダーシップを再定義しました。",
       },
       churchill: {
         title: "Winston Churchill",
-        text: "Winston Churchill — 国を最も暗い時間に導いた人物、勇気が運命となった。"
+        text: "国の最も暗い時を支え、勇気を運命に変えた男。",
       },
       hollywood: {
-        title: "アイコンと文化",
-        text: "アイコンと文化 — 人生を芸術に、芸術を遺産に変えた人々。"
+        title:"アイコンと文化",
+        text: "人生を芸術に、芸術を遺産に変えた人々。",
       }
     },
     contactBlock: {
@@ -390,20 +391,20 @@ privacyLink: "プライバシーポリシー",
     },
     collections: {
       ww2: {
-        title: "Segunda Guerra Mundial",
-        text: "El Holocausto y la Segunda Guerra Mundial: un testimonio de la resistencia humana, la pérdida y la voluntad de recordar."
+        title:"Holocausto y Segunda Guerra Mundial",
+        text: "Un testimonio de la resistencia humana, la pérdida y la voluntad de recordar."
       },
       kennedy: {
         title: "John F. Kennedy",
-        text: "John F. Kennedy — fragmentos de juventud, visión y determinación que definieron una era y redefinieron el liderazgo."
+        text: "Fragmentos de juventud, visión y determinación que definieron una era y redefinieron el liderazgo.",
       },
       churchill: {
         title: "Winston Churchill",
-        text: "Winston Churchill — el hombre que llevó a una nación a través de su hora más oscura, donde el coraje se convirtió en destino."
+        text: "El hombre que llevó a una nación a través de su hora más oscura, donde el valor se convirtió en destino.",
       },
       hollywood: {
         title: "Íconos y Cultura",
-        text: "Íconos y Cultura — las personas que convirtieron la vida en arte, y el arte en legado."
+        text: "Las personas que convirtieron la vida en arte y el arte en legado.",
       }
     },
     contactBlock: {
@@ -504,20 +505,20 @@ privacyLink: "política de privacidad",
     },
     collections: {
       ww2: {
-        title: "第二次世界大战",
-        text: "大屠杀与第二次世界大战——人类坚韧、失落与记忆意志的见证。"
+        title: "大屠杀与第二次世界大战",
+        text: "人类坚韧、失去与铭记意志的见证。"
       },
       kennedy: {
         title: "John F. Kennedy",
-        text: "John F. Kennedy——青春、愿景与决心的片段，定义了一个时代并重新定义了领导力。"
+        text: "青年、远见与决心的片段，定义了一个时代并重新诠释了领导力。"
       },
       churchill: {
         title: "Winston Churchill",
-        text: "Winston Churchill——带领国家度过最黑暗时刻的人，勇气成为命运。"
+        text: "带领国家度过最黑暗时刻的人，他让勇气成为命运。"
       },
       hollywood: {
-        title: "偶像与文化",
-        text: "偶像与文化——将生活转化为艺术，将艺术转化为遗产的人们。"
+        title:"偶像与文化",
+        text: "那些将生活化为艺术、将艺术化为传承的人们。"
       }
     },
     contactBlock: {
