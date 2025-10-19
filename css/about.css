@@ -60,8 +60,7 @@ html, body {
   transition: transform 1s ease;
   background-color: var(--fonts);
   text-transform: uppercase;
-    will-change: transform;
-  transform: translateZ(0);
+
 }
 
 
