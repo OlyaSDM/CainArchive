@@ -11,6 +11,10 @@ const translations = {
       founderTitle: "Founder & Director | Cain Archive",
       coordinatorTitle: "Institutional & Archive Coordinator | Cain Archive",
     },
+      hero: {
+    left: "OUR",
+    right: "MISSION",
+  },
     footer: {
       heading: 'History that shapes <span>Tomorrow</span>',
       founder: {
@@ -56,6 +60,10 @@ const translations = {
       founderTitle: "المؤسس والمدير | Cain أرشيف",
       coordinatorTitle: "منسق المؤسسات والأرشيف | Cain أرشيف",
     },
+     hero: { 
+    left: "مهم", 
+    right: "تنا" 
+  },
     footer: {
       heading: 'التاريخ <span>الذي يشكل الغد</span>',
       founder: {
@@ -101,6 +109,7 @@ const translations = {
       founderTitle: "創設者兼ディレクター | Cain アーカイブ",
       coordinatorTitle: "機関およびアーカイブコーディネーター | Cain アーカイブ",
     },
+    hero: { left: "私たちの", right: "使命"} ,
     footer: {
       heading: '歴史 <span>が明日を形作る</span>',
       founder: {
@@ -137,6 +146,8 @@ const translations = {
   es: {
     nav: { mission: "Nuestra misión", collections: "Colecciones", voices: "Voces y diálogos", rentals: "Exposiciones y colaboraciones", press: "Prensa" },
     contact: { founderTitle: "Fundador y Director | Cain Archivo", coordinatorTitle: "Coordinadora Institucional y de Archivo | Cain Archivo" },
+     hero: { left: "NUESTRA", right: "MISION" } ,
+
     footer: {
       heading: 'Historia que da forma <span>al mañana</span>',
       founder: { name: 'John Cain', title: 'Fundador y Director | Cain Archivo', email: 'john@cainarchive.com', phone: '+1 561 884 0648' },
@@ -152,6 +163,8 @@ const translations = {
   zh: {
     nav: { mission: "我们的使命", collections: "藏品", voices: "声音与对话", rentals: "展览与合作", press: "媒体" },
     contact: { founderTitle: "创始人兼主任 | Cain 档案馆", coordinatorTitle: "机构与档案协调员 | Cain 档案馆" },
+     hero: { left: "我们", right: "的使命" } ,
+
     footer: {
       heading: '塑造 <span>明天</span> 的历史',
       founder: { name: 'John Cain', title: '创始人兼主任 | Cain 档案馆', email: 'john@cainarchive.com', phone: '+1 561 884 0648' },

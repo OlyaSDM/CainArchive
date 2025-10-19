@@ -10,112 +10,95 @@ const video = document.querySelector(".hero-video");
 const scrollDown = document.querySelector(".scroll-down");
 
 if (leftPanel && rightPanel && ampersand && video) {
-  // INITIAL SET
+  // Начальные состояния
   gsap.set([leftPanel, rightPanel], { xPercent: 0, yPercent: 0 });
   gsap.set([...leftLetters, ...rightLetters, ...ampLetter], { y: "100%", opacity: 0 });
   gsap.set(video, { y: 50, opacity: 0 });
-  gsap.set(ampersand, { opacity: 0, scale: 1, zIndex: 10 }); // scale 1 для нормального размера
+  gsap.set(ampersand, { opacity: 0, scale: 1, zIndex: 10 });
 
-  // LOADING ANIMATION
-  const tl = gsap.timeline();
-
-  // LEFT WORD + AMPERSAND одновременно
-  tl.to([...leftLetters, ...ampLetter], {
-    y: "0%",
-    opacity: 1,
-    stagger: 0.05,
-    ease: "power3.out",
-    duration: 1.2,
-  })
-  // RIGHT WORD чуть позже
-  .to(rightLetters, {
-    y: "0%",
-    opacity: 1,
-    stagger: 0.05,
-    ease: "power3.out",
-    duration: 1.2,
-  }, "-=1");
-
-  // SCROLL TRIGGER for ampersand disappearance
-  ScrollTrigger.create({
-    trigger: ".section-hero",
-    start: "top top",
-    end: "bottom 80%",
-    scrub: true,
-    onUpdate: (self) => {
-      const scale = self.progress < 0.2 ? 1 : 0.4;
-      const opacity = self.progress < 0.2 ? 1 : 0;
-      gsap.to(ampersand, { opacity, scale, ease: "power2.out", overwrite: "auto" });
-    },
-  });
+  // Анимация загрузки (буквы + &)
+  const tlLoad = gsap.timeline();
+  tlLoad
+    .to([...leftLetters, ...ampLetter], {
+      y: "0%",
+      opacity: 1,
+      stagger: 0.08,
+      ease: "power3.out",
+      duration: 1.4,
+    })
+    .to(
+      rightLetters,
+      {
+        y: "0%",
+        opacity: 1,
+        stagger: 0.08,
+        ease: "power3.out",
+        duration: 1.4,
+      },
+      "-=1"
+    )
+    .to(ampersand, { opacity: 1, scale: 1, duration: 0.8 }, "<");
 
   const mm = gsap.matchMedia();
 
-  // DESKTOP
+  // 🖥 DESKTOP
   mm.add("(min-width: 769px)", () => {
     gsap.set(ampersand, { yPercent: -20 });
-    gsap.to(leftPanel, {
-      xPercent: -100,
-      ease: "none",
+
+    const tlPanels = gsap.timeline({
       scrollTrigger: {
         trigger: ".section-hero",
         start: "top top",
-        end: "bottom top",
-        scrub: true,
+        endTrigger: ".hero-inner",
+        end: "center center", 
+        scrub: 1,
+        invalidateOnRefresh: true,
       },
     });
-    gsap.to(rightPanel, {
-      xPercent: 100,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".section-hero",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
+
+    // панели и & одновременно
+    tlPanels
+      .to(leftPanel, { xPercent: -100, ease: "power2.inOut" }, 0)
+      .to(rightPanel, { xPercent: 100, ease: "power2.inOut" }, 0)
+      .to(ampersand, { opacity: 0, scale: 0.4, ease: "power2.out" }, 0);
   });
 
-  // MOBILE
+  // 📱 MOBILE
   mm.add("(max-width: 768px)", () => {
     gsap.set(ampersand, { yPercent: 0 });
-    gsap.to(leftPanel, {
-      yPercent: -100,
-      ease: "none",
+
+    const tlPanelsMobile = gsap.timeline({
       scrollTrigger: {
         trigger: ".section-hero",
         start: "top top",
-        end: "bottom top",
-        scrub: true,
+        endTrigger: ".hero-inner",
+        end: "center center",
+        scrub: 1,
+        invalidateOnRefresh: true,
       },
     });
-    gsap.to(rightPanel, {
-      yPercent: 100,
-      ease: "none",
-      scrollTrigger: {
-        trigger: ".section-hero",
-        start: "top top",
-        end: "bottom top",
-        scrub: true,
-      },
-    });
+
+    tlPanelsMobile
+      .to(leftPanel, { yPercent: -100, ease: "power2.inOut" }, 0)
+      .to(rightPanel, { yPercent: 100, ease: "power2.inOut" }, 0)
+      .to(ampersand, { opacity: 0, scale: 0.4, ease: "power2.out" }, 0);
   });
 
-  // VIDEO ANIMATION
+  // Видео появляется плавно
   gsap.to(video, {
     y: 0,
     opacity: 1,
-    duration: 1.5,
+    duration: 2,
     ease: "power3.out",
     scrollTrigger: {
-      trigger: ".section-hero",
-      start: "top 70%",
-      end: "top 40%",
-      scrub: true,
+      trigger: ".hero-inner",
+      start: "top 80%",
+      end: "center 50%",
+      scrub: 1,
     },
   });
 
-  // SCROLL-DOWN ANIMATION
+  // Подсказка "скролл вниз"
   if (scrollDown) {
     gsap.to(scrollDown, {
       opacity: 0,
@@ -125,7 +108,7 @@ if (leftPanel && rightPanel && ampersand && video) {
         trigger: ".section-hero",
         start: "top+=10 top",
         end: "center top",
-        scrub: true,
+        scrub: 1,
         onLeaveBack: () => {
           gsap.to(scrollDown, {
             opacity: 1,
