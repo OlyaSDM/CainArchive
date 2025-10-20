@@ -170,7 +170,30 @@ if (scrollDown) {
 
 
 
+  // document.querySelectorAll('.img-wrapper img').forEach(img => {
+  //   const frontSrc = img.getAttribute('src');
+  //   const backSrc = img.getAttribute('data-back');
 
+  //   img.addEventListener('mouseenter', () => {
+  //     if (backSrc) img.src = backSrc;
+  //   });
+
+  //   img.addEventListener('mouseleave', () => {
+  //     img.src = frontSrc;
+  //   });
+  // });
+document.querySelectorAll('.img-wrapper img').forEach(img => {
+  const frontSrc = img.getAttribute('data-front');
+  const backSrc = img.getAttribute('data-back');
+
+  img.addEventListener('mouseenter', () => {
+    if (backSrc) img.src = backSrc;
+  });
+
+  img.addEventListener('mouseleave', () => {
+    img.src = frontSrc;
+  });
+});
 
 
 
@@ -188,25 +211,44 @@ if (scrollDown) {
   let currentIndex = 0;
 
 
+  // const openModal = (index) => {
+  //   currentIndex = index;
+  //   const currentImg = allImages[currentIndex];
+    
+  //   modalImgFront.src = currentImg.src;
+
+  //   // Use the data-back attribute for the flip image
+  //   const backSrc = currentImg.dataset.back;
+  //   modalImgBack.src = backSrc || "/img/Kennedy/The Legacy/Photo 133_result copy-min.jpg"; // fallback
+
+  //   modalFlipCard.classList.remove("flipped");
+  //   modal.style.display = "flex";
+
+  //     // ✅ Show carousel buttons
+  // document.querySelectorAll(".modal-btn").forEach(btn => {
+  //   btn.style.opacity = "1";
+  //   btn.style.pointerEvents = "auto";
+  // });
+  // };
   const openModal = (index) => {
     currentIndex = index;
     const currentImg = allImages[currentIndex];
-    
-    modalImgFront.src = currentImg.src;
 
-    // Use the data-back attribute for the flip image
-    const backSrc = currentImg.dataset.back;
-    modalImgBack.src = backSrc || "/img/Kennedy/The Legacy/Photo 133_result copy-min.jpg"; // fallback
+    modalImgFront.src = currentImg.getAttribute("data-front");
+    modalImgBack.src = currentImg.getAttribute("data-back") || "/img/fallback.jpg";
 
     modalFlipCard.classList.remove("flipped");
     modal.style.display = "flex";
 
-      // ✅ Show carousel buttons
-  document.querySelectorAll(".modal-btn").forEach(btn => {
-    btn.style.opacity = "1";
-    btn.style.pointerEvents = "auto";
-  });
+    document.querySelectorAll(".modal-btn").forEach(btn => {
+      btn.style.opacity = "1";
+      btn.style.pointerEvents = "auto";
+    });
   };
+
+
+
+
 
 document.querySelectorAll('.flip-container').forEach(container => {
   container.addEventListener('click', () => {
@@ -241,9 +283,12 @@ const showPrev = () => {
 
   function updateModalImages() {
     const currentImg = allImages[currentIndex];
-    modalImgFront.src = currentImg.src;
+    modalImgFront.src = currentImg.getAttribute("data-front");
+    // modalImgFront.src = currentImg.src;
     const backSrc = currentImg.dataset.back;
-    modalImgBack.src = backSrc || "/img/Kennedy/The Legacy/Photo 133_result copy-min.jpg";
+    modalImgBack.src = currentImg.getAttribute("data-back") || "/img/fallback.jpg";
+
+    // modalImgBack.src = backSrc || "/img/Kennedy/The Legacy/Photo 133_result copy-min.jpg";
     // modalFlipCard.classList.remove("flipped");
   }
 
