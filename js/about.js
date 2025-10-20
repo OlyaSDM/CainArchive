@@ -13,8 +13,8 @@ gsap.set(video, { y:50, opacity:0 });
 gsap.set([leftPanel, rightPanel], { xPercent: 0, yPercent: 0 });
 
 const tlMissionIntro = gsap.timeline();
-tlMissionIntro.to(leftLetters, { y:"0%", opacity:1, stagger:0.1, duration:1.2, ease:"power3.out" })
-             .to(rightLetters, { y:"0%", opacity:1, stagger:0.1, duration:1.2, ease:"power3.out" }, "-=1");
+tlMissionIntro.to(leftLetters, { y:"0%", opacity:1, stagger:0.1, duration:4.2, ease:"power3.out" })
+             .to(rightLetters, { y:"0%", opacity:1, stagger:0.1, duration:4.2, ease:"power3.out" }, "-=1");
 
 gsap.timeline({
   scrollTrigger: {
@@ -40,5 +40,5 @@ gsap.to(scrollIndicator, { y:30, opacity:0, scrollTrigger:{
   start:"top top",
   end:"center top",
   scrub:1,
-  onLeaveBack:()=> gsap.to(scrollIndicator, { y:0, opacity:1, duration:0.6 })
+  onLeaveBack:()=> gsap.to(scrollIndicator, { y:0, opacity:1, duration:2.6 })
 }});
