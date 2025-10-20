@@ -162,9 +162,21 @@ html, body {
 } */
 
 .term h3 {
-  font-size: 1.8rem;
-  margin-bottom: 20px;
+  font-size: 50px;
+  margin-bottom: 60px;
+  font-weight: 300;
+  font-family: 'GT Super';
+  text-transform: uppercase;
+  text-align: center;
   color: var(--fonts);
+}
+.term h3::after {
+  content: "";
+  display: block;
+  width: 60px;
+  height: 3px;
+  background-color: var(--accent-bright);
+  margin: 10px auto 0;
 }
 
 .term ul {

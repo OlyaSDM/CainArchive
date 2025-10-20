@@ -10,13 +10,11 @@ const video = document.querySelector(".hero-video");
 const scrollDown = document.querySelector(".scroll-down");
 
 if (leftPanel && rightPanel && ampersand && video) {
-  // Начальные состояния
   gsap.set([leftPanel, rightPanel], { xPercent: 0, yPercent: 0 });
   gsap.set([...leftLetters, ...rightLetters, ...ampLetter], { y: "100%", opacity: 0 });
   gsap.set(video, { y: 50, opacity: 0 });
   gsap.set(ampersand, { opacity: 0, scale: 1, zIndex: 10 });
 
-  // Анимация загрузки (буквы + &)
   const tlLoad = gsap.timeline();
   tlLoad
     .to([...leftLetters, ...ampLetter], {
@@ -41,7 +39,6 @@ if (leftPanel && rightPanel && ampersand && video) {
 
   const mm = gsap.matchMedia();
 
-  // 🖥 DESKTOP
   mm.add("(min-width: 769px)", () => {
     gsap.set(ampersand, { yPercent: -20 });
 
@@ -56,14 +53,12 @@ if (leftPanel && rightPanel && ampersand && video) {
       },
     });
 
-    // панели и & одновременно
     tlPanels
       .to(leftPanel, { xPercent: -100, ease: "power2.inOut" }, 0)
       .to(rightPanel, { xPercent: 100, ease: "power2.inOut" }, 0)
       .to(ampersand, { opacity: 0, scale: 0.4, ease: "power2.out" }, 0);
   });
 
-  // 📱 MOBILE
   mm.add("(max-width: 768px)", () => {
     gsap.set(ampersand, { yPercent: 0 });
 
@@ -84,7 +79,6 @@ if (leftPanel && rightPanel && ampersand && video) {
       .to(ampersand, { opacity: 0, scale: 0.4, ease: "power2.out" }, 0);
   });
 
-  // Видео появляется плавно
   gsap.to(video, {
     y: 0,
     opacity: 1,
@@ -98,7 +92,6 @@ if (leftPanel && rightPanel && ampersand && video) {
     },
   });
 
-  // Подсказка "скролл вниз"
   if (scrollDown) {
     gsap.to(scrollDown, {
       opacity: 0,

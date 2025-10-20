@@ -2049,7 +2049,7 @@ textarea.error {
 .modal {
   display: none; 
   position: fixed;
-  top: 0;
+  top: 5%;
   left: 0;
   width: 100vw;
   height: 100vh;
@@ -2057,11 +2057,14 @@ textarea.error {
   z-index: 9999;
   justify-content: center;
   align-items: center;
+  font-family: "Libre Franklin", sans-serif;
+color: var(--fonts);
+line-height: 30px;
 }
 
 .modal-content {
   background: var(--background);
-  padding: 2rem;
+  padding: 3rem;
   width: 90%;
   max-width: 700px;
   max-height: 90vh;
@@ -2069,6 +2072,23 @@ textarea.error {
   position: relative;
     z-index: 9999;
 }
+
+#privacyModal .close-modal {
+  position: absolute;
+  top: 20px;
+  right: 30px;
+  font-size: 2.8rem;
+  color: var(--fonts);
+  cursor: pointer;
+  z-index: 10;
+  opacity: 0;
+  transform: scale(0.8);
+}
+
+#privacyModal .close-modal:hover {
+  color: rgb(72, 202, 228);
+}
+
 
 .close-modal {
   top: 10px;
@@ -2090,6 +2110,20 @@ font-weight: 100;
 color: var(--background);
 font-size: 16px;
 }
+
+.custom-list {
+  list-style: none;
+  padding-left: 0;  
+}
+
+.custom-list li::before {
+  content: "–";      
+  display: inline-block;
+  width: 1em;        
+  margin-right: 0.5em; 
+  color: var(--fonts);       
+}
+
 
 @media (max-width: 1024px) {
   .contact-block {

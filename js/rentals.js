@@ -35,18 +35,26 @@ document.addEventListener("DOMContentLoaded", () => {
   const openLink = document.querySelector(".privacy-link");
   const closeBtn = document.querySelector(".close-modal");
 
+  // Всплывающее появление модалки и кнопки
   openLink.addEventListener("click", (e) => {
     e.preventDefault();
-    modal.style.display = "flex"; 
-    document.body.style.overflow = "hidden"; 
+    modal.style.display = "flex";
+    document.body.style.overflow = "hidden";
 
     gsap.fromTo(
       modal.querySelector(".modal-content"),
       { opacity: 0, scale: 0.9, y: -50 },
       { opacity: 1, scale: 1, y: 0, duration: 0.4, ease: "power2.out" }
     );
+
+    gsap.fromTo(
+      closeBtn,
+      { opacity: 0, scale: 0.5, rotation: 180 },
+      { opacity: 1, scale: 1, rotation: 0, duration: 0.4, ease: "power2.out", onStart: () => closeBtn.style.display = "block" }
+    );
   });
 
+  // Закрытие модалки
   const closeModal = () => {
     gsap.to(modal.querySelector(".modal-content"), {
       opacity: 0,
@@ -59,11 +67,33 @@ document.addEventListener("DOMContentLoaded", () => {
         document.body.style.overflow = "";
       }
     });
+
+    gsap.to(closeBtn, {
+      opacity: 0,
+      scale: 0.8,
+      rotation: 180,
+      duration: 0.3,
+      ease: "power2.in",
+      onComplete: () => {
+        closeBtn.style.display = "none";
+      }
+    });
   };
 
+  // Клик по крестику
   closeBtn.addEventListener("click", closeModal);
+
+  // Клик по фону модалки
   modal.addEventListener("click", (e) => {
     if (e.target === modal) closeModal();
   });
-});
 
+  // Вращение крестика при наведении
+  closeBtn.addEventListener("mouseenter", () => {
+    gsap.to(closeBtn, { rotation: 90, duration: 0.3, ease: "power2.out" });
+  });
+
+  closeBtn.addEventListener("mouseleave", () => {
+    gsap.to(closeBtn, { rotation: 0, duration: 0.3, ease: "power2.out" });
+  });
+});
