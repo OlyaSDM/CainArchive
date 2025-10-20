@@ -677,7 +677,7 @@ body{
   opacity: 0;
   transform: translate(-30px); 
 }
-.hero-cta {
+.hero-cta, .nav-link-gallery{
   text-decoration: none;
 }
 .hero-buttons {
