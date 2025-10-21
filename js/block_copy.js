@@ -29,6 +29,9 @@ const images = [
     "img/gallery/28.jpg",
     "img/gallery/29.JPEG",
     "img/gallery/30.JPEG",
+    "img/gallery/31.JPG",
+    "img/gallery/31-1.JPG",
+
   ];
 
   // Create a hidden canvas for each image

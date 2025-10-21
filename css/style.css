@@ -1477,7 +1477,6 @@ top: -7%;
   }
 }
 
-/*перенести в главный код */
 .image-wrapper {
   position: relative;
   display: inline-block;
@@ -1497,7 +1496,7 @@ top: -7%;
   pointer-events: none;
   user-select: none;    
 }
-/* */
+
 
 /* COLLECTION SECTION */
 #collections{

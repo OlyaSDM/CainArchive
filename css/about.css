@@ -142,6 +142,33 @@ html, body {
   line-height: 26px;
   margin-top: 20px;
 }
+  .image-wrapper-about {
+  max-width: 600px;
+  max-height: 700px;
+    align-self: center;
+
+  width: 100%;       
+  }
+
+  .image-wrapper-about {
+  position: relative;
+  display: inline-block;
+}
+
+.image-wrapper-about img {
+  display: block;
+  max-width: 100%;
+}
+
+.watermark-about  {
+  position: absolute;
+  bottom: 20px;       
+  left: 90px;         
+  font-size: 30px;
+  color: rgba(229, 240, 241, 0.5); 
+  pointer-events: none;
+  user-select: none;    
+}
 
 .exhibit-image {
   max-width: 600px;
@@ -188,7 +215,7 @@ flex-direction: column;
     max-width: 650px;
     margin-left: 0;
     max-height: 360px;
-    content: url('/img/gallery/3-1.JPG'); 
+    content: url('/img/gallery/31-1.JPG'); 
   }
 }
 
