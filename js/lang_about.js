@@ -359,16 +359,7 @@ function initGSAPAnimations() {
     gsap.set([text, image], { y: 50, opacity: 0 });
 
     gsap.timeline({
-      scrollTrigger: {
-        trigger: panel,
-        start: 'top 80%',
-        end: 'top 40%',
-        scrub: 1,
-        onEnter: () => gsap.to(panel, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.5, ease: 'power2.out' }), 
-        onLeave: () => gsap.to(panel, { clipPath: 'inset(0% 100% 0% 0%)', duration: 1.5, ease: 'power2.in' }), 
-        onEnterBack: () => gsap.to(panel, { clipPath: 'inset(0% 0% 0% 0%)', duration: 1.5, ease: 'power2.out' }), 
-        onLeaveBack: () => gsap.to(panel, { clipPath: 'inset(0% 100% 0% 0%)', duration: 1.5, ease: 'power2.in' }), 
-      },
+     
     })
       .to(letters, { y: '0%', opacity: 1, stagger: 0.05, duration: 1.5, ease: 'power3.out' }) 
       .to(text, { y: 0, opacity: 1, duration: 1.5, ease: 'power3.out' }, '-=0.5') 

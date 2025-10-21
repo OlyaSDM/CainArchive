@@ -200,6 +200,12 @@ html, body {
   transition: max-height 0.5s ease;
   padding-left: 20px;
 }
+.panel .title .letter,
+.panel .text,
+.panel .image {
+  will-change: transform, opacity;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
 .scroll-down {
   position: fixed;      

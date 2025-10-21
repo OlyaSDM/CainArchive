@@ -233,27 +233,57 @@ const setLanguage = (lang) => {
 function initGSAPAnimations() {
   gsap.registerPlugin(ScrollTrigger);
 
-  gsap.utils.toArray('.panel').forEach((panel) => {
-    const letters = panel.querySelectorAll('.title .letter');
-    const text = panel.querySelector('.text');
-    const image = panel.querySelector('.image');
+  const isMobile = window.innerWidth < 768;
+  const startPos = isMobile ? "top 90%" : "top 80%";
+  const endPos = isMobile ? "top 60%" : "top 40%";
 
-    gsap.set(letters, { y: '100%', opacity: 0 });
+  gsap.utils.toArray(".panel").forEach((panel) => {
+    const letters = panel.querySelectorAll(".title .letter");
+    const text = panel.querySelector(".text");
+    const image = panel.querySelector(".image");
+
+    gsap.set(letters, { y: "100%", opacity: 0 });
     gsap.set([text, image], { y: 50, opacity: 0 });
 
-    gsap.timeline({
+    const tl = gsap.timeline({
       scrollTrigger: {
         trigger: panel,
-        start: 'top 80%',
-        end: 'top 40%',
-        scrub: 1,
+        start: startPos,
+        end: endPos,
+        scrub: isMobile ? false : 1,
+        once: true, 
+        onEnter: () => ScrollTrigger.refresh(), 
       },
+    });
+
+    tl.to(letters, {
+      y: "0%",
+      opacity: 1,
+      stagger: 0.05,
+      duration: 1,
+      ease: "power3.out",
     })
-      .to(letters, { y: '0%', opacity: 1, stagger: 0.05, duration: 1, ease: 'power3.out' })
-      .to(text, { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }, '-=0.5')
-      .to(image, { y: 0, opacity: 1, duration: 1, ease: 'power3.out' }, '-=0.7');
+      .to(
+        text,
+        { y: 0, opacity: 1, duration: 1, ease: "power3.out" },
+        "-=0.5"
+      )
+      .to(
+        image,
+        { y: 0, opacity: 1, duration: 1, ease: "power3.out" },
+        "-=0.7"
+      );
   });
+
+  const refreshScrollTriggers = () => ScrollTrigger.refresh();
+  window.addEventListener("resize", refreshScrollTriggers);
+  window.addEventListener("orientationchange", refreshScrollTriggers);
+
+  window.addEventListener("scroll", () => ScrollTrigger.update());
+
+  ScrollTrigger.refresh();
 }
+
 
 // INITIALIZATION //
 document.addEventListener('DOMContentLoaded', () => {

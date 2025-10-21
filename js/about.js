@@ -24,9 +24,16 @@ gsap.timeline({
     scrub: 1
   }
 })
-.to(leftPanel, { x: "-100%", ease:"power2.inOut" }, 0)
-.to(rightPanel, { x: "100%", ease:"power2.inOut" }, 0)
-.to([...leftLetters, ...rightLetters], { y:"-100%", opacity:0, stagger:0.05, ease:"power2.in" }, 0);
+.to(leftPanel, { x: "-100%", duration: 2.8, ease:"power4.inOut" }, 0)
+.to(rightPanel, { x: "100%", duration: 2.8, ease:"power4.inOut" }, 0)
+.to([...leftLetters, ...rightLetters], {
+  y:"-100%",
+  opacity:0,
+  stagger:0.05,
+  duration:2.8,
+  ease:"power2.inOut"
+}, 0);
+
 
 gsap.to(video, { y:0, opacity:1, duration:2, ease:"power3.out", scrollTrigger:{
   trigger:".mission-hero",
