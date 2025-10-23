@@ -336,6 +336,7 @@ gsap.to(scrollIndicator, {
 // ============================
 // ACCORDION 
 // ============================
+
 const accordionItems = document.querySelectorAll(".accordion-item");
 
 accordionItems.forEach((item, index) => {
@@ -346,17 +347,27 @@ accordionItems.forEach((item, index) => {
   const toggleAccordion = (open) => {
     if (open) {
       title.setAttribute("aria-expanded", "true");
-      gsap.set(content, { height: "auto", opacity: 1 });
-      gsap.to(content, { height: content.scrollHeight, opacity: 1, duration: 0.5, ease: "power3.inOut" });
+      gsap.to(content, { 
+        height: content.scrollHeight, 
+        opacity: 1, 
+        duration: 0.5, 
+        ease: "power3.inOut" 
+      });
       gsap.to(arrow, { rotation: 45, duration: 0.3 });
     } else {
       title.setAttribute("aria-expanded", "false");
-      gsap.to(content, { height: 0, opacity: 0, duration: 0.5, ease: "power3.out" });
+      gsap.to(content, { 
+        height: 0, 
+        opacity: 0, 
+        duration: 0.5, 
+        ease: "power3.inOut" 
+      });
       gsap.to(arrow, { rotation: 0, duration: 0.3 });
     }
   };
 
-  title.addEventListener("click", () => {
+  const handleToggle = (e) => {
+    e.preventDefault();
     const isOpen = title.getAttribute("aria-expanded") === "true";
 
     accordionItems.forEach(otherItem => {
@@ -365,15 +376,18 @@ accordionItems.forEach((item, index) => {
         const otherContent = otherItem.querySelector(".accordion-content");
         const otherArrow = otherItem.querySelector(".accordion-arrow");
         otherTitle.setAttribute("aria-expanded", "false");
-        gsap.to(otherContent, { height: 0, opacity: 0, duration: 0.5, ease: "power3.out" });
+        gsap.to(otherContent, { height: 0, opacity: 0, duration: 0.5, ease: "power3.inOut" });
         gsap.to(otherArrow, { rotation: 0, duration: 0.3 });
       }
     });
 
     toggleAccordion(!isOpen);
-  });
+  };
 
- if (index === 0) toggleAccordion(true);
+  title.addEventListener("click", handleToggle);
+  title.addEventListener("touchstart", handleToggle);
+
+  if (index === 0) toggleAccordion(true);
   else gsap.set(content, { height: 0, opacity: 0 });
 });
 
