@@ -280,94 +280,158 @@ const translations = {
   },
 };
 
-// HELPERS //
-const getValue = (obj, path) =>
-  path?.split('.').reduce((acc, key) => acc?.[key], obj);
+// ============================
+// GSAP & ScrollTrigger Setup
+// ============================
+gsap.registerPlugin(ScrollTrigger);
+
+// --- HERO ANIMATIONS ---
+const leftLetters = document.querySelectorAll(".mission-left-panel .mission-letter");
+const rightLetters = document.querySelectorAll(".mission-right-panel .mission-letter");
+const leftPanel = document.querySelector(".mission-left-panel");
+const rightPanel = document.querySelector(".mission-right-panel");
+const video = document.querySelector(".mission-video");
+const scrollIndicator = document.querySelector(".scroll-indicator");
+
+gsap.set([...leftLetters, ...rightLetters], { y: "100%", opacity: 0 });
+gsap.set(video, { y: 50, opacity: 0 });
+gsap.set([leftPanel, rightPanel], { xPercent: 0, yPercent: 0 });
+
+// Intro Animation
+gsap.timeline()
+  .to(leftLetters, { y: "0%", opacity: 1, stagger: 0.1, duration: 4.2, ease: "power3.out" })
+  .to(rightLetters, { y: "0%", opacity: 1, stagger: 0.1, duration: 4.2, ease: "power3.out" }, "-=1");
+
+// Scroll-triggered panel animation
+gsap.timeline({
+  scrollTrigger: {
+    trigger: ".mission-hero",
+    start: "top top",
+    end: "bottom top",
+    scrub: 1
+  }
+})
+  .to(leftPanel, { x: "-100%", duration: 2.8, ease: "power4.inOut" }, 0)
+  .to(rightPanel, { x: "100%", duration: 2.8, ease: "power4.inOut" }, 0)
+  .to([...leftLetters, ...rightLetters], { y: "-100%", opacity: 0, stagger: 0.05, duration: 2.8, ease: "power2.inOut" }, 0);
+
+// Exhibit fade-in
+gsap.set([".exhibit-image", ".exhibit-text"], { clearProps: "all" });
+gsap.fromTo(".exhibit-image", { opacity: 0 }, { opacity: 1, duration: 0.5, ease: "none", scrollTrigger: { trigger: ".mission-hero", start: "center bottom", toggleActions: "play none none reverse" } });
+gsap.fromTo(".exhibit-text", { opacity: 0 }, { opacity: 1, duration: 1.5, delay: 0.3, ease: "none", scrollTrigger: { trigger: ".mission-hero", start: "center bottom", toggleActions: "play none none reverse" } });
+
+// Scroll indicator animation
+gsap.to(scrollIndicator, {
+  y: 30,
+  opacity: 0,
+  scrollTrigger: {
+    trigger: ".mission-hero",
+    start: "top top",
+    end: "center top",
+    scrub: 1,
+    onLeaveBack: () => gsap.to(scrollIndicator, { y: 0, opacity: 1, duration: 2.6 })
+  }
+});
+
+// ============================
+// ACCORDION 
+// ============================
+const accordionItems = document.querySelectorAll(".accordion-item");
+
+accordionItems.forEach((item, index) => {
+  const title = item.querySelector(".accordion-title");
+  const content = item.querySelector(".accordion-content");
+  const arrow = item.querySelector(".accordion-arrow");
+
+  const toggleAccordion = (open) => {
+    if (open) {
+      title.setAttribute("aria-expanded", "true");
+      gsap.set(content, { height: "auto", opacity: 1 });
+      gsap.to(content, { height: content.scrollHeight, opacity: 1, duration: 0.5, ease: "power3.inOut" });
+      gsap.to(arrow, { rotation: 45, duration: 0.3 });
+    } else {
+      title.setAttribute("aria-expanded", "false");
+      gsap.to(content, { height: 0, opacity: 0, duration: 0.5, ease: "power3.out" });
+      gsap.to(arrow, { rotation: 0, duration: 0.3 });
+    }
+  };
+
+  title.addEventListener("click", () => {
+    const isOpen = title.getAttribute("aria-expanded") === "true";
+
+    accordionItems.forEach(otherItem => {
+      if (otherItem !== item) {
+        const otherTitle = otherItem.querySelector(".accordion-title");
+        const otherContent = otherItem.querySelector(".accordion-content");
+        const otherArrow = otherItem.querySelector(".accordion-arrow");
+        otherTitle.setAttribute("aria-expanded", "false");
+        gsap.to(otherContent, { height: 0, opacity: 0, duration: 0.5, ease: "power3.out" });
+        gsap.to(otherArrow, { rotation: 0, duration: 0.3 });
+      }
+    });
+
+    toggleAccordion(!isOpen);
+  });
+
+ if (index === 0) toggleAccordion(true);
+  else gsap.set(content, { height: 0, opacity: 0 });
+});
+
+// ============================
+// HELPER FUNCTIONS
+// ============================
+const getValue = (obj, path) => path?.split('.').reduce((acc, key) => acc?.[key], obj);
 
 const applyText = (el, text) => {
   if (!el || text == null) return;
   if (el.dataset?.attr) el.setAttribute(el.dataset.attr, text);
-  else if (['input', 'textarea'].includes(el.tagName.toLowerCase()))
-    el.placeholder = text;
+  else if (['input', 'textarea'].includes(el.tagName.toLowerCase())) el.placeholder = text;
   else el.innerHTML = text;
 };
 
 const updateTitleLetters = (el, text, letterClass = 'letter') => {
   if (!el) return;
   el.innerHTML = '';
-  text.split('').forEach((char) => {
+  text.split('').forEach(char => {
     const span = document.createElement('span');
     span.className = letterClass;
     span.textContent = char === ' ' ? '\u00A0' : char;
     if (char === ' ') span.classList.add('space');
     el.appendChild(span);
   });
-  gsap.fromTo(
-    el.querySelectorAll(`.${letterClass}`),
-    { y: '100%', opacity: 0 },
-    { y: '0%', opacity: 1, duration: 1, ease: 'power3.out', stagger: 0.05 }
-  );
+  gsap.fromTo(el.querySelectorAll(`.${letterClass}`), { y: '100%', opacity: 0 }, { y: '0%', opacity: 1, duration: 1, ease: 'power3.out', stagger: 0.05 });
 };
 
-//  MISSION HERO ANIMATION  //
+// ============================
+// LANGUAGE MANAGEMENT
+// ============================
 function updateMissionHeroTitle(lang) {
   const hero = translations[lang]?.missionHero;
   if (!hero) return;
-
   const leftEl = document.querySelector('.mission-left-panel .mission-title');
   const rightEl = document.querySelector('.mission-right-panel .mission-title');
-
-  const leftText = hero.our || '';
-  const rightText = hero.mission || '';
-
-  updateTitleLetters(leftEl, leftText, 'mission-letter');
-  updateTitleLetters(rightEl, rightText, 'mission-letter');
+  updateTitleLetters(leftEl, hero.our || '', 'mission-letter');
+  updateTitleLetters(rightEl, hero.mission || '', 'mission-letter');
 }
 
-// SET LANGUAGE //
 const setLanguage = (lang) => {
   const t = translations[lang];
   if (!t) return;
-
   localStorage.setItem('lang', lang);
-
-  document.querySelectorAll('[data-key]').forEach((el) => {
+  document.querySelectorAll('[data-key]').forEach(el => {
     const value = getValue(t, el.dataset.key);
     if (value == null) return;
-
     if (el.classList.contains('title')) updateTitleLetters(el, value);
     else applyText(el, value);
   });
-
   updateMissionHeroTitle(lang);
-
   const currentLangEl = document.getElementById('lang-current');
   if (currentLangEl) currentLangEl.textContent = lang.toUpperCase();
 };
 
-//  GSAP ANIMATIONS  //
-function initGSAPAnimations() {
-  gsap.registerPlugin(ScrollTrigger);
-
-  gsap.utils.toArray('.panel').forEach((panel) => {
-    const letters = panel.querySelectorAll('.title .letter');
-    const text = panel.querySelector('.text');
-    const image = panel.querySelector('.image');
-
-    gsap.set(panel, { clipPath: 'inset(0% 100% 0% 0%)' }); 
-    gsap.set(letters, { y: '100%', opacity: 0 });
-    gsap.set([text, image], { y: 50, opacity: 0 });
-
-    gsap.timeline({
-     
-    })
-      .to(letters, { y: '0%', opacity: 1, stagger: 0.05, duration: 1.5, ease: 'power3.out' }) 
-      .to(text, { y: 0, opacity: 1, duration: 1.5, ease: 'power3.out' }, '-=0.5') 
-      .to(image, { y: 0, opacity: 1, duration: 1.5, ease: 'power3.out' }, '-=0.7'); 
-  });
-}
-
-//  INITIALIZATION //
+// ============================
+// LANGUAGE SWITCHER
+// ============================
 document.addEventListener('DOMContentLoaded', () => {
   const lang = localStorage.getItem('lang') || 'en';
   setLanguage(lang);
@@ -377,13 +441,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const langMenu = document.getElementById('lang-menu');
 
   if (langSwitcher && langToggle && langMenu) {
-    langToggle.addEventListener('click', (e) => {
+    langToggle.addEventListener('click', e => {
       e.stopPropagation();
       langSwitcher.classList.toggle('open');
       langToggle.setAttribute('aria-expanded', langSwitcher.classList.contains('open'));
     });
 
-    langMenu.querySelectorAll('li').forEach((option) => {
+    langMenu.querySelectorAll('li').forEach(option => {
       option.addEventListener('click', () => {
         setLanguage(option.dataset.lang);
         langSwitcher.classList.remove('open');
@@ -391,7 +455,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    document.addEventListener('click', (e) => {
+    document.addEventListener('click', e => {
       if (!langSwitcher.contains(e.target)) {
         langSwitcher.classList.remove('open');
         langToggle.setAttribute('aria-expanded', 'false');
@@ -399,5 +463,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  initGSAPAnimations();
+  // Initialize GSAP animations if function exists
+  if (typeof initGSAPAnimations === 'function') initGSAPAnimations();
 });

@@ -625,7 +625,6 @@ body{
   will-change: transform, opacity;
 }
 
-
 .hero-overlay {
   position: absolute;
   top: 0; left: 0;
@@ -951,7 +950,7 @@ body{
   justify-content: center;
   flex-direction: column;
   background: var(--background);
-  padding: 70px 40px 200px 40px;
+  padding: 140px 40px 200px 40px;
   text-align: center;
 }
 
