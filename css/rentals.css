@@ -38,13 +38,14 @@ html, body {
   font-display: swap;
 }
 
-.section-hero {
+.rentals-hero {
   position: relative;
   height: 100vh;
   overflow: hidden;
 }
 
-.hero-left, .hero-right {
+.rentals-left-panel,
+.rentals-right-panel {
   position: fixed;
   top: 0;
   width: 50%;
@@ -53,41 +54,34 @@ html, body {
   justify-content: center;
   align-items: center;
   font-family: 'GT Super';
-  font-size: clamp(20px, 2vw, 34px);
   font-weight: 300;
   color: var(--sandy);
-  z-index: 2;
-  transition: transform 1s ease;
-  background-color: var(--fonts);
   text-transform: uppercase;
+  background-color: var(--fonts);
+  z-index: 2;
 }
 
-.hero-left {
+.rentals-left-panel {
   left: 0;
 }
 
-.hero-right {
+.rentals-right-panel {
   right: 0;
 }
 
-.hero-left, .hero-right, .hero-ampersand {
-  font-family: 'GT Super';
-  font-weight: 300;
-  color: var(--sandy);
-  text-transform: uppercase;
+.rentals-title {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   overflow: hidden;
-  z-index: 2;
 }
 
-.hero-left, .hero-right {
-  position: fixed;
-  top: 0;
-  width: 50%;
-  height: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  font-size: clamp(28px, 3vw, 30px); 
+.rentals-letter {
+  display: inline-block;
+  transform: translateY(100%);
+  opacity: 0;
+  font-size: clamp(32px, 3vw, 60px);
+  will-change: transform, opacity;
 }
 
 .hero-ampersand {
@@ -95,31 +89,22 @@ html, body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  margin-top: -20px;
-    font-family: 'GT Super';
+  font-family: 'GT Super';
   display: flex;
   justify-content: center;
+  color: var(--sandy);
   align-items: center;
+  z-index: 999;
 }
 
-.hero-letter {
-  display: inline-block;
-  transform: translateY(100%);
-    font-size: clamp(32px, 3vw, 60px);
-  opacity: 0;
-}
-
-
-
-.hero-video {
+.rentals-video {
   position: relative;
-  display: block;
   width: 100%;
   height: auto;
   opacity: 0;
-  transform: translateY(50px);
   z-index: 1;
 }
+
 
 .terms {
   background: var(--background);
@@ -283,22 +268,16 @@ html, body {
 }
 
 @media (max-width: 768px) {
-  .hero-left, .hero-right {
-    position: fixed;
+  .rentals-left-panel,
+  .rentals-right-panel {
     width: 100%;
     height: 50%;
-    left: 0;
-    background-color: var(--fonts);
-  }
-  .ampersand {
-    font-size: 5rem;
-  }
-  .hero-left {
-    top: 0;
   }
 
-  .hero-right {
-    top: 50%;
+  .rentals-left-panel { top: 0; }
+  .rentals-right-panel { top: 50%; }
+  .ampersand {
+    font-size: 5rem;
   }
 
   .hero-left .hero-title,

@@ -164,7 +164,7 @@ const translations = {
 };
 
 
-// HELPERS //
+// HELPERS
 const getValue = (obj, path) =>
   path?.split('.').reduce((acc, key) => acc?.[key], obj);
 
@@ -193,22 +193,22 @@ const updateTitleLetters = (el, text, letterClass = 'letter') => {
   );
 };
 
-//  HERO TITLES UPDATE //
+// HERO TITLES UPDATE
 function updateHeroTitles(lang) {
   const hero = translations[lang]?.hero;
   if (!hero) return;
 
-  const leftEl = document.querySelector('.hero-left .hero-title');
-  const rightEl = document.querySelector('.hero-right .hero-title');
-  const ampEl = document.querySelector('.hero-ampersand .hero-letter');
+  const leftEl = document.querySelector('.rentals-left-panel .rentals-title');
+  const rightEl = document.querySelector('.rentals-right-panel .rentals-title');
+  const ampEl = document.querySelector('.hero-ampersand');
 
-  updateTitleLetters(leftEl, hero.left, 'hero-letter');
-  updateTitleLetters(rightEl, hero.right, 'hero-letter');
+  updateTitleLetters(leftEl, hero.left, 'rentals-letter');
+  updateTitleLetters(rightEl, hero.right, 'rentals-letter');
 
   if (ampEl) ampEl.style.display = hero.left && hero.right ? 'inline-block' : 'none';
 }
 
-//  SET LANGUAGE //
+// SET LANGUAGE
 const setLanguage = (lang) => {
   const t = translations[lang];
   if (!t) return;
@@ -229,63 +229,104 @@ const setLanguage = (lang) => {
   if (currentLangEl) currentLangEl.textContent = lang.toUpperCase();
 };
 
-//  GSAP ANIMATIONS  //
+// GSAP & SCROLL ANIMATIONS
 function initGSAPAnimations() {
   gsap.registerPlugin(ScrollTrigger);
 
-  const isMobile = window.innerWidth < 768;
-  const startPos = isMobile ? "top 90%" : "top 80%";
-  const endPos = isMobile ? "top 60%" : "top 40%";
+  const leftPanel = document.querySelector(".rentals-left-panel");
+  const rightPanel = document.querySelector(".rentals-right-panel");
+  const leftLetters = leftPanel.querySelectorAll(".rentals-letter");
+  const rightLetters = rightPanel.querySelectorAll(".rentals-letter");
+  const ampersand = document.querySelector(".hero-ampersand");
+  const ampLetters = ampersand ? ampersand.querySelectorAll(".rentals-letter") : [];
+  const video = document.querySelector(".rentals-video");
+  const scrollIndicator = document.querySelector(".scroll-down");
 
-  gsap.utils.toArray(".panel").forEach((panel) => {
-    const letters = panel.querySelectorAll(".title .letter");
-    const text = panel.querySelector(".text");
-    const image = panel.querySelector(".image");
+  // Initial states
+  gsap.set([...leftLetters, ...rightLetters, ...ampLetters], { y: "100%", opacity: 0 });
+  gsap.set(video, { y: 50, opacity: 0 });
+  gsap.set([leftPanel, rightPanel], { xPercent: 0 });
 
-    gsap.set(letters, { y: "100%", opacity: 0 });
-    gsap.set([text, image], { y: 50, opacity: 0 });
+  // Intro animation
+  const introTimeline = gsap.timeline();
+  introTimeline
+    .to(leftLetters, { y: "0%", opacity: 1, stagger: 0.05, duration: 1.2, ease: "power3.out" })
+    .to(rightLetters, { y: "0%", opacity: 1, stagger: 0.05, duration: 1.2, ease: "power3.out" }, "-=0.6")
+    .to(ampLetters, { y: "0%", opacity: 1, stagger: 0.05, duration: 1.2, ease: "power3.out" }, "-=0.8")
+    .to(video, { y: 0, opacity: 1, duration: 1, ease: "power3.out" }, "-=1");
 
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: panel,
-        start: startPos,
-        end: endPos,
-        scrub: isMobile ? false : 1,
-        once: true, 
-        onEnter: () => ScrollTrigger.refresh(), 
-      },
-    });
+  // Scroll panels
+  const isMobile = window.innerWidth <= 768;
 
-    tl.to(letters, {
-      y: "0%",
-      opacity: 1,
+  gsap.timeline({
+    scrollTrigger: {
+      trigger: ".rentals-hero",
+      start: "top top",
+      end: "bottom top",
+      scrub: 1,
+    }
+  })
+.to(leftPanel, {
+  x: "-100%", 
+  duration: 2.8,
+  ease: "power4.inOut"
+}, 0)
+.to(rightPanel, {
+  x: "100%",  
+  duration: 2.8,
+  ease: "power4.inOut"
+}, 0)
+
+
+    .to([...leftLetters, ...rightLetters, ...ampLetters], {
+      y: "-100%",
+      opacity: 0,
       stagger: 0.05,
-      duration: 1,
-      ease: "power3.out",
-    })
-      .to(
-        text,
-        { y: 0, opacity: 1, duration: 1, ease: "power3.out" },
-        "-=0.5"
-      )
-      .to(
-        image,
-        { y: 0, opacity: 1, duration: 1, ease: "power3.out" },
-        "-=0.7"
-      );
+      duration: 2.8,
+      ease: "power2.inOut"
+    }, 0);
+
+  // Exhibit fade-in
+  gsap.fromTo(".rentals-image", { opacity: 0 }, {
+    opacity: 1,
+    duration: 0.8,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".rentals-hero",
+      start: "center bottom",
+      toggleActions: "play none none reverse"
+    }
   });
 
-  const refreshScrollTriggers = () => ScrollTrigger.refresh();
-  window.addEventListener("resize", refreshScrollTriggers);
-  window.addEventListener("orientationchange", refreshScrollTriggers);
+  gsap.fromTo(".exhibit-text", { opacity: 0, y: 30 }, {
+    opacity: 1,
+    y: 0,
+    duration: 1,
+    delay: 0.3,
+    ease: "power3.out",
+    scrollTrigger: {
+      trigger: ".rentals-hero",
+      start: "center bottom",
+      toggleActions: "play none none reverse"
+    }
+  });
 
-  window.addEventListener("scroll", () => ScrollTrigger.update());
+  // Scroll indicator
+  gsap.to(scrollIndicator, {
+    y: 30,
+    opacity: 0,
+    scrollTrigger: {
+      trigger: ".rentals-hero",
+      start: "top top",
+      end: "center top",
+      scrub: 1,
+      onLeaveBack: () => gsap.to(scrollIndicator, { y: 0, opacity: 1, duration: 2.6 })
+    }
+  });
 
-  ScrollTrigger.refresh();
 }
 
-
-// INITIALIZATION //
+// INITIALIZATION
 document.addEventListener('DOMContentLoaded', () => {
   const lang = localStorage.getItem('lang') || 'en';
   setLanguage(lang);
