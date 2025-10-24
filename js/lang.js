@@ -97,7 +97,7 @@ const translations = {
         email: 'dina.kriukova@cainarchive.com'
       },
       copyright: '© 2025 Cain Archive. All rights reserved.',
-      protectedText: 'All images and materials on this website are protected under international copyright. Unauthorized reproduction, distribution, or display is strictly prohibited.'
+      protectedText: 'Original vintage photographs are displayed for documentary, educational, and research purposes. Cain Archive holds physical ownership of the original prints but does not claim copyright to the underlying images. Unauthorized reproduction or commercial use is prohibited.'
     },
     tooltips: {
       cain: 'Point',

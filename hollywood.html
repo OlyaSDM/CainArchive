@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8" />
+      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>Cain Archive</title>
+      <link rel="stylesheet" href="css/style.css" />
+      <link rel="stylesheet" href="css/collections.css">
+      <link type="image/png" sizes="16x16" rel="icon" href="#" />
+      <!-- FONTS -->
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+   </head>
+   <body>
+
+
+
+    <!-- NAVIGATION -->
+    <header class="navbar " id="navbar">
+      <!-- Logos  -->
+      <a href="index.html" class="logo">
+        <img src="logos/logo-white.png" alt="Logo" class="round-logo" />
+        <img src="logos/logo-words.png" alt="CAIN Archive Logo" class="words-logo" />
+      </a>
+
+      <!-- Right side cluster -->
+      <div class="nav-right">
+        <!-- Inline links (desktop) -->
+        <nav class="nav-links" aria-label="Primary">
+          <a href="index.html">Home</a>
+          <a href="WW2.html">Holocaust & WWII</a>
+        <a href="kennedy.html">John F. Kenndey</a>
+          <a href="churchill.html">Winston Churchill</a>
+        </nav>
+        <!-- Burger (tablet/phone) -->
+        <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
+          <span class="bar bar-long"></span>
+          <span class="bar bar-middle"></span>
+          <span class="bar bar-short"></span>
+        </button>
+        <!-- Divider -->
+        <div class="nav-divider" aria-hidden="true"></div>
+
+        <!-- Language Switcher -->
+        <div class="lang-switcher" id="langSwitcher">
+          <button id="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu">
+            <span id="lang-current">EN</span>
+            <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+          </button>
+          <ul class="lang-options" id="lang-menu" role="menu">
+            <li role="menuitem" data-lang="en">English</li>
+            <li role="menuitem" data-lang="ar">العربية</li>
+            <li role="menuitem" data-lang="ja">日本語</li>
+            <li role="menuitem" data-lang="es">Español</li>
+            <li role="menuitem" data-lang="zh">中文</li>
+          </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- FULLSCREEN MENU -->
+    <div class="fullscreen-menu" id="menu">
+      <div class="fullscreen-menu-content">
+        <!-- LEFT: Navigation Links -->
+        <nav>
+          <a href="index.html" style="--i:1" data-index="01"><span>Home</span></a>
+          <a href="WW2.html" style="--i:2" data-index="02"><span>Holocaust & WWII</span></a>
+        <a href="kennedy.html" style="--i:3" data-index="03"><span>John F. Kenndey</span></a>
+          <a href="churchill.html" style="--i:4" data-index="04"><span>Winston Churchill</span></a>
+        </nav>
+        <!-- DIVIDER -->
+        <div class="divider"></div>
+        <!-- RIGHT: Contact Info -->
+        <div class="menu-contact">
+          <div>
+            <p>John Cain</p>
+            <p>Founder & Director | Cain Archive</p>
+            <a href="mailto:john@cainarchive.com" class="menu-contacts">john@cainarchive.com</a>
+            <a href="tel:+15618840648" class="menu-contacts">+1 561 884 0648</a>
+          </div>
+          <div>
+            <p>Dina Kriukova-Lichman</p>
+            <p>Institutional & Archive Coordinator | Cain Archive</p>
+            <a href="mailto:dina.kriukova@cainarchive.com" class="menu-contacts">dina.kriukova@cainarchive.com</a>
+          </div>
+          <div class="social-icons">
+            <ul>
+              <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+              <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
+              <li><a href="#" aria-label="X-twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
+              <li><a href="#" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+
+<section class="coming">
+  <div class="glass-wrapper">
+    <h2>Icons & Culture</h2>
+    <h3>collection</h3>
+    <h5>Coming soon...</h5>
+  </div>
+</section>
+
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
+      <script src="js/img-collections.js"></script>
+      <script src="js/dropdown.js"></script>
+      <script src="js/main.js"></script>
+    <script src="js/hollywood.js"></script>
+
+   </body>
+</html>
