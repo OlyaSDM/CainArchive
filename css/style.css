@@ -969,7 +969,7 @@ margin-left: -10%;
 .archive-title {
   position: absolute;  
 margin-left: -4%;        
-          top: 45%;            
+          top: 50%;            
   left: 72%;   
   transform: translateX(-30%); 
   font-size: clamp(30px, 6vw, 70px); 

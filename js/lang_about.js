@@ -327,11 +327,12 @@ gsap.to(scrollIndicator, {
   scrollTrigger: {
     trigger: ".mission-hero",
     start: "top top",
-    end: "center top",
-    scrub: 1,
-    onLeaveBack: () => gsap.to(scrollIndicator, { y: 0, opacity: 1, duration: 2.6 })
+    end: "25% top",
+    scrub: 1
   }
 });
+
+
 
 // ============================
 // ACCORDION 
