@@ -68,6 +68,7 @@ body {
   height: 100%;
   z-index: 0;
   overflow: hidden;
+    border-radius: 0;
 }
 .video-wrapper video {
   width: 100%;
@@ -147,7 +148,7 @@ body {
 #collection-text {
   font-family: 'GT Super', serif;
   font-weight: 300;
-  font-size: 170px;
+  font-size: 140px;
   text-align: center;
   color: var(--accent);
   letter-spacing: -5px;
@@ -159,9 +160,19 @@ body {
   font-size: 30px;
   font-style: italic;
   color: var(--white);
-  margin-top: -30px;
+  margin-top: -20px;
 }
-
+  @media (max-width: 768px) {
+    .scroll-down {
+        bottom: 170px;
+    }
+    #collection-text{
+        font-size: 100px;
+    }
+    .collection-text-p {
+        margin-top: -5px;
+    }
+  }
 /* ===== GALLERY SECTION ===== */
 .gallery-words {
   background: var(--background);
@@ -186,7 +197,12 @@ body {
   font-size: clamp(32px, 6vw, 80px);
   margin-top: -20px;
 }
-
+.gallery-words p{
+  font-size: 16px;
+    font-family: 'Libre Franklin', sans-serif;
+  margin: 15px 0;
+    font-weight: 100;
+}
 .gallery-section {
   padding: 1rem 100px;
   background: var(--background);
@@ -356,7 +372,7 @@ body {
   top: 50px;
   right: 50px;
   font-size: 2.8rem;
-  color: var(--background);
+  color: var(--white);
   cursor: pointer;
 }
 .modal-btn {
@@ -366,9 +382,9 @@ body {
   width: 48px;
   height: 48px;
   background-color: transparent;
-  border: 0.5px solid var(--background);
+  border: 0.5px solid var(--white);
   border-radius: 50%;
-  color: var(--background);
+  color: var(--white);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -413,7 +429,7 @@ body {
   position: absolute;
   height: 2px;
   width: 35px;
-  background-color: var(--background);
+  background-color: var(--white);
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%) rotate(-45deg);
@@ -610,13 +626,12 @@ body {
     padding: 1rem 30px;
   }
   .gallery-nav {
-    flex-direction: column;
-    align-items: center;
     margin: 20px 0;
+    gap: 8px;
   }
   .navigational-links {
-    padding: 10px 25px;
-    font-size: 13px;
+    padding: 10px 15px;
+    font-size: 10px;
   }
   .gallery-words h3 {
     font-size: 44px;
@@ -625,8 +640,12 @@ body {
     font-size: 38px;
     margin-top: 5px;
   }
+  .gallery-chapter-text{
+    font-size: 14px;
+  }
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
+    padding: 0;
   }
   .glass-wrapper {
     padding: 1.5rem 2rem;
