@@ -1135,6 +1135,11 @@ margin-top: -50px;
     transform: none;
     justify-content: center;
   }
+
+  .desc-text {
+    padding-left: 14px;
+    padding-right: 14px;
+  }
 }
 
 
@@ -1343,10 +1348,6 @@ top: -7%;
 }
 
 
-
-
-
-
 /* GALLERY SECTION  */
 .mosaic-section {
   display: flex;
@@ -1355,7 +1356,7 @@ top: -7%;
   overflow: hidden;
   position: relative;
   padding: 0 20px;
-  z-index: 5;
+  z-index: 3;
 }
 
 
@@ -1488,10 +1489,10 @@ top: -7%;
 
 .watermark {
   position: absolute;
-  bottom: 30px;       
-  left: 20px;         
-  font-size: 30px;
-  color: rgba(229, 240, 241, 0.5); 
+  bottom: 20px;       
+  left: 10px;         
+  font-size: 25px;
+  color: rgba(229, 240, 241, 0.5);
   pointer-events: none;
   user-select: none;    
 }
