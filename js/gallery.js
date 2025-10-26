@@ -25,10 +25,14 @@ function initMosaicAnimation() {
 
   function updateSizes() {
     cols.forEach(c => {
+      const prevShift = c.shift;
       const h = c.el.scrollHeight || 1;
-      c.shift = h / 3.5; 
-      c.speed = c.shift / DURATION; 
-      c.offset = 0;
+      c.shift = h / 3.5;
+      c.speed = c.shift / DURATION;
+
+      if (prevShift) {
+        c.offset = (c.offset / prevShift) * c.shift;
+      }
     });
   }
 
@@ -47,7 +51,6 @@ function initMosaicAnimation() {
   });
 
   gsap.ticker.fps(30);
-
   let lastTime = performance.now();
 
   gsap.ticker.add(() => {
@@ -71,7 +74,11 @@ function initMosaicAnimation() {
   window.addEventListener("resize", () => {
     clearTimeout(resizeTimeout);
     resizeTimeout = setTimeout(() => {
+      const oldOffsets = cols.map(c => c.offset);
       updateSizes();
+      cols.forEach((c, i) => {
+        c.offset = oldOffsets[i];
+      });
       ScrollTrigger.refresh();
     }, 200);
   });
