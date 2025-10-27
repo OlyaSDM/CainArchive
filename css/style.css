@@ -833,9 +833,13 @@ body{
 
 @media (max-width: 876px) {
     .hero-content .h1 {
-
       line-height: 70px;
-
+  }
+  .hero {
+      height: 70vh;
+  }
+  .hero-video {
+      height: 70vh;
   }
 }
 
@@ -845,23 +849,30 @@ body{
     padding: 0 4vw;
     text-align: center;
   }
-  .hero-content .h1 {
-    font-size: 48px;
-      line-height: 65px;
+  .hero-content{
+    margin-top: 150px;
   }
-  .hero-content h4{
-    font-size: 14px;
+  .hero-content .h1 {
+    font-size: 40px;
+    line-height: 40px;
+  }
+  .hero-content .span{
+    font-size: 48px;
+    line-height: 48px;
   }
   .hero-content p {
     font-size: 16px;
+    margin-top: 30px;
   }
   .hero-buttons{
     flex-direction: column;
     align-items: center;
   }
-
   .hero-btn-text {
   margin-top: 15px;
+  }
+  #scrollDownBtn {
+    display: none;
   }
 }
     .scroll-btn {
