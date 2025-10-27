@@ -926,44 +926,44 @@
          </div>
       </div>
    </div>
-   <div class="contact-left">
-      <form class="contact-form" id="contactForm" method="POST" novalidate>
-         <div class="contact-title">
-            <h3 data-key="contactBlock.form.titleLine1">Get in</h3>
-            <h2 data-key="contactBlock.form.titleLine2">touch</h2>
+<div class="contact-left">
+   <form class="contact-form" id="contactForm" method="POST" action="https://getform.io/f/your-form-id" novalidate>
+      <div class="contact-title">
+         <h3 data-key="contactBlock.form.titleLine1">Get in</h3>
+         <h2 data-key="contactBlock.form.titleLine2">touch</h2>
+      </div>
+      <div class="form-group">
+         <input type="text" name="name" placeholder="" data-key="contactBlock.form.name" required>
+         <small class="error-message"></small>
+      </div>
+      <div class="form-group">
+         <input type="email" name="email" placeholder="" data-key="contactBlock.form.email" required>
+         <small class="error-message"></small>
+      </div>
+      <div class="form-group">
+         <textarea name="message" placeholder="" data-key="contactBlock.form.message" required></textarea>
+         <small class="error-message"></small>
+      </div>
+      <!-- Honeypot to prevent spam -->
+      <input type="text" name="company" style="display:none">
+      <div class="form-group checkbox-group">
+         <div class="form-flex">
+         <label>
+         <input type="checkbox" name="privacy" required>
+         <span data-key="contactBlock.form.privacyText">I've accepted the</span>
+         </label>
+         <a href="#" class="privacy-link" data-key="contactBlock.form.privacyLink">privacy policy</a>.
          </div>
-         <div class="form-group">
-            <input type="text" name="name" placeholder="" data-key="contactBlock.form.name" required>
-            <small class="error-message"></small>
-         </div>
-         <div class="form-group">
-            <input type="email" name="email" placeholder="" data-key="contactBlock.form.email" required>
-            <small class="error-message"></small>
-         </div>
-         <div class="form-group">
-            <textarea name="message" placeholder="" data-key="contactBlock.form.message" required></textarea>
-            <small class="error-message"></small>
-         </div>
-         <!-- Honeypot -->
-         <input type="text" name="company" style="display:none">
-         <div class="form-group checkbox-group">
-            <div class="form-flex">
-            <label>
-            <input type="checkbox" name="privacy" required>
-            <span data-key="contactBlock.form.privacyText">I've accepted the</span>
-            </label>
-            <a href="#" class="privacy-link" data-key="contactBlock.form.privacyLink">privacy policy</a>.
-                     </div>
-            <small class="error-message"></small>
-
-         </div>
-         <button type="submit" class="hero-cta-btn">
+         <small class="error-message"></small>
+      </div>
+      <button type="submit" class="hero-cta-btn">
          <span class="btn-text" data-key="contactBlock.form.submit">Submit Inquiry</span>
          <span class="v-border v-left"></span>
          <span class="v-border v-right"></span>
-         </button>
-      </form>
-   </div>
+      </button>
+   </form>
+</div>
+
 </section>
             <!-- PRESS SECTION -->
             <!-- <section class="press-intro letter-section">
