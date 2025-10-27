@@ -1402,13 +1402,18 @@ top: -7%;
 .column {
   flex: 1;
   position: relative;
+    align-items: center; 
 }
 
 .column img {
-  width: 100%;
-  display: block;
+width: 550px; 
+max-width: 550px;
+  height: auto; 
+   display: block;
   margin-top: 30px;
   object-fit: cover;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .column.middle .column-inner,
@@ -3040,7 +3045,6 @@ body.modal-open .fullscreen-menu {
   display: block;
   margin: 0 auto;
 }
-
 }
 
 
@@ -3080,11 +3084,7 @@ body.modal-open .fullscreen-menu {
   }
 }
 
-
-
 /* FOOTER */
-
-
 .footer {
   background-color: var(--fonts);
   color: var(--white);
