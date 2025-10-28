@@ -255,37 +255,43 @@ function initGSAPAnimations() {
     .to(ampLetters, { y: "0%", opacity: 1, stagger: 0.05, duration: 1.2, ease: "power3.out" }, "-=0.8")
     .to(video, { y: 0, opacity: 1, duration: 1, ease: "power3.out" }, "-=1");
 
-  // Scroll panels
-  const isMobile = window.innerWidth <= 768;
+// Scroll panels
+const isMobile = window.innerWidth <= 768;
 
-  gsap.timeline({
-    scrollTrigger: {
-      trigger: ".rentals-hero",
-      start: "top top",
-      end: "bottom top",
-      scrub: 1,
-    }
-  })
-.to(leftPanel, {
-  x: "-100%", 
-  duration: 2.8,
-  ease: "power4.inOut"
-}, 0)
-.to(rightPanel, {
-  x: "100%",  
-  duration: 2.8,
-  ease: "power4.inOut"
-}, 0)
+const scrollTimeline = gsap.timeline({
+  scrollTrigger: {
+    trigger: ".rentals-hero",
+    start: "top top",
+    end: "bottom top",
+    scrub: 1,
+  }
+});
 
-
-    .to([...leftLetters, ...rightLetters, ...ampLetters], {
-      y: "-100%",
-      opacity: 0,
-      stagger: 0.05,
-      duration: 2.8,
-      ease: "power2.inOut"
-    }, 0);
-
+scrollTimeline
+  .to(leftPanel, {
+    x: "-100%",
+    duration: 2.8,
+    ease: "power4.inOut"
+  }, 0)
+  .to(rightPanel, {
+    x: "100%",
+    duration: 2.8,
+    ease: "power4.inOut"
+  }, 0)
+  .to(ampLetters, {
+    y: "-100%",
+    opacity: 0,
+    duration: 1.8,  
+    ease: "power2.inOut"
+  }, 0.1) 
+  .to([...leftLetters, ...rightLetters], {
+    y: "-100%",
+    opacity: 0,
+    stagger: 0.05,
+    duration: 2.8,
+    ease: "power2.inOut"
+  }, 0.3); 
+  
   // Exhibit fade-in
   gsap.fromTo(".rentals-image", { opacity: 0 }, {
     opacity: 1,
