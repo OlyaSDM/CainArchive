@@ -1626,6 +1626,12 @@ max-width: 550px;
 .churchill .bg {
   background-image: url(/img/collections/churchill.JPEG);
 }
+
+@media (max-width: 768px) {
+  .churchill .bg {
+    background-image: url(/img/collections/churchill-sm.JPEG);
+  }
+}
 .kennedy .bg {
   background-image: url(/img/collections/kennedy.JPEG);
 }
