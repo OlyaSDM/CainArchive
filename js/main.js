@@ -68,6 +68,26 @@ gsap.timeline({
 }, 0);
 
 
+// VIDEO FOR SMALLER SCREENS
+  const video = document.querySelector('.hero-video');
+  const source = video.querySelector('source');
+
+  const setResponsiveVideo = () => {
+    const isMobile = window.innerWidth <= 480;
+    const newSrc = isMobile ? '/video/sm-hero.MP4' : '/video/HERO.MP4';
+
+    if (source.getAttribute('src') !== newSrc) {
+      source.setAttribute('src', newSrc);
+      video.load();
+    }
+  };
+
+  setResponsiveVideo();
+  window.addEventListener('resize', setResponsiveVideo);
+
+
+
+
 // ANIMATION FOR SCROLL DOWN BUTTON ON HERO
 document.getElementById('scrollDownBtn').addEventListener('click', function () {
   const target = document.getElementById('cain-section');
