@@ -1621,22 +1621,22 @@ max-width: 550px;
   z-index: -1;
 }
 .ww2 .bg {
-  background-image: url(/img/collections/ww2.JPEG);
+  background-image: url(/img/collections/ww2.webp);
 }
 .churchill .bg {
-  background-image: url(/img/collections/churchill.JPEG);
+  background-image: url(/img/collections/churchill.webp);
 }
 
 @media (max-width: 768px) {
   .churchill .bg {
-    background-image: url(/img/collections/churchill-sm.JPEG);
+    background-image: url(/img/collections/churchill-sm.webp);
   }
 }
 .kennedy .bg {
-  background-image: url(/img/collections/kennedy.JPEG);
+  background-image: url(/img/collections/kennedy.webp);
 }
 .hollywood .bg {
-  background-image: url(/img/collections/hollywood.JPEG);
+  background-image: url(/img/collections/hollywood.webp);
 }
 
 
