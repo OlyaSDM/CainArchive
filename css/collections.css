@@ -103,7 +103,7 @@ body {
   text-align: center;
 }
 .chirchill-title{
-    font-size: 100px;
+  font-size: clamp(40px, 8vw, 120px);
 }
 .scroll-down {
   position: absolute;
