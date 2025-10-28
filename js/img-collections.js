@@ -204,87 +204,106 @@ const animateNavbar = () => {
     });
   };
 
-  const initModal = () => {
-    const modal = document.getElementById("imageModal");
-    const modalFlipCard = document.getElementById("modalFlipCard");
-    const modalImgFront = document.getElementById("modalImgFront");
-    const modalImgBack = document.getElementById("modalImgBack");
-    const allImages = Array.from(document.querySelectorAll(".gallery-grid img"));
-    let currentIndex = 0;
 
-    const updateModal = () => {
-      const currentImg = allImages[currentIndex];
-      modalImgFront.src = currentImg.dataset.front;
-      modalImgBack.src = currentImg.dataset.back || "/img/fallback.jpg";
-      modalFlipCard.classList.remove("flipped");
-    };
+    // ===== MODAL =====
 
-    const openModal = (i) => {
-      currentIndex = i;
-      updateModal();
-      modal.style.display = "flex";
-      document.querySelectorAll(".modal-btn").forEach(btn => {
-        btn.style.opacity = "1";
-        btn.style.pointerEvents = "auto";
-      });
-    };
+const initModal = () => {
+  const modal = document.getElementById("imageModal");
+  const modalImgFront = document.getElementById("modalImgFront");
+  const modalImgBack = document.getElementById("modalImgBack");
+  const allImages = Array.from(document.querySelectorAll(".gallery-grid img"));
+  let currentIndex = 0;
 
-    const closeModal = () => {
-      modal.style.display = "none";
-      document.querySelectorAll(".modal-btn").forEach(btn => {
-        btn.style.opacity = "0";
-        btn.style.pointerEvents = "none";
-      });
-    };
+const updateModal = () => {
+  const currentImg = allImages[currentIndex];
+  modalImgFront.src = currentImg.dataset.front;
+  modalImgBack.src = currentImg.dataset.back || "/img/fallback.jpg";
 
-    const showNext = () => {
-      currentIndex = (currentIndex + 1) % allImages.length;
-      updateModal();
-    };
+  const flipContainer = document.getElementById("modalFlipCard");
+  const flipHint = document.querySelector(".flip-hint");
 
-    const showPrev = () => {
-      currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
-      updateModal();
-    };
+  // Reset flip state
+  flipContainer.classList.remove("flipped");
 
-    allImages.forEach((img, i) => img.addEventListener("click", () => openModal(i)));
-    document.getElementById("modalClose").addEventListener("click", closeModal);
-    document.getElementById("prevBtn").addEventListener("click", showPrev);
-    document.getElementById("nextBtn").addEventListener("click", showNext);
-    modal.addEventListener("click", e => e.target === modal && closeModal());
+  // Add click-to-flip
+  flipContainer.onclick = () => {
+    flipContainer.classList.toggle("flipped");
+    // Hide the flip hint after first flip
+    if (flipHint) flipHint.classList.remove("visible");
+  };
 
-    // Wheel scroll
-    let lastScrollTime = 0;
-    modal.addEventListener("wheel", e => {
-      if (Date.now() - lastScrollTime > 600) {
-        e.deltaY > 0 ? showNext() : showPrev();
-        lastScrollTime = Date.now();
-      }
-      e.preventDefault();
-    }, { passive: false });
+  // Show flip hint (both desktop & mobile)
+  if (flipHint) flipHint.classList.add("visible");
+};
 
-    // Touch swipe
-    let touchStartX = 0;
-    modal.addEventListener("touchstart", e => touchStartX = e.changedTouches[0].screenX);
-    modal.addEventListener("touchend", e => {
-      const deltaX = e.changedTouches[0].screenX - touchStartX;
-      if (Math.abs(deltaX) > 50) deltaX > 0 ? showPrev() : showNext();
-    });
 
-    // Keyboard nav
-    document.addEventListener("keydown", e => {
-      if (modal.style.display === "flex") {
-        if (e.key === "ArrowRight") showNext();
-        else if (e.key === "ArrowLeft") showPrev();
-        else if (e.key === "Escape") closeModal();
-      }
-    });
+  const openModal = (i) => {
+    currentIndex = i;
+    updateModal();
+    modal.style.display = "flex";
 
-    // Flip on click
-    document.querySelectorAll(".flip-container").forEach(container => {
-      container.addEventListener("click", () => container.classList.toggle("flipped"));
+    // Show navigation buttons
+    document.querySelectorAll(".modal-btn").forEach(btn => {
+      btn.style.opacity = "1";
+      btn.style.pointerEvents = "auto";
     });
   };
+
+  const closeModal = () => {
+    modal.style.display = "none";
+    document.querySelectorAll(".modal-btn").forEach(btn => {
+      btn.style.opacity = "0";
+      btn.style.pointerEvents = "none";
+    });
+  };
+
+  const showNext = () => {
+    currentIndex = (currentIndex + 1) % allImages.length;
+    updateModal();
+  };
+
+  const showPrev = () => {
+    currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
+    updateModal();
+  };
+
+  // Image click opens modal
+  allImages.forEach((img, i) => img.addEventListener("click", () => openModal(i)));
+
+  // Modal interactions
+  document.getElementById("modalClose").addEventListener("click", closeModal);
+  document.getElementById("prevBtn").addEventListener("click", showPrev);
+  document.getElementById("nextBtn").addEventListener("click", showNext);
+  modal.addEventListener("click", e => e.target === modal && closeModal());
+
+  // Wheel scroll
+  let lastScrollTime = 0;
+  modal.addEventListener("wheel", e => {
+    if (Date.now() - lastScrollTime > 600) {
+      e.deltaY > 0 ? showNext() : showPrev();
+      lastScrollTime = Date.now();
+    }
+    e.preventDefault();
+  }, { passive: false });
+
+  // Touch swipe
+  let touchStartX = 0;
+  modal.addEventListener("touchstart", e => touchStartX = e.changedTouches[0].screenX);
+  modal.addEventListener("touchend", e => {
+    const deltaX = e.changedTouches[0].screenX - touchStartX;
+    if (Math.abs(deltaX) > 50) deltaX > 0 ? showPrev() : showNext();
+  });
+
+  // Keyboard nav
+  document.addEventListener("keydown", e => {
+    if (modal.style.display === "flex") {
+      if (e.key === "ArrowRight") showNext();
+      else if (e.key === "ArrowLeft") showPrev();
+      else if (e.key === "Escape") closeModal();
+    }
+  });
+};
+
 
   // ===== INIT EVERYTHING IN ORDER =====
   animateNavbar();
