@@ -291,7 +291,7 @@ scrollTimeline
     duration: 2.8,
     ease: "power2.inOut"
   }, 0.3); 
-  
+
   // Exhibit fade-in
   gsap.fromTo(".rentals-image", { opacity: 0 }, {
     opacity: 1,
@@ -329,7 +329,6 @@ scrollTimeline
       onLeaveBack: () => gsap.to(scrollIndicator, { y: 0, opacity: 1, duration: 2.6 })
     }
   });
-
 }
 
 // INITIALIZATION
