@@ -624,5 +624,3 @@ document.addEventListener("DOMContentLoaded", () => {
     btn.addEventListener("click", () => setLanguage(btn.dataset.lang));
   });
 });
-
-
