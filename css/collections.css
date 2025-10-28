@@ -454,48 +454,6 @@ body {
   transform: translate(-50%, -50%) rotate(225deg);
 }
 
-/* ===== Modal Responsive Enhancements ===== */
-@media (max-width: 768px) {
-  .modal {
-    padding: 0;
-    background-color: rgba(4, 56, 75, 0.98);
-  }
-
-  .modal-content {
-    max-width: 100vw;
-    max-height: 95vh;
-    width: auto;
-    height: auto;
-    object-fit: contain;
-  }
-  .flip-container {
-    width: 100vw;
-    height: 95vh;
-  }
-  #prevBtn,
-  #nextBtn {
-    display: none;
-  }
-    .modal-close.item-3 {
-    top: 20px;
-    right: 20px;
-    width: 28px;
-    height: 28px;
-  }
-
-  .modal-close.item-3::before,
-  .modal-close.item-3::after {
-    width: 28px;
-  }
-}
-
-@media (max-width: 480px) {
-  .modal-content {
-    max-width: 100vw;
-    max-height: 100vh;
-    object-fit: cover;
-  }
-}
 
 
 .swipe-indicator {
@@ -543,12 +501,12 @@ body {
   position: relative;
   width: 100%;
   height: 100%;
-  -webkit-transform-style: preserve-3d;
-  transform-style: preserve-3d;
+  /* -webkit-transform-style: preserve-3d;
+  transform-style: preserve-3d; */
 }
 
 .flip-inner {
-  width: 100%;
+  /* width: 100%;
   height: 100%;
   position: relative;
   transition: transform 1.2s ease-in-out;
@@ -557,7 +515,17 @@ body {
   transform-style: preserve-3d;
   -webkit-transform-style: preserve-3d;
   backface-visibility: hidden;
-  -webkit-backface-visibility: hidden;
+  -webkit-backface-visibility: hidden; */
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 1.2s ease-in-out;
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
+    will-change: transform;
+
+  /* transform: translateZ(0);
+  -webkit-transform: translateZ(0); */
 }
 
 .flip-container.flipped .flip-inner {
@@ -581,13 +549,15 @@ body {
   backface-visibility: hidden;
   -webkit-backface-visibility: hidden;
 
-  /* transform-style: preserve-3d;
-  -webkit-transform-style: preserve-3d; */
+  /* z-index: 1; */
+  transform-style: preserve-3d;
+  -webkit-transform-style: preserve-3d;
 }
 
 .flip-back {
   transform: rotateY(180deg);
   -webkit-transform: rotateY(180deg);
+    /* z-index: 2; */
 }
 
 .flip-front img,
@@ -596,8 +566,8 @@ body {
   max-height: 90vh;
   object-fit: contain;
   display: block;
-  will-change: transform;
-  image-rendering: auto;
+  /* will-change: transform;
+  image-rendering: auto; */
 }
 
 .flip-hint {
@@ -618,13 +588,63 @@ body {
   opacity: 1;
 }
 
+@supports not (transform-style: preserve-3d) {
+  .flip-container,
+  .flip-inner,
+  .flip-front,
+  .flip-back {
+    display: block !important;
+    transform: none !important;
+    backface-visibility: visible !important;
+  }
+}
+
+/* ===== Modal Responsive Enhancements ===== */
 @media (max-width: 768px) {
-  .flip-hint {
+  .modal {
+    padding: 0;
+    background-color: rgba(4, 56, 75, 0.98);
+  }
+
+  .modal-content {
+    max-width: 100vw;
+    max-height: 95vh;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+  }
+  .flip-container {
+    width: 100vw;
+    height: 95vh;
+  }
+  #prevBtn,
+  #nextBtn {
+    display: none;
+  }
+    .modal-close.item-3 {
+    top: 20px;
+    right: 20px;
+    width: 28px;
+    height: 28px;
+  }
+
+  .modal-close.item-3::before,
+  .modal-close.item-3::after {
+    width: 28px;
+  }
+    .flip-hint {
     top: 30px;
     font-size: 14px;
   }
 }
 
+@media (max-width: 480px) {
+  .modal-content {
+    max-width: 100vw;
+    max-height: 100vh;
+    object-fit: cover;
+  }
+}
 
 
 /* Coming Soon */

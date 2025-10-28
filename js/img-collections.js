@@ -222,6 +222,11 @@ const updateModal = () => {
   const flipContainer = document.getElementById("modalFlipCard");
   const flipHint = document.querySelector(".flip-hint");
 
+  //Safari
+  modalImgFront.onload = modalImgBack.onload = () => {
+  flipContainer.classList.remove("flipped");
+};
+
   // Reset flip state
   flipContainer.classList.remove("flipped");
 
