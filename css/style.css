@@ -836,10 +836,10 @@ body{
       line-height: 70px;
   }
   .hero {
-      height: 70vh;
+      height: 90vh;
   }
   .hero-video {
-      height: 70vh;
+      height: 90vh;
   }
 }
 
@@ -850,15 +850,15 @@ body{
     text-align: center;
   }
   .hero-content{
-    margin-top: 150px;
+    margin-top: 100px;
   }
   .hero-content .h1 {
-    font-size: 40px;
-    line-height: 40px;
+    font-size: 36px;
+    line-height: 36px;
   }
   .hero-content .span{
-    font-size: 48px;
-    line-height: 48px;
+    font-size: 40px;
+    line-height: 40px;
   }
   .hero-content p {
     font-size: 16px;

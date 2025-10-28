@@ -104,6 +104,9 @@
          <!-- Hero Section -->
          <section id="hero" class="hero">
             <video class="hero-video" autoplay muted loop playsinline>
+               <!-- Mobile-first -->
+               <source src="/video/sm-hero.MP4" type="video/mp4" media="(max-width: 768px)">
+               <!-- Default for desktop -->
                <source src="/video/HERO.MP4" type="video/mp4" />
             </video>
             <div class="hero-overlay"></div>
@@ -256,7 +259,7 @@
                      </p>
                   </div>
                </a>
-               <a href="#" class="coll-background churchill">
+               <a href="churchill.html" class="coll-background churchill">
                   <div class="bg" data-speed="0.8"></div>
                   <div class="overlay">
                      <h3 data-key="collections.churchill.title" data-speed="1.2">Winston Churchill</h3>
