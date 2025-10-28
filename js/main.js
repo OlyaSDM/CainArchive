@@ -69,21 +69,46 @@ gsap.timeline({
 
 
 // VIDEO FOR SMALLER SCREENS
-  const video = document.querySelector('.hero-video');
-  const source = video.querySelector('source');
+  // const video = document.querySelector('.hero-video');
+  // const source = video.querySelector('source');
 
-  const setResponsiveVideo = () => {
-    const isMobile = window.innerWidth <= 480;
-    const newSrc = isMobile ? '/video/sm-hero.MP4' : '/video/HERO.MP4';
+  // const setResponsiveVideo = () => {
+  //   const isMobile = window.innerWidth <= 480;
+  //   const newSrc = isMobile ? '/video/sm-hero.MP4' : '/video/HERO.MP4';
 
-    if (source.getAttribute('src') !== newSrc) {
-      source.setAttribute('src', newSrc);
-      video.load();
-    }
-  };
+  //   if (source.getAttribute('src') !== newSrc) {
+  //     source.setAttribute('src', newSrc);
+  //     video.load();
+  //   }
+  // };
 
-  setResponsiveVideo();
-  window.addEventListener('resize', setResponsiveVideo);
+  // setResponsiveVideo();
+  // window.addEventListener('resize', setResponsiveVideo);
+  
+const video = document.querySelector('.hero-video');
+const source = video.querySelector('source');
+
+const setResponsiveVideo = () => {
+  const isMobile = window.innerWidth <= 480;
+  const newSrc = isMobile ? '/video/sm-hero.MP4' : '/video/HERO.MP4';
+
+  if (source.getAttribute('src') !== newSrc) {
+    video.pause();
+    source.setAttribute('src', newSrc);
+    video.load();
+    video.onloadedmetadata = () => {
+      video.play();
+    };
+  }
+};
+
+video.addEventListener('ended', () => {
+  video.currentTime = 0;
+  video.play();
+});
+
+setResponsiveVideo();
+window.addEventListener('resize', setResponsiveVideo);
 
 
 
