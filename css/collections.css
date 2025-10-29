@@ -105,6 +105,7 @@ body {
 .chirchill-title{
   font-size: clamp(38px, 8vw, 120px);
 }
+
 .scroll-down {
   position: absolute;
   bottom: 100px;
@@ -769,7 +770,7 @@ body {
 .wwii-section {
   background-color: var(--background);
   padding: 10vw 10vw 4vw;
-  font-family: "Libre Franklin", sans-serif;
+  font-family: 'GT Super', serif;
 }
 
 .grid-wrapper {
@@ -795,30 +796,31 @@ body {
   content: "";
   position: absolute;
   inset: 0;
+  background-image: 
+    linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)),
+    var(--bg-img);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
   transform: scale(1);
-  transition: transform 0.4s ease, background-color 0.3s ease;
-  z-index: -1; 
+  transition: 
+    transform 0.4s ease, 
+    background-color 0.3s ease,
+    background-image 0.4s ease;
+  z-index: -1;
 }
 
 .grid-item:hover::before {
   transform: scale(1.1);
-}
-
-.grid-item::before {
   background-image: var(--bg-img);
 }
-/* Overlay text */
+
 .grid-item span {
   z-index: 1;
   padding: 1rem;
-  /* background: rgba(0, 0, 0, 0.1);  */
   color: white;
   font-size: clamp(18px, 2vw, 22px);
   font-weight: 200;
-  /* backdrop-filter: blur(3px); */
   transition: transform 0.3s ease;
   will-change: transform;
 }
@@ -826,44 +828,56 @@ body {
 .grid-item:hover span {
   transform: scale(.95);
 }
-
 .ww-text {
+  display: flex;
+  flex-direction: column;
+}
+.ww-text h2 {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-family: 'GT Super', serif;
-  font-size: clamp(26px, 4vw, 48px);
+  font-size: clamp(34px, 4vw, 52px);
   pointer-events: none;
-  color: var(--accent-bright);
+  color: var(--fonts);
 }
+#ww2-text p{
+  font-style: italic;
+  color: var(--accent-bright);
+    font-size: clamp(24px, 3vw, 32px);
+}
+
 .block1 {
   grid-row: 1 / span 2;
   grid-column: 1;
-  /* background-image: url('/img/WW2/1.jpg'); */
 }
 
 .block2 {
   grid-row: 1;
   grid-column: 2 / span 2;
-  /* background-image: url('/img/WW2/2.jpg'); */
 }
 
 .block3 {
   grid-row: 2 / span 2;
   grid-column: 3;
-  /* background-image: url('/img/WW2/3.jpg'); */
 }
 
 .block4 {
   grid-row: 3;
   grid-column: 1 / span 2;
-  /* background-image: url('/img/WW2/4.jpg'); */
 }
 
-.center-text {
+#ww2-text {
   grid-row: 2;
   grid-column: 2;
 }
+.block1 {
+  --bg-img: url('/img/WW2/1.jpg');
+}
+.block3 {
+  --bg-img: url('/img/WW2/3.jpg');
+}
+
+
 
 /* Responsive: stack on mobile */
 @media (max-width: 768px) {
@@ -885,5 +899,54 @@ body {
     padding: 100px 0 30px 0;
     height: auto;
   }
+  .block1 {
+    --bg-img: url('/img/WW2/1-sm.jpg');
+  }
+
+  .block3 {
+    --bg-img: url('/img/WW2/3-sm.jpg');
+  } 
 }
 
+
+/* PROPAGANDA */
+
+.video-title-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2;
+  pointer-events: none;
+  text-align: center;
+}
+
+.video-title-overlay h2 {
+  font-size: clamp(40px, 8vw, 60px);
+  font-weight: 100;
+  color: white;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  line-height: 1;
+}
+
+
+.propaganda-title {
+font-size: clamp(28px, 5vw, 54px);
+}
+.image-wrapper-ww2 {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.image-wrapper-ww2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
