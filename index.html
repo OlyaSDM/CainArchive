@@ -455,7 +455,9 @@
                   </div>
                </div>
                <div class="contact-left">
-                  <form class="contact-form" id="contactForm" method="POST" action="https://getform.io/f/your-form-id" novalidate>
+<form class="contact-form" id="contactForm" method="POST" action="https://api.web3forms.com/submit" novalidate>
+     <input type="hidden" name="access_key" value="">
+
                      <div class="contact-title">
                         <h3 data-key="contactBlock.form.titleLine1">Get in</h3>
                         <h2 data-key="contactBlock.form.titleLine2">touch</h2>
@@ -472,7 +474,6 @@
                         <textarea name="message" placeholder="" data-key="contactBlock.form.message" required></textarea>
                         <small class="error-message"></small>
                      </div>
-                     <!-- Honeypot to prevent spam -->
                      <input type="text" name="company" style="display:none">
                      <div class="form-group checkbox-group">
                         <div class="form-flex">
@@ -493,34 +494,34 @@
                </div>
             </section>
             <!-- PRESS SECTION -->
-            <!-- <section class="press-intro letter-section">
+              <!-- <section class="press-intro letter-section">
                <h3>Press on Us</h3>
                <p>Discover what leading publications are saying about <span>Cain Archive</span></p>
                </section>
                <section id="press">
                <img class="rec6-img" src="img/Rec6.png" alt="">
                <div class="press-grid">
-                  <div class="press-item">
+                  <div class="press-item" data-pdf="/img/Kennedy/The Legacy/press/Photo 927 copy.pdf">
                      <a href="#" class="press-item-img">
-                     <img src="img/press/1.jpg" loading="lazy" alt="Press 1">
+                     <img src="img/gallery/1.webp" loading="lazy" alt="Press 1">
                      </a>
                      <h4 class="press-category">Podcasts with Cain Archive</h4>
                      <h3>Second World War: the Main Tragedy</h3>
                      <p class="press-subtitle">Podcast</p>
                      <p class="press-date">November 17, 2025</p>
                   </div>
-                  <div class="press-item">
+                  <div class="press-item" data-pdf="/img/Kennedy/The Legacy/press/Photo 927 copy.pdf">
                      <a href="#"  class="press-item-img">
-                     <img src="img/press/2.jpg" loading="lazy" alt="Press 2">
+                     <img src="img/gallery/1.webp" loading="lazy" alt="Press 2">
                      </a>
                      <h4 class="press-category">Visits and Activities</h4>
                      <h3>Our unique photos at the London Museum</h3>
                      <p class="press-subtitle">Exhibition</p>
                      <p class="press-date">September 12 - November 20, 2025</p>
                   </div>
-                  <div class="press-item">
+                  <div class="press-item" data-pdf="/img/Kennedy/The Legacy/press/Photo 927 copy.pdf">
                      <a href="#"  class="press-item-img">
-                     <img src="img/press/3.jpg" loading="lazy" alt="Press 3">
+                     <img src="img/gallery/1.webp" loading="lazy" alt="Press 3">
                      </a>
                      <h4 class="press-category">Publications</h4>
                      <h3>What the New York Times writes about our collection </h3>
@@ -528,27 +529,27 @@
                      <p class="press-date">December 1, 2025</p>
                   </div>
                   <img class="rec7-img" src="img/Rec7.png" alt="">
-                  <div class="press-item">
+                  <div class="press-item" data-pdf="/img/Kennedy/The Legacy/press/Photo 927 copy.pdf">
                      <a href="#"  class="press-item-img">
-                     <img src="img/press/4.jpg" loading="lazy" alt="Press 4">
+                     <img src="img/gallery/1.webp" loading="lazy" alt="Press 4">
                      </a>
                      <h4 class="press-category">Events</h4>
                      <h3>Rare photo collectors gather in New York</h3>
                      <p class="press-subtitle">One of a kind photographs from the early XX century</p>
                      <p class="press-date">January 9, 2026</p>
                      </div>
-                     <div class="press-item">
+                     <div class="press-item" data-pdf="/img/Kennedy/The Legacy/press/Photo 927 copy.pdf">
                      <a href="#"  class="press-item-img">
-                     <img src="img/press/5.jpg" loading="lazy" alt="Press 5">
+                     <img src="img/gallery/1.webp" loading="lazy" alt="Press 5">
                      </a>
                      <h4 class="press-category">Expositions</h4>
                      <h3>Cain Archive collection of old Hollywood photos at the Tokyo Museum</h3>
                      <p class="press-subtitle">A unique exhibition</p>
                      <p class="press-date">November 1, 2025 - February 20, 2026</p>
                      </div>
-                     <div class="press-item">
+                     <div class="press-item" data-pdf="/img/Kennedy/The Legacy/press/Photo 927 copy.pdf">
                      <a href="#" class="press-item-img">
-                     <img src="img/press/6.jpg" loading="lazy" alt="Press 6">
+                     <img src="img/gallery/1.webp" loading="lazy" alt="Press 6">
                      </a>
                      <h4 class="press-category">Expositions</h4>
                      <h3>Visiting Florida</h3>
@@ -556,7 +557,18 @@
                      <p class="press-date">August 2 - November 15, 2025</p>
                      </div> 
                </div>
-               </section> -->
+<div id="popup-window" class="popup-overlay">
+  <div class="popup-box">
+    <span id="close-popup-btn" class="popup-close-btn">&times;</span>
+    <embed id="pdf-popup" src="" type="application/pdf" width="100%" height="500px">
+  </div>
+</div>
+              </section>   -->
+
+
+
+
+
             <!-- FOOTER -->
             <footer class="footer">
                <p class="footer-heading" data-key="footer.heading"></p>
@@ -701,6 +713,8 @@
       <script src="js/cards.js"></script>
       <script src="js/cain.js"></script>
       <script src="js/img.js"></script>
+            <script src="js/press.js"></script>
+
       <!-- <script src="js/block_copy.js"></script> -->
       <script src="/js/lang.js"></script>
    </body>

@@ -1,19 +1,16 @@
-
 document.getElementById("contactForm").addEventListener("submit", function (e) {
-  e.preventDefault();
+  e.preventDefault(); 
   let isValid = true;
 
   this.querySelectorAll(".error-message").forEach(el => el.textContent = "");
   this.querySelectorAll("input, textarea").forEach(el => el.classList.remove("error"));
 
-  // name
   const name = this.elements["name"];
   if (!name.value.trim()) {
     showError(name, "Please enter your name.");
     isValid = false;
   }
 
-  // email
   const email = this.elements["email"];
   if (!email.value.trim()) {
     showError(email, "Please enter your email.");
@@ -23,14 +20,12 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
     isValid = false;
   }
 
-  // message
   const message = this.elements["message"];
   if (!message.value.trim()) {
     showError(message, "Please enter your message.");
     isValid = false;
   }
 
-  // checkbox
   const privacy = this.elements["privacy"];
   if (!privacy.checked) {
     showError(privacy, "You must accept the privacy policy.");
@@ -38,7 +33,33 @@ document.getElementById("contactForm").addEventListener("submit", function (e) {
   }
 
   if (isValid) {
-    this.submit();
+    const formData = new FormData(this);
+
+    const data = Object.fromEntries(formData.entries());
+
+    fetch("https://api.web3forms.com/submit", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        access_key: "ВАШ_API_KEY",  
+        ...data
+      })
+    })
+    .then(response => response.json())
+    .then(result => {
+      if (result.success) {
+        alert("Message sent successfully!");
+        this.reset();  
+      } else {
+        alert("Error sending message.");
+      }
+    })
+    .catch(error => {
+      alert("Something went wrong. Please try again later.");
+      console.error("Error:", error);
+    });
   }
 });
 
