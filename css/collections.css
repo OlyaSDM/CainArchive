@@ -136,7 +136,12 @@ body {
   50% { transform: translateY(12px); }
   60% { transform: translateY(6px); }
 }
-
+.scroll-down-ww2 {
+    border: 2px solid var(--background);
+}
+.scroll-down-ww2 span {
+    background-color: var(--background);
+}
 .collection-caption {
   position: absolute;
   inset: 0;
@@ -911,42 +916,50 @@ body {
 
 /* PROPAGANDA */
 
-.video-title-overlay {
-  position: absolute;
-  inset: 0;
+.hero-ww2 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: visible;
   display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  background-position: center;
+  background-size: cover;
+  background-image: url(/img/WW2/propaganda/hero.jpg);
+  background-repeat: no-repeat;
+}
+#ww2-hero-titile{
+  display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  z-index: 2;
-  pointer-events: none;
   text-align: center;
+  color: var(--white);
+  font-size: clamp(28px, 5vw, 50px);
+    position: relative; 
+  z-index: 2;
+}
+#ww2-hero-titile h2{
+    font-weight: 100;
+  font-family: 'GT Super', serif;
+}
+#ww2-hero-titile p{
+  font-size: clamp(14px, 2vw, 18px);
+    font-family: "Libre Franklin", sans-serif;
+    font-weight: 100;
+    margin-top: 25px;
 }
 
-.video-title-overlay h2 {
-  font-size: clamp(40px, 8vw, 60px);
-  font-weight: 100;
-  color: white;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
-  line-height: 1;
-}
 
 
-.propaganda-title {
-font-size: clamp(28px, 5vw, 54px);
-}
-.image-wrapper-ww2 {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 0;
-  overflow: hidden;
-}
 
-.image-wrapper-ww2 img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+
+
+
+@media (max-width: 768px) {
+  #ww2-hero-titile p{
+    max-width: 400px;
+  }
 }
