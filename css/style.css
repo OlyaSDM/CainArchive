@@ -2248,9 +2248,7 @@ font-size: 16px;
 }
 
 
-
 /* PRESS */
-
 .press-intro {
   display: flex;
   flex-direction: column;
@@ -2271,10 +2269,22 @@ font-size: 16px;
   font-family: "Libre Franklin", sans-serif;
   font-size: 18px;
   font-weight: 100;
+  color: var(--fonts);
   text-align: center;
 }
 .press-intro p span {
   font-style: italic;
+}
+.watch-more-btn {
+  display: none;
+}
+
+.more-item {
+  display: none;
+}
+
+.more-item.show {
+  display: flex; 
 }
 
 /* Tablet layout */
@@ -2283,6 +2293,27 @@ font-size: 16px;
     font-size: 66px;
   }
 }
+
+@media (max-width: 768px) {
+  .press-item.more-item {
+    display: none; 
+  }
+
+  .watch-more-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--accent-color);
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  .watch-more-btn:hover {
+    background-color: var(--accent-bright);
+  }
+}
+
 
 /* Mobile layout */
 @media (max-width: 600px) {
@@ -2298,15 +2329,12 @@ font-size: 16px;
   }
 }
 
-
-
 #press {
   padding: 30px 5vw 70px 5vw;
   background: var(--background);
   color: var(--fonts);
   position: relative;
   /* min-height: 100vh; */
-  overflow: hidden;
 }
 
 .press-intro,
@@ -2333,12 +2361,13 @@ font-size: 16px;
   position: relative;      
   overflow: hidden;        
   aspect-ratio: 3/4 ;     
-  width: 100%;
-  height: auto;
+  width: 100%; 
+  height: 380px; 
   display: block;      
   text-decoration: none;
   color: inherit;   
 }
+
 @media (min-width: 1025px){
   #press{
     padding-left: 10vw;
@@ -2349,8 +2378,8 @@ font-size: 16px;
     justify-self: center;           
   }
   .press-item-img{
-    width: 100%;
-    aspect-ratio: 3 / 4;        
+
+        aspect-ratio: 3 / 4;        
   }
 }
 
@@ -2440,29 +2469,30 @@ font-size: 16px;
   }
 }
 
-
-
-/* .popup-overlay {
-  display: none; 
-  position: fixed; 
+.popup-overlay {
+  position: fixed;
   top: 0; left: 0;
-  width: 100%;
-   height: 100%;
-  background: rgba(0,0,0,0.6);
-  z-index: 1000;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(4, 56, 75, 0.95);
+  z-index: 9999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
 }
 
 .popup-overlay.show {
-  display: block; 
+  opacity: 1;
+  visibility: visible;
 }
 
 .popup-box {
   background: var(--sandy);
-  padding: 40px;
+  padding: 50px;
   max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-  top: 15%;
   width: 90%;
   position: relative;
 }
@@ -2470,14 +2500,23 @@ font-size: 16px;
 .popup-close-btn {
   position: absolute;
   top: 10px;
-  right: 15px;
-  font-size: 28px;
+  right: 20px;
+  font-size: 2.8rem;
+  color: var(--fonts);
   cursor: pointer;
   font-weight: bold;
-} */
+  transform-origin: center; 
+  opacity: 1;                
+}
 
-
-
+.popup-p {
+    color: var(--fonts);
+  font-family: "Libre Franklin", sans-serif;
+  font-size: 18px;
+  margin-top: 24px;
+  font-weight: 600;
+  text-align: center;
+}
 
 
 /* INTERVIEWS */
