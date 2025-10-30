@@ -11,7 +11,6 @@ function initMosaicAnimation() {
 
   if (!leftCol || !middleCol || !rightCol) return;
 
-  // массив всех изображений
   const images = [
     "/img/gallery/1.webp", "/img/gallery/2.webp", "/img/gallery/3.webp",
     "/img/gallery/4.webp", "/img/gallery/5.webp", "/img/gallery/6.webp",
@@ -31,9 +30,8 @@ function initMosaicAnimation() {
     { el: rightCol, dirFactor: 1, imgs: images.filter((_, i) => i % 3 === 2) },
   ];
 
-  // создаем дублированные изображения для бесконечного скролла
   cols.forEach(c => {
-    const totalImages = [...c.imgs, ...c.imgs]; // дублируем
+    const totalImages = [...c.imgs, ...c.imgs]; 
     totalImages.forEach(src => {
       const wrapper = document.createElement("div");
       wrapper.className = "image-wrapper";
@@ -47,7 +45,7 @@ function initMosaicAnimation() {
   let targetDir = 1;
   let currentDir = 1;
 
-  const SPEED = 50; // px/sec
+  const SPEED = 50; 
 
   ScrollTrigger.create({
     trigger: ".mosaic-section",
