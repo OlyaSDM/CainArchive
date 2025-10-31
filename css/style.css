@@ -2094,34 +2094,41 @@ line-height: 30px;
     z-index: 9999;
 }
 
-#privacyModal .close-modal {
+.close-modal.item-3 {
+  width: 35px;
+  height: 35px;
   position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 2.8rem;
-  color: var(--fonts);
-  cursor: pointer;
-  z-index: 10;
-  opacity: 0;
-  transform: scale(0.8);
-}
-
-#privacyModal .close-modal:hover {
-  color: rgb(72, 202, 228);
-}
-
-
-.close-modal {
   top: 10px;
-  right: 15px;
-    position: absolute;
-  font-size: 2.8rem;
-  color: var(--fonts);
+  right: 10px;
   cursor: pointer;
+  z-index: 10001;
 }
 
-.close-modal:hover {
-  color: var(--accent-bright);
+.close-modal.item-3::before,
+.close-modal.item-3::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 35px;
+  background-color: var(--fonts);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  transition: transform 0.3s ease-out;
+}
+
+.close-modal.item-3::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.close-modal.item-3:hover::before,
+.close-modal.item-3:focus::before {
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.close-modal.item-3:hover::after,
+.close-modal.item-3:focus::after {
+  transform: translate(-50%, -50%) rotate(225deg);
 }
 
 .privacy-link{
@@ -2508,19 +2515,6 @@ font-size: 16px;
   width: 90%;
   position: relative;
 }
-
-.popup-close-btn {
-  position: absolute;
-  top: 10px;
-  right: 20px;
-  font-size: 2.8rem;
-  color: var(--fonts);
-  cursor: pointer;
-  font-weight: bold;
-  transform-origin: center; 
-  opacity: 1;                
-}
-
 .popup-p {
     color: var(--fonts);
   font-family: "Libre Franklin", sans-serif;
@@ -2529,18 +2523,42 @@ font-size: 16px;
   font-weight: 600;
   text-align: center;
 }
-
-.cursor {
-  display: inline-block;
-  animation: blink 0.8s infinite;
+.popup-close-btn.item-3 {
+  width: 35px;
+  height: 35px;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+  z-index: 10001;
 }
 
-@keyframes blink {
-  0%, 50% { opacity: 1; }
-  51%, 100% { opacity: 0; }
+.popup-close-btn.item-3::before,
+.popup-close-btn.item-3::after {
+  content: "";
+  position: absolute;
+  height: 2px;
+  width: 35px;
+  background-color: var(--fonts);
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  transition: transform 0.3s ease-out;
 }
 
+.popup-close-btn.item-3::after {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
 
+.popup-close-btn.item-3:hover::before,
+.popup-close-btn.item-3:focus::before {
+  transform: translate(-50%, -50%) rotate(135deg);
+}
+
+.popup-close-btn.item-3:hover::after,
+.popup-close-btn.item-3:focus::after {
+  transform: translate(-50%, -50%) rotate(225deg);
+}
 
 
 /* INTERVIEWS */

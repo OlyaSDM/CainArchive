@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const pdfPopup = document.getElementById("pdf-popup");
   const popupText = document.querySelector(".popup-p");
 
+  // ---------- ОТКРЫТИЕ ПОПАПА ----------
   pressItems.forEach(item => {
     item.addEventListener("click", e => {
       e.preventDefault();
@@ -24,9 +25,16 @@ document.addEventListener("DOMContentLoaded", () => {
       const cursor = document.createElement("span");
       cursor.classList.add("cursor");
       cursor.textContent = "|";
+      cursor.style.opacity = "0"; // курсор сначала невидим
 
       popupText.appendChild(textSpan);
       popupText.appendChild(cursor);
+
+      // курсор появляется чуть позже
+      gsap.to(cursor, {
+        opacity: 1,
+        delay: 0.3
+      });
 
       gsap.to(textSpan, {
         duration: 4,
@@ -43,6 +51,7 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   });
 
+  // ---------- ЗАКРЫТИЕ ПОПАПА ----------
   const closePopup = () => {
     popupWindow.classList.remove("show");
     pdfPopup.setAttribute("src", "");
@@ -54,13 +63,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (e.target === popupWindow) closePopup();
   });
 
-  closePopupBtn.addEventListener("mouseenter", () => {
-    gsap.to(closePopupBtn, { rotate: 90, color: "rgb(72,202,228)", duration: 0.3 });
-  });
-  closePopupBtn.addEventListener("mouseleave", () => {
-    gsap.to(closePopupBtn, { rotate: 0, color: "var(--fonts)", duration: 0.3 });
-  });
-
+  // ---------- WATCH MORE ----------
   const watchMoreBtn = document.querySelector(".watch-more-btn");
   const allItems = document.querySelectorAll(".press-item");
 
@@ -68,10 +71,10 @@ document.addEventListener("DOMContentLoaded", () => {
     const isMobile = window.matchMedia("(max-width: 768px)").matches;
 
     if (isMobile) {
-      allItems.forEach((item, i) => item.style.display = i < 3 ? "block" : "none");
+      allItems.forEach((item, i) => (item.style.display = i < 3 ? "block" : "none"));
       if (watchMoreBtn) watchMoreBtn.style.display = "block";
     } else {
-      allItems.forEach(item => item.style.display = "block");
+      allItems.forEach(item => (item.style.display = "block"));
       if (watchMoreBtn) watchMoreBtn.style.display = "none";
     }
   };
@@ -80,7 +83,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (watchMoreBtn) {
     watchMoreBtn.addEventListener("click", () => {
-      allItems.forEach(item => item.style.display = "block");
+      allItems.forEach(item => (item.style.display = "block"));
       watchMoreBtn.style.display = "none";
     });
   }
