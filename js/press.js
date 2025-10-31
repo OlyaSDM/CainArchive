@@ -1,92 +1,89 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const pressItems = document.querySelectorAll('.press-item');
-  const popupWindow = document.getElementById('popup-window');
-  const closePopupBtn = document.getElementById('close-popup-btn');
-  const pdfPopup = document.getElementById('pdf-popup');
+  gsap.registerPlugin(TextPlugin);
+
+  const pressItems = document.querySelectorAll(".press-item");
+  const popupWindow = document.getElementById("popup-window");
+  const closePopupBtn = document.getElementById("close-popup-btn");
+  const pdfPopup = document.getElementById("pdf-popup");
+  const popupText = document.querySelector(".popup-p");
 
   pressItems.forEach(item => {
-    item.addEventListener('click', (e) => {
+    item.addEventListener("click", e => {
       e.preventDefault();
-      const pdfFile = item.getAttribute('data-pdf');
+      const pdfFile = item.getAttribute("data-pdf");
       if (!pdfFile) return;
 
-      pdfPopup.setAttribute('src', pdfFile);
-      popupWindow.classList.add('show');
-      document.body.style.overflow = 'hidden';
+      pdfPopup.setAttribute("src", pdfFile);
+      popupWindow.classList.add("show");
+      document.body.style.overflow = "hidden";
+
+      const text = "If you want to read the full article, please contact us.";
+      popupText.textContent = "";
+
+      const textSpan = document.createElement("span");
+      const cursor = document.createElement("span");
+      cursor.classList.add("cursor");
+      cursor.textContent = "|";
+
+      popupText.appendChild(textSpan);
+      popupText.appendChild(cursor);
+
+      gsap.to(textSpan, {
+        duration: 4,
+        text: text,
+        ease: "none",
+        onComplete: () => {
+          gsap.to(cursor, {
+            opacity: 0,
+            duration: 0.5,
+            onComplete: () => cursor.remove()
+          });
+        }
+      });
     });
   });
 
   const closePopup = () => {
-    popupWindow.classList.remove('show');
-    pdfPopup.setAttribute('src', '');
-    document.body.style.overflow = '';
+    popupWindow.classList.remove("show");
+    pdfPopup.setAttribute("src", "");
+    document.body.style.overflow = "";
   };
 
-  closePopupBtn.addEventListener('click', closePopup);
-  popupWindow.addEventListener('click', (e) => {
+  closePopupBtn.addEventListener("click", closePopup);
+  popupWindow.addEventListener("click", e => {
     if (e.target === popupWindow) closePopup();
   });
 
-  let hoverTweenRotate = null;
-  let hoverTweenColor = null;
-
   closePopupBtn.addEventListener("mouseenter", () => {
-    if (hoverTweenRotate) hoverTweenRotate.kill();
-    if (hoverTweenColor) hoverTweenColor.kill();
-
-    hoverTweenRotate = gsap.to(closePopupBtn, { 
-      rotate: 90,
-      duration: 0.3,
-      ease: "power2.out"
-    });
-
-    hoverTweenColor = gsap.to(closePopupBtn, {
-      color: "rgb(72, 202, 228)",
-      duration: 0.3,
-      ease: "power2.out"
-    });
+    gsap.to(closePopupBtn, { rotate: 90, color: "rgb(72,202,228)", duration: 0.3 });
   });
-
   closePopupBtn.addEventListener("mouseleave", () => {
-    if (hoverTweenRotate) hoverTweenRotate.kill();
-    if (hoverTweenColor) hoverTweenColor.kill();
-
-    hoverTweenRotate = gsap.to(closePopupBtn, { 
-      rotate: 0,
-      duration: 0.3,
-      ease: "power2.out"
-    });
-
-    hoverTweenColor = gsap.to(closePopupBtn, {
-      color: "var(--fonts)",
-      duration: 0.3,
-      ease: "power2.out"
-    });
+    gsap.to(closePopupBtn, { rotate: 0, color: "var(--fonts)", duration: 0.3 });
   });
 
   const watchMoreBtn = document.querySelector(".watch-more-btn");
-  const moreItems = document.querySelectorAll(".more-item");
+  const allItems = document.querySelectorAll(".press-item");
+
+  const showInitialItems = () => {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+
+    if (isMobile) {
+      allItems.forEach((item, i) => item.style.display = i < 3 ? "block" : "none");
+      if (watchMoreBtn) watchMoreBtn.style.display = "block";
+    } else {
+      allItems.forEach(item => item.style.display = "block");
+      if (watchMoreBtn) watchMoreBtn.style.display = "none";
+    }
+  };
+
+  showInitialItems();
 
   if (watchMoreBtn) {
     watchMoreBtn.addEventListener("click", () => {
-      moreItems.forEach(item => {
-        item.style.display = "block"; 
-      });
-      watchMoreBtn.style.display = "none"; 
+      allItems.forEach(item => item.style.display = "block");
+      watchMoreBtn.style.display = "none";
     });
   }
 
-  const isMobile = window.matchMedia("(max-width: 768px)").matches;
-
-  if (isMobile) {
-    moreItems.forEach((item, index) => {
-      if (index >= 3) { 
-        item.style.display = "none"; 
-      }
-    });
-
-    if (watchMoreBtn) {
-      watchMoreBtn.style.display = "block"; 
-    }
-  }
+  window.addEventListener("resize", showInitialItems);
 });
