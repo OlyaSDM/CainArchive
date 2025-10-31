@@ -927,8 +927,11 @@ body {
   box-sizing: border-box;
   background-position: center;
   background-size: cover;
-  background-image: url(/img/WW2/propaganda/hero.jpg);
+  background-image: url(/img/WW2/hero.jpg);
   background-repeat: no-repeat;
+}
+#theWitness{
+  background-image: url(/img/WW2/Witness/Eichmann/Photo5_result\ copy-min.jpg);
 }
 #ww2-hero-titile{
   display: flex;
