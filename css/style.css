@@ -2522,6 +2522,8 @@ font-size: 16px;
   margin-top: 24px;
   font-weight: 600;
   text-align: center;
+  opacity: 0;
+  transition: opacity 1s ease;
 }
 .popup-close-btn.item-3 {
   width: 35px;
@@ -2559,6 +2561,13 @@ font-size: 16px;
 .popup-close-btn.item-3:focus::after {
   transform: translate(-50%, -50%) rotate(225deg);
 }
+@media (max-width: 1668px) {
+  .popup-box {
+margin-top: 120px;
+  }
+}
+
+
 
 
 /* INTERVIEWS */
