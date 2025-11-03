@@ -933,6 +933,12 @@ body {
 #theWitness{
   background-image: url(/img/WW2/Witness/Eichmann/Photo5_result\ copy-min.jpg);
 }
+#occupation {
+  background-image: url(/img//WW2/occupation/eichmann/Photo130_result\ copy-min.jpg);
+}
+#ashes{
+  background-image: url(/img/WW2/Ashes/Victims/Photo\ 242_result\ copy-min.jpg);
+}
 #ww2-hero-titile{
   display: flex;
   flex-direction: column;
@@ -957,6 +963,44 @@ body {
 
 
 
+.breadcrumb {
+  font-family: 'Libre Franklin', sans-serif;
+  font-size: 18px;
+  padding: 20px 0;
+  color: var(--fonts);
+  background-color: var(--background);
+text-align: center;
+}
+
+.breadcrumb ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: inline-flex;
+  gap: 8px;
+  flex-wrap: wrap;
+    justify-content: center;
+}
+
+.breadcrumb li::after {
+  content: ">";
+  margin: 0 8px;
+  color: var(--accent);
+}
+
+.breadcrumb li:last-child::after {
+  content: "";
+}
+
+.breadcrumb a {
+  text-decoration: none;
+  color: var(--accent-bright);
+  transition: color 0.3s ease;
+}
+
+.breadcrumb a:hover {
+  color: var(--accent);
+}
 
 
 
