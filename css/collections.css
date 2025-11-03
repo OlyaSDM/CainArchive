@@ -902,9 +902,14 @@ body {
   .block1 {
     --bg-img: url('/img/WW2/1-sm.jpg');
   }
-
+  .block2{
+        --bg-img: url('/img/WW2/2.jpg');
+  }
   .block3 {
     --bg-img: url('/img/WW2/3-sm.jpg');
+  } 
+    .block4 {
+    --bg-img: url('/img/WW2/4.jpg');
   } 
 }
 
