@@ -1592,8 +1592,18 @@ max-width: 550px;
   will-change: transform, opacity;  
 } */
 
+/* скрываем заголовки до разбиения и делаем спаны анимируемыми */
 .letter-section h3 {
-  visibility: hidden;
+  visibility: hidden; /* скрипт сделает visible после split */
+  overflow: hidden;
+  line-height: 1;
+}
+
+/* каждый символ — inline-block чтобы можно было двигать по Y */
+.letter-inner {
+  display: inline-block;
+  transform: translateY(100%);
+  will-change: transform, opacity;
 }
 
 
@@ -2566,6 +2576,8 @@ font-size: 16px;
 margin-top: 120px;
   }
 }
+
+
 
 
 

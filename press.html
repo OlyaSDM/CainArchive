@@ -27,10 +27,13 @@
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-      <link rel="stylesheet" href="css/about.css" />
       <link rel="stylesheet" href="css/style.css" />
+            <link rel="stylesheet" href="css/collections.css">
+
    </head>
    <body>
+
+    <!-- NAVIGATION -->
       <header class="navbar delayed" id="navbar">
          <!-- Logos  -->
          <a href="index.html" class="logo">
@@ -41,10 +44,11 @@
          <div class="nav-right">
             <!-- Inline links (desktop) -->
             <nav class="nav-links" aria-label="Primary">
+                                               <a href="/index.html" style="--i:5" data-index="05" data-key="nav.press"><span>Home</span></a>
+
                <a href="/#collections" data-key="nav.collections">Collections</a>
                <a href="#" data-key="nav.voices">Voices & Dialogues</a>
                <a href="/rentals.html" data-key="nav.rentals">Exhibitions & Collaborations</a>
-               <a href="/press.html" data-key="nav.press">Press</a>
             </nav>
             <!-- Burger (tablet/phone) -->
             <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
@@ -75,10 +79,11 @@
          <div class="fullscreen-menu-content">
             <!-- LEFT: Navigation Links -->
             <nav>
+                               <a href="/index.html" style="--i:5" data-index="05" data-key="nav.press"><span>Home</span></a>
+
                <a href="/#collections" style="--i:2" data-index="02" data-key="nav.collections"><span>Collections</span></a>
                <a href="#" style="--i:3" data-index="03" data-key="nav.voices"><span>Voices & Dialogues</span></a>
                <a href="/rentals.html" style="--i:4" data-index="04" data-key="nav.rentals"><span>Exhibitions & Collaborations</span></a>
-               <a href="/press.html" style="--i:5" data-index="05" data-key="nav.press"><span>Press</span></a>
             </nav>
             <!-- DIVIDER -->
             <div class="divider"></div>
@@ -107,101 +112,77 @@
             </div>
          </div>
       </div>
-      <section class="mission-hero">
-         <div class="mission-left-panel">
-            <h1 class="mission-title left">
-               <span class="mission-letter">O</span>
-               <span class="mission-letter">U</span>
-               <span class="mission-letter">R</span>
-            </h1>
-         </div>
-         <div class="mission-ampersand">
-            <span class="mission-letter"></span>
-         </div>
-         <div class="mission-right-panel">
-            <h1 class="mission-title right">
-               <span class="mission-letter">M</span>
-               <span class="mission-letter">i</span>
-               <span class="mission-letter">s</span>
-               <span class="mission-letter">s</span>
-               <span class="mission-letter">i</span>
-               <span class="mission-letter">o</span>
-               <span class="mission-letter">n</span>
-            </h1>
-         </div>
-         <video class="mission-video" ></video>
-         <div class="scroll-indicator">
-            <span></span>
-         </div>
-      </section>
-      <!-- <section class="exhibit-section">
-         <div class="image-wrapper-about">
-         <img class="exhibit-image" src="/img/gallery/31-1.JPG" alt="Mission image">
-         <div class="watermark-about">© CainArchive</div>
-         </div> -->
-      <section class="exhibit-section exhibit-with-accordion">
-         <div class="image-wrapper-about">
-            <img class="exhibit-image" src="/img/gallery/31-1.webp" alt="Mission image">
-            <div class="watermark-about">© CainArchive</div>
-         </div>
-         <div class="accordion-column">
-            <div class="accordion-item">
-               <button class="accordion-title" data-key="about.title" aria-expanded="false">
-               <span class="title-text">About us</span>
-               </button>
-               <span class="accordion-line"></span> 
-               <span class="accordion-arrow">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                     <path d="M6 9l6 6 6-6" stroke="var(--accent-bright)" stroke-width="2" fill="none" stroke-linecap="round"/>
-                  </svg>
-               </span>
-               <div class="accordion-content">
-                  <p data-key="about.text1">
-                     Cain Archive began as a personal journey — a search across continents to recover authentic fragments of the twentieth century. From forgotten negatives and private archives emerged rare photographs that reveal not only the suffering, but also the resilience and grace of human life.
-                  </p>
+            <!-- PRESS SECTION -->
+            <section class="press-intro letter-section" id="press">
+               <h3>Press on Us</h3>
+               <p>Discover what leading publications are saying about <span>Cain Archive</span></p>
+            </section>
+            <section id="press">
+               <img class="rec6-img" src="img/Rec6.png" alt="">
+               <div class="press-grid">
+                  <div class="press-item" data-pdf="/press/article.pdf">
+                     <a href="#" class="press-item-img">
+                     <img src="img/gallery/1.webp" loading="lazy" alt="Press 1">
+                     </a>
+                     <h4 class="press-category">Podcasts with Cain Archive</h4>
+                     <h3>Second World War: the Main Tragedy</h3>
+                     <p class="press-subtitle">Podcast</p>
+                     <p class="press-date">November 17, 2025</p>
+                  </div>
+                  <div class="press-item" data-pdf="/press/article2.pdf">
+                     <a href="#" class="press-item-img">
+                     <img src="img/gallery/1.webp" loading="lazy" alt="Press 2">
+                     </a>
+                     <h4 class="press-category">Visits and Activities</h4>
+                     <h3>Our unique photos at the London Museum</h3>
+                     <p class="press-subtitle">Exhibition</p>
+                     <p class="press-date">September 12 - November 20, 2025</p>
+                  </div>
+                  <div class="press-item" data-pdf="/press/article.pdf">
+                     <a href="#" class="press-item-img">
+                     <img src="img/gallery/1.webp" loading="lazy" alt="Press 3">
+                     </a>
+                     <h4 class="press-category">Publications</h4>
+                     <h3>What the New York Times writes about our collection </h3>
+                     <p class="press-subtitle">Newspaper article</p>
+                     <p class="press-date">December 1, 2025</p>
+                  </div>
+                  <img class="rec7-img" src="img/Rec7.png" alt="">
+                  <div class="press-item more-item" data-pdf="/press/article.pdf">
+                     <a href="#" class="press-item-img">
+                     <img src="img/gallery/1.webp" loading="lazy" alt="Press 4">
+                     </a>
+                     <h4 class="press-category">Events</h4>
+                     <h3>Rare photo collectors gather in New York</h3>
+                     <p class="press-subtitle">One of a kind photographs from the early XX century</p>
+                     <p class="press-date">January 9, 2026</p>
+                  </div>
+                  <div class="press-item more-item" data-pdf="/press/article.pdf">
+                     <a href="#" class="press-item-img">
+                     <img src="img/gallery/1.webp" loading="lazy" alt="Press 5">
+                     </a>
+                     <h4 class="press-category">Expositions</h4>
+                     <h3>Cain Archive collection of old Hollywood photos at the Tokyo Museum</h3>
+                     <p class="press-subtitle">A unique exhibition</p>
+                     <p class="press-date">November 1, 2025 - February 20, 2026</p>
+                  </div>
+                  <div class="press-item more-item" data-pdf="/press/article.pdf">
+                     <a href="#" class="press-item-img">
+                     <img src="img/gallery/1.webp" loading="lazy" alt="Press 6">
+                     </a>
+                     <h4 class="press-category">Expositions</h4>
+                     <h3>Visiting Florida</h3>
+                     <p class="press-subtitle">Our WWII photo collection is now in Florida museums</p>
+                     <p class="press-date">August 2 - November 15, 2025</p>
+                  </div>
                </div>
-               <hr class="accordion-sep">
-            </div>
-            <div class="accordion-item">
-               <button class="accordion-title" data-key="mission.title" aria-expanded="false">
-               <span class="title-text">OUR MISSION</span>
-               </button>
-               <span class="accordion-line"></span> 
-               <span class="accordion-arrow">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                     <path d="M6 9l6 6 6-6" stroke="var(--accent-bright)" stroke-width="2" fill="none" stroke-linecap="round"/>
-                  </svg>
-               </span>
-               <div class="accordion-content">
-                  <p data-key="mission.text1">
-                     Cain Archive exists to preserve authentic visual evidence of the twentieth century — its courage, its loss, and its rebirth. Our mission is to protect the truths that time cannot erase and to honor the enduring worth of every human life.
-                  </p>
-               </div>
-               <hr class="accordion-sep">
-            </div>
-            <div class="accordion-item">
-               <button class="accordion-title" data-key="history.title" aria-expanded="false">
-               <span class="title-text">OUR VISION</span>
-               </button>
-               <span class="accordion-line"></span> 
-               <span class="accordion-arrow">
-                  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
-                     <path d="M6 9l6 6 6-6" stroke="var(--accent-bright)" stroke-width="2" fill="none" stroke-linecap="round"/>
-                  </svg>
-               </span>
-               <div class="accordion-content">
-                  <p data-key="history.text1">
-                     We believe that memory is not only remembrance — it is guidance. Cain Archive strives to unite museums, scholars, and generations in a living dialogue that preserves history as the foundation of empathy, knowledge, and responsibility.
-                  </p>
-               </div>
-               <hr class="accordion-sep">
-            </div>
-         </div>
-      </section>
-      <!-- FOOTER -->
+               <button class="watch-more-btn text">Watch More</button>
+            </section>
+        <!-- FOOTER -->
 <footer class="footer">
-  <p class="footer-heading" data-key="footer.heading">History that shapes <span>Tomorrow</span></p>
-  <hr class="footer-divider" />
+<p class="footer-heading" data-key="footer.slogan">
+  History that shapes <span class="highlight">Tomorrow</span>
+</p>  <hr class="footer-divider" />
   <div class="footer-wrapper">
     <!-- Logo + tagline -->
     <a href="index.html" class="logo">
@@ -234,16 +215,23 @@
     <p class="footer-protected" data-key="footer.protectedText">Original vintage photographs are displayed for documentary, educational, and research purposes. Cain Archive holds physical ownership of the original prints but does not claim copyright to the underlying images. Unauthorized reproduction or commercial use is prohibited.</p>
   </div>
 </footer>
+
+      <div id="popup-window" class="popup-overlay">
+  <div class="popup-box">
+    <span id="close-popup-btn" class="popup-close-btn item-3"></span>
+    <embed id="pdf-popup" src="" type="application/pdf" width="100%" height="500px">
+    <p class="popup-p">If you want to read the full article, please contact us.</p>
+  </div>
+</div>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/gsap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/ScrollTrigger.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.13.0/TextPlugin.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
-      <script src="js/loader.js"></script>
-      <script src="js/highlights.js"></script>
-      <script src="js/navbar.js"></script>
-      <script src="js/lang_about.js"></script>
+                  <script src="js/img-collections.js"></script>
+                        <script src="js/navbar.js"></script>
+     <script src="js/press.js"></script>
       <script src="js/block_copy.js"></script>
+            <script src="js/img.js"></script>
+            <script src="js/main.js"></script>
    </body>
 </html>
