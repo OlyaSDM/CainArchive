@@ -225,6 +225,16 @@ body {
   padding: 0 15px;
   box-sizing: border-box;
 }
+.gallery-grid-ww2{
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  padding: 0 15px;
+  box-sizing: border-box;
+}
 .img-wrapper {
   width: 100%;
   margin-bottom: 20px;
@@ -757,6 +767,9 @@ body {
   .gallery-grid {
     grid-template-columns: repeat(2, 1fr);
     padding: 0;
+  }
+  .gallery-grid-ww2{
+    grid-template-columns: repeat(3, 1fr);
   }
   .glass-wrapper {
     padding: 1.5rem 2rem;

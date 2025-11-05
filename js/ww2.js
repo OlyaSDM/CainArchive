@@ -163,3 +163,13 @@ function waitForSmootherWW2() {
 waitForSmootherWW2();
 
 
+    gsap.to("body", {
+      "--background": "#e7c9af",
+      ease: "none",
+      scrollTrigger: {
+        trigger: ".breadcrumb",
+        start: "top center",
+        end: "bottom top",
+        scrub: true,
+      }
+    });

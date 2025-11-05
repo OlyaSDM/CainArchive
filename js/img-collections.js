@@ -211,7 +211,7 @@ const initModal = () => {
   const modal = document.getElementById("imageModal");
   const modalImgFront = document.getElementById("modalImgFront");
   const modalImgBack = document.getElementById("modalImgBack");
-  const allImages = Array.from(document.querySelectorAll(".gallery-grid img"));
+  const allImages = Array.from(document.querySelectorAll(".gallery-grid img, .gallery-grid-ww2 img"));
   let currentIndex = 0;
 
 const updateModal = () => {
