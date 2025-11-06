@@ -2526,6 +2526,9 @@ font-size: 16px;
     grid-template-columns: 1fr;
     gap: 25px;
   }
+  .watch {
+  margin-left: 0;
+}
 }
 
 .popup-overlay {
