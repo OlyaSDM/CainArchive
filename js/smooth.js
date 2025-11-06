@@ -23,6 +23,7 @@ function initScrollSmoother() {
     smoothTouch: 0.1,
     effects: true
   });
+
 }
 
 // If loader is present (main page), wait for the custom event
@@ -36,4 +37,22 @@ if (document.querySelector(".loader")) {
     initScrollSmoother();
   }
 }
+
+
+window.addEventListener("load", () => {
+  const hash = window.location.hash;
+
+  if (hash) {
+    const target = document.querySelector(hash);
+    if (!target) return;
+
+    if (window.ScrollSmoother && ScrollSmoother.get()) {
+      setTimeout(() => {
+        ScrollSmoother.get().scrollTo(target, true);
+      }, 800); 
+    } else {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
+  }
+});
 

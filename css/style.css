@@ -7,6 +7,8 @@
   --sandy: #e7c9af;
   --red: #cc0303;
 }
+
+
 body{
   margin: 0;
   padding: 0;
@@ -17,9 +19,9 @@ body{
   transition: background-color 0.4s ease;
              user-select: none;
       -webkit-user-drag: none; 
+      
 }
 
-/*перенести в главный код*/
     body, canvas {
       -webkit-user-select: none;
       -webkit-touch-callout: none;
@@ -27,13 +29,13 @@ body{
     canvas {
       display: none;
     }
-    /**/
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
     #smooth-wrapper {
       position: relative;
       overflow: hidden;
@@ -2387,15 +2389,41 @@ font-size: 16px;
 }
 
 .press-item-img {
-  position: relative;      
-  overflow: hidden;        
-  aspect-ratio: 3/4 ;     
-  width: 100%; 
-  height: 380px; 
-  display: block;      
+  position: relative;
+  overflow: hidden;
+  aspect-ratio: 3/4;
+  width: 100%;
+  height: 380px;
+  display: block;
   text-decoration: none;
-  color: inherit;   
+  color: inherit;
 }
+
+.press-item-img::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8); 
+  z-index: 1;
+}
+
+.press-item-img .press-item-text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+  font-family: 'GT Super', serif;
+  font-weight: 300;
+  font-size: 40px;
+  text-align: center;
+  color: var(--accent);
+  letter-spacing: -1px;
+}
+
 
 @media (min-width: 1025px){
   #press{
@@ -2411,7 +2439,9 @@ font-size: 16px;
         aspect-ratio: 3 / 4;        
   }
 }
-
+.watch {
+  margin-left: 15%;
+}
 .press-item-img img {
   width: 100%;
   height: 100%;
@@ -2423,19 +2453,19 @@ font-size: 16px;
 .press-item-img::after {
   content: "Read More";
   position: absolute;
-  top: 0;
+  top: 30%;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.4);
   color: var(--background);
   font-family: "Libre Franklin", sans-serif;
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 400;
   display: flex;
   align-items: center;
   justify-content: center;
   opacity: 0;
+  z-index: 5;
   transform: scale(1.05);
   transition: opacity 0.3s ease, transform 0.5s ease;
   pointer-events: none;
