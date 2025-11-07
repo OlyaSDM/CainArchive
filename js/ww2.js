@@ -107,49 +107,62 @@ function animateWW2GridItems() {
 }
 
 function animateHeroWW2Title() {
+  // Initial setup
   gsap.set(".ww2-left", { opacity: 0, x: -100 });
   gsap.set(".ww2-right", { opacity: 0, x: 100 });
+  gsap.set("#ww2-hero-titile p", { opacity: 0, y: 50 });
 
-  gsap.timeline({
+  // Timeline for text entrance
+  const tl = gsap.timeline({
     scrollTrigger: {
       trigger: ".hero-ww2",
       start: "top center",
       scrub: false,
       once: true
     }
-  })
-  .to(".ww2-left", {
-    opacity: 1,
-    x: 0,
-    duration: 1.2,
-    ease: "power3.out"
-  })
-  .to(".ww2-right", {
-    opacity: 1,
-    x: 0,
-    duration: 1.2,
-    ease: "power3.out"
-  }, "-=1")
-  .from("#ww2-hero-titile p", {
-    opacity: 0,
-    y: 50,
-    duration: 1.2,
-    ease: "power3.out"
-  }, "-=0.8"); // slight overlap with previous animation
+  });
 
-// Background scale effect on scroll
-gsap.to(".hero-ww2", {
-  scale: 1.2,
-  transformOrigin: "center center",
-  ease: "none",
-  scrollTrigger: {
-    trigger: ".hero-ww2",
-    start: "top top",
-    end: "bottom top",
-    scrub: true
-  }
-});
+  tl.to(".ww2-left", {
+      opacity: 1,
+      x: 0,
+      duration: 1.2,
+      ease: "power3.out"
+    })
+    .to(".ww2-right", {
+      opacity: 1,
+      x: 0,
+      duration: 1.2,
+      ease: "power3.out"
+    }, "-=1")
+    // Animate the large paragraph first
+    .to("#ww2-hero-titile .big-p", {
+      opacity: 1,
+      y: 0,
+      duration: 1.3,
+      ease: "power3.out"
+    }, "-=0.4")
+    // Then animate the second paragraph slightly later
+    .to("#ww2-hero-titile p:not(.big-p)", {
+      opacity: 1,
+      y: 0,
+      duration: 1.3,
+      ease: "power3.out"
+    }, "-=0.7");
+
+  // Background scale effect on scroll
+  gsap.to(".hero-ww2", {
+    scale: 1.2,
+    transformOrigin: "center center",
+    ease: "none",
+    scrollTrigger: {
+      trigger: ".hero-ww2",
+      start: "top top",
+      end: "bottom top",
+      scrub: true
+    }
+  });
 }
+
 
 function waitForSmootherWW2() {
   if (ScrollSmoother.get()) {

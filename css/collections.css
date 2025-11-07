@@ -862,6 +862,7 @@ body {
 .block2 {
   grid-row: 1;
   grid-column: 2 / span 2;
+  --bg-img: url('/img/WW2/2.jpg');
 }
 
 .block3 {
@@ -873,6 +874,7 @@ body {
 .block4 {
   grid-row: 3;
   grid-column: 1 / span 2;
+  --bg-img: url('/img/WW2/4.jpg');
 }
 
 #ww2-text {
