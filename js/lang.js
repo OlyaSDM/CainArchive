@@ -16,7 +16,7 @@ const translations = {
       tomorrow: "Tomorrow"
     },
     hero: {
-      description: "Collected across the world, Cain Archive reveals untold moments of the twentieth century — war and rebirth, fear and resilience, loss and faith. Each photograph preserves the fragile truth of its time — so that memory never fades, and history remains human.",
+      description: "Over a 1000 verified photographs and historical documents bear witness to the twentieth century — its courage, its loss, and its rebirth. An archive built to preserve what must never be forgotten, reminding us not only of what happened, but why it matters.",
       startJourney: "Explore the Archive",
       aboutUsText: "About Us"
     },

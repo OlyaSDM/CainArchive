@@ -647,10 +647,12 @@ body{
   font-weight: 300;
   line-height: 90px;
   font-family: 'GT Super';
-      color: var(--white);
-
+  color: var(--white);
 }
 
+.hero-content p span {
+  color: var(--accent);
+}
 .span {
     font-style: italic;
       font-size: 78px;
@@ -667,7 +669,7 @@ body{
 .hero-content p {
   font-family: "Libre Franklin", sans-serif;
   font-weight: 100;
-  font-size:16px;
+  font-size:17px;
   margin-bottom: 2rem;
   line-height: 22px;
 }
@@ -2268,32 +2270,8 @@ font-size: 16px;
 
 
 /* PRESS */
-.press-intro {
-  display: flex;
-  flex-direction: column;
-    position: relative;
-  margin: 100px 0 20px 0 ;
-}
-.press-intro h3 {
-  font-family: 'GT Super';
-  font-size: 78px;
-  text-align: center;
-  line-height: 90px;
-  font-weight: 100;
-  color: var(--fonts);
-    visibility: hidden;
-}
-.press-intro p {
-  margin-top: 20px;
-  font-family: "Libre Franklin", sans-serif;
-  font-size: 18px;
-  font-weight: 100;
-  color: var(--fonts);
-  text-align: center;
-}
-.press-intro p span {
-  font-style: italic;
-}
+
+
 .watch-more-btn {
   display: none;
 }
@@ -2310,12 +2288,7 @@ font-size: 16px;
   display: none;
 }
 
-/* Tablet layout */
-@media (max-width: 1024px) {
-  .press-intro h3{
-    font-size: 66px;
-  }
-}
+
 
 @media (max-width: 768px) {
   .press-item.more-item {
@@ -2346,30 +2319,13 @@ font-size: 16px;
 }
 
 
-/* Mobile layout */
-@media (max-width: 600px) {
-  .press-intro {
-    margin: 100px 0 0 0;
-  }
-  .press-intro h3{
-    font-size: 48px;
-  }
-    .press-intro p {
-    font-size: 20px;
-    margin: 0 40px;
-  }
-}
+
 
 #press {
-  padding: 30px 5vw 70px 5vw;
+  margin-top: 50px;
+  padding: 30px 5vw 50px 5vw;
   background: var(--background);
   color: var(--fonts);
-  position: relative;
-  /* min-height: 100vh; */
-}
-
-.press-intro,
-#press {
   position: relative;
   z-index: 2;
   will-change: transform, opacity;
@@ -2379,8 +2335,12 @@ font-size: 16px;
 /* Grid */
 .press-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr); 
-  gap: 40px;
+  grid-template-columns: repeat(4, 1fr); 
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .press-item {
@@ -2391,9 +2351,10 @@ font-size: 16px;
 .press-item-img {
   position: relative;
   overflow: hidden;
-  aspect-ratio: 3/4;
+  aspect-ratio: 2 / 2.5;
   width: 100%;
-  height: 380px;
+  max-width: 280px;
+  max-height: 350px;
   display: block;
   text-decoration: none;
   color: inherit;
@@ -2406,7 +2367,7 @@ font-size: 16px;
   left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0, 0, 0, 0.8); 
+  background: rgba(0, 0, 0, 0.6); 
   z-index: 1;
 }
 
@@ -2480,43 +2441,21 @@ font-size: 16px;
   transform: scale(1);
 }
 
-.press-category {
-  color: var(--dark-blue);
-  text-transform: uppercase;
-  font-family: "Libre Franklin", sans-serif;
-  font-size: 14px;
-  margin-bottom: 10px;
-}
-.press-item h4,
-.press-item h3,
-.press-item .press-subtitle,
-.press-item .press-date {
-  margin: 5px 0;
-}
-.press-item h3 {
+
+.press-item .description-press {
   font-family: 'GT Super', serif;
   font-size: 22px;
   font-weight: 600;
-  margin-bottom: 5px;
+  margin-top: 10px;
 }
 
-.press-subtitle {
-  font-size: 14px;
-  font-weight: 400;
-  margin-bottom: 10px;
-}
 
-.press-date {
-  font-size: 14px;
-  font-weight: 200;
-  color: #999;
-}
 
 /* Tablet layout */
 @media (max-width: 1024px) {
   .press-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 20px;
   }
 }
 
