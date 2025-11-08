@@ -17,75 +17,75 @@
 
 
 
-    <!-- NAVIGATION -->
-    <header class="navbar " id="navbar" style="opacity: 0; transform: translateY(-50px); pointer-events: none;">
-      <!-- Logos  -->
-      <a href="index.html" class="logo">
-        <img src="logos/logo-white.webp" alt="Logo" class="round-logo" />
-        <img src="logos/logo-words.webp" alt="CAIN Archive Logo" class="words-logo" />
-      </a>
+<!-- NAVIGATION -->
+<header class="navbar" id="navbar" style="opacity: 0; transform: translateY(-50px); pointer-events: none;">
+  <!-- Logos  -->
+  <a href="index.html" class="logo">
+    <img src="logos/logo-white.webp" alt="Logo" class="round-logo" />
+    <img src="logos/logo-words.webp" alt="CAIN Archive Logo" class="words-logo" />
+  </a>
 
-      <!-- Right side cluster -->
-      <div class="nav-right">
-        <!-- Inline links (desktop) -->
-        <nav class="nav-links" aria-label="Primary">
-          <a href="index.html">Home</a>
-          <a href="WW2.html">Holocaust & WWII</a>
-          <a href="churchill.html">Winston Churchill</a>
-          <a href="hollywood.html">Icons & Culture</a>
-        </nav>
-        <!-- Burger (tablet/phone) -->
-        <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
-          <span class="bar bar-long"></span>
-          <span class="bar bar-middle"></span>
-          <span class="bar bar-short"></span>
-        </button>
-        <!-- Divider -->
-        <div class="nav-divider" aria-hidden="true"></div>
+  <!-- Right side cluster -->
+  <div class="nav-right">
+    <!-- Inline links (desktop) -->
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html" data-key="nav.home">Home</a>
+      <a href="WW2.html" data-key="nav.ww2">Holocaust & WWII</a>
+      <a href="churchill.html" >Winston Churchill</a>
+      <a href="hollywood.html" data-key="nav.hollywood">Icons & Culture</a>
+    </nav>
+    <!-- Burger (tablet/phone) -->
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
+      <span class="bar bar-long"></span>
+      <span class="bar bar-middle"></span>
+      <span class="bar bar-short"></span>
+    </button>
+    <!-- Divider -->
+    <div class="nav-divider" aria-hidden="true"></div>
 
-        <!-- Language Switcher -->
-        <div class="lang-switcher" id="langSwitcher">
-          <button id="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu">
-            <span id="lang-current">EN</span>
-            <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
-          </button>
-          <ul class="lang-options" id="lang-menu" role="menu">
-            <li role="menuitem" data-lang="en">English</li>
-            <li role="menuitem" data-lang="ar">العربية</li>
-            <li role="menuitem" data-lang="ja">日本語</li>
-            <li role="menuitem" data-lang="es">Español</li>
-            <li role="menuitem" data-lang="zh">中文</li>
-          </ul>
-        </div>
+    <!-- Language Switcher -->
+    <div class="lang-switcher" id="langSwitcher">
+      <button id="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu">
+        <span id="lang-current" data-key="lang-switcher.language">EN</span>
+        <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+      </button>
+      <ul class="lang-options" id="lang-menu" role="menu">
+        <li role="menuitem" data-lang="en" data-key="lang-switcher.english">English</li>
+        <li role="menuitem" data-lang="ar" data-key="lang-switcher.arabic">العربية</li>
+        <li role="menuitem" data-lang="ja" data-key="lang-switcher.japanese">日本語</li>
+        <li role="menuitem" data-lang="es" data-key="lang-switcher.spanish">Español</li>
+        <li role="menuitem" data-lang="zh" data-key="lang-switcher.chinese">中文</li>
+      </ul>
+    </div>
+  </div>
+</header>
+
+<!-- FULLSCREEN MENU -->
+<div class="fullscreen-menu" id="menu">
+  <div class="fullscreen-menu-content">
+    <!-- LEFT: Navigation Links -->
+    <nav>
+      <a href="index.html" style="--i:1" data-index="01" data-key="fullscreenMenu.home"><span>Home</span></a>
+      <a href="WW2.html" style="--i:2" data-index="02" data-key="fullscreenMenu.ww2"><span>Holocaust & WWII</span></a>
+      <a href="churchill.html" style="--i:3" data-index="03" ><span>Winston Churchill</span></a>
+      <a href="hollywood.html" style="--i:4" data-index="04" data-key="fullscreenMenu.hollywood"><span>Icons & Culture</span></a>
+    </nav>
+    <!-- DIVIDER -->
+    <div class="divider"></div>
+    <!-- RIGHT: Contact Info -->
+    <div class="menu-contact">
+      <div>
+        <p data-key="fullscreenMenu.contactJohn">John Cain</p>
+        <p data-key="fullscreenMenu.contactFounderTitle">Founder & Director | Cain Archive</p>
+        <a href="mailto:john@cainarchive.com" class="menu-contacts" data-key="fullscreenMenu.contactEmail">john@cainarchive.com</a>
+        <a href="tel:+15618840648" class="menu-contacts" data-key="fullscreenMenu.contactPhone">+1 561 884 0648</a>
       </div>
-    </header>
-
-    <!-- FULLSCREEN MENU -->
-    <div class="fullscreen-menu" id="menu">
-      <div class="fullscreen-menu-content">
-        <!-- LEFT: Navigation Links -->
-        <nav>
-          <a href="index.html" style="--i:1" data-index="01"><span>Home</span></a>
-          <a href="WW2.html" style="--i:2" data-index="02"><span>Holocaust & WWII</span></a>
-          <a href="churchill.html" style="--i:3" data-index="03"><span>Winston Churchill</span></a>
-          <a href="hollywood.html" style="--i:4" data-index="04"><span>Icons & Culture</span></a>
-        </nav>
-        <!-- DIVIDER -->
-        <div class="divider"></div>
-        <!-- RIGHT: Contact Info -->
-        <div class="menu-contact">
-          <div>
-            <p>John Cain</p>
-            <p>Founder & Director | Cain Archive</p>
-            <a href="mailto:john@cainarchive.com" class="menu-contacts">john@cainarchive.com</a>
-            <a href="tel:+15618840648" class="menu-contacts">+1 561 884 0648</a>
-          </div>
-          <div>
-            <p>Dina Kriukova-Lichman</p>
-            <p>Institutional & Archive Coordinator | Cain Archive</p>
-            <a href="mailto:dina.kriukova@cainarchive.com" class="menu-contacts">dina.kriukova@cainarchive.com</a>
-          </div>
-          <div class="social-icons">
+      <div>
+        <p data-key="fullscreenMenu.contactDina">Dina Kriukova-Lichman</p>
+        <p data-key="fullscreenMenu.contactCoordinatorTitle">Institutional & Archive Coordinator | Cain Archive</p>
+        <a href="mailto:dina.kriukova@cainarchive.com" class="menu-contacts" data-key="fullscreenMenu.contactDinaEmail">dina.kriukova@cainarchive.com</a>
+      </div>
+                <div class="social-icons">
             <ul>
               <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
               <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
@@ -93,9 +93,9 @@
               <li><a href="#" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a></li>
             </ul>
           </div>
-        </div>
-      </div>
     </div>
+  </div>
+</div>
 
       <div id="smooth-wrapper">
       <div id="smooth-content">
@@ -115,17 +115,17 @@
             <span></span>
           </div>
           <div class="collection-caption">
-            <h3 id="collection-text">over 100</h3>
-            <p class="collection-text-p">Documented Photographs</p>
+            <h3 id="collection-text" data-key="sections.collectionText">over 100</h3>
+            <p class="collection-text-p" data-key="sections.collectionSubtext">Documented Photographs</p>
           </div>
       </section>
 
 
 <!-- GALLERY -->
     <section class="gallery-words letter-section" id="gallery-words">
-      <p data-speed="1.1">Only part of this collection and its materials is shown. For full access, please contact Cain Archive.</p>
+      <p data-speed="1.1" data-key="sections.galleryNote">Only part of this collection and its materials is shown. For full access, please contact Cain Archive.</p>
       <h3 data-speed="1.1">John F. Kennedy</h3>
-      <h3 data-speed="1.1" class="blue">collection</h3>
+      <h3 data-speed="1.1" class="blue" data-key="sections.collectionLabel">collection</h3>
 
 
 
@@ -137,28 +137,28 @@
             <div>
               <div class="press-item" data-pdf="/press/article1.pdf">
                   <a href="#" class="press-item-img">
-                    <p class="press-item-text">Article</p>
+                    <p class="press-item-text" data-key="sections.pressArticle">Article</p>
                     <img src="img/Kennedy/The Legacy/Photo 228_result copy-min.webp" loading="lazy" alt="Press 1">
                   </a>
-                  <h5 class="description-press">Pilgrims to Kennedy's grave</h5>
+                  <h5 class="description-press" data-key="sections.pressDesc1">Pilgrims to Kennedy's grave</h5>
               </div>
             </div>
             <div>
               <div class="press-item" data-pdf="/press/article2.pdf">
                   <a href="#" class="press-item-img">
-                    <p class="press-item-text" >Article</p>
+                    <p class="press-item-text" data-key="sections.pressArticle" >Article</p>
                     <img src="img/Kennedy/The Legacy/Photo 210_result copy-min.webp" loading="lazy" alt="Press 2">
                   </a>
-                  <h5 class="description-press">A flashy lawyer for Oswald's killer</h5>
+                  <h5 class="description-press" data-key="sections.pressDesc2">A flashy lawyer for Oswald's killer</h5>
               </div>
             </div>
             <div>
               <div class="press-item" data-pdf="/press/article3.pdf">
                   <a href="#" class="press-item-img">
-                    <p class="press-item-text" >Article</p>
+                    <p class="press-item-text" data-key="sections.pressArticle" >Article</p>
                     <img src="img/Kennedy/The Presidency/Photo 169_result copy-min.webp" loading="lazy" alt="Press 3">
                   </a>
-                  <h5 class="description-press">Has the white house turned away from Bonn?</h5>
+                  <h5 class="description-press" data-key="sections.pressDesc3">Has the white house turned away from Bonn?</h5>
               </div>
             </div>
             <div>
@@ -180,21 +180,21 @@
             <nav class="gallery-nav" data-speed="1.1">
               <a href="#visionary" class="nav-link-gallery">
                 <span class="navigational-links">
-                  <span>The Visionary</span>
+                  <span data-key="sections.chapterVisionaryTitle">The Visionary</span>
                   <span class="v-border v-left"></span>
                   <span class="v-border v-right"></span>
                 </span>
               </a>
               <a href="#presidency" class="nav-link-gallery">
                 <span class="navigational-links">
-                  <span>The Presidency</span>
+                  <span data-key="sections.chapterPresidencyTitle">The Presidency</span>
                   <span class="v-border v-left"></span>
                   <span class="v-border v-right"></span>
                 </span>
               </a>
               <a href="#legacy" class="nav-link-gallery">
                 <span class="navigational-links">
-                  <span>The Legacy</span>
+                  <span data-key="sections.chapterLegacyTitle">The Legacy</span>
                   <span class="v-border v-left"></span>
                   <span class="v-border v-right"></span>
                 </span>
@@ -202,15 +202,11 @@
           </nav>
         </section>
 
-
-
-
-
 <!-- === CHAPTER 1: The Visionary === -->
 <section class="gallery-section" id="visionary">
   <div class="gallery-chapter">
-    <h3 class="gallery-chapter-title" data-speed="1.1">The Visionary</h3>
-    <p class="gallery-chapter-text" data-speed="1.1">Between gesture and silence, between hope and doubt — the human story of vision unfolds. Kennedy was not only seen, he was felt — as light, as voice, as the certainty that tomorrow could begin again.</p>
+    <h3 class="gallery-chapter-title" data-speed="1.1" data-key="sections.chapterVisionaryTitle">The Visionary</h3>
+    <p class="gallery-chapter-text" data-speed="1.1" data-key="sections.chapterVisionaryText">Between gesture and silence, between hope and doubt — the human story of vision unfolds. Kennedy was not only seen, he was felt — as light, as voice, as the certainty that tomorrow could begin again.</p>
   </div>
 
   <div class="gallery-grid" id="kvisionary">
@@ -293,8 +289,8 @@
 <!-- === CHAPTER 2: The Presidency === -->
 <section class="gallery-section" id="presidency">  
   <div class="gallery-chapter" id="kpresidency">
-    <h3 class="gallery-chapter-title" data-speed="1.1">The Presidency</h3>
-    <p class="gallery-chapter-text" data-speed="1.1">Leadership measured not in words, but in silence. These moments of The Presidency reflect the balance between intellect and responsibility.</p>
+    <h3 class="gallery-chapter-title" data-speed="1.1" data-key="sections.chapterPresidencyTitle">The Presidency</h3>
+    <p class="gallery-chapter-text" data-speed="1.1" data-key="sections.chapterPresidencyText">Leadership measured not in words, but in silence. These moments of The Presidency reflect the balance between intellect and responsibility.</p>
   </div>
   <div class="gallery-grid">
     <div class="img-wrapper"><img 
@@ -375,8 +371,8 @@
 <!-- === CHAPTER 3: The Legacy === -->
 <section class="gallery-section" id="legacy">
   <div class="gallery-chapter">
-    <h3 class="gallery-chapter-title" data-speed="1.1">The Legacy</h3>
-    <p class="gallery-chapter-text" data-speed="1.1">From loss to memory, from memory to meaning.</p>
+    <h3 class="gallery-chapter-title" data-speed="1.1" data-key="sections.chapterLegacyTitle">The Legacy</h3>
+    <p class="gallery-chapter-text" data-speed="1.1" data-key="sections.chapterLegacyText">From loss to memory, from memory to meaning.</p>
   </div>
   <div class="gallery-grid" id="klegacy">
     <div class="img-wrapper"><img 
@@ -434,42 +430,42 @@
 
 
 
-        <!-- FOOTER -->
-        <footer class="footer">
-          <p class="footer-heading">History that shapes <span>Tomorrow</span></p>
-          <hr class="footer-divider" />
-          <div class="footer-wrapper">
-            <!-- Logo + tagline -->
-            <a href="index.html" class="logo">
-              <img src="logos/logo-white.webp" alt="Logo" class="round-logo" />
-              <img src="logos/logo-words.webp" alt="CAIN Archive Logo" class="words-logo" />
-            </a>
-            <!-- Contact Info -->
-            <div class="footer-contact">
-              <p>John Cain</p>
-              <p>Founder & Director | Cain Archive</p>
-              <a href="mailto:john@cainarchive.com">john@cainarchive.com</a>
-              <a href="tel:+15618840648">+1 561 884 0648</a>
-            </div>
-            <div class="footer-contact">
-              <p>Dina Kriukova-Lichman</p>
-              <p>Institutional & Archive Coordinator | Cain Archive</p>
-              <a href="mailto:dina.kriukova@cainarchive.com">dina.kriukova@cainarchive.com</a>
-            </div>
-            <!-- Social Media -->
-            <div class="footer-social">
-              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-              <a href="#" aria-label="X-twitter"><i class="fa-brands fa-x-twitter"></i></a>
-              <a href="#" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
-            </div>
-          </div>
-          <!-- Bottom copyright -->
-          <div class="footer-bottom">
-              <p>© 2025 Cain Archive. All rights reserved.</p>
-              <p class="footer-protected">Original vintage photographs are displayed for documentary, educational, and research purposes. Cain Archive holds physical ownership of the original prints but does not claim copyright to the underlying images. Unauthorized reproduction or commercial use is prohibited.</p>
-          </div>
-      </footer>
+<!-- FOOTER -->
+<footer class="footer">
+  <p class="footer-heading" data-key="footer.slogan">History that shapes <span>Tomorrow</span></p>
+  <hr class="footer-divider" />
+  <div class="footer-wrapper">
+    <!-- Logo + tagline -->
+    <a href="index.html" class="logo">
+      <img src="logos/logo-white.webp" alt="Logo" class="round-logo" />
+      <img src="logos/logo-words.webp" alt="CAIN Archive Logo" class="words-logo" />
+    </a>
+    <!-- Contact Info -->
+    <div class="footer-contact">
+      <p >John Cain</p>
+      <p data-key="footer.founderTitle">Founder & Director | Cain Archive</p>
+      <a href="mailto:john@cainarchive.com" data-key="footer.founderEmail">john@cainarchive.com</a>
+      <a href="tel:+15618840648" data-key="footer.founderPhone">+1 561 884 0648</a>
+    </div>
+    <div class="footer-contact">
+      <p >Dina Kriukova-Lichman</p>
+      <p data-key="footer.coordinatorTitle">Institutional & Archive Coordinator | Cain Archive</p>
+      <a href="mailto:dina.kriukova@cainarchive.com" data-key="footer.coordinatorEmail">dina.kriukova@cainarchive.com</a>
+    </div>
+    <!-- Social Media -->
+    <div class="footer-social">
+      <a href="#" aria-label="Instagram" data-key="footer.socialInstagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" aria-label="Facebook" data-key="footer.socialFacebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" aria-label="X-twitter" data-key="footer.socialTwitter"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#" aria-label="Youtube" data-key="footer.socialYoutube"><i class="fa-brands fa-youtube"></i></a>
+    </div>
+  </div>
+  <!-- Bottom copyright -->
+  <div class="footer-bottom">
+    <p data-key="footer.copyright">© 2025 Cain Archive. All rights reserved.</p>
+    <p class="footer-protected" data-key="footer.protectedText">Original vintage photographs are displayed for documentary, educational, and research purposes. Cain Archive holds physical ownership of the original prints but does not claim copyright to the underlying images. Unauthorized reproduction or commercial use is prohibited.</p>
+  </div>
+</footer>
 
   </div>
 </div>
@@ -532,6 +528,8 @@
       <script src="js/dropdown.js"></script>
       <script src="js/smooth.js"></script>
       <script src="js/main.js"></script>
+      <script src="js/lang_k_c.js"></script>
+
 
    </body>
 </html>

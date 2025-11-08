@@ -16,7 +16,7 @@ const translations = {
       tomorrow: "Tomorrow"
     },
     hero: {
-      description: "Over a 1000 verified photographs and historical documents bear witness to the twentieth century — its courage, its loss, and its rebirth. An archive built to preserve what must never be forgotten, reminding us not only of what happened, but why it matters.",
+      description: "Over a <span>1000</span> verified photographs and historical documents bear witness to the twentieth century — its courage, its loss, and its rebirth. An archive built to preserve what must never be forgotten, reminding us not only of what happened, but why it matters.",
       startJourney: "Explore the Archive",
       aboutUsText: "About Us"
     },
@@ -129,7 +129,7 @@ const translations = {
       tomorrow: "الغد"
     },
     hero: {
-      description: "تم جمعها من جميع أنحاء العالم، يكشف Cain أرشيف عن لحظات غير مروية من القرن العشرين — الحرب والبعث، الخوف والمرونة، الفقدان والإيمان. كل صورة تحفظ الحقيقة الهشة لزمانها — حتى لا تتلاشى الذاكرة، ويظل التاريخ إنسانيًا.",
+  description: "أكثر من <span>1000</span> صورة موثقة ووثائق تاريخية تشهد على القرن العشرين - شجاعته، خسارته وولادته من جديد. أرشيف تم بناؤه للحفاظ على ما يجب ألا يُنسى، ويذكرنا ليس فقط بما حدث، ولكن لماذا يهم.",
       startJourney: "استكشف الأرشيف",
       aboutUsText: "حولنا"
     },
@@ -244,7 +244,7 @@ privacyLink: "سياسة الخصوصية",
       tomorrow: "明日"
     },
     hero: {
-      description: "世界中から集められたCain アーカイブは、20世紀の語られざる瞬間 — 戦争と再生、恐怖と回復力、喪失と信仰 — を明らかにする。各写真はその時代のかけがえのない真実を保存し、記憶が薄れず、歴史が人間らしさを保ち続けるようにしている。",
+  description: "<span>1000</span>枚以上の検証された写真と歴史的文書が20世紀—その勇気、喪失、そして再生を証言します。忘れてはならないものを保存するために作られたアーカイブであり、何が起こったのかだけでなく、それがなぜ重要であるかを私たちに思い出させます。",
       startJourney: "アーカイブを探索する",
       aboutUsText: "私たちについて"
     },
@@ -358,7 +358,7 @@ privacyLink: "プライバシーポリシー",
       tomorrow: "Mañana"
     },
     hero: {
-      description: "Reunido en todo el mundo, Cain Archivo revela momentos no contados del siglo XX — guerra y renacimiento, miedo y resiliencia, pérdida y fe. Cada fotografía preserva la frágil verdad de su tiempo, para que la memoria nunca se desvanezca y la historia siga siendo humana.",
+  description: "Más de <span>1000</span> fotografías verificadas y documentos históricos dan testimonio del siglo XX: su valentía, su pérdida y su renacimiento. Un archivo construido para preservar lo que nunca debe ser olvidado, recordándonos no solo lo que ocurrió, sino por qué es importante.",
       startJourney: "Explorar el Archivo",
       aboutUsText: "Sobre Nosotros"
     },
@@ -472,7 +472,7 @@ privacyLink: "política de privacidad",
       tomorrow: "明天"
     },
     hero: {
-      description: "Cain 档案收集自世界各地，揭示二十世纪未被讲述的瞬间——战争与重生、恐惧与韧性、失落与信念。每张照片都保存了当时脆弱的真相，以确保记忆永不消逝，历史保持人性。",
+  description: "超过<span>1000</span>张经过验证的照片和历史文献见证了20世纪——它的勇气、失落和重生。一个旨在保存永不应被遗忘的档案，提醒我们不仅是什么发生了，而且为什么它很重要。",
       startJourney: "探索档案",
       aboutUsText: "关于我们"
     },

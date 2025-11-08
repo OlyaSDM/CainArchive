@@ -15,77 +15,75 @@
    </head>
    <body>
 
+<!-- NAVIGATION -->
+<header class="navbar" id="navbar" style="opacity: 0; transform: translateY(-50px); pointer-events: none;">
+  <!-- Logos  -->
+  <a href="index.html" class="logo">
+    <img src="logos/logo-white.webp" alt="Logo" class="round-logo" />
+    <img src="logos/logo-words.webp" alt="CAIN Archive Logo" class="words-logo" />
+  </a>
 
-
-    <!-- NAVIGATION -->
-    <header class="navbar " id="navbar">
-      <!-- Logos  -->
-      <a href="index.html" class="logo">
-        <img src="logos/logo-white.webp" alt="Logo" class="round-logo" />
-        <img src="logos/logo-words.webp" alt="CAIN Archive Logo" class="words-logo" />
-      </a>
-
-      <!-- Right side cluster -->
-      <div class="nav-right">
-        <!-- Inline links (desktop) -->
-        <nav class="nav-links" aria-label="Primary">
-          <a href="index.html">Home</a>
-          <a href="WW2.html">Holocaust & WWII</a>
-        <a href="kennedy.html">John F. Kenndey</a>
+  <!-- Right side cluster -->
+  <div class="nav-right">
+    <!-- Inline links (desktop) -->
+    <nav class="nav-links" aria-label="Primary">
+      <a href="index.html" data-key="nav.home">Home</a>
+      <a href="WW2.html" data-key="nav.ww2">Holocaust & WWII</a>
+          <a href="kennedy.html">John F. Kenndey</a>
           <a href="churchill.html">Winston Churchill</a>
-        </nav>
-        <!-- Burger (tablet/phone) -->
-        <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
-          <span class="bar bar-long"></span>
-          <span class="bar bar-middle"></span>
-          <span class="bar bar-short"></span>
-        </button>
-        <!-- Divider -->
-        <div class="nav-divider" aria-hidden="true"></div>
+    </nav>
+    <!-- Burger (tablet/phone) -->
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
+      <span class="bar bar-long"></span>
+      <span class="bar bar-middle"></span>
+      <span class="bar bar-short"></span>
+    </button>
+    <!-- Divider -->
+    <div class="nav-divider" aria-hidden="true"></div>
 
-        <!-- Language Switcher -->
-        <div class="lang-switcher" id="langSwitcher">
-          <button id="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu">
-            <span id="lang-current">EN</span>
-            <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
-          </button>
-          <ul class="lang-options" id="lang-menu" role="menu">
-            <li role="menuitem" data-lang="en">English</li>
-            <li role="menuitem" data-lang="ar">العربية</li>
-            <li role="menuitem" data-lang="ja">日本語</li>
-            <li role="menuitem" data-lang="es">Español</li>
-            <li role="menuitem" data-lang="zh">中文</li>
-          </ul>
-        </div>
-      </div>
-    </header>
+    <!-- Language Switcher -->
+    <div class="lang-switcher" id="langSwitcher">
+      <button id="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu">
+        <span id="lang-current" data-key="lang-switcher.language">EN</span>
+        <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+      </button>
+      <ul class="lang-options" id="lang-menu" role="menu">
+        <li role="menuitem" data-lang="en" data-key="lang-switcher.english">English</li>
+        <li role="menuitem" data-lang="ar" data-key="lang-switcher.arabic">العربية</li>
+        <li role="menuitem" data-lang="ja" data-key="lang-switcher.japanese">日本語</li>
+        <li role="menuitem" data-lang="es" data-key="lang-switcher.spanish">Español</li>
+        <li role="menuitem" data-lang="zh" data-key="lang-switcher.chinese">中文</li>
+      </ul>
+    </div>
+  </div>
+</header>
 
-    <!-- FULLSCREEN MENU -->
-    <div class="fullscreen-menu" id="menu">
-      <div class="fullscreen-menu-content">
-        <!-- LEFT: Navigation Links -->
-        <nav>
-          <a href="index.html" style="--i:1" data-index="01"><span>Home</span></a>
-          <a href="WW2.html" style="--i:2" data-index="02"><span>Holocaust & WWII</span></a>
-        <a href="kennedy.html" style="--i:3" data-index="03"><span>John F. Kenndey</span></a>
+<!-- FULLSCREEN MENU -->
+<div class="fullscreen-menu" id="menu">
+  <div class="fullscreen-menu-content">
+    <!-- LEFT: Navigation Links -->
+    <nav>
+      <a href="index.html" style="--i:1" data-index="01" data-key="fullscreenMenu.home"><span>Home</span></a>
+      <a href="WW2.html" style="--i:2" data-index="02" data-key="fullscreenMenu.ww2"><span>Holocaust & WWII</span></a>
+          <a href="kennedy.html" style="--i:3" data-index="03"><span>John F. Kenndey</span></a>
           <a href="churchill.html" style="--i:4" data-index="04"><span>Winston Churchill</span></a>
-        </nav>
-        <!-- DIVIDER -->
-        <div class="divider"></div>
-        <!-- RIGHT: Contact Info -->
-        <div class="menu-contact">
-          <div>
-            <p>John Cain</p>
-            <p>Founder & Director | Cain Archive</p>
-            <a href="mailto:john@cainarchive.com" class="menu-contacts">john@cainarchive.com</a>
-            <a href="tel:+15618840648" class="menu-contacts">+1 561 884 0648</a>
-          </div>
-          <div>
-            <p>Dina Kriukova-Lichman</p>
-            <p>Institutional & Archive Coordinator | Cain Archive</p>
-            <a href="mailto:dina.kriukova@cainarchive.com" class="menu-contacts">dina.kriukova@cainarchive.com</a>
-          </div>
-          <div class="social-icons">
+    </nav>
+    <!-- DIVIDER -->
+    <div class="divider"></div>
+    <!-- RIGHT: Contact Info -->
+    <div class="menu-contact">
+      <div>
+        <p data-key="fullscreenMenu.contactJohn">John Cain</p>
+        <p data-key="fullscreenMenu.contactFounderTitle">Founder & Director | Cain Archive</p>
+        <a href="mailto:john@cainarchive.com" class="menu-contacts" data-key="fullscreenMenu.contactEmail">john@cainarchive.com</a>
+        <a href="tel:+15618840648" class="menu-contacts" data-key="fullscreenMenu.contactPhone">+1 561 884 0648</a>
+      </div>
+      <div>
+        <p data-key="fullscreenMenu.contactDina">Dina Kriukova-Lichman</p>
+        <p data-key="fullscreenMenu.contactCoordinatorTitle">Institutional & Archive Coordinator | Cain Archive</p>
+        <a href="mailto:dina.kriukova@cainarchive.com" class="menu-contacts" data-key="fullscreenMenu.contactDinaEmail">dina.kriukova@cainarchive.com</a>
+      </div>
+                <div class="social-icons">
             <ul>
               <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
               <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
@@ -93,17 +91,19 @@
               <li><a href="#" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a></li>
             </ul>
           </div>
-        </div>
-      </div>
     </div>
+  </div>
+</div>
+
 
 <section class="coming">
   <div class="glass-wrapper">
-    <h2>Icons & Culture</h2>
-    <h3>collection</h3>
-    <h5>Coming soon...</h5>
+    <h2 data-key="coming.title">Icons & Culture</h2>
+    <h3 data-key="coming.collection">collection</h3>
+    <h5 data-key="coming.soon">Coming soon...</h5>
   </div>
 </section>
+
 
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
@@ -113,7 +113,8 @@
       <script src="js/img-collections.js"></script>
       <script src="js/dropdown.js"></script>
       <script src="js/main.js"></script>
-    <script src="js/hollywood.js"></script>
+      <script src="js/hollywood.js"></script>
+      <script src="js/lang_k_c.js"></script>
 
    </body>
 </html>

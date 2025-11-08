@@ -161,13 +161,6 @@
 //     });
 //   }
 
-//   function setLanguage(lang) {
-//     updateTranslations(lang);
-//     langCurrent.textContent = langMenu.querySelector(`li[data-lang="${lang}"]`).textContent;
-//     langMenu.querySelectorAll('li').forEach(li => li.classList.remove('active'));
-//     langMenu.querySelector(`li[data-lang="${lang}"]`)?.classList.add('active');
-//   }
-
 //   const splitTextToLetters = (el) => {
 //     const text = el.textContent || "";
 //     el.textContent = "";
@@ -242,7 +235,7 @@
 
 //   // --- Watch More ---
 //   const watchMoreBtn = document.querySelector(".watch-more-btn");
-//   // const allItems = document.querySelectorAll(".press-item");
+//   const allItems = document.querySelectorAll(".press-item");
 
 //   const showItems = () => {
 //     const isMobile = window.matchMedia("(max-width: 768px)").matches;
