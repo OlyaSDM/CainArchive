@@ -884,25 +884,25 @@ body {
 .block1 {
   grid-row: 1 / span 2;
   grid-column: 1;
-    --bg-img: url('/img/WW2/1.jpg');
+    --bg-img: url('/img/WW2/1.webp');
 }
 
 .block2 {
   grid-row: 1;
   grid-column: 2 / span 2;
-  --bg-img: url('/img/WW2/2.jpg');
+  --bg-img: url('/img/WW2/2.webp');
 }
 
 .block3 {
   grid-row: 2 / span 2;
   grid-column: 3;
-    --bg-img: url('/img/WW2/3.jpg');
+    --bg-img: url('/img/WW2/3.webp');
 }
 
 .block4 {
   grid-row: 3;
   grid-column: 1 / span 2;
-  --bg-img: url('/img/WW2/4.jpg');
+  --bg-img: url('/img/WW2/4.webp');
 }
 
 #ww2-text {
@@ -932,16 +932,16 @@ body {
     height: auto;
   }
   .block1 {
-    --bg-img: url('/img/WW2/1-sm.jpg');
+    --bg-img: url('/img/WW2/1-sm.webp');
   }
   .block2{
-        --bg-img: url('/img/WW2/2.jpg');
+        --bg-img: url('/img/WW2/2.webp');
   }
   .block3 {
-    --bg-img: url('/img/WW2/3-sm.jpg');
+    --bg-img: url('/img/WW2/3-sm.webp');
   } 
     .block4 {
-    --bg-img: url('/img/WW2/4.jpg');
+    --bg-img: url('/img/WW2/4.webp');
   } 
 }
 
@@ -959,7 +959,7 @@ body {
   box-sizing: border-box;
   background-position: center;
   background-size: cover;
-  background-image: url(/img/WW2/hero.jpg);
+  background-image: url(/img/WW2/hero.webp);
   background-repeat: no-repeat;
 }
 #theWitness{
