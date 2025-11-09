@@ -30,8 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
       stagger: 0.05,
       scrollTrigger: {
         trigger: ".letter-section",
-        start: "top 70%",
-        end: "bottom 60%",
+        start: "top 90%",
+        end: "bottom 90%",
         scrub: 1,
       }
     });

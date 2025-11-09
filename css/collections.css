@@ -769,6 +769,9 @@ body {
     margin: 20px 0;
     gap: 8px;
   }
+  .gallery-nav-witness{
+    flex-direction: column;
+  }
   .navigational-links {
     padding: 10px 15px;
     font-size: 10px;
@@ -1046,4 +1049,16 @@ text-align: center;
   #ww2-hero-titile p{
     max-width: 400px;
   }
+  .hero-ww2 {
+  background-image: url(/img/WW2/photo-output\ 5.jpeg);
+}
+#theWitness{
+  background-image: url(/img/WW2/Witness/photo-output\ 7.JPEG);
+}
+#occupation {
+  background-image: url(/img//WW2/occupation/photo-output\ 6.JPEG);
+}
+#ashes{
+  background-image: url(/img/WW2/Ashes/photo-output\ 5\ copy.JPEG);
+}
 }

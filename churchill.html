@@ -127,6 +127,35 @@
           <p data-speed="1.1" data-key="sections.galleryNote">Only part of this collection and its materials is shown. For full access, please contact Cain Archive.</p>
           <h3 data-speed="1.1">Winston Churchill</h3>
           <h3 data-speed="1.1" class="blue" data-key="sections.collectionLabel">collection</h3>
+
+
+      <!-- PRESS SECTION -->
+
+      <div id="press-churchill">
+        <img class="rec6-img" src="img/Rec6.png" alt="">
+        <div class="press-grid grid-churchill">
+            <div>
+              <div class="press-item" data-pdf="/img/churchill/articles/Photo 049 copy 2.pdf.pdf">
+                  <a href="#" class="press-item-img">
+                    <img src="/img/churchill/articles/Photo 049 copy 2.pdf.png" loading="lazy" alt="Press 1">
+                  </a>
+                  <p class="press-item-text">Article</p>
+                  <h5 class="description-press" data-key="sections.pressDesc1">Churchill is 86</h5>
+              </div>
+            </div>
+            <div>
+              <div class="press-item" data-pdf="/img/churchill/articles/Photo 056 copy 2.pdf.pdf">
+                  <a href="#" class="press-item-img">
+                    <img src="/img/churchill/articles/Photo 056 copy 2.pdf.png" loading="lazy" alt="Press 2">
+                  </a>
+                  <p class="press-item-text">Article</p>
+                  <h5 class="description-press" data-key="sections.pressDesc2">Churchill at 90: Twilight of a Hero</h5>
+              </div>
+            </div>
+            <img class="rec7-img" src="img/Rec7.png" alt="">
+        </div>
+      </div>
+
             <nav class="gallery-nav" data-speed="1.1">
               <a href="#visionary" class="nav-link-gallery">
                 <span class="navigational-links">
@@ -463,7 +492,16 @@
   </div>
 </div>
 
-
+<!-- MODAL FOR PDF -->
+<div id="pdf-modal">
+  <div class="pdf-modal-content">
+    <button class="modal-close item-3" aria-label="Close PDF"></button>
+    <iframe class="pdf-viewer" src="" frameborder="0"></iframe>
+    <div id="pdf-popup-msg" class="pdf-popup-msg">
+      If you want to read the full article, please contact Cain Archive.
+    </div>
+  </div>
+</div>
 <!-- Modal for GALLERY-->
 
 <div class="modal" id="imageModal">
@@ -522,7 +560,7 @@
       <script src="js/smooth.js"></script>
       <script src="js/main.js"></script>
       <script src="js/lang_k_c.js"></script>
+      <script src="js/press.js"></script>
 
-
-   </body>
+  </body>
 </html>
