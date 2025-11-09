@@ -27,9 +27,10 @@ const translations = {
       "sections.collectionSubtext": "Documented Photographs",
       "sections.collectionLabel": "collection",
       "sections.pressArticle": "Article",
-      "sections.pressDesc1": "Pilgrims to Kennedy's grave",
-      "sections.pressDesc2": "A flashy lawyer for Oswald's killer",
-      "sections.pressDesc3": "Has the White House turned away from Bonn?",
+      "sections.pressDesc1": "Les Petits Cousins D'europe Des Epoux Kennedy",
+      "sections.pressDesc2": "Pilgrims to Kennedy's Grave",
+      "sections.pressDesc4": "A Flashy Lawyer for Oswald's Killer",
+      "sections.pressDesc3": "Le Match Kennedy-Nixon",
       "sections.watchMore": "Watch More",
       "sections.chapterVisionaryTitle": "The Visionary",
       "sections.chapterPresidencyTitle": "The Presidency",
@@ -42,6 +43,8 @@ const translations = {
       "sections.collectionSubtext": "Original Photographs",
       "sections.over": "over",
       "sections.galleryNote": "Only part of this collection and its materials is shown. For full access, please contact Cain Archive.",
+      "sections.CpressDesc1": "Churchill is 86",
+      "sections.CpressDesc2": "Churchill at 90: Twilight of a Hero",
       "sections.navLeader": "The Leader",
       "sections.navPrivateMan": "The Private Man",
       "sections.chapterLeaderTitle": "The Leader and the Visionary",
@@ -80,11 +83,13 @@ const translations = {
       "fullscreenMenu.socialYoutube": "يوتيوب",
       "sections.collectionText": "أكثر من 100",
       "sections.collectionLabel": "المجموعة",
+      "sections.pressArticle": "مقال",
       "sections.collectionSubtext": "صور موثقة",
       "sections.pressArticle": "مقال",
-      "sections.pressDesc1": "الحجاج إلى قبر Kennedy",
-      "sections.pressDesc2": "محامٍ بارز لقاتل Oswald",
-      "sections.pressDesc3": "هل تحول البيت الأبيض بعيدًا عن Bonn؟",
+      "sections.pressDesc1": "أبناء عمومة أوروبا الصغار لزوجي Kennedy",
+      "sections.pressDesc2": "الحجاج إلى قبر Kennedy",
+      "sections.pressDesc4": "محامٍ بارز لقاتل Oswald",
+      "sections.pressDesc3": "المباراة بين Kennedy و Nixon",
       "sections.watchMore": "شاهد المزيد",
       "sections.chapterVisionaryTitle": "المبصر",
       "sections.chapterPresidencyTitle": "الرئاسة",
@@ -97,6 +102,8 @@ const translations = {
       "sections.collectionSubtext": "صور أصلية",
       "sections.over": "أكثر من",
       "sections.galleryNote": "يتم عرض جزء فقط من هذه المجموعة وموادها. للوصول الكامل، يرجى الاتصال بـ Cain الأرشيف.",
+      "sections.CpressDesc1": "Churchill عمره 86 عامًا",
+      "sections.CpressDesc2": "Churchill في سن 90: غروب بطل",
       "sections.navLeader": "القائد",
       "sections.navPrivateMan": "الرجل الخاص",
       "sections.chapterLeaderTitle": "القائد والمبصر",
@@ -135,11 +142,13 @@ const translations = {
       "fullscreenMenu.socialYoutube": "ユーチューブ",
       "sections.collectionText": "100以上",
       "sections.collectionLabel": "コレクション",
+      "sections.pressArticle": "記事",
       "sections.collectionSubtext": "記録写真",
       "sections.pressArticle": "記事",
-      "sections.pressDesc1": "Kennedyの墓への巡礼者",
-      "sections.pressDesc2": "Oswaldの殺人者の派手な弁護士",
-      "sections.pressDesc3": "ホワイトハウスはBonnから離れたのか？",
+      "sections.pressDesc1": "Kennedy夫妻のヨーロッパの小さな親戚",
+      "sections.pressDesc2": "Kennedyの墓への巡礼者",
+      "sections.pressDesc4": "Oswaldの殺人者の派手な弁護士",
+      "sections.pressDesc3": "Kennedy対Nixonの対決",
       "sections.watchMore": "もっと見る",
       "sections.chapterVisionaryTitle": "ビジョナリー",
       "sections.chapterPresidencyTitle": "大統領職",
@@ -152,6 +161,8 @@ const translations = {
       "sections.collectionSubtext": "オリジナル写真",
       "sections.over": "以上",
       "sections.galleryNote": "このコレクションとその資料の一部のみが表示されています。完全なアクセスについては、Cain アーカイブにお問い合わせください。",
+      "sections.CpressDesc1": "Churchillは86歳です",
+      "sections.CpressDesc2": "Churchill 90歳：英雄の黄昏",
       "sections.navLeader": "リーダー",
       "sections.navPrivateMan": "私的な人",
       "sections.chapterLeaderTitle": "指導者とビジョナリー",
@@ -190,11 +201,13 @@ const translations = {
       "fullscreenMenu.socialYoutube": "Youtube",
       "sections.collectionText": "más de 100",
       "sections.collectionLabel": "colección",
+      "sections.pressArticle": "Artículo",
       "sections.collectionSubtext": "Fotografías documentadas",
       "sections.pressArticle": "Artículo",
-      "sections.pressDesc1": "Peregrinos a la tumba de Kennedy",
-      "sections.pressDesc2": "Un abogado llamativo del asesino de Oswald",
-      "sections.pressDesc3": "¿Se ha alejado la Casa Blanca de Bonn?",
+      "sections.pressDesc1": "Los pequeños primos europeos de los esposos Kennedy",
+      "sections.pressDesc2": "Peregrinos a la tumba de Kennedy",
+      "sections.pressDesc4": "Un abogado llamativo del asesino de Oswald",
+      "sections.pressDesc3": "El enfrentamiento Kennedy-Nixon",
       "sections.watchMore": "Ver más",
       "sections.chapterVisionaryTitle": "El Visionario",
       "sections.chapterPresidencyTitle": "La Presidencia",
@@ -207,6 +220,8 @@ const translations = {
       "sections.collectionSubtext": "Fotografías Originales",
       "sections.over": "más de",
       "sections.galleryNote": "Solo se muestra una parte de esta colección y sus materiales. Para acceder a todo, comuníquese con Cain Archivo.",
+      "sections.CpressDesc1": "Churchill tiene 86 años",
+      "sections.CpressDesc2": "Churchill a los 90: Crepúsculo de un Héroe",
       "sections.navLeader": "El Líder",
       "sections.navPrivateMan": "El Hombre Privado",
       "sections.chapterLeaderTitle": "El Líder y el Visionario",
@@ -246,11 +261,13 @@ const translations = {
       "fullscreenMenu.socialYoutube": "Youtube",
       "sections.collectionText": "超过100",
       "sections.collectionLabel": "收藏",
+      "sections.pressArticle": "文章",
       "sections.collectionSubtext": "记录照片",
       "sections.pressArticle": "文章",
-      "sections.pressDesc1": "前往Kennedy墓地的朝圣者",
-      "sections.pressDesc2": "Oswald杀手的浮夸律师",
-      "sections.pressDesc3": "白宫是否已远离Bonn？",
+      "sections.pressDesc1": "Kennedy夫妇的欧洲小表亲",
+      "sections.pressDesc2": "前往Kennedy墓地的朝圣者",
+      "sections.pressDesc4": "Oswald杀手的浮夸律师",
+      "sections.pressDesc3": "Kennedy-Nixon 对决",
       "sections.watchMore": "查看更多",
       "sections.chapterVisionaryTitle": "远见者",
       "sections.chapterPresidencyTitle": "总统任期",
@@ -263,6 +280,8 @@ const translations = {
       "sections.collectionSubtext": "原始照片",
       "sections.over": "超过",
       "sections.galleryNote": "仅显示此收藏及其材料的一部分。如需完整访问，请联系 Cain 档案。",
+      "sections.CpressDesc1": "Churchill 86岁",
+      "sections.CpressDesc2": "Churchill 90岁：英雄的暮光",
       "sections.navLeader": "领导者",
       "sections.navPrivateMan": "私人之人",
       "sections.chapterLeaderTitle": "领导者与梦想家",
@@ -278,30 +297,45 @@ const translations = {
 };
 
 const updateTranslations = (lang) => {
-   currentLang = lang;
    localStorage.setItem('lang', lang);
 
-   document.querySelectorAll("[data-key]").forEach(el => {
+   document.querySelectorAll("[data-key]").forEach((el) => {
       const key = el.getAttribute("data-key");
 
       if (key === "footer.slogan" && Array.isArray(translations[lang][key])) {
          const [before, after] = translations[lang][key];
          const span = el.querySelector("span");
+
          if (span) {
             span.textContent = after;
             if (el.firstChild) el.firstChild.textContent = before;
          } else {
-            el.textContent = before + after;
+            el.textContent = `${before}${after}`;
          }
       } else if (translations[lang][key]) {
          el.textContent = translations[lang][key];
       }
    });
+
+   // ( 'EN', 'AR', 'JA')
+   const langCurrentSpan = document.getElementById('lang-current');
+   if (langCurrentSpan) {
+      langCurrentSpan.textContent = lang.toUpperCase();
+   }
 };
 
-document.querySelectorAll('[data-lang]').forEach(langItem => {
+const loadLanguage = () => {
+   const savedLang = localStorage.getItem('lang');
+   const defaultLang = 'en';
+   updateTranslations(savedLang || defaultLang);
+};
+
+const languageButtons = document.querySelectorAll('[data-lang]');
+languageButtons.forEach((langItem) => {
    langItem.addEventListener('click', (e) => {
       const selectedLang = e.target.getAttribute('data-lang');
       updateTranslations(selectedLang);
    });
 });
+
+document.addEventListener('DOMContentLoaded', loadLanguage);
