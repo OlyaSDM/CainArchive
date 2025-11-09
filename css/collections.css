@@ -966,13 +966,13 @@ body {
   background-repeat: no-repeat;
 }
 #theWitness{
-  background-image: url(/img/WW2/Witness/Eichmann/Photo5_result\ copy-min.jpg);
+  background-image: url(/img/WW2/Witness/Eichmann/Photo5_result\ copy-min.webp);
 }
 #occupation {
-  background-image: url(/img//WW2/occupation/eichmann/Photo130_result\ copy-min.jpg);
+  background-image: url(/img//WW2/occupation/eichmann/Photo130_result\ copy-min.webp);
 }
 #ashes{
-  background-image: url(/img/WW2/Ashes/Victims/Photo\ 242_result\ copy-min.jpg);
+  background-image: url(/img/WW2/Ashes/Victims/Photo\ 242_result\ copy-min.webp);
 }
 #ww2-hero-titile{
   display: flex;
@@ -1050,15 +1050,15 @@ text-align: center;
     max-width: 400px;
   }
   .hero-ww2 {
-  background-image: url(/img/WW2/photo-output\ 5.jpeg);
+  background-image: url(/img/WW2/photo-output\ 5.webp);
 }
 #theWitness{
-  background-image: url(/img/WW2/Witness/photo-output\ 7.JPEG);
+  background-image: url(/img/WW2/Witness/photo-output\ 7.webp);
 }
 #occupation {
-  background-image: url(/img//WW2/occupation/photo-output\ 6.JPEG);
+  background-image: url(/img//WW2/occupation/photo-output\ 6.webp);
 }
 #ashes{
-  background-image: url(/img/WW2/Ashes/photo-output\ 5\ copy.JPEG);
+  background-image: url(/img/WW2/Ashes/photo-output\ 5\ copy.webp);
 }
 }
