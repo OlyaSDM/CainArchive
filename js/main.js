@@ -316,4 +316,4 @@ document.querySelectorAll(".coll-background").forEach((el) => {
 
 
         // Animate both sections
-animateLetterSection(".quote-two");
+// animateLetterSection(".quote-two");

@@ -30,14 +30,26 @@ function initMosaicAnimation() {
     { el: rightCol, dirFactor: 1, imgs: images.filter((_, i) => i % 3 === 2) },
   ];
 
+  // Оптимизация: загрузка изображений с высоким приоритетом для LCP
   cols.forEach(c => {
-    const totalImages = [...c.imgs, ...c.imgs]; 
-    totalImages.forEach(src => {
+    const totalImages = [...c.imgs, ...c.imgs]; // Дублируем для бесконечной прокрутки
+    totalImages.forEach((src, index) => {
       const wrapper = document.createElement("div");
       wrapper.className = "image-wrapper";
-      wrapper.innerHTML = `<img src="${src}" alt="photo" loading="lazy"><div class="watermark">© CainArchive</div>`;
+      
+      // Если это первое изображение в каждой колонке (LCP), делаем его с высоким приоритетом
+      const imgTag = document.createElement("img");
+      imgTag.src = src;
+      imgTag.alt = "photo";
+      imgTag.loading = index < 3 ? "eager" : "lazy"; // Первые изображения сразу, остальные — лениво
+      if (index < 3) imgTag.setAttribute("fetchpriority", "high"); // Устанавливаем fetchpriority для LCP
+
+      wrapper.appendChild(imgTag);
+      wrapper.innerHTML += '<div class="watermark">© CainArchive</div>';
       c.el.appendChild(wrapper);
     });
+
+    // Применение стилей для ускорения рендеринга
     c.el.style.willChange = "transform";
     c.el.style.transform = "translateZ(0)";
   });
@@ -45,23 +57,27 @@ function initMosaicAnimation() {
   let targetDir = 1;
   let currentDir = 1;
 
-  const SPEED = 50; 
+  const SPEED = 50;
 
+  // ScrollTrigger обновляется для каждого скролла
   ScrollTrigger.create({
     trigger: ".mosaic-section",
     start: "top top",
     end: "bottom bottom",
+    invalidateOnRefresh: true, // Обновляем размеры при изменении окна
     onUpdate(self) {
       targetDir = window.innerWidth > 768 ? (self.direction === 1 ? 1 : -1) : 1;
     },
   });
 
-  gsap.ticker.fps(60);
+  // Снижаем частоту обновлений до 30 fps для производительности
+  gsap.ticker.fps(30); // Снижение до 30 fps для экономии ресурсов
+
   let lastTime = performance.now();
 
   gsap.ticker.add(() => {
     const now = performance.now();
-    const dt = Math.min(0.05, (now - lastTime) / 1000);
+    const dt = Math.min(0.05, (now - lastTime) / 1000); // Ограничиваем изменение времени
     lastTime = now;
 
     currentDir += (targetDir - currentDir) * 0.15;
@@ -70,6 +86,7 @@ function initMosaicAnimation() {
       c.el.offset = (c.el.offset || 0) + -currentDir * c.dirFactor * SPEED * dt;
       const shift = c.el.scrollHeight / 2;
 
+      // Бесконечная прокрутка
       if (c.el.offset <= -shift) c.el.offset += shift;
       if (c.el.offset > 0) c.el.offset -= shift;
 
@@ -77,10 +94,11 @@ function initMosaicAnimation() {
     });
   });
 
+  // Обновление размеров при изменении окна
   window.addEventListener("resize", () => {
     cols.forEach(c => {
       c.el.offset = c.el.offset || 0;
     });
-    ScrollTrigger.refresh();
+    ScrollTrigger.refresh(); // Пересчёт размеров ScrollTrigger
   });
 }
