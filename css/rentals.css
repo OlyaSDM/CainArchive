@@ -112,7 +112,7 @@ html, body {
 }
 
 .terms .container {
-  max-width: 1200px;
+  max-width: 1800px;
   margin: 0 auto;
 }
 
@@ -136,11 +136,22 @@ html, body {
   padding: 30px;
   /* border-radius: 12px;
   box-shadow: 0 8px 20px rgba(0,0,0,0.1); */
-  flex: 1 1 400px;
-  max-width: 500px;
+  flex: 1 1 45%;
+  max-width: 800px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-
+.p{
+  margin-top: 10px;
+  line-height: 25px;
+  color: var(--fonts);
+  font-weight: 300;
+  font-family: "Libre Franklin", sans-serif;
+font-size: 18px;
+}
+.highlight {
+  color: var(--fonts);
+  font-weight: bold;
+}
 /* .term:hover {
   transform: translateY(-8px);
   box-shadow: 0 12px 30px rgba(0,0,0,0.15);
@@ -296,6 +307,10 @@ html, body {
   .term {
     flex: 1 1 100%;
     max-width: 100%;
+  }
+
+  .p{
+    font-size: 16px;
   }
 }
 
