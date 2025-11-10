@@ -372,7 +372,7 @@ scrollTimeline
   .to(ampLetters, {
     y: "-100%",
     opacity: 0,
-    duration: 1.8,  
+    duration: 1.2,  
     ease: "power2.inOut"
   }, 0.1) 
   .to([...leftLetters, ...rightLetters], {

@@ -14,497 +14,482 @@
       <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
    </head>
    <body>
-
-
-
-    <!-- NAVIGATION -->
-    <header class="navbar " id="navbar" style="opacity: 0; transform: translateY(-50px); pointer-events: none;">
-      <!-- Logos  -->
-      <a href="index.html" class="logo">
-        <img src="logos/logo-white.webp" alt="Logo" class="round-logo" />
-        <img src="logos/logo-words.webp" alt="CAIN Archive Logo" class="words-logo" />
-      </a>
-
-      <!-- Right side cluster -->
-      <div class="nav-right">
-        <!-- Inline links (desktop) -->
-        <nav class="nav-links" aria-label="Primary">
-          <a href="index.html">Home</a>
-          <a href="propaganda-ww2.html">Propaganda</a>
-          <a href="Occupation-ww2.html">From Occupation to Retribution</a>
-          <a href="Ashes-ww2.html">From Ashes to Legacy</a>
-        </nav>
-        <!-- Burger (tablet/phone) -->
-        <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
-          <span class="bar bar-long"></span>
-          <span class="bar bar-middle"></span>
-          <span class="bar bar-short"></span>
-        </button>
-        <!-- Divider -->
-        <div class="nav-divider" aria-hidden="true"></div>
-
-        <!-- Language Switcher -->
-        <div class="lang-switcher" id="langSwitcher">
-          <button id="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu">
-            <span id="lang-current">EN</span>
-            <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
-          </button>
-          <ul class="lang-options" id="lang-menu" role="menu">
-            <li role="menuitem" data-lang="en">English</li>
-            <li role="menuitem" data-lang="ar">العربية</li>
-            <li role="menuitem" data-lang="ja">日本語</li>
-            <li role="menuitem" data-lang="es">Español</li>
-            <li role="menuitem" data-lang="zh">中文</li>
-          </ul>
-        </div>
+      <!-- NAVIGATION -->
+      <header class="navbar " id="navbar" style="opacity: 0; transform: translateY(-50px); pointer-events: none;">
+         <!-- Logos  -->
+         <a href="index.html" class="logo">
+         <img src="logos/logo-white.webp" alt="Logo" class="round-logo" />
+         <img src="logos/logo-words.webp" alt="CAIN Archive Logo" class="words-logo" />
+         </a>
+         <!-- Right side cluster -->
+         <div class="nav-right">
+            <!-- Inline links (desktop) -->
+            <nav class="nav-links" aria-label="Primary">
+               <a href="index.html" data-key="fullscreenMenu.home">Home</a>
+               <a href="propaganda-ww2.html" data-key="wwii.propagandaLabel">Propaganda</a>
+               <a href="Occupation-ww2.html" data-key="wwii.occupation">From Occupation to Retribution</a>
+               <a href="Ashes-ww2.html" data-key="wwii.ashes">From Ashes to Legacy</a>
+            </nav>
+            <!-- Burger (tablet/phone) -->
+            <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
+            <span class="bar bar-long"></span>
+            <span class="bar bar-middle"></span>
+            <span class="bar bar-short"></span>
+            </button>
+            <!-- Divider -->
+            <div class="nav-divider" aria-hidden="true"></div>
+            <!-- Language Switcher -->
+            <div class="lang-switcher" id="langSwitcher">
+               <button id="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu">
+               <span id="lang-current">EN</span>
+               <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+               </button>
+               <ul class="lang-options" id="lang-menu" role="menu">
+                  <li role="menuitem" data-lang="en">English</li>
+                  <li role="menuitem" data-lang="ar">العربية</li>
+                  <li role="menuitem" data-lang="ja">日本語</li>
+                  <li role="menuitem" data-lang="es">Español</li>
+                  <li role="menuitem" data-lang="zh">中文</li>
+               </ul>
+            </div>
+         </div>
+      </header>
+      <!-- FULLSCREEN MENU -->
+      <div class="fullscreen-menu" id="menu">
+         <div class="fullscreen-menu-content">
+            <!-- LEFT: Navigation Links -->
+            <nav>
+               <a href="index.html" style="--i:1" data-index="01" data-key="fullscreenMenu.home"><span>Home</span></a>
+               <a href="propaganda-ww2.html" style="--i:2" data-index="02" data-key="wwii.propagandaLabel"><span>Propaganda</span></a>
+               <a href="Occupation-ww2.html" style="--i:3" data-index="03" data-key="wwii.occupation"><span>From Occupation to Retribution</span></a>
+               <a href="Ashes-ww2.html" style="--i:4" data-index="04" data-key="wwii.ashes"><span>From Ashes to Legacy</span></a>
+            </nav>
+            <!-- DIVIDER -->
+            <div class="divider"></div>
+            <!-- RIGHT: Contact Info -->
+            <div class="menu-contact">
+               <div>
+                  <p>John Cain</p>
+                  <p>Founder & Director | Cain Archive</p>
+                  <a href="mailto:john@cainarchive.com" class="menu-contacts">john@cainarchive.com</a>
+                  <a href="tel:+15618840648" class="menu-contacts">+1 561 884 0648</a>
+               </div>
+               <div>
+                  <p>Dina Kriukova-Lichman</p>
+                  <p>Institutional & Archive Coordinator | Cain Archive</p>
+                  <a href="mailto:dina.kriukova@cainarchive.com" class="menu-contacts">dina.kriukova@cainarchive.com</a>
+               </div>
+               <div class="social-icons">
+                  <ul>
+                     <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                     <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
+                     <li><a href="#" aria-label="X-twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
+                     <li><a href="#" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
       </div>
-    </header>
-
-    <!-- FULLSCREEN MENU -->
-    <div class="fullscreen-menu" id="menu">
-      <div class="fullscreen-menu-content">
-        <!-- LEFT: Navigation Links -->
-        <nav>
-          <a href="index.html" style="--i:1" data-index="01"><span>Home</span></a>
-          <a href="propaganda-ww2.html" style="--i:2" data-index="02"><span>Propaganda</span></a>
-          <a href="Occupation-ww2.html" style="--i:3" data-index="03"><span>From Occupation to Retribution</span></a>
-          <a href="Ashes-ww2.html" style="--i:4" data-index="04"><span>From Ashes to Legacy</span></a>
-        </nav>
-        <!-- DIVIDER -->
-        <div class="divider"></div>
-        <!-- RIGHT: Contact Info -->
-        <div class="menu-contact">
-          <div>
-            <p>John Cain</p>
-            <p>Founder & Director | Cain Archive</p>
-            <a href="mailto:john@cainarchive.com" class="menu-contacts">john@cainarchive.com</a>
-            <a href="tel:+15618840648" class="menu-contacts">+1 561 884 0648</a>
-          </div>
-          <div>
-            <p>Dina Kriukova-Lichman</p>
-            <p>Institutional & Archive Coordinator | Cain Archive</p>
-            <a href="mailto:dina.kriukova@cainarchive.com" class="menu-contacts">dina.kriukova@cainarchive.com</a>
-          </div>
-          <div class="social-icons">
-            <ul>
-              <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-              <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
-              <li><a href="#" aria-label="X-twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
-              <li><a href="#" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
       <div id="smooth-wrapper">
       <div id="smooth-content">
-        
-
-<section class="hero-ww2" id="theWitness">
-  <div id="ww2-hero-titile">
-    <h2 class="ww2-left" data-speed="1.15">The Witness and</h2>
-    <h2 class="ww2-right" data-speed="1.15">the Silence</h2>
-    <p class="big-p">Over 170 authentic photographs trace the silence that followed the shattered world of Europe’s Jews. Each frame is a witness — not only to what was lost, but to the enduring will to be remembered.</p>
-  </div>
-</section>
-
-
-<!-- GALLERY -->
-        <section class="gallery-words letter-section" id="gallery-words">
-          <p data-speed="1.1" class="ww2-p">Only part of this collection and its materials is shown. For full access, please contact Cain Archive.</p>
-            <nav class="gallery-nav gallery-nav-witness" data-speed="1.1">
-              <a href="#visionary" class="nav-link-gallery">
-                <span class="navigational-links">
-                  <span>Eichmann</span>
-                  <span class="v-border v-left"></span>
-                  <span class="v-border v-right"></span>
-                </span>
-              </a>
-              <a href="#presidency" class="nav-link-gallery">
-                <span class="navigational-links">
-                  <span>Terezin & Belsen</span>
-                  <span class="v-border v-left"></span>
-                  <span class="v-border v-right"></span>
-                </span>
-              </a>
-              <a href="#darkness" class="nav-link-gallery">
-                <span class="navigational-links">
-                  <span>Lidice & Oradour</span>
-                  <span class="v-border v-left"></span>
-                  <span class="v-border v-right"></span>
-                </span>
-              </a>
-            <a href="#echoes" class="nav-link-gallery">
-                <span class="navigational-links">
-                  <span>Echoes</span>
-                  <span class="v-border v-left"></span>
-                  <span class="v-border v-right"></span>
-                </span>
-              </a>
-          </nav>
-        </section>
-
-
-<!-- BREADCRUMB -->
-<nav class="breadcrumb" aria-label="breadcrumb">
-  <ul data-speed="1.1">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="WW2.html">Holocaust & WWII</a></li>
-    <li>The Witness and the Silence</li>
-  </ul>
-</nav>
-
-
-<!-- === CHAPTER 1  === -->
-<section class="gallery-section" id="visionary">
-    <div class="gallery-chapter">
-        <h3 class="gallery-chapter-title" data-speed="1.1">Eichmann - <br>Crimes and Evidence</h3>
-        <p class="gallery-chapter-text" data-speed="1.1">Authentic press photographs and documents trace the moment when horror met accountability. Each image bears silent witness to a truth too vast for one trial — but impossible to forget.</p>
-    </div>
-
-    <div class="gallery-grid">
-          <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Eichmann/Photo 240_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Eichmann/Photo 240_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Witness/Eichmann/Photo 241_result copy-min.webp"/>
-        </div>
-                  <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Eichmann/Photo3_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Eichmann/Photo3_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Witness/Eichmann/Photo2_result copy-min.webp"/>
-        </div>
-                  <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Eichmann/Photo5_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Eichmann/Photo5_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Witness/Eichmann/Photo4_result copy-min.webp"/>
-        </div>
-                  <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Eichmann/Photo19_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Eichmann/Photo19_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Witness/Eichmann/Photo20_result copy-min.webp"/>
-        </div>
-                  <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Eichmann/Photo30_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Eichmann/Photo30_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Witness/Eichmann/Photo31_result copy-min.webp"/>
-        </div>
-                  <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Eichmann/Photo36_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Eichmann/Photo36_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Witness/Eichmann/Photo37_result copy-min.webp"/>
-        </div>
-                  <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Eichmann/Photo40_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Eichmann/Photo40_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Witness/Eichmann/Photo41_result copy-min.webp"/>
-        </div>
-                  <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Eichmann/Photo1_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Eichmann/Photo1_result copy-min.webp"
-            alt="Gallery 1"/>
-        </div>
-    </div>
-</section>
-
-<!-- === CHAPTER 2 === -->
-<section class="gallery-section" id="presidency">  
-    <div class="gallery-chapter">
-        <h3 class="gallery-chapter-title" data-speed="1.1">Terezin & Belsen - <br>Testimony and Retribution</h3>
-        <p class="gallery-chapter-text" data-speed="1.1">From the ruins of the camps arose the language of justice. These photographs capture the first moments when memory turned against oblivion — and truth demanded a voice.</p>
-    </div>
-    <div class="gallery-grid">
-          <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Terezin/Photo9_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Terezin/Photo9_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Witness/Terezin/Photo10_result copy-min.webp"/>
-        </div>
-                  <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Terezin/Photo11_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Terezin/Photo11_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Witness/Terezin/Photo12_result copy-min.webp"/>
-        </div>
-                  <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Terezin/Photo13_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Terezin/Photo13_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Witness/Terezin/Photo14_result copy-min.webp"/>
-        </div>
-                  <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Terezin/Photo15_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Terezin/Photo15_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Witness/Terezin/Photo16_result copy-min.webp"/>
-        </div>
-                  <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Terezin/Photo17_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Terezin/Photo17_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Witness/Terezin/Photo18_result copy-min.webp"/>
-        </div>
-                  <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Terezin/Photo21_result copy 2-min.webp" 
-            data-front="/img/WW2/Witness/Terezin/Photo21_result copy 2-min.webp"
-            alt="Gallery 1"/>
-        </div>
-                  <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Terezin/Photo22_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Terezin/Photo22_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Witness/Terezin/Photo23_result copy-min.webp"/>
-        </div>
-                  <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Terezin/Photo28_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Terezin/Photo28_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Witness/Terezin/Photo29_result copy-min.webp"/>
-        </div>
-                  <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Terezin/Photo32_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Terezin/Photo32_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Witness/Terezin/Photo33_result copy-min.webp"/>
-        </div>
-                  <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Terezin/Photo44_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Terezin/Photo44_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Witness/Terezin/Photo45_result copy-min.webp"/>
-        </div>
-                  <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Terezin/Photo46_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Terezin/Photo46_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Witness/Terezin/Photo47_result copy-min.webp"/>
-        </div>
-                  <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Terezin/Photo82_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Terezin/Photo82_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Witness/Terezin/Photo83_result copy-min.webp"/>
-        </div>
-        <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Terezin/Photo108_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Terezin/Photo108_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Witness/Terezin/Photo109_result copy-min.webp"/>
-        </div>
-                          <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Terezin/Photo110_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Terezin/Photo110_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Witness/Terezin/Photo111_result copy-min.webp"/>
-        </div>
-                          <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Terezin/Photo112_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Terezin/Photo112_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Witness/Terezin/Photo113_result copy-min.webp"/>
-        </div>
-        <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Terezin/фото 16 обратная сторона только-min.webp" 
-            data-front="/img/WW2/Witness/Terezin/фото 16 обратная сторона только-min.webp"
-            alt="Gallery 1"/>
-        </div>
-
-
-    </div>
-</section>
-
-<!-- === CHAPTER 3 === -->
-<section class="gallery-section" id="darkness">  
-    <div class="gallery-chapter">
-        <h3 class="gallery-chapter-title" data-speed="1.1">Lindice & Oradour - <br>Cities of Silence</h3>
-        <p class="gallery-chapter-text" data-speed="1.1">Two towns — Lidice and Oradour — stand as Europe’s living memorials. Destroyed in 1942 and 1944, they rose again as symbols of survival, justice, and the world’s promise never to forget.</p>
-    </div>
-    <div class="gallery-grid">
-        <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Lidice/Photo 112_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Lidice/Photo 112_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Witness/Lidice/Photo 113_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Lidice/Photo 114_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Lidice/Photo 114_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Witness/Lidice/Photo 115_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Lidice/Photo 244_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Lidice/Photo 244_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Witness/Lidice/Photo 245_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Lidice/Photo 256_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Lidice/Photo 256_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Witness/Lidice/Photo 257_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Lidice/Photo 258_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Lidice/Photo 258_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Witness/Lidice/Photo 259_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Lidice/Photo 438_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Lidice/Photo 438_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Witness/Lidice/Photo 439_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Lidice/Photo38_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Lidice/Photo38_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Witness/Lidice/Photo39_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Lidice/Photo40_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Lidice/Photo40_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Witness/Lidice/Photo41_result copy-min.webp"/>
-        </div>
-
-
-    </div>
-</section>
-
-
-<!-- === CHAPTER 4 === -->
-<section class="gallery-section" id="echoes">  
-    <div class="gallery-chapter">
-        <h3 class="gallery-chapter-title" data-speed="1.1">Echoes of Hatered - <br>Damascus 1962</h3>
-        <p class="gallery-chapter-text" data-speed="1.1">From Nuremberg to Damascus, the rhetoric of justice became a mirror for hate. These images from 1962 remind us that memory fades faster than fear — and that silence, once again, became the world’s accomplice.</p>
-    </div>
-    <div class="gallery-grid">
-          <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Echoes/Photo 427_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Echoes/Photo 427_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Witness/Echoes/Photo 428_result copy-min.webp"/>
-        </div>
-                  <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Echoes/Photo118_result copy-min.webp" 
-            data-front="/img/WW2/Witness/Echoes/Photo118_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Witness/Echoes/Photo119_result copy-min.webp"/>
-        </div>
-                  <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Echoes/фото 3 обратная сторона только -min.webp" 
-            data-front="/img/WW2/Witness/Echoes/фото 3 обратная сторона только -min.webp"
-            alt="Gallery 1" />
-        </div>
-                  <div class="img-wrapper"><img 
-            src="/img/WW2/Witness/Echoes/фото4 обратная сторона только-min.webp" 
-            data-front="/img/WW2/Witness/Echoes/фото4 обратная сторона только-min.webp"
-            alt="Gallery 1" />
-        </div>
-
-
-    </div>
-</section>
-
-
-        <!-- FOOTER -->
-        <footer class="footer">
-          <p class="footer-heading">History that shapes <span>Tomorrow</span></p>
-          <hr class="footer-divider" />
-          <div class="footer-wrapper">
-            <!-- Logo + tagline -->
-            <a href="index.html" class="logo">
-              <img src="logos/logo-white.webp" alt="Logo" class="round-logo" />
-              <img src="logos/logo-words.webp" alt="CAIN Archive Logo" class="words-logo" />
+      <section class="hero-ww2" id="theWitness">
+         <div id="ww2-hero-titile">
+            <h2 class="ww2-left" data-speed="1.15" data-key="wwii.heroWitnessTitle">The Witness and</h2>
+            <h2 class="ww2-right" data-speed="1.15" data-key="wwii.heroSilenceTitle">the Silence</h2>
+            <p class="big-p" data-key="wwii.heroText">Over 170 authentic photographs trace the silence that followed the shattered world of Europe’s Jews. Each frame is a witness — not only to what was lost, but to the enduring will to be remembered.</p>
+         </div>
+      </section>
+      <!-- GALLERY -->
+      <section class="gallery-words letter-section" id="gallery-words">
+         <p data-speed="1.1" class="ww2-p" data-key="wwii.collectionAccess">Only part of this collection and its materials is shown. For full access, please contact Cain Archive.</p>
+         <nav class="gallery-nav gallery-nav-witness" data-speed="1.1">
+            <a href="#visionary" class="nav-link-gallery">
+            <span class="navigational-links">
+            <span data-key="eichmann">Eichmann</span>
+            <span class="v-border v-left"></span>
+            <span class="v-border v-right"></span>
+            </span>
             </a>
-            <!-- Contact Info -->
-            <div class="footer-contact">
-              <p>John Cain</p>
-              <p>Founder & Director | Cain Archive</p>
-              <a href="mailto:john@cainarchive.com">john@cainarchive.com</a>
-              <a href="tel:+15618840648">+1 561 884 0648</a>
+            <a href="#presidency" class="nav-link-gallery">
+            <span class="navigational-links">
+            <span data-key="terezinBelsen">Terezin & Belsen</span>
+            <span class="v-border v-left"></span>
+            <span class="v-border v-right"></span>
+            </span>
+            </a>
+            <a href="#darkness" class="nav-link-gallery">
+            <span class="navigational-links">
+            <span data-key="lidiceOradour">Lidice & Oradour</span>
+            <span class="v-border v-left"></span>
+            <span class="v-border v-right"></span>
+            </span>
+            </a>
+            <a href="#echoes" class="nav-link-gallery">
+            <span class="navigational-links">
+            <span data-key="echoes">Echoes</span>
+            <span class="v-border v-left"></span>
+            <span class="v-border v-right"></span>
+            </span>
+            </a>
+         </nav>
+      </section>
+      <!-- BREADCRUMB -->
+      <nav class="breadcrumb" aria-label="breadcrumb">
+         <ul data-speed="1.1">
+            <li><a href="index.html" data-key="fullscreenMenu.home">Home</a></li>
+            <li><a href="WW2.html" data-key="fullscreenMenu.ww2">Holocaust & WWII</a></li>
+            <li data-key="witnessSilence">The Witness and the Silence</li>
+         </ul>
+      </nav>
+      <!-- === CHAPTER 1  === -->
+      <section class="gallery-section" id="visionary">
+         <div class="gallery-chapter">
+         <div >
+            <h3 class="chapter-t" data-speed="1.1" data-key="eichmannTitle" >
+               Eichmann - 
+               <h3 class="subheading chapter-t gallery-chapter-title-war"  data-speed="1.1" data-key="crimesEvidence" >Crimes and Evidence</h3>
+            </h3>
+            <p class="gallery-chapter-text" data-speed="1.1" data-key="pressPhotosText">
+               Authentic press photographs and documents trace the moment when horror met accountability. Each image bears silent witness to a truth too vast for one trial — but impossible to forget.
+            </p>
+         </div>
+         <div class="gallery-grid">
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Eichmann/Photo 240_result copy-min.webp" 
+               data-front="/img/WW2/Witness/Eichmann/Photo 240_result copy-min.webp"
+               alt="Gallery 1" 
+               data-back="/img/WW2/Witness/Eichmann/Photo 241_result copy-min.webp"/>
             </div>
-            <div class="footer-contact">
-              <p>Dina Kriukova-Lichman</p>
-              <p>Institutional & Archive Coordinator | Cain Archive</p>
-              <a href="mailto:dina.kriukova@cainarchive.com">dina.kriukova@cainarchive.com</a>
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Eichmann/Photo3_result copy-min.webp" 
+               data-front="/img/WW2/Witness/Eichmann/Photo3_result copy-min.webp"
+               alt="Gallery 1" 
+               data-back="/img/WW2/Witness/Eichmann/Photo2_result copy-min.webp"/>
             </div>
-            <!-- Social Media -->
-            <div class="footer-social">
-              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-              <a href="#" aria-label="X-twitter"><i class="fa-brands fa-x-twitter"></i></a>
-              <a href="#" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Eichmann/Photo5_result copy-min.webp" 
+               data-front="/img/WW2/Witness/Eichmann/Photo5_result copy-min.webp"
+               alt="Gallery 1" 
+               data-back="/img/WW2/Witness/Eichmann/Photo4_result copy-min.webp"/>
             </div>
-          </div>
-          <!-- Bottom copyright -->
-          <div class="footer-bottom">
-              <p>© 2025 Cain Archive. All rights reserved.</p>
-              <p class="footer-protected">Original vintage photographs are displayed for documentary, educational, and research purposes. Cain Archive holds physical ownership of the original prints but does not claim copyright to the underlying images. Unauthorized reproduction or commercial use is prohibited.</p>
-          </div>
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Eichmann/Photo19_result copy-min.webp" 
+               data-front="/img/WW2/Witness/Eichmann/Photo19_result copy-min.webp"
+               alt="Gallery 1" 
+               data-back="/img/WW2/Witness/Eichmann/Photo20_result copy-min.webp"/>
+            </div>
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Eichmann/Photo30_result copy-min.webp" 
+               data-front="/img/WW2/Witness/Eichmann/Photo30_result copy-min.webp"
+               alt="Gallery 1" 
+               data-back="/img/WW2/Witness/Eichmann/Photo31_result copy-min.webp"/>
+            </div>
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Eichmann/Photo36_result copy-min.webp" 
+               data-front="/img/WW2/Witness/Eichmann/Photo36_result copy-min.webp"
+               alt="Gallery 1" 
+               data-back="/img/WW2/Witness/Eichmann/Photo37_result copy-min.webp"/>
+            </div>
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Eichmann/Photo40_result copy-min.webp" 
+               data-front="/img/WW2/Witness/Eichmann/Photo40_result copy-min.webp"
+               alt="Gallery 1" 
+               data-back="/img/WW2/Witness/Eichmann/Photo41_result copy-min.webp"/>
+            </div>
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Eichmann/Photo1_result copy-min.webp" 
+               data-front="/img/WW2/Witness/Eichmann/Photo1_result copy-min.webp"
+               alt="Gallery 1"/>
+            </div>
+         </div>
+      </section>
+      <!-- === CHAPTER 2 === -->
+      <section class="gallery-section" id="presidency">
+         <div class="gallery-chapter">
+         <div >
+            <h3 class="chapter-t" data-speed="1.1" data-key="terezinBelsen">
+               Terezin & Belsen -  
+               <h3 class="subheading chapter-t gallery-chapter-title-war"  data-speed="1.1" data-key="testimonyRetribution"  >Testimony and Retribution</h3>
+            </h3>
+            <p class="gallery-chapter-text" data-speed="1.1" data-key="campsJusticeText">
+               From the ruins of the camps arose the language of justice. These photographs capture the first moments when memory turned against oblivion — and truth demanded a voice.
+            </p>
+         </div>
+         <div class="gallery-grid">
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Terezin/Photo9_result copy-min.webp" 
+               data-front="/img/WW2/Witness/Terezin/Photo9_result copy-min.webp"
+               alt="Gallery 1" 
+               data-back="/img/WW2/Witness/Terezin/Photo10_result copy-min.webp"/>
+            </div>
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Terezin/Photo11_result copy-min.webp" 
+               data-front="/img/WW2/Witness/Terezin/Photo11_result copy-min.webp"
+               alt="Gallery 1" 
+               data-back="/img/WW2/Witness/Terezin/Photo12_result copy-min.webp"/>
+            </div>
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Terezin/Photo13_result copy-min.webp" 
+               data-front="/img/WW2/Witness/Terezin/Photo13_result copy-min.webp"
+               alt="Gallery 1" 
+               data-back="/img/WW2/Witness/Terezin/Photo14_result copy-min.webp"/>
+            </div>
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Terezin/Photo15_result copy-min.webp" 
+               data-front="/img/WW2/Witness/Terezin/Photo15_result copy-min.webp"
+               alt="Gallery 1" 
+               data-back="/img/WW2/Witness/Terezin/Photo16_result copy-min.webp"/>
+            </div>
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Terezin/Photo17_result copy-min.webp" 
+               data-front="/img/WW2/Witness/Terezin/Photo17_result copy-min.webp"
+               alt="Gallery 1" 
+               data-back="/img/WW2/Witness/Terezin/Photo18_result copy-min.webp"/>
+            </div>
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Terezin/Photo21_result copy 2-min.webp" 
+               data-front="/img/WW2/Witness/Terezin/Photo21_result copy 2-min.webp"
+               alt="Gallery 1"/>
+            </div>
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Terezin/Photo22_result copy-min.webp" 
+               data-front="/img/WW2/Witness/Terezin/Photo22_result copy-min.webp"
+               alt="Gallery 1" 
+               data-back="/img/WW2/Witness/Terezin/Photo23_result copy-min.webp"/>
+            </div>
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Terezin/Photo28_result copy-min.webp" 
+               data-front="/img/WW2/Witness/Terezin/Photo28_result copy-min.webp"
+               alt="Gallery 1" 
+               data-back="/img/WW2/Witness/Terezin/Photo29_result copy-min.webp"/>
+            </div>
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Terezin/Photo32_result copy-min.webp" 
+               data-front="/img/WW2/Witness/Terezin/Photo32_result copy-min.webp"
+               alt="Gallery 1" 
+               data-back="/img/WW2/Witness/Terezin/Photo33_result copy-min.webp"/>
+            </div>
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Terezin/Photo44_result copy-min.webp" 
+               data-front="/img/WW2/Witness/Terezin/Photo44_result copy-min.webp"
+               alt="Gallery 1" 
+               data-back="/img/WW2/Witness/Terezin/Photo45_result copy-min.webp"/>
+            </div>
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Terezin/Photo46_result copy-min.webp" 
+               data-front="/img/WW2/Witness/Terezin/Photo46_result copy-min.webp"
+               alt="Gallery 1" 
+               data-back="/img/WW2/Witness/Terezin/Photo47_result copy-min.webp"/>
+            </div>
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Terezin/Photo82_result copy-min.webp" 
+               data-front="/img/WW2/Witness/Terezin/Photo82_result copy-min.webp"
+               alt="Gallery 1" 
+               data-back="/img/WW2/Witness/Terezin/Photo83_result copy-min.webp"/>
+            </div>
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Terezin/Photo108_result copy-min.webp" 
+               data-front="/img/WW2/Witness/Terezin/Photo108_result copy-min.webp"
+               alt="Gallery 1" 
+               data-back="/img/WW2/Witness/Terezin/Photo109_result copy-min.webp"/>
+            </div>
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Terezin/Photo110_result copy-min.webp" 
+               data-front="/img/WW2/Witness/Terezin/Photo110_result copy-min.webp"
+               alt="Gallery 1" 
+               data-back="/img/WW2/Witness/Terezin/Photo111_result copy-min.webp"/>
+            </div>
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Terezin/Photo112_result copy-min.webp" 
+               data-front="/img/WW2/Witness/Terezin/Photo112_result copy-min.webp"
+               alt="Gallery 1" 
+               data-back="/img/WW2/Witness/Terezin/Photo113_result copy-min.webp"/>
+            </div>
+            <div class="img-wrapper"><img 
+               src="/img/WW2/Witness/Terezin/фото 16 обратная сторона только-min.webp" 
+               data-front="/img/WW2/Witness/Terezin/фото 16 обратная сторона только-min.webp"
+               alt="Gallery 1"/>
+            </div>
+         </div>
+      </section>
+      <!-- === CHAPTER 3 === -->
+      <section class="gallery-section" id="darkness">
+         <div class="gallery-chapter">
+            <div >
+               <h3 class="chapter-t" data-speed="1.1" data-key="lidiceOradour" >
+                  Lindice & Oradour - 
+                  <h3 class="subheading chapter-t gallery-chapter-title-war"  data-speed="1.1" data-key="citiesOfSilence" >Cities of Silence</h3>
+               </h3>
+               <p class="gallery-chapter-text" data-speed="1.1" data-key="lidiceOradourText">
+                  Two towns — Lidice and Oradour — stand as Europe’s living memorials. Destroyed in 1942 and 1944, they rose again as symbols of survival, justice, and the world’s promise never to forget.
+               </p>
+            </div>
+            <div class="gallery-grid">
+               <div class="img-wrapper"><img 
+                  src="/img/WW2/Witness/Lidice/Photo 112_result copy-min.webp" 
+                  data-front="/img/WW2/Witness/Lidice/Photo 112_result copy-min.webp"
+                  alt="Gallery 1"
+                  data-back="/img/WW2/Witness/Lidice/Photo 113_result copy-min.webp"/>
+               </div>
+               <div class="img-wrapper"><img 
+                  src="/img/WW2/Witness/Lidice/Photo 114_result copy-min.webp" 
+                  data-front="/img/WW2/Witness/Lidice/Photo 114_result copy-min.webp"
+                  alt="Gallery 1"
+                  data-back="/img/WW2/Witness/Lidice/Photo 115_result copy-min.webp"/>
+               </div>
+               <div class="img-wrapper"><img 
+                  src="/img/WW2/Witness/Lidice/Photo 244_result copy-min.webp" 
+                  data-front="/img/WW2/Witness/Lidice/Photo 244_result copy-min.webp"
+                  alt="Gallery 1"
+                  data-back="/img/WW2/Witness/Lidice/Photo 245_result copy-min.webp"/>
+               </div>
+               <div class="img-wrapper"><img 
+                  src="/img/WW2/Witness/Lidice/Photo 256_result copy-min.webp" 
+                  data-front="/img/WW2/Witness/Lidice/Photo 256_result copy-min.webp"
+                  alt="Gallery 1"
+                  data-back="/img/WW2/Witness/Lidice/Photo 257_result copy-min.webp"/>
+               </div>
+               <div class="img-wrapper"><img 
+                  src="/img/WW2/Witness/Lidice/Photo 258_result copy-min.webp" 
+                  data-front="/img/WW2/Witness/Lidice/Photo 258_result copy-min.webp"
+                  alt="Gallery 1"
+                  data-back="/img/WW2/Witness/Lidice/Photo 259_result copy-min.webp"/>
+               </div>
+               <div class="img-wrapper"><img 
+                  src="/img/WW2/Witness/Lidice/Photo 438_result copy-min.webp" 
+                  data-front="/img/WW2/Witness/Lidice/Photo 438_result copy-min.webp"
+                  alt="Gallery 1"
+                  data-back="/img/WW2/Witness/Lidice/Photo 439_result copy-min.webp"/>
+               </div>
+               <div class="img-wrapper"><img 
+                  src="/img/WW2/Witness/Lidice/Photo38_result copy-min.webp" 
+                  data-front="/img/WW2/Witness/Lidice/Photo38_result copy-min.webp"
+                  alt="Gallery 1"
+                  data-back="/img/WW2/Witness/Lidice/Photo39_result copy-min.webp"/>
+               </div>
+               <div class="img-wrapper"><img 
+                  src="/img/WW2/Witness/Lidice/Photo40_result copy-min.webp" 
+                  data-front="/img/WW2/Witness/Lidice/Photo40_result copy-min.webp"
+                  alt="Gallery 1"
+                  data-back="/img/WW2/Witness/Lidice/Photo41_result copy-min.webp"/>
+               </div>
+            </div>
+      </section>
+      <!-- === CHAPTER 4 === -->
+      <section class="gallery-section" id="echoes">  
+      <div class="gallery-chapter">
+      <div >
+      <h3 class="chapter-t" data-speed="1.1" data-key="echoesOfHatred" >
+      Echoes of Hatered -
+      <h3 class="subheading chapter-t gallery-chapter-title-war"  data-speed="1.1" data-key="damascus1962"  >Damascus 1962</h3>
+      </h3>
+      <p class="gallery-chapter-text" data-speed="1.1" data-key="nurembergDamascusText" >
+      From Nuremberg to Damascus, the rhetoric of justice became a mirror for hate. These images from 1962 remind us that memory fades faster than fear — and that silence, once again, became the world’s accomplice.
+      </p>
+      </div>
+      <div class="gallery-grid">
+      <div class="img-wrapper"><img 
+         src="/img/WW2/Witness/Echoes/Photo 427_result copy-min.webp" 
+         data-front="/img/WW2/Witness/Echoes/Photo 427_result copy-min.webp"
+         alt="Gallery 1" 
+         data-back="/img/WW2/Witness/Echoes/Photo 428_result copy-min.webp"/>
+      </div>
+      <div class="img-wrapper"><img 
+         src="/img/WW2/Witness/Echoes/Photo118_result copy-min.webp" 
+         data-front="/img/WW2/Witness/Echoes/Photo118_result copy-min.webp"
+         alt="Gallery 1" 
+         data-back="/img/WW2/Witness/Echoes/Photo119_result copy-min.webp"/>
+      </div>
+      <div class="img-wrapper"><img 
+         src="/img/WW2/Witness/Echoes/фото 3 обратная сторона только -min.webp" 
+         data-front="/img/WW2/Witness/Echoes/фото 3 обратная сторона только -min.webp"
+         alt="Gallery 1" />
+      </div>
+      <div class="img-wrapper"><img 
+         src="/img/WW2/Witness/Echoes/фото4 обратная сторона только-min.webp" 
+         data-front="/img/WW2/Witness/Echoes/фото4 обратная сторона только-min.webp"
+         alt="Gallery 1" />
+      </div>
+      </div>
+      </section>
+      <!-- FOOTER -->
+      <footer class="footer">
+      <p class="footer-heading" data-key="footer.slogan">History that shapes <span>Tomorrow</span></p>
+      <hr class="footer-divider" />
+      <div class="footer-wrapper">
+      <!-- Logo + tagline -->
+      <a href="index.html" class="logo">
+      <img src="logos/logo-white.webp" alt="Logo" class="round-logo" />
+      <img src="logos/logo-words.webp" alt="CAIN Archive Logo" class="words-logo" />
+      </a>
+      <!-- Contact Info -->
+      <div class="footer-contact">
+      <p >John Cain</p>
+      <p data-key="footer.founderTitle">Founder & Director | Cain Archive</p>
+      <a href="mailto:john@cainarchive.com" data-key="footer.founderEmail">john@cainarchive.com</a>
+      <a href="tel:+15618840648" data-key="footer.founderPhone">+1 561 884 0648</a>
+      </div>
+      <div class="footer-contact">
+      <p >Dina Kriukova-Lichman</p>
+      <p data-key="footer.coordinatorTitle">Institutional & Archive Coordinator | Cain Archive</p>
+      <a href="mailto:dina.kriukova@cainarchive.com" data-key="footer.coordinatorEmail">dina.kriukova@cainarchive.com</a>
+      </div>
+      <!-- Social Media -->
+      <div class="footer-social">
+      <a href="#" aria-label="Instagram" data-key="footer.socialInstagram"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" aria-label="Facebook" data-key="footer.socialFacebook"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" aria-label="X-twitter" data-key="footer.socialTwitter"><i class="fa-brands fa-x-twitter"></i></a>
+      <a href="#" aria-label="Youtube" data-key="footer.socialYoutube"><i class="fa-brands fa-youtube"></i></a>
+      </div>
+      </div>
+      <!-- Bottom copyright -->
+      <div class="footer-bottom">
+      <p data-key="footer.copyright">© 2025 Cain Archive. All rights reserved.</p>
+      <p class="footer-protected" data-key="footer.protectedText">Original vintage photographs are displayed for documentary, educational, and research purposes. Cain Archive holds physical ownership of the original prints but does not claim copyright to the underlying images. Unauthorized reproduction or commercial use is prohibited.</p>
+      </div>
       </footer>
-
-  </div>
-</div>
-
-
-<!-- Modal for GALLERY-->
-
-<div class="modal" id="imageModal">
-  <div class="modal-close item-3" id="modalClose" tabindex="0" role="button" aria-label="Close modal"></div>
-
-  <div class="flip-container" id="modalFlipCard">
-    <div class="flip-inner">
-      <div class="flip-front">
-        <div class="modal-image-wrapper">
-          <div class="modal-image-inner">
-            <img class="modal-content" id="modalImgFront" alt="Front" />
-            <div class="modal-watermark">© Cain Archive</div>
-        </div>
       </div>
-    </div>
-
-    <div class="flip-back">
-      <div class="modal-image-wrapper">
-        <div class="modal-image-inner">
-          <img class="modal-content" id="modalImgBack" alt="Back" />
-          <div class="modal-watermark">© Cain Archive</div>
-        </div>
       </div>
-    </div>
-  </div>
-  <div class="flip-hint" id="flipHint">Click to flip</div>
-</div>
-
-    <button id="prevBtn" class="modal-btn" aria-label="Previous">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="15 18 9 12 15 6"></polyline>
-      </svg>
-    </button>
-    <button id="nextBtn" class="modal-btn" aria-label="Next">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="9 18 15 12 9 6"></polyline>
-      </svg>
-  </button>
-
-      <div class="swipe-indicator">
-        <span class="swipe-arrow left">&#8592;</span>
-        <span class="swipe-text">Swipe</span>
-        <span class="swipe-arrow right">&#8594;</span>
-    </div>
-</div>
-
-
-
+      <!-- Modal for GALLERY-->
+      <div class="modal" id="imageModal">
+         <div class="modal-close item-3" id="modalClose" tabindex="0" role="button" aria-label="Close modal"></div>
+         <div class="flip-container" id="modalFlipCard">
+            <div class="flip-inner">
+               <div class="flip-front">
+                  <div class="modal-image-wrapper">
+                     <div class="modal-image-inner">
+                        <img class="modal-content" id="modalImgFront" alt="Front" />
+                        <div class="modal-watermark">© Cain Archive</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="flip-back">
+                  <div class="modal-image-wrapper">
+                     <div class="modal-image-inner">
+                        <img class="modal-content" id="modalImgBack" alt="Back" />
+                        <div class="modal-watermark">© Cain Archive</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="flip-hint" id="flipHint">Click to flip</div>
+         </div>
+         <button id="prevBtn" class="modal-btn" aria-label="Previous">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+               <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+         </button>
+         <button id="nextBtn" class="modal-btn" aria-label="Next">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+               <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+         </button>
+         <div class="swipe-indicator">
+            <span class="swipe-arrow left">&#8592;</span>
+            <span class="swipe-text">Swipe</span>
+            <span class="swipe-arrow right">&#8594;</span>
+         </div>
+      </div>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
@@ -515,6 +500,6 @@
       <script src="js/smooth.js"></script>
       <script src="js/main.js"></script>
       <script src="js/ww2.js"></script>
-
+      <script src="js/lang_ww2.js"></script>
    </body>
 </html>
