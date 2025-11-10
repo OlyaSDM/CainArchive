@@ -29,10 +29,10 @@
       <div class="nav-right">
         <!-- Inline links (desktop) -->
         <nav class="nav-links" aria-label="Primary">
-          <a href="index.html">Home</a>
-          <a href="propaganda-ww2.html">Propaganda</a>
-        <a href="Witness-ww2.html">The Witness and the Silence</a>
-          <a href="Ashes-ww2.html">From Ashes to Legacy</a>
+          <a href="index.html" data-key="fullscreenMenu.home">Home</a>
+          <a href="propaganda-ww2.html"  data-key="wwii.propagandaLabel">Propaganda</a>
+        <a href="Witness-ww2.html" data-key="wwii.witness">The Witness and the Silence</a>
+          <a href="Ashes-ww2.html" data-key="wwii.ashes">From Ashes to Legacy</a>
         </nav>
         <!-- Burger (tablet/phone) -->
         <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
@@ -65,26 +65,26 @@
       <div class="fullscreen-menu-content">
         <!-- LEFT: Navigation Links -->
         <nav>
-          <a href="index.html" style="--i:1" data-index="01"><span>Home</span></a>
-          <a href="propaganda-ww2.html" style="--i:2" data-index="02"><span>Propaganda</span></a>
-          <a href="Witness-ww2.html" style="--i:3" data-index="03"><span>The Witness and the Silence</span></a>
-          <a href="Ashes-ww2.html" style="--i:4" data-index="04"><span>From Ashes to Legacy</span></a>
+          <a href="index.html" style="--i:1" data-index="01" data-key="fullscreenMenu.home"><span>Home</span></a>
+          <a href="propaganda-ww2.html" style="--i:2" data-index="02"  data-key="wwii.propagandaLabel"><span>Propaganda</span></a>
+          <a href="Witness-ww2.html" style="--i:3" data-index="03" data-key="wwii.witness"><span>The Witness and the Silence</span></a>
+          <a href="Ashes-ww2.html" style="--i:4" data-index="04" data-key="wwii.ashes"><span>From Ashes to Legacy</span></a>
         </nav>
         <!-- DIVIDER -->
         <div class="divider"></div>
         <!-- RIGHT: Contact Info -->
         <div class="menu-contact">
-          <div>
-            <p>John Cain</p>
-            <p>Founder & Director | Cain Archive</p>
-            <a href="mailto:john@cainarchive.com" class="menu-contacts">john@cainarchive.com</a>
-            <a href="tel:+15618840648" class="menu-contacts">+1 561 884 0648</a>
-          </div>
-          <div>
-            <p>Dina Kriukova-Lichman</p>
-            <p>Institutional & Archive Coordinator | Cain Archive</p>
-            <a href="mailto:dina.kriukova@cainarchive.com" class="menu-contacts">dina.kriukova@cainarchive.com</a>
-          </div>
+                    <div>
+        <p data-key="fullscreenMenu.contactJohn">John Cain</p>
+        <p data-key="fullscreenMenu.contactFounderTitle">Founder & Director | Cain Archive</p>
+        <a href="mailto:john@cainarchive.com" class="menu-contacts" data-key="fullscreenMenu.contactEmail">john@cainarchive.com</a>
+        <a href="tel:+15618840648" class="menu-contacts" data-key="fullscreenMenu.contactPhone">+1 561 884 0648</a>
+      </div>
+      <div>
+        <p data-key="fullscreenMenu.contactDina">Dina Kriukova-Lichman</p>
+        <p data-key="fullscreenMenu.contactCoordinatorTitle">Institutional & Archive Coordinator | Cain Archive</p>
+        <a href="mailto:dina.kriukova@cainarchive.com" class="menu-contacts" data-key="fullscreenMenu.contactDinaEmail">dina.kriukova@cainarchive.com</a>
+      </div>
           <div class="social-icons">
             <ul>
               <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
@@ -103,34 +103,34 @@
 
 <section class="hero-ww2" id="occupation">
   <div id="ww2-hero-titile">
-    <h2 class="ww2-left" data-speed="1.15">From Occupation </h2>
-    <h2 class="ww2-right" data-speed="1.15">to Retribution</h2>
-    <p class="big-p">Retribution was never a single moment, but a reckoning that spanned decades. Here, history faces its own reflection — in law, in guilt, and in the fading shadow of peace.</p>
+    <h2 class="ww2-left" data-speed="1.15" data-key="fromOccupation">From Occupation </h2>
+    <h2 class="ww2-right" data-speed="1.15" data-key="toRetribution">to Retribution</h2>
+    <p class="big-p" data-key="retributionText">Retribution was never a single moment, but a reckoning that spanned decades. Here, history faces its own reflection — in law, in guilt, and in the fading shadow of peace.</p>
   </div>
 </section>
 
 
 <!-- GALLERY -->
         <section class="gallery-words letter-section" id="gallery-words">
-          <p data-speed="1.1" class="ww2-p">Only part of this collection and its materials is shown. For full access, please contact Cain Archive.</p>
+          <p data-speed="1.1" class="ww2-p" data-key="wwii.collectionAccess">Only part of this collection and its materials is shown. For full access, please contact Cain Archive.</p>
             <nav class="gallery-nav" data-speed="1.1">
               <a href="#visionary" class="nav-link-gallery">
                 <span class="navigational-links">
-                  <span>Auschwitz</span>
+                  <span data-key="auschwitz">Auschwitz</span>
                   <span class="v-border v-left"></span>
                   <span class="v-border v-right"></span>
                 </span>
               </a>
               <a href="#presidency" class="nav-link-gallery">
                 <span class="navigational-links">
-                  <span>Eichmann Trial</span>
+                  <span data-key="eichmannTrial">Eichmann Trial</span>
                   <span class="v-border v-left"></span>
                   <span class="v-border v-right"></span>
                 </span>
               </a>
               <a href="#darkness" class="nav-link-gallery">
                 <span class="navigational-links">
-                  <span>Spandau</span>
+                  <span data-key="spandau">Spandau</span>
                   <span class="v-border v-left"></span>
                   <span class="v-border v-right"></span>
                 </span>
@@ -142,9 +142,9 @@
 <!-- BREADCRUMB -->
 <nav class="breadcrumb" aria-label="breadcrumb">
   <ul data-speed="1.1">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="WW2.html">Holocaust & WWII</a></li>
-    <li>From Occupation to Retribution</li>
+    <li><a href="index.html" data-key="fullscreenMenu.home">Home</a></li>
+    <li><a href="WW2.html" data-key="wwii.title">Holocaust & WWII</a></li>
+    <li data-key="wwii.occupation" >From Occupation to Retribution</li>
   </ul>
 </nav>
 
@@ -152,8 +152,8 @@
 <!-- === CHAPTER 1  === -->
 <section class="gallery-section" id="visionary">
     <div class="gallery-chapter">
-        <h3 class="gallery-chapter-title" data-speed="1.1">Auschwitz Revisited</h3>
-        <p class="gallery-chapter-text" data-speed="1.1">Two decades after liberation, the ghosts of Auschwitz were summoned once more — this time by law. These images capture the moment when justice returned to the ruins, seeking proof among the ashes.</p>
+        <h3 class="gallery-chapter-title" data-speed="1.1" data-key="auschwitzRevisited">Auschwitz Revisited</h3>
+        <p class="gallery-chapter-text" data-speed="1.1" data-key="auschwitzRevisitedText">Two decades after liberation, the ghosts of Auschwitz were summoned once more — this time by law. These images capture the moment when justice returned to the ruins, seeking proof among the ashes.</p>
     </div>
 
     <div class="gallery-grid">
@@ -211,8 +211,8 @@
 <!-- === CHAPTER 2 === -->
 <section class="gallery-section" id="presidency">  
     <div class="gallery-chapter">
-        <h3 class="gallery-chapter-title" data-speed="1.1">Eichmann Trial - Postwar Justice</h3>
-        <p class="gallery-chapter-text" data-speed="1.1">In 1961, the trial of Adolf Eichmann transformed a single courtroom into the moral center of the world. These photographs preserve the faces of justice — judges, witnesses, and the accused — when history itself took the stand.</p>
+        <h3 class="gallery-chapter-title" data-speed="1.1" data-key="eichmannTrialPostwarJustice">Eichmann Trial - Postwar Justice</h3>
+        <p class="gallery-chapter-text" data-speed="1.1" data-key="eichmannTrialText">In 1961, the trial of Adolf Eichmann transformed a single courtroom into the moral center of the world. These photographs preserve the faces of justice — judges, witnesses, and the accused — when history itself took the stand.</p>
     </div>
     <div class="gallery-grid">
         <div class="img-wrapper"><img 
@@ -296,8 +296,8 @@
 <!-- === CHAPTER 3 === -->
 <section class="gallery-section" id="darkness">  
     <div class="gallery-chapter">
-        <h3 class="gallery-chapter-title" data-speed="1.1">Spandau - the Last Prisoners</h3>
-        <p class="gallery-chapter-text" data-speed="1.1">In the silence of Spandau, time itself became their sentence. Justice had been served, yet peace remained uncertain.</p>
+        <h3 class="gallery-chapter-title" data-speed="1.1" data-key="spandauLastPrisoners">Spandau - the Last Prisoners</h3>
+        <p class="gallery-chapter-text" data-speed="1.1" data-key="spandauSilenceText">In the silence of Spandau, time itself became their sentence. Justice had been served, yet peace remained uncertain.</p>
     </div>
     <div class="gallery-grid">
         <div class="img-wrapper"><img 
@@ -334,41 +334,41 @@
 
 
         <!-- FOOTER -->
-        <footer class="footer">
-          <p class="footer-heading">History that shapes <span>Tomorrow</span></p>
-          <hr class="footer-divider" />
-          <div class="footer-wrapper">
-            <!-- Logo + tagline -->
-            <a href="index.html" class="logo">
-              <img src="logos/logo-white.webp" alt="Logo" class="round-logo" />
-              <img src="logos/logo-words.webp" alt="CAIN Archive Logo" class="words-logo" />
-            </a>
-            <!-- Contact Info -->
-            <div class="footer-contact">
-              <p>John Cain</p>
-              <p>Founder & Director | Cain Archive</p>
-              <a href="mailto:john@cainarchive.com">john@cainarchive.com</a>
-              <a href="tel:+15618840648">+1 561 884 0648</a>
-            </div>
-            <div class="footer-contact">
-              <p>Dina Kriukova-Lichman</p>
-              <p>Institutional & Archive Coordinator | Cain Archive</p>
-              <a href="mailto:dina.kriukova@cainarchive.com">dina.kriukova@cainarchive.com</a>
-            </div>
-            <!-- Social Media -->
-            <div class="footer-social">
-              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-              <a href="#" aria-label="X-twitter"><i class="fa-brands fa-x-twitter"></i></a>
-              <a href="#" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
-            </div>
-          </div>
-          <!-- Bottom copyright -->
-          <div class="footer-bottom">
-              <p>© 2025 Cain Archive. All rights reserved.</p>
-              <p class="footer-protected">Original vintage photographs are displayed for documentary, educational, and research purposes. Cain Archive holds physical ownership of the original prints but does not claim copyright to the underlying images. Unauthorized reproduction or commercial use is prohibited.</p>
-          </div>
-      </footer>
+            <footer class="footer">
+               <p class="footer-heading" data-key="footer.slogan">History that shapes <span>Tomorrow</span></p>
+               <hr class="footer-divider" />
+               <div class="footer-wrapper">
+                  <!-- Logo + tagline -->
+                  <a href="index.html" class="logo">
+                  <img src="logos/logo-white.webp" alt="Logo" class="round-logo" />
+                  <img src="logos/logo-words.webp" alt="CAIN Archive Logo" class="words-logo" />
+                  </a>
+                  <!-- Contact Info -->
+                  <div class="footer-contact">
+                     <p >John Cain</p>
+                     <p data-key="footer.founderTitle">Founder & Director | Cain Archive</p>
+                     <a href="mailto:john@cainarchive.com" data-key="footer.founderEmail">john@cainarchive.com</a>
+                     <a href="tel:+15618840648" data-key="footer.founderPhone">+1 561 884 0648</a>
+                  </div>
+                  <div class="footer-contact">
+                     <p >Dina Kriukova-Lichman</p>
+                     <p data-key="footer.coordinatorTitle">Institutional & Archive Coordinator | Cain Archive</p>
+                     <a href="mailto:dina.kriukova@cainarchive.com" data-key="footer.coordinatorEmail">dina.kriukova@cainarchive.com</a>
+                  </div>
+                  <!-- Social Media -->
+                  <div class="footer-social">
+                     <a href="#" aria-label="Instagram" data-key="footer.socialInstagram"><i class="fa-brands fa-instagram"></i></a>
+                     <a href="#" aria-label="Facebook" data-key="footer.socialFacebook"><i class="fa-brands fa-facebook"></i></a>
+                     <a href="#" aria-label="X-twitter" data-key="footer.socialTwitter"><i class="fa-brands fa-x-twitter"></i></a>
+                     <a href="#" aria-label="Youtube" data-key="footer.socialYoutube"><i class="fa-brands fa-youtube"></i></a>
+                  </div>
+               </div>
+               <!-- Bottom copyright -->
+               <div class="footer-bottom">
+                  <p data-key="footer.copyright">© 2025 Cain Archive. All rights reserved.</p>
+                  <p class="footer-protected" data-key="footer.protectedText">Original vintage photographs are displayed for documentary, educational, and research purposes. Cain Archive holds physical ownership of the original prints but does not claim copyright to the underlying images. Unauthorized reproduction or commercial use is prohibited.</p>
+               </div>
+            </footer>
 
   </div>
 </div>
@@ -432,6 +432,8 @@
       <script src="js/smooth.js"></script>
       <script src="js/main.js"></script>
       <script src="js/ww2.js"></script>
+            <script src="js/lang_ww2.js"></script>
+
 
    </body>
 </html>

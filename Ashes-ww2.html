@@ -14,392 +14,365 @@
       <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
    </head>
    <body>
-
-
-
-    <!-- NAVIGATION -->
-    <header class="navbar " id="navbar" style="opacity: 0; transform: translateY(-50px); pointer-events: none;">
-      <!-- Logos  -->
-      <a href="index.html" class="logo">
-        <img src="logos/logo-white.webp" alt="Logo" class="round-logo" />
-        <img src="logos/logo-words.webp" alt="CAIN Archive Logo" class="words-logo" />
-      </a>
-
-      <!-- Right side cluster -->
-      <div class="nav-right">
-        <!-- Inline links (desktop) -->
-        <nav class="nav-links" aria-label="Primary">
-          <a href="index.html">Home</a>
-          <a href="propaganda-ww2.html">Propaganda</a>
-        <a href="Witness-ww2.html">The Witness and the Silence</a>
-          <a href="Occupation-ww2.html">From Occupation to Retribution</a>
-        </nav>
-        <!-- Burger (tablet/phone) -->
-        <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
-          <span class="bar bar-long"></span>
-          <span class="bar bar-middle"></span>
-          <span class="bar bar-short"></span>
-        </button>
-        <!-- Divider -->
-        <div class="nav-divider" aria-hidden="true"></div>
-
-        <!-- Language Switcher -->
-        <div class="lang-switcher" id="langSwitcher">
-          <button id="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu">
-            <span id="lang-current">EN</span>
-            <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
-          </button>
-          <ul class="lang-options" id="lang-menu" role="menu">
-            <li role="menuitem" data-lang="en">English</li>
-            <li role="menuitem" data-lang="ar">العربية</li>
-            <li role="menuitem" data-lang="ja">日本語</li>
-            <li role="menuitem" data-lang="es">Español</li>
-            <li role="menuitem" data-lang="zh">中文</li>
-          </ul>
-        </div>
+      <!-- NAVIGATION -->
+      <header class="navbar " id="navbar" style="opacity: 0; transform: translateY(-50px); pointer-events: none;">
+         <!-- Logos  -->
+         <a href="index.html" class="logo">
+         <img src="logos/logo-white.webp" alt="Logo" class="round-logo" />
+         <img src="logos/logo-words.webp" alt="CAIN Archive Logo" class="words-logo" />
+         </a>
+         <!-- Right side cluster -->
+         <div class="nav-right">
+            <!-- Inline links (desktop) -->
+            <nav class="nav-links" aria-label="Primary">
+               <a href="index.html" data-key="fullscreenMenu.home">Home</a>
+               <a href="propaganda-ww2.html" data-key="wwii.propagandaLabel">Propaganda</a>
+               <a href="Witness-ww2.html" data-key="wwii.witness">The Witness and the Silence</a>
+               <a href="Occupation-ww2.html" data-key="wwii.occupation">From Occupation to Retribution</a>
+            </nav>
+            <!-- Burger (tablet/phone) -->
+            <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false" aria-controls="menu">
+            <span class="bar bar-long"></span>
+            <span class="bar bar-middle"></span>
+            <span class="bar bar-short"></span>
+            </button>
+            <!-- Divider -->
+            <div class="nav-divider" aria-hidden="true"></div>
+            <!-- Language Switcher -->
+            <div class="lang-switcher" id="langSwitcher">
+               <button id="lang-toggle" aria-haspopup="true" aria-expanded="false" aria-controls="lang-menu">
+               <span id="lang-current">EN</span>
+               <i class="fa-solid fa-angle-down" aria-hidden="true"></i>
+               </button>
+               <ul class="lang-options" id="lang-menu" role="menu">
+                  <li role="menuitem" data-lang="en">English</li>
+                  <li role="menuitem" data-lang="ar">العربية</li>
+                  <li role="menuitem" data-lang="ja">日本語</li>
+                  <li role="menuitem" data-lang="es">Español</li>
+                  <li role="menuitem" data-lang="zh">中文</li>
+               </ul>
+            </div>
+         </div>
+      </header>
+      <!-- FULLSCREEN MENU -->
+      <div class="fullscreen-menu" id="menu">
+         <div class="fullscreen-menu-content">
+            <!-- LEFT: Navigation Links -->
+            <nav>
+               <a href="index.html" style="--i:1" data-index="01" data-key="fullscreenMenu.home"><span>Home</span></a>
+               <a href="propaganda-ww2.html" style="--i:2" data-index="02" data-key="wwii.propagandaLabel"><span>Propaganda</span></a>
+               <a href="Witness-ww2.html" style="--i:3" data-index="03" data-key="wwii.witness"><span>The Witness and the Silence</span></a>
+               <a href="Occupation-ww2.html" style="--i:4" data-index="04" data-key="wwii.occupation"><span>From Occupation to Retribution</span></a>
+            </nav>
+            <!-- DIVIDER -->
+            <div class="divider"></div>
+            <!-- RIGHT: Contact Info -->
+            <div class="menu-contact">
+               <div>
+                  <p data-key="fullscreenMenu.contactJohn">John Cain</p>
+                  <p data-key="fullscreenMenu.contactFounderTitle">Founder & Director | Cain Archive</p>
+                  <a href="mailto:john@cainarchive.com" class="menu-contacts" data-key="fullscreenMenu.contactEmail">john@cainarchive.com</a>
+                  <a href="tel:+15618840648" class="menu-contacts" data-key="fullscreenMenu.contactPhone">+1 561 884 0648</a>
+               </div>
+               <div>
+                  <p data-key="fullscreenMenu.contactDina">Dina Kriukova-Lichman</p>
+                  <p data-key="fullscreenMenu.contactCoordinatorTitle">Institutional & Archive Coordinator | Cain Archive</p>
+                  <a href="mailto:dina.kriukova@cainarchive.com" class="menu-contacts" data-key="fullscreenMenu.contactDinaEmail">dina.kriukova@cainarchive.com</a>
+               </div>
+               <div class="social-icons">
+                  <ul>
+                     <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
+                     <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
+                     <li><a href="#" aria-label="X-twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
+                     <li><a href="#" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a></li>
+                  </ul>
+               </div>
+            </div>
+         </div>
       </div>
-    </header>
-
-    <!-- FULLSCREEN MENU -->
-    <div class="fullscreen-menu" id="menu">
-      <div class="fullscreen-menu-content">
-        <!-- LEFT: Navigation Links -->
-        <nav>
-          <a href="index.html" style="--i:1" data-index="01"><span>Home</span></a>
-          <a href="propaganda-ww2.html" style="--i:2" data-index="02"><span>Propaganda</span></a>
-          <a href="Witness-ww2.html" style="--i:3" data-index="03"><span>The Witness and the Silence</span></a>
-          <a href="Occupation-ww2.html" style="--i:4" data-index="04"><span>From Occupation to Retribution</span></a>
-        </nav>
-        <!-- DIVIDER -->
-        <div class="divider"></div>
-        <!-- RIGHT: Contact Info -->
-        <div class="menu-contact">
-          <div>
-            <p>John Cain</p>
-            <p>Founder & Director | Cain Archive</p>
-            <a href="mailto:john@cainarchive.com" class="menu-contacts">john@cainarchive.com</a>
-            <a href="tel:+15618840648" class="menu-contacts">+1 561 884 0648</a>
-          </div>
-          <div>
-            <p>Dina Kriukova-Lichman</p>
-            <p>Institutional & Archive Coordinator | Cain Archive</p>
-            <a href="mailto:dina.kriukova@cainarchive.com" class="menu-contacts">dina.kriukova@cainarchive.com</a>
-          </div>
-          <div class="social-icons">
-            <ul>
-              <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
-              <li><a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a></li>
-              <li><a href="#" aria-label="X-twitter"><i class="fa-brands fa-x-twitter"></i></a></li>
-              <li><a href="#" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a></li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-
       <div id="smooth-wrapper">
       <div id="smooth-content">
-        
-
-<section class="hero-ww2" id="ashes">
-  <div id="ww2-hero-titile">
-    <h2 class="ww2-left" data-speed="1.15">From Ashes </h2>
-    <h2 class="ww2-right" data-speed="1.15">to Legacy</h2>
-    <p class="big-p">From ashes, humanity began again — not to forget, but to rebuild meaning. These photographs reveal how memory turned into legacy, and grief into purpose.</p>
-  </div>
-</section>
-
-
-
-<!-- GALLERY -->
-        <section class="gallery-words letter-section" id="gallery-words">
-          <p data-speed="1.1" class="ww2-p">Only part of this collection and its materials is shown. For full access, please contact Cain Archive.</p>
+         <section class="hero-ww2" id="ashes">
+            <div id="ww2-hero-titile">
+               <h2 class="ww2-left" data-speed="1.15" data-key="fromAshes">From Ashes </h2>
+               <h2 class="ww2-right" data-speed="1.15" data-key="toLegacy">to Legacy</h2>
+               <p class="big-p" data-key="fromAshesText">From ashes, humanity began again — not to forget, but to rebuild meaning. These photographs reveal how memory turned into legacy, and grief into purpose.</p>
+            </div>
+         </section>
+         <!-- GALLERY -->
+         <section class="gallery-words letter-section" id="gallery-words">
+            <p data-speed="1.1" class="ww2-p" data-key="wwii.collectionAccess">Only part of this collection and its materials is shown. For full access, please contact Cain Archive.</p>
             <nav class="gallery-nav" data-speed="1.1">
-              <a href="#visionary" class="nav-link-gallery">
-                <span class="navigational-links">
-                  <span>Lifelong Victims</span>
-                  <span class="v-border v-left"></span>
-                  <span class="v-border v-right"></span>
-                </span>
-              </a>
-              <a href="#presidency" class="nav-link-gallery">
-                <span class="navigational-links">
-                  <span>Rebirth of a Nation</span>
-                  <span class="v-border v-left"></span>
-                  <span class="v-border v-right"></span>
-                </span>
-              </a>
-
-          </nav>
-        </section>
-
-
-<!-- BREADCRUMB -->
-<nav class="breadcrumb" aria-label="breadcrumb">
-  <ul data-speed="1.1">
-    <li><a href="index.html">Home</a></li>
-    <li><a href="WW2.html">Holocaust & WWII</a></li>
-    <li>From Ashes to Legacy</li>
-  </ul>
-</nav>
-
-
-<!-- === CHAPTER 1  === -->
-<section class="gallery-section" id="visionary">
-    <div class="gallery-chapter">
-        <h3 class="gallery-chapter-title" data-speed="1.1">Lifelong Victims</h3>
-        <p class="gallery-chapter-text" data-speed="1.1">Captured by Paul Almasy, these images document the forgotten aftermath of liberation — survivors who carried the wounds of the Holocaust into the decades that followed. In villages of care and silence, they rebuilt fragments of purpose amid the ruins of memory.</p>
-    </div>
-
-    <div class="gallery-grid">
-        <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Victims/Photo 242_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Victims/Photo 242_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Ashes/Victims/Photo 243_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Victims/Photo3_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Victims/Photo3_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Ashes/Victims/Photo4_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Victims/Photo5_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Victims/Photo5_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Ashes/Victims/Photo6_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Victims/Photo7_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Victims/Photo7_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Ashes/Victims/Photo8_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Victims/Photo11_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Victims/Photo11_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Ashes/Victims/Photo12_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Victims/Photo19_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Victims/Photo19_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Ashes/Victims/Photo20_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Victims/Photo22_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Victims/Photo22_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Ashes/Victims/Photo23_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Victims/Photo24_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Victims/Photo24_result copy-min.webp"
-            alt="Gallery 1" 
-            data-back="/img/WW2/Ashes/Victims/Photo25_result copy-min.webp"/>
-        </div>
-    </div>
-</section>
-
-<!-- === CHAPTER 2 === -->
-<section class="gallery-section" id="presidency">  
-    <div class="gallery-chapter">
-        <h3 class="gallery-chapter-title" data-speed="1.1">Rebirth of a Nation - <br>Israel and the New Humanism</h3>
-        <p class="gallery-chapter-text" data-speed="1.1">From ruins and exile emerged not only a nation — but a new kind of human being. These photographs capture Israel’s birth as a moral and spiritual event, where art, faith, and science converged to give the world a new language of humanity.</p>
-    </div>
-    <div class="gallery-grid">
-        <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Israel/Photo 122_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Israel/Photo 122_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Ashes/Israel/Photo 123_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Israel/Photo 429_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Israel/Photo 429_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Ashes/Israel/Photo 430_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Israel/Photo30_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Israel/Photo30_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Ashes/Israel/Photo31_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Israel/Photo50_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Israel/Photo50_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Ashes/Israel/Photo51_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Israel/Photo54_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Israel/Photo54_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Ashes/Israel/Photo55_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Israel/Photo56_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Israel/Photo56_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Ashes/Israel/Photo57_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Israel/Photo58_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Israel/Photo58_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Ashes/Israel/Photo59_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Israel/Photo60_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Israel/Photo60_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Ashes/Israel/Photo61_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Israel/Photo69_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Israel/Photo69_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Ashes/Israel/Photo70_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Israel/Photo73_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Israel/Photo73_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Ashes/Israel/Photo74_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Israel/Photo77_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Israel/Photo77_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Ashes/Israel/Photo78_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Israel/Photo81_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Israel/Photo81_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Ashes/Israel/Photo82_result copy-min.webp"/>
-        </div>
-                <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Israel/Photo87_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Israel/Photo87_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Ashes/Israel/Photo88_result copy-min.webp"/>
-        </div>
-        <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Israel/Photo89_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Israel/Photo89_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Ashes/Israel/Photo91_result copy-min.webp"/>
-        </div>
-        <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Israel/Photo96_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Israel/Photo96_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Ashes/Israel/Photo97_result copy-min.webp"/>
-        </div>
-        <div class="img-wrapper"><img 
-            src="/img/WW2/Ashes/Israel/Photo100_result copy-min.webp" 
-            data-front="/img/WW2/Ashes/Israel/Photo100_result copy-min.webp"
-            alt="Gallery 1"
-            data-back="/img/WW2/Ashes/Israel/Photo101_result copy-min.webp"/>
-        </div>
-    </div>
-
-</section>
-
-
-        <!-- FOOTER -->
-        <footer class="footer">
-          <p class="footer-heading">History that shapes <span>Tomorrow</span></p>
-          <hr class="footer-divider" />
-          <div class="footer-wrapper">
-            <!-- Logo + tagline -->
-            <a href="index.html" class="logo">
-              <img src="logos/logo-white.webp" alt="Logo" class="round-logo" />
-              <img src="logos/logo-words.webp" alt="CAIN Archive Logo" class="words-logo" />
-            </a>
-            <!-- Contact Info -->
-            <div class="footer-contact">
-              <p>John Cain</p>
-              <p>Founder & Director | Cain Archive</p>
-              <a href="mailto:john@cainarchive.com">john@cainarchive.com</a>
-              <a href="tel:+15618840648">+1 561 884 0648</a>
+               <a href="#visionary" class="nav-link-gallery">
+               <span class="navigational-links">
+               <span data-key="lifelongVictims">Lifelong Victims</span>
+               <span class="v-border v-left"></span>
+               <span class="v-border v-right"></span>
+               </span>
+               </a>
+               <a href="#presidency" class="nav-link-gallery">
+               <span class="navigational-links">
+               <span data-key="rebirthOfANation">Rebirth of a Nation</span>
+               <span class="v-border v-left"></span>
+               <span class="v-border v-right"></span>
+               </span>
+               </a>
+            </nav>
+         </section>
+         <!-- BREADCRUMB -->
+         <nav class="breadcrumb" aria-label="breadcrumb">
+            <ul data-speed="1.1">
+               <li><a href="index.html" data-key="fullscreenMenu.home">Home</a></li>
+               <li><a href="WW2.html" data-key="wwii.title">Holocaust & WWII</a></li>
+               <li data-key="wwii.ashes">From Ashes to Legacy</li>
+            </ul>
+         </nav>
+         <!-- === CHAPTER 1  === -->
+         <section class="gallery-section" id="visionary">
+            <div class="gallery-chapter">
+               <h3 class="gallery-chapter-title" data-speed="1.1" data-key="lifelongVictims">Lifelong Victims</h3>
+               <p class="gallery-chapter-text" data-speed="1.1" data-key="rebirthText">Captured by Paul Almasy, these images document the forgotten aftermath of liberation — survivors who carried the wounds of the Holocaust into the decades that followed. In villages of care and silence, they rebuilt fragments of purpose amid the ruins of memory.</p>
             </div>
-            <div class="footer-contact">
-              <p>Dina Kriukova-Lichman</p>
-              <p>Institutional & Archive Coordinator | Cain Archive</p>
-              <a href="mailto:dina.kriukova@cainarchive.com">dina.kriukova@cainarchive.com</a>
+            <div class="gallery-grid">
+               <div class="img-wrapper"><img 
+                  src="/img/WW2/Ashes/Victims/Photo 242_result copy-min.webp" 
+                  data-front="/img/WW2/Ashes/Victims/Photo 242_result copy-min.webp"
+                  alt="Gallery 1" 
+                  data-back="/img/WW2/Ashes/Victims/Photo 243_result copy-min.webp"/>
+               </div>
+               <div class="img-wrapper"><img 
+                  src="/img/WW2/Ashes/Victims/Photo3_result copy-min.webp" 
+                  data-front="/img/WW2/Ashes/Victims/Photo3_result copy-min.webp"
+                  alt="Gallery 1" 
+                  data-back="/img/WW2/Ashes/Victims/Photo4_result copy-min.webp"/>
+               </div>
+               <div class="img-wrapper"><img 
+                  src="/img/WW2/Ashes/Victims/Photo5_result copy-min.webp" 
+                  data-front="/img/WW2/Ashes/Victims/Photo5_result copy-min.webp"
+                  alt="Gallery 1" 
+                  data-back="/img/WW2/Ashes/Victims/Photo6_result copy-min.webp"/>
+               </div>
+               <div class="img-wrapper"><img 
+                  src="/img/WW2/Ashes/Victims/Photo7_result copy-min.webp" 
+                  data-front="/img/WW2/Ashes/Victims/Photo7_result copy-min.webp"
+                  alt="Gallery 1" 
+                  data-back="/img/WW2/Ashes/Victims/Photo8_result copy-min.webp"/>
+               </div>
+               <div class="img-wrapper"><img 
+                  src="/img/WW2/Ashes/Victims/Photo11_result copy-min.webp" 
+                  data-front="/img/WW2/Ashes/Victims/Photo11_result copy-min.webp"
+                  alt="Gallery 1" 
+                  data-back="/img/WW2/Ashes/Victims/Photo12_result copy-min.webp"/>
+               </div>
+               <div class="img-wrapper"><img 
+                  src="/img/WW2/Ashes/Victims/Photo19_result copy-min.webp" 
+                  data-front="/img/WW2/Ashes/Victims/Photo19_result copy-min.webp"
+                  alt="Gallery 1" 
+                  data-back="/img/WW2/Ashes/Victims/Photo20_result copy-min.webp"/>
+               </div>
+               <div class="img-wrapper"><img 
+                  src="/img/WW2/Ashes/Victims/Photo22_result copy-min.webp" 
+                  data-front="/img/WW2/Ashes/Victims/Photo22_result copy-min.webp"
+                  alt="Gallery 1" 
+                  data-back="/img/WW2/Ashes/Victims/Photo23_result copy-min.webp"/>
+               </div>
+               <div class="img-wrapper"><img 
+                  src="/img/WW2/Ashes/Victims/Photo24_result copy-min.webp" 
+                  data-front="/img/WW2/Ashes/Victims/Photo24_result copy-min.webp"
+                  alt="Gallery 1" 
+                  data-back="/img/WW2/Ashes/Victims/Photo25_result copy-min.webp"/>
+               </div>
             </div>
-            <!-- Social Media -->
-            <div class="footer-social">
-              <a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a>
-              <a href="#" aria-label="Facebook"><i class="fa-brands fa-facebook"></i></a>
-              <a href="#" aria-label="X-twitter"><i class="fa-brands fa-x-twitter"></i></a>
-              <a href="#" aria-label="Youtube"><i class="fa-brands fa-youtube"></i></a>
-            </div>
-          </div>
-          <!-- Bottom copyright -->
-          <div class="footer-bottom">
-              <p>© 2025 Cain Archive. All rights reserved.</p>
-              <p class="footer-protected">Original vintage photographs are displayed for documentary, educational, and research purposes. Cain Archive holds physical ownership of the original prints but does not claim copyright to the underlying images. Unauthorized reproduction or commercial use is prohibited.</p>
-          </div>
-      </footer>
-
-  </div>
-</div>
-
-
-<!-- Modal for GALLERY-->
-
-<div class="modal" id="imageModal">
-  <div class="modal-close item-3" id="modalClose" tabindex="0" role="button" aria-label="Close modal"></div>
-
-  <div class="flip-container" id="modalFlipCard">
-    <div class="flip-inner">
-      <div class="flip-front">
-        <div class="modal-image-wrapper">
-          <div class="modal-image-inner">
-            <img class="modal-content" id="modalImgFront" alt="Front" />
-            <div class="modal-watermark">© Cain Archive</div>
-        </div>
+         </section>
+         <!-- === CHAPTER 2 === -->
+         <section class="gallery-section" id="presidency">
+            <div class="gallery-chapter">
+               <div >
+                  <h3 class="chapter-t" data-speed="1.1" data-key="rebirthOfANation" >
+                     Rebirth of a Nation - 
+                     <h3 class="subheading chapter-t gallery-chapter-title-war"  data-speed="1.1" data-key="israelNewHumanism">Israel and the New Humanism</h3>
+                  </h3>
+                  <p class="gallery-chapter-text" data-speed="1.1" data-key="israelNewHumanismText">
+                     From ruins and exile emerged not only a nation — but a new kind of human being. These photographs capture Israel’s birth as a moral and spiritual event, where art, faith, and science converged to give the world a new language of humanity.
+                  </p>
+               </div>
+               <div class="gallery-grid">
+                  <div class="img-wrapper"><img 
+                     src="/img/WW2/Ashes/Israel/Photo 122_result copy-min.webp" 
+                     data-front="/img/WW2/Ashes/Israel/Photo 122_result copy-min.webp"
+                     alt="Gallery 1"
+                     data-back="/img/WW2/Ashes/Israel/Photo 123_result copy-min.webp"/>
+                  </div>
+                  <div class="img-wrapper"><img 
+                     src="/img/WW2/Ashes/Israel/Photo 429_result copy-min.webp" 
+                     data-front="/img/WW2/Ashes/Israel/Photo 429_result copy-min.webp"
+                     alt="Gallery 1"
+                     data-back="/img/WW2/Ashes/Israel/Photo 430_result copy-min.webp"/>
+                  </div>
+                  <div class="img-wrapper"><img 
+                     src="/img/WW2/Ashes/Israel/Photo30_result copy-min.webp" 
+                     data-front="/img/WW2/Ashes/Israel/Photo30_result copy-min.webp"
+                     alt="Gallery 1"
+                     data-back="/img/WW2/Ashes/Israel/Photo31_result copy-min.webp"/>
+                  </div>
+                  <div class="img-wrapper"><img 
+                     src="/img/WW2/Ashes/Israel/Photo50_result copy-min.webp" 
+                     data-front="/img/WW2/Ashes/Israel/Photo50_result copy-min.webp"
+                     alt="Gallery 1"
+                     data-back="/img/WW2/Ashes/Israel/Photo51_result copy-min.webp"/>
+                  </div>
+                  <div class="img-wrapper"><img 
+                     src="/img/WW2/Ashes/Israel/Photo54_result copy-min.webp" 
+                     data-front="/img/WW2/Ashes/Israel/Photo54_result copy-min.webp"
+                     alt="Gallery 1"
+                     data-back="/img/WW2/Ashes/Israel/Photo55_result copy-min.webp"/>
+                  </div>
+                  <div class="img-wrapper"><img 
+                     src="/img/WW2/Ashes/Israel/Photo56_result copy-min.webp" 
+                     data-front="/img/WW2/Ashes/Israel/Photo56_result copy-min.webp"
+                     alt="Gallery 1"
+                     data-back="/img/WW2/Ashes/Israel/Photo57_result copy-min.webp"/>
+                  </div>
+                  <div class="img-wrapper"><img 
+                     src="/img/WW2/Ashes/Israel/Photo58_result copy-min.webp" 
+                     data-front="/img/WW2/Ashes/Israel/Photo58_result copy-min.webp"
+                     alt="Gallery 1"
+                     data-back="/img/WW2/Ashes/Israel/Photo59_result copy-min.webp"/>
+                  </div>
+                  <div class="img-wrapper"><img 
+                     src="/img/WW2/Ashes/Israel/Photo60_result copy-min.webp" 
+                     data-front="/img/WW2/Ashes/Israel/Photo60_result copy-min.webp"
+                     alt="Gallery 1"
+                     data-back="/img/WW2/Ashes/Israel/Photo61_result copy-min.webp"/>
+                  </div>
+                  <div class="img-wrapper"><img 
+                     src="/img/WW2/Ashes/Israel/Photo69_result copy-min.webp" 
+                     data-front="/img/WW2/Ashes/Israel/Photo69_result copy-min.webp"
+                     alt="Gallery 1"
+                     data-back="/img/WW2/Ashes/Israel/Photo70_result copy-min.webp"/>
+                  </div>
+                  <div class="img-wrapper"><img 
+                     src="/img/WW2/Ashes/Israel/Photo73_result copy-min.webp" 
+                     data-front="/img/WW2/Ashes/Israel/Photo73_result copy-min.webp"
+                     alt="Gallery 1"
+                     data-back="/img/WW2/Ashes/Israel/Photo74_result copy-min.webp"/>
+                  </div>
+                  <div class="img-wrapper"><img 
+                     src="/img/WW2/Ashes/Israel/Photo77_result copy-min.webp" 
+                     data-front="/img/WW2/Ashes/Israel/Photo77_result copy-min.webp"
+                     alt="Gallery 1"
+                     data-back="/img/WW2/Ashes/Israel/Photo78_result copy-min.webp"/>
+                  </div>
+                  <div class="img-wrapper"><img 
+                     src="/img/WW2/Ashes/Israel/Photo81_result copy-min.webp" 
+                     data-front="/img/WW2/Ashes/Israel/Photo81_result copy-min.webp"
+                     alt="Gallery 1"
+                     data-back="/img/WW2/Ashes/Israel/Photo82_result copy-min.webp"/>
+                  </div>
+                  <div class="img-wrapper"><img 
+                     src="/img/WW2/Ashes/Israel/Photo87_result copy-min.webp" 
+                     data-front="/img/WW2/Ashes/Israel/Photo87_result copy-min.webp"
+                     alt="Gallery 1"
+                     data-back="/img/WW2/Ashes/Israel/Photo88_result copy-min.webp"/>
+                  </div>
+                  <div class="img-wrapper"><img 
+                     src="/img/WW2/Ashes/Israel/Photo89_result copy-min.webp" 
+                     data-front="/img/WW2/Ashes/Israel/Photo89_result copy-min.webp"
+                     alt="Gallery 1"
+                     data-back="/img/WW2/Ashes/Israel/Photo91_result copy-min.webp"/>
+                  </div>
+                  <div class="img-wrapper"><img 
+                     src="/img/WW2/Ashes/Israel/Photo96_result copy-min.webp" 
+                     data-front="/img/WW2/Ashes/Israel/Photo96_result copy-min.webp"
+                     alt="Gallery 1"
+                     data-back="/img/WW2/Ashes/Israel/Photo97_result copy-min.webp"/>
+                  </div>
+                  <div class="img-wrapper"><img 
+                     src="/img/WW2/Ashes/Israel/Photo100_result copy-min.webp" 
+                     data-front="/img/WW2/Ashes/Israel/Photo100_result copy-min.webp"
+                     alt="Gallery 1"
+                     data-back="/img/WW2/Ashes/Israel/Photo101_result copy-min.webp"/>
+                  </div>
+               </div>
+         </section>
+         <!-- FOOTER -->
+         <footer class="footer">
+         <p class="footer-heading" data-key="footer.slogan">History that shapes <span>Tomorrow</span></p>
+         <hr class="footer-divider" />
+         <div class="footer-wrapper">
+         <!-- Logo + tagline -->
+         <a href="index.html" class="logo">
+         <img src="logos/logo-white.webp" alt="Logo" class="round-logo" />
+         <img src="logos/logo-words.webp" alt="CAIN Archive Logo" class="words-logo" />
+         </a>
+         <!-- Contact Info -->
+         <div class="footer-contact">
+         <p >John Cain</p>
+         <p data-key="footer.founderTitle">Founder & Director | Cain Archive</p>
+         <a href="mailto:john@cainarchive.com" data-key="footer.founderEmail">john@cainarchive.com</a>
+         <a href="tel:+15618840648" data-key="footer.founderPhone">+1 561 884 0648</a>
+         </div>
+         <div class="footer-contact">
+         <p >Dina Kriukova-Lichman</p>
+         <p data-key="footer.coordinatorTitle">Institutional & Archive Coordinator | Cain Archive</p>
+         <a href="mailto:dina.kriukova@cainarchive.com" data-key="footer.coordinatorEmail">dina.kriukova@cainarchive.com</a>
+         </div>
+         <!-- Social Media -->
+         <div class="footer-social">
+         <a href="#" aria-label="Instagram" data-key="footer.socialInstagram"><i class="fa-brands fa-instagram"></i></a>
+         <a href="#" aria-label="Facebook" data-key="footer.socialFacebook"><i class="fa-brands fa-facebook"></i></a>
+         <a href="#" aria-label="X-twitter" data-key="footer.socialTwitter"><i class="fa-brands fa-x-twitter"></i></a>
+         <a href="#" aria-label="Youtube" data-key="footer.socialYoutube"><i class="fa-brands fa-youtube"></i></a>
+         </div>
+         </div>
+         <!-- Bottom copyright -->
+         <div class="footer-bottom">
+         <p data-key="footer.copyright">© 2025 Cain Archive. All rights reserved.</p>
+         <p class="footer-protected" data-key="footer.protectedText">Original vintage photographs are displayed for documentary, educational, and research purposes. Cain Archive holds physical ownership of the original prints but does not claim copyright to the underlying images. Unauthorized reproduction or commercial use is prohibited.</p>
+         </div>
+         </footer>
+         </div>
       </div>
-    </div>
-
-    <div class="flip-back">
-      <div class="modal-image-wrapper">
-        <div class="modal-image-inner">
-          <img class="modal-content" id="modalImgBack" alt="Back" />
-          <div class="modal-watermark">© Cain Archive</div>
-        </div>
+      <!-- Modal for GALLERY-->
+      <div class="modal" id="imageModal">
+         <div class="modal-close item-3" id="modalClose" tabindex="0" role="button" aria-label="Close modal"></div>
+         <div class="flip-container" id="modalFlipCard">
+            <div class="flip-inner">
+               <div class="flip-front">
+                  <div class="modal-image-wrapper">
+                     <div class="modal-image-inner">
+                        <img class="modal-content" id="modalImgFront" alt="Front" />
+                        <div class="modal-watermark">© Cain Archive</div>
+                     </div>
+                  </div>
+               </div>
+               <div class="flip-back">
+                  <div class="modal-image-wrapper">
+                     <div class="modal-image-inner">
+                        <img class="modal-content" id="modalImgBack" alt="Back" />
+                        <div class="modal-watermark">© Cain Archive</div>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="flip-hint" id="flipHint">Click to flip</div>
+         </div>
+         <button id="prevBtn" class="modal-btn" aria-label="Previous">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+               <polyline points="15 18 9 12 15 6"></polyline>
+            </svg>
+         </button>
+         <button id="nextBtn" class="modal-btn" aria-label="Next">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+               <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+         </button>
+         <div class="swipe-indicator">
+            <span class="swipe-arrow left">&#8592;</span>
+            <span class="swipe-text">Swipe</span>
+            <span class="swipe-arrow right">&#8594;</span>
+         </div>
       </div>
-    </div>
-  </div>
-  <div class="flip-hint" id="flipHint">Click to flip</div>
-</div>
-
-    <button id="prevBtn" class="modal-btn" aria-label="Previous">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="15 18 9 12 15 6"></polyline>
-      </svg>
-    </button>
-    <button id="nextBtn" class="modal-btn" aria-label="Next">
-      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-        <polyline points="9 18 15 12 9 6"></polyline>
-      </svg>
-  </button>
-
-      <div class="swipe-indicator">
-        <span class="swipe-arrow left">&#8592;</span>
-        <span class="swipe-text">Swipe</span>
-        <span class="swipe-arrow right">&#8594;</span>
-    </div>
-</div>
-
-
-
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
@@ -410,6 +383,6 @@
       <script src="js/smooth.js"></script>
       <script src="js/main.js"></script>
       <script src="js/ww2.js"></script>
-
+      <script src="js/lang_ww2.js"></script>
    </body>
 </html>
