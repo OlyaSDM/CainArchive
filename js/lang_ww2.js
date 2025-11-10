@@ -46,6 +46,16 @@ const translations = {
 "echoesOfHatred": "Echoes of Hatred",
 "damascus1962": "Damascus 1962",
 "nurembergDamascusText": "From Nuremberg to Damascus, the rhetoric of justice became a mirror for hate. These images from 1962 remind us that memory fades faster than fear — and that silence, once again, became the world’s accomplice.",
+    // Propaganda
+    "propagandaAnd": "Propaganda and",
+    "fallOfDarkness": "the Fall of Darkness",
+    "warArcText": "The arc of a world at war — from illusion to awakening. A testament to how humanity was deceived, endured, and learned to begin again.",
+    "alliedSands": "Allied Sands",
+    "TfallOfDarkness": "The Fall of Darkness",
+    "warBeganText": "Before the first shot was fired, the war began with persuasion — shaping fear, obedience, and illusion. Truth was twisted, identity erased, and vision trained to see only what power allowed.",
+"northAfricaText": "Across the deserts of North Africa, nations found unity in purpose and endurance. What began as a campaign became a brotherhood — proof that even in war, humanity can rise above conquest.",
+"collapseOfPowerText": "The collapse of power came with both liberation and loss. The world awoke to ruins and silence — a freedom that carried the weight of memory. Much was still to be rebuilt: cities, justice, faith itself.",
+
   },
   ar: {
     "nav.home": "الصفحة الرئيسية",
@@ -94,6 +104,16 @@ const translations = {
 "echoesOfHatred": "أصداء الكراهية",
 "damascus1962": "دمشق 1962",
     "nurembergDamascusText": "من نورمبرغ إلى دمشق، أصبحت خطابات العدالة مرآة للكراهية. تذكرنا هذه الصور من عام 1962 أن الذاكرة تتلاشى أسرع من الخوف — وأن الصمت، مرة أخرى، أصبح متواطئًا للعالم.",
+    // Propaganda 
+    "propagandaAnd": "الدعاية و",
+    "fallOfDarkness": "سقوط الظلام",
+    "warArcText": "قوس عالم في حالة حرب — من الوهم إلى اليقظة. شهادة على كيف تم خداع الإنسانية، وصمدت، وتعلمت أن تبدأ من جديد.",
+    "alliedSands": "رمال الحلفاء",
+    "TfallOfDarkness": "سقوط الظلام",
+    "warBeganText": "قبل أن يتم إطلاق الرصاصة الأولى، بدأ الحرب بالإقناع — تشكيل الخوف والطاعة والوهم. تم تشويه الحقيقة، وتم محو الهوية، وتم تدريب الرؤية لرؤية فقط ما سمحت به السلطة.",
+"northAfricaText": "عبر صحاري شمال أفريقيا، وجدت الأمم الوحدة في الهدف والصمود. ما بدأ كحملة أصبح أخوة — دليل على أنه حتى في الحرب، يمكن للإنسانية أن تتجاوز الفتح.",
+"collapseOfPowerText": "جاء انهيار السلطة مع التحرير والخسارة. استيقظ العالم على الخراب والصمت — حرية تحمل عبء الذاكرة. كان هناك الكثير ليُعاد بناءه: المدن، والعدالة، والإيمان نفسه.",
+
   },
   ja: {
       "nav.home": "ホーム",
@@ -142,6 +162,16 @@ const translations = {
      "echoesOfHatred": "憎悪の残響",
      "damascus1962": "ダマスカス 1962",
      "nurembergDamascusText": "ニュルンベルクからダマスカスへ、正義の言説は憎しみの鏡となった。1962年のこれらの画像は、記憶が恐怖よりも速く薄れていくこと、そして沈黙が再び世界の共犯者となったことを私たちに思い出させます。",
+     // Propaganda 
+     "propagandaAnd": "プロパガンダと",
+     "fallOfDarkness": "闇の崩壊",
+     "warArcText": "戦争の世界の弧 — 幻想から覚醒へ。人類がどのように欺かれ、耐え、そして再び始めることを学んだかの証です。",
+     "alliedSands": "連合軍の砂",
+     "TfallOfDarkness": "闇の崩壊",
+     "warBeganText": "最初の銃声が響く前に、戦争は説得から始まりました — 恐怖、服従、そして幻想を形作ることから。真実は歪められ、アイデンティティは消され、視覚は力が許すものだけを見るように訓練されました。",
+"northAfricaText": "北アフリカの砂漠を越えて、国々は目的と忍耐において団結を見出しました。キャンペーンとして始まったものが兄弟愛となり — 戦争の中でも人間性が征服を超えることができる証です。",
+"collapseOfPowerText": "権力の崩壊は解放と喪失の両方を伴いました。世界は廃墟と沈黙に目覚めました — 記憶の重みを伴う自由。再建すべきものは多くありました：都市、正義、そして信仰そのもの。",
+
   },
 
    es: {
@@ -191,6 +221,16 @@ const translations = {
 "echoesOfHatred": "Ecos del Odio",
 "damascus1962": "Damasco 1962",
     "nurembergDamascusText": "Desde Nuremberg hasta Damasco, la retórica de la justicia se convirtió en un espejo del odio. Estas imágenes de 1962 nos recuerdan que la memoria se desvanece más rápido que el miedo — y que el silencio, una vez más, se convirtió en cómplice del mundo.",
+    // Propaganda 
+    "propagandaAnd": "Propaganda y",
+    "fallOfDarkness": "la Caída de la Oscuridad",
+    "warArcText": "El arco de un mundo en guerra — de la ilusión al despertar. Un testamento de cómo la humanidad fue engañada, soportó y aprendió a comenzar de nuevo.",
+    "alliedSands": "Arenas Aliadas",
+    "TfallOfDarkness": "La caída de la oscuridad",
+    "warBeganText": "Antes de que se disparara el primer tiro, la guerra comenzó con persuasión — moldeando el miedo, la obediencia y la ilusión. La verdad fue distorsionada, la identidad borrada, y la visión entrenada para ver solo lo que el poder permitía.",
+"northAfricaText": "A través de los desiertos del norte de África, las naciones encontraron unidad en el propósito y la resistencia. Lo que comenzó como una campaña se convirtió en una hermandad — una prueba de que incluso en la guerra, la humanidad puede superar la conquista.",
+"collapseOfPowerText": "El colapso del poder vino acompañado tanto de liberación como de pérdida. El mundo despertó entre ruinas y silencio — una libertad que llevaba el peso de la memoria. Mucho aún debía ser reconstruido: ciudades, justicia, la fe misma.",
+
    },
 
    zh: {
@@ -240,6 +280,15 @@ const translations = {
     "echoesOfHatred": "仇恨的回响",
     "damascus1962": "大马士革 1962",
     "nurembergDamascusText": "从纽伦堡到大马士革，正义的言辞成为了仇恨的镜子。1962年的这些图片提醒我们，记忆比恐惧消逝得更快——而沉默，再一次，成为了世界的同谋。",
+// Propaganda 
+"propagandaAnd": "宣传与",
+"fallOfDarkness": "黑暗的陨落",
+"warArcText": "战争世界的弧线 — 从幻觉到觉醒。见证人类如何被欺骗、坚持，并学会重新开始。",
+"alliedSands": "盟军之沙",
+"TfallOfDarkness": "黑暗的陨落",
+"warBeganText": "在第一枪响起之前，战争以说服开始 — 塑造恐惧、服从和幻觉。真相被扭曲，身份被抹去，视野被训练只看见权力允许的事物。",
+"northAfricaText": "穿越北非的沙漠，各国在目标和坚持中找到了团结。最初作为一场战役开始的，最终成为了兄弟情谊 — 证明了即使在战争中，人类也能超越征服。",
+"collapseOfPowerText": "权力的崩溃伴随着解放和失落。世界在废墟与沉默中觉醒 — 一种承载记忆重负的自由。仍有许多需要重建的：城市、正义，乃至信仰本身。",
    },
 };
 
