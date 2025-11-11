@@ -377,7 +377,7 @@ body {
 .navigational-links:hover .v-left,
 .navigational-links:hover .v-right { height: 100%; }
 
-/* Modal styles */
+Modal styles
 .modal {
   display: none;
   position: fixed;
