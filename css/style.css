@@ -2447,20 +2447,23 @@ font-size: 16px;
 .pdf-modal-content {
   position: relative;
   width: 100%;
-  height: 100%;
-  max-width: 1200px;
-  max-height: 100%;
+  max-width: none; /* убираем ограничение */
+  height: auto;
+  max-height: 90vh;
   background: transparent;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  padding: 0; /* убираем внутренние отступы */
+  overflow: hidden;
 }
 
 .pdf-viewer {
-  width: 100%;
-  height: 100%;
+  width: 100vw; /* на всю ширину экрана */
+  height: 90vh; /* адаптируем по высоте */
   border: none;
+  display: block;
 }
 
 .modal-close.item-3 {
@@ -2530,16 +2533,15 @@ font-size: 16px;
 
 @media (max-width: 768px) {
   .pdf-modal-content {
-    max-width: 100%;
-    max-height: 100%;
-padding: max(20px, env(safe-area-inset-top)) max(20px, env(safe-area-inset-right))
-             max(20px, env(safe-area-inset-bottom)) max(20px, env(safe-area-inset-left));
-  }  }
+    max-width: 100vw;
+    height: auto;
+    max-height: 85vh;
+    padding: 0;
+  }
 
   .pdf-viewer {
-    width: 100%;
-    height: 90vh;
-    align-items: center;
+    width: 100vw;
+    height: 85vh;
   }
 
   .modal-close.item-3 {
