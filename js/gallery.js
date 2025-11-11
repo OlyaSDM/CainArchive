@@ -102,3 +102,83 @@
 //     ScrollTrigger.refresh(); // Пересчёт размеров ScrollTrigger
 //   });
 // }
+
+
+
+gsap.registerPlugin(ScrollTrigger);
+
+window.addEventListener("load", () => {
+  initMosaicAnimation();
+});
+
+function initMosaicAnimation() {
+  const leftCol = document.querySelector(".column.left");
+  const middleCol = document.querySelector(".column.middle");
+  const rightCol = document.querySelector(".column.right");
+
+  if (!leftCol || !middleCol || !rightCol) return;
+
+  const images = [
+    "/img/gallery/1.webp","/img/gallery/2.webp","/img/gallery/3.webp",
+    "/img/gallery/4.webp","/img/gallery/5.webp","/img/gallery/6.webp",
+    "/img/gallery/7.webp","/img/gallery/8.webp","/img/gallery/9.webp",
+    "/img/gallery/10.webp","/img/gallery/11.webp","/img/gallery/12.webp",
+    "/img/gallery/13.webp","/img/gallery/14.webp","/img/gallery/15.webp",
+    "/img/gallery/16.webp","/img/gallery/17.webp","/img/gallery/18.webp",
+    "/img/gallery/19.webp","/img/gallery/20.webp","/img/gallery/21.webp",
+    "/img/gallery/22.webp","/img/gallery/23.webp","/img/gallery/24.webp",
+    "/img/gallery/25.webp","/img/gallery/26.webp","/img/gallery/27.webp",
+    "/img/gallery/28.webp","/img/gallery/29.webp","/img/gallery/30.webp"
+  ];
+
+  const cols = [
+    { el: leftCol, imgs: images.filter((_, i) => i % 3 === 0), dir: "normal" },
+    { el: middleCol, imgs: images.filter((_, i) => i % 3 === 1), dir: "reverse" },
+    { el: rightCol, imgs: images.filter((_, i) => i % 3 === 2), dir: "normal" },
+  ];
+
+  // Добавляем изображения в колонки
+  cols.forEach(c => {
+    const totalImages = [...c.imgs, ...c.imgs]; // дублируем для бесконечной прокрутки
+    totalImages.forEach((src, idx) => {
+      const wrapper = document.createElement("div");
+      wrapper.className = "image-wrapper";
+
+      const img = document.createElement("img");
+      img.src = src;
+      img.alt = "photo";
+      img.loading = idx < 2 ? "eager" : "lazy";
+      if(idx < 2) img.setAttribute("fetchpriority", "high");
+
+      wrapper.appendChild(img);
+
+      const watermark = document.createElement("div");
+      watermark.className = "watermark";
+      watermark.textContent = "© CainArchive";
+      wrapper.appendChild(watermark);
+
+      c.el.appendChild(wrapper);
+    });
+
+    // Устанавливаем начальное направление анимации
+    c.el.style.animationDirection = c.dir;
+  });
+
+  // ScrollTrigger для смены направления при скролле (если нужно)
+  ScrollTrigger.create({
+    trigger: ".mosaic-section",
+    start: "top top",
+    end: "bottom bottom",
+    onUpdate: self => {
+      const dirFactor = self.direction === 1 ? 1 : -1;
+      cols.forEach(c => {
+        // левая и правая: normal/reverse, средняя — противоположно
+        if(c.el.classList.contains("middle")) {
+          c.el.style.animationDirection = dirFactor === 1 ? "reverse" : "normal";
+        } else {
+          c.el.style.animationDirection = dirFactor === 1 ? "normal" : "reverse";
+        }
+      });
+    }
+  });
+}
