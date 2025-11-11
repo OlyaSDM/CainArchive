@@ -1367,90 +1367,7 @@ top: -7%;
 
 /* GALLERY SECTION  */
 
-.mosaic-section {
-  display: flex;
-  flex-direction: column;
-  height: 100vh;
-  overflow: hidden;
-  position: relative;
-  padding: 0 20px;
-}
-
-.mosaic {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 30px;
-  margin: 0 auto;
-  max-width: 1600px;
-  height: 100%;
-}
-
-.column {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  will-change: transform;
-}
-
-@keyframes scrollUp {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-20%); } /* небольшой сдвиг, чтобы движение было заметным */
-}
-
-.column.left { animation-duration: 70s; }
-.column.middle { animation-duration: 50s; }
-.column.right { animation-duration: 60s; }
-
-
-.column img {
-  width: 100%;
-  display: block;
-  object-fit: cover;
-  margin: 20px 0;
-}
-
-.image-wrapper {
-  position: relative;
-  width: 100%;
-}
-
-.watermark {
-  position: absolute;
-  bottom: 10px;
-  left: 10px;
-  font-size: 18px;
-  color: rgba(229, 240, 241, 0.5);
-  pointer-events: none;
-  user-select: none;
-}
-
-/* Анимация бесконечного скролла вверх */
-@keyframes scrollUp {
-  0% { transform: translateY(0); }
-  100% { transform: translateY(-50%); }
-}
-
-/* Media Queries */
-@media (max-width: 900px) {
-  .mosaic {
-    grid-template-columns: 1fr;
-    gap: 20px;
-  }
-  .mosaic-section { height: 70vh; }
-}
-@media (max-width: 600px) {
-  .mosaic-section { height: 50vh; }
-}
-
-
-
-
-
-
-
-
-
-/* .mosaic-section {
+ .mosaic-section {
   display: flex;
   flex-direction: column;
   height: 100vh;
@@ -1581,7 +1498,7 @@ max-width: 550px;
   .mosaic-section {
     height: 50vh; 
   }
-} */
+} 
 
 .image-wrapper {
   position: relative;
