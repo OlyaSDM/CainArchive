@@ -4,13 +4,17 @@
       <meta charset="UTF-8" />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title>Cain Archive</title>
-            <!-- Favicon -->
+      <!-- Favicon -->
       <link rel="icon" type="image/png" sizes="16x16" href="/logos/logo-white.webp" />
-      <link rel="stylesheet" href="css/style.css" />
+      <link rel="preload" href="css/style.css" as="style" onload="this.onload=null;this.rel='stylesheet'" />
       <link rel="stylesheet" href="css/collections.css">
       <link type="image/png" sizes="16x16" rel="icon" href="#" />
       <!-- FONTS -->
-      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+      <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+      <link rel="preload" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+      <noscript>
+         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap">
+      </noscript>
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
       <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
@@ -70,17 +74,17 @@
             <div class="divider"></div>
             <!-- RIGHT: Contact Info -->
             <div class="menu-contact">
-                     <div>
-        <p data-key="fullscreenMenu.contactJohn">John Cain</p>
-        <p data-key="fullscreenMenu.contactFounderTitle">Founder & Director | Cain Archive</p>
-        <a href="mailto:john@cainarchive.com" class="menu-contacts" data-key="fullscreenMenu.contactEmail">john@cainarchive.com</a>
-        <a href="tel:+15618840648" class="menu-contacts" data-key="fullscreenMenu.contactPhone">+1 561 884 0648</a>
-      </div>
-      <div>
-        <p data-key="fullscreenMenu.contactDina">Dina Kriukova-Lichman</p>
-        <p data-key="fullscreenMenu.contactCoordinatorTitle">Institutional & Archive Coordinator | Cain Archive</p>
-        <a href="mailto:dina.kriukova@cainarchive.com" class="menu-contacts" data-key="fullscreenMenu.contactDinaEmail">dina.kriukova@cainarchive.com</a>
-      </div>
+               <div>
+                  <p data-key="fullscreenMenu.contactJohn">John Cain</p>
+                  <p data-key="fullscreenMenu.contactFounderTitle">Founder & Director | Cain Archive</p>
+                  <a href="mailto:john@cainarchive.com" class="menu-contacts" data-key="fullscreenMenu.contactEmail">john@cainarchive.com</a>
+                  <a href="tel:+15618840648" class="menu-contacts" data-key="fullscreenMenu.contactPhone">+1 561 884 0648</a>
+               </div>
+               <div>
+                  <p data-key="fullscreenMenu.contactDina">Dina Kriukova-Lichman</p>
+                  <p data-key="fullscreenMenu.contactCoordinatorTitle">Institutional & Archive Coordinator | Cain Archive</p>
+                  <a href="mailto:dina.kriukova@cainarchive.com" class="menu-contacts" data-key="fullscreenMenu.contactDinaEmail">dina.kriukova@cainarchive.com</a>
+               </div>
                <div class="social-icons">
                   <ul>
                      <li><a href="#" aria-label="Instagram"><i class="fa-brands fa-instagram"></i></a></li>
@@ -104,53 +108,49 @@
       <!-- GALLERY -->
       <section class="gallery-words letter-section" id="gallery-words">
          <p data-speed="1.1" class="ww2-p" data-key="wwii.collectionAccess">Only part of this collection and its materials is shown. For full access, please contact Cain Archive.</p>
-
-   <!-- PRESS SECTION -->
-
-      <div id="press">
-         <img class="rec6-img" src="img/Rec6.png" alt="">
-         <div class="press-grid">
-            <div>
-               <div class="press-item" data-pdf="img/WW2/Witness/articles/Photo 912 copy 2.pdf.pdf">
-                  <a href="#" class="press-item-img">
-                    <img src="img/WW2/Witness/articles/Photo 912 copy 2.pdf.png" loading="lazy" alt="Press 1">
-                  </a>
-                  <p class="press-item-text" data-key="sections.pressArticle">Article</p>
-                  <h5 class="description-press" data-key="pressTitle" >Syria Hangs Israeli 'Spies'</h5>
-              </div>
+         <!-- PRESS SECTION -->
+         <div id="press">
+            <img class="rec6-img" src="img/Rec6.png" alt="">
+            <div class="press-grid">
+               <div>
+                  <div class="press-item" data-pdf="img/WW2/Witness/articles/Photo 912 copy 2.pdf.pdf">
+                     <a href="#" class="press-item-img">
+                     <img src="img/WW2/Witness/articles/Photo 912 copy 2.pdf.png" loading="lazy" alt="Press 1">
+                     </a>
+                     <p class="press-item-text" data-key="sections.pressArticle">Article</p>
+                     <h5 class="description-press" data-key="pressTitle" >Syria Hangs Israeli 'Spies'</h5>
+                  </div>
+               </div>
+               <div>
+                  <div class="press-item" data-pdf="img/WW2/Witness/articles/Photo 915 copy 2.pdf.pdf">
+                     <a href="#" class="press-item-img">
+                     <img src="/img/WW2/Witness/articles/Photo 915 copy 2.pdf.png" loading="lazy" alt="Press 2">
+                     </a>
+                     <p class="press-item-text" data-key="sections.pressArticle">Article</p>
+                     <h5 class="description-press" data-key="pressBelsen">Lest We Forget...: Belsen</h5>
+                  </div>
+               </div>
+               <div>
+                  <div class="press-item" data-pdf="/img/WW2/Witness/articles/Photo 919 copy 2.pdf.pdf">
+                     <a href="#" class="press-item-img">
+                     <img src="/img/WW2/Witness/articles/Photo 919 copy 2.pdf.png" loading="lazy" alt="Press 3">
+                     </a>
+                     <p class="press-item-text" data-key="sections.pressArticle">Article</p>
+                     <h5 class="description-press" data-key="pressRoyko">Press Conference Disclosing War Criminal Stephen Royko</h5>
+                  </div>
+               </div>
+               <div>
+                  <div class="press-item" data-pdf="/img/WW2/Witness/articles/Photo 921 copy 2.pdf.pdf">
+                     <a href="#" class="press-item-img">
+                     <img src="/img/WW2/Witness/articles/Photo 921 copy 2.pdf.png" loading="lazy" alt="Press 3">
+                     </a>
+                     <p class="press-item-text" data-key="sections.pressArticle">Article</p>
+                     <h5 class="description-press" data-key="pressLidice">20th Anniversary of the destruction of Lidice</h5>
+                  </div>
+               </div>
+               <img class="rec7-img" src="img/Rec7.png" alt="">
             </div>
-            <div>
-              <div class="press-item" data-pdf="img/WW2/Witness/articles/Photo 915 copy 2.pdf.pdf">
-                  <a href="#" class="press-item-img">
-                    <img src="/img/WW2/Witness/articles/Photo 915 copy 2.pdf.png" loading="lazy" alt="Press 2">
-                  </a>
-                  <p class="press-item-text" data-key="sections.pressArticle">Article</p>
-                  <h5 class="description-press" data-key="pressBelsen">Lest We Forget...: Belsen</h5>
-              </div>
-            </div>
-            <div>
-              <div class="press-item" data-pdf="/img/WW2/Witness/articles/Photo 919 copy 2.pdf.pdf">
-                  <a href="#" class="press-item-img">
-                    <img src="/img/WW2/Witness/articles/Photo 919 copy 2.pdf.png" loading="lazy" alt="Press 3">
-                  </a>
-                  <p class="press-item-text" data-key="sections.pressArticle">Article</p>
-                  <h5 class="description-press" data-key="pressRoyko">Press Conference Disclosing War Criminal Stephen Royko</h5>
-              </div>
-            </div>
-            <div>
-              <div class="press-item" data-pdf="/img/WW2/Witness/articles/Photo 921 copy 2.pdf.pdf">
-                  <a href="#" class="press-item-img">
-                    <img src="/img/WW2/Witness/articles/Photo 921 copy 2.pdf.png" loading="lazy" alt="Press 3">
-                  </a>
-                  <p class="press-item-text" data-key="sections.pressArticle">Article</p>
-                  <h5 class="description-press" data-key="pressLidice">20th Anniversary of the destruction of Lidice</h5>
-              </div>
-            </div>
-            <img class="rec7-img" src="img/Rec7.png" alt="">
-        </div>
-      </div>
-
-
+         </div>
          <nav class="gallery-nav gallery-nav-witness" data-speed="1.1">
             <a href="#visionary" class="nav-link-gallery">
             <span class="navigational-links">
@@ -508,13 +508,13 @@
       </div>
       <!-- MODAL FOR PDF -->
       <div id="pdf-modal">
-      <div class="pdf-modal-content">
-         <button class="modal-close item-3" aria-label="Close PDF"></button>
-         <iframe class="pdf-viewer" src="" frameborder="0"></iframe>
-         <div id="pdf-popup-msg" class="pdf-popup-msg">
-            If you want to read the full article, please contact Cain Archive.
+         <div class="pdf-modal-content">
+            <button class="modal-close item-3" aria-label="Close PDF"></button>
+            <iframe class="pdf-viewer" src="" frameborder="0"></iframe>
+            <div id="pdf-popup-msg" class="pdf-popup-msg">
+               If you want to read the full article, please contact Cain Archive.
+            </div>
          </div>
-      </div>
       </div>
       <!-- Modal for GALLERY-->
       <div class="modal" id="imageModal">
@@ -568,5 +568,6 @@
       <script src="js/ww2.js"></script>
       <script src="js/lang_ww2.js"></script>
       <script src="js/press.js"></script>
+      <script src="js/block_copy.js"></script>
    </body>
 </html>
