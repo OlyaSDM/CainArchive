@@ -1386,17 +1386,22 @@ top: -7%;
 }
 
 .column {
-  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: scrollUp 80s linear infinite; /* медленная анимация */
   will-change: transform;
-  animation: scrollUp 60s linear infinite;
 }
 
 @keyframes scrollUp {
   0% { transform: translateY(0); }
-  100% { transform: translateY(-50%); }
+  100% { transform: translateY(-50%); } /* двигаем на половину контента */
+}
+
+@media (max-width: 900px) {
+  .column {
+    animation: scrollUp 100s linear infinite; /* чуть медленнее на мобильных */
+  }
 }
 
 

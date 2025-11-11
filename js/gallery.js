@@ -164,21 +164,24 @@ function initMosaicAnimation() {
     c.el.style.animationDirection = c.dir;
   });
 
-  // ScrollTrigger для смены направления при скролле (если нужно)
-  ScrollTrigger.create({
-    trigger: ".mosaic-section",
-    start: "top top",
-    end: "bottom bottom",
-    onUpdate: self => {
-      const dirFactor = self.direction === 1 ? 1 : -1;
-      cols.forEach(c => {
-        // левая и правая: normal/reverse, средняя — противоположно
-        if(c.el.classList.contains("middle")) {
-          c.el.style.animationDirection = dirFactor === 1 ? "reverse" : "normal";
-        } else {
-          c.el.style.animationDirection = dirFactor === 1 ? "normal" : "reverse";
-        }
-      });
+ScrollTrigger.create({
+  trigger: ".mosaic-section",
+  start: "top top",
+  end: "bottom bottom",
+  onUpdate: self => {
+    if(window.innerWidth <= 900){
+      // на мобильных просто двигаем вверх
+      leftCol.style.animationDirection = "normal";
+      rightCol.style.animationDirection = "normal";
+      middleCol.style.animationDirection = "reverse";
+      return;
     }
-  });
+    // на десктопе меняем направление при скролле
+    const dirFactor = self.direction === 1 ? 1 : -1;
+    leftCol.style.animationDirection = dirFactor === 1 ? "normal" : "reverse";
+    rightCol.style.animationDirection = dirFactor === 1 ? "normal" : "reverse";
+    middleCol.style.animationDirection = dirFactor === 1 ? "reverse" : "normal";
+  }
+});
+
 }
