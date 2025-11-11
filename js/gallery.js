@@ -49,21 +49,22 @@ function initMosaicAnimation() {
 
   let targetDir = 1;
   let currentDir = 1;
-  const SPEED = 25; 
+  const SPEED = 25;
+  const MOBILE_SPEED = 15;
 
-  ScrollTrigger.create({
-    trigger: ".mosaic-section",
-    start: "top top",
-    end: "bottom bottom",
-    scrub: false,
-    onUpdate(self) {
-      if (window.innerWidth > 768) {
+  const isMobile = () => window.innerWidth <= 768;
+
+  if (!isMobile()) {
+    ScrollTrigger.create({
+      trigger: ".mosaic-section",
+      start: "top top",
+      end: "bottom bottom",
+      scrub: false,
+      onUpdate(self) {
         targetDir = self.direction === 1 ? 1 : -1;
-      } else {
-        targetDir = 1;
-      }
-    },
-  });
+      },
+    });
+  }
 
   let lastTime = performance.now();
   const frameInterval = 1000 / 30; 
@@ -76,18 +77,31 @@ function initMosaicAnimation() {
     }
     lastTime = now;
 
-    currentDir += (targetDir - currentDir) * 0.1;
+    if (isMobile()) {
+      cols.forEach(c => {
+        const el = c.el;
+        el.offset += -1 * c.dirFactor * MOBILE_SPEED * (delta / 1000);
 
-    cols.forEach(c => {
-      const el = c.el;
-      el.offset += -currentDir * c.dirFactor * SPEED * (delta / 1000);
+        const shift = el.scrollHeight / 2;
+        if (el.offset <= -shift) el.offset += shift;
+        if (el.offset >= 0) el.offset -= shift;
 
-      const shift = el.scrollHeight / 2;
-      if (el.offset <= -shift) el.offset += shift;
-      if (el.offset >= 0) el.offset -= shift;
+        el.style.transform = `translate3d(0, ${el.offset}px, 0)`;
+      });
+    } else {
+      currentDir += (targetDir - currentDir) * 0.1;
 
-      el.style.transform = `translate3d(0, ${el.offset}px, 0)`;
-    });
+      cols.forEach(c => {
+        const el = c.el;
+        el.offset += -currentDir * c.dirFactor * SPEED * (delta / 1000);
+
+        const shift = el.scrollHeight / 2;
+        if (el.offset <= -shift) el.offset += shift;
+        if (el.offset >= 0) el.offset -= shift;
+
+        el.style.transform = `translate3d(0, ${el.offset}px, 0)`;
+      });
+    }
 
     requestAnimationFrame(animate);
   }
@@ -95,7 +109,17 @@ function initMosaicAnimation() {
   requestAnimationFrame(animate);
 
   window.addEventListener("resize", () => {
-    cols.forEach(c => (c.el.offset = c.el.offset || 0));
-    ScrollTrigger.refresh();
+    ScrollTrigger.getAll().forEach(t => t.kill());
+    if (!isMobile()) {
+      ScrollTrigger.create({
+        trigger: ".mosaic-section",
+        start: "top top",
+        end: "bottom bottom",
+        scrub: false,
+        onUpdate(self) {
+          targetDir = self.direction === 1 ? 1 : -1;
+        },
+      });
+    }
   });
 }
