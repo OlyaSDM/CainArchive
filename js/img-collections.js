@@ -219,6 +219,22 @@ const updateModal = () => {
   modalImgFront.src = currentImg.dataset.front;
   modalImgBack.src = currentImg.dataset.back || "/img/fallback.jpg";
 
+  const modalCaption = document.querySelector(".modal-caption");
+if (modalCaption) {
+  const captionText = currentImg.dataset.caption;
+if (captionText) {
+  modalCaption.style.display = "block";
+  modalCaption.textContent = captionText;
+  modalCaption.classList.add("visible");
+} else {
+  modalCaption.style.display = "none";
+  modalCaption.textContent = "";
+  modalCaption.classList.remove("visible");
+}
+
+}
+
+
   const flipContainer = document.getElementById("modalFlipCard");
   const flipHint = document.querySelector(".flip-hint");
 
@@ -242,25 +258,53 @@ const updateModal = () => {
 };
 
 
+  // const openModal = (i) => {
+  //   currentIndex = i;
+  //   updateModal();
+  //   modal.style.display = "flex";
+
+  //   // Show navigation buttons
+  //   document.querySelectorAll(".modal-btn").forEach(btn => {
+  //     btn.style.opacity = "1";
+  //     btn.style.pointerEvents = "auto";
+  //   });
+  // };
   const openModal = (i) => {
-    currentIndex = i;
-    updateModal();
-    modal.style.display = "flex";
+  currentIndex = i;
+  updateModal();
+  modal.style.display = "flex";
 
-    // Show navigation buttons
-    document.querySelectorAll(".modal-btn").forEach(btn => {
-      btn.style.opacity = "1";
-      btn.style.pointerEvents = "auto";
-    });
-  };
+  // Pause ScrollSmoother + Lock Scroll
+  document.body.style.overflow = "hidden";
+  ScrollSmoother.get().paused(true);
 
-  const closeModal = () => {
-    modal.style.display = "none";
-    document.querySelectorAll(".modal-btn").forEach(btn => {
-      btn.style.opacity = "0";
-      btn.style.pointerEvents = "none";
-    });
-  };
+  document.querySelectorAll(".modal-btn").forEach(btn => {
+    btn.style.opacity = "1";
+    btn.style.pointerEvents = "auto";
+  });
+};
+
+const closeModal = () => {
+  modal.style.display = "none";
+
+  // Restore scroll and smoother
+  document.body.style.overflow = "";
+  ScrollSmoother.get().paused(false);
+  ScrollTrigger.refresh(); // 🔁 in case something broke
+
+  document.querySelectorAll(".modal-btn").forEach(btn => {
+    btn.style.opacity = "0";
+    btn.style.pointerEvents = "none";
+  });
+};
+
+  // const closeModal = () => {
+  //   modal.style.display = "none";
+  //   document.querySelectorAll(".modal-btn").forEach(btn => {
+  //     btn.style.opacity = "0";
+  //     btn.style.pointerEvents = "none";
+  //   });
+  // };
 
   const showNext = () => {
     currentIndex = (currentIndex + 1) % allImages.length;

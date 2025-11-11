@@ -399,9 +399,13 @@ body {
   z-index: -1;
 }
 .modal-content {
-  max-width: 90%;
-  max-height: 90%;
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  max-height: 90vh;
   object-fit: contain;
+  margin: 0 auto;
   background: transparent;
   pointer-events: auto;
 }
@@ -697,6 +701,40 @@ body {
 }
 
 
+.modal-caption {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--fonts);
+  padding: 10px 14px;
+  font-size: 14px;
+  font-family: 'Libre Franklin', sans-serif;
+  line-height: 20px;
+  border-radius: 0;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+  max-width: 90%;
+  text-align: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+.modal-caption.visible {
+  opacity: 1;
+}
+@media (max-width: 480px) {
+  .modal-caption {
+    padding: 8px 12px;
+    font-size: 12px;
+    top: 50px;
+    max-width: 90%;
+    line-height: 16px;
+  }
+}
+
+
+
 /* Coming Soon */
 .coming {
   background: url('/img/gallery/13.webp') center/cover no-repeat;
@@ -795,6 +833,9 @@ body {
   .glass-wrapper {
     padding: 1.5rem 2rem;
   }
+  .coming {
+  background: url('/img/gallery/photo-output\ 5.jpeg') center/cover no-repeat;
+}
 }
 
 @media (max-width: 480px) {

@@ -1,59 +1,4 @@
 
-
-// document.addEventListener("DOMContentLoaded", () => {
-//   const items = document.querySelectorAll(".grid-item:not(#ww2-text)");
-//   const wwText = document.getElementById("ww2-text");
-
-
-//   items.forEach(item => {
-//     const yOffset = item.classList.contains("block1") ? 100 : 40;
-//     gsap.set(item, { opacity: 0, y: yOffset });
-//   });
-
-//   gsap.to(items, {
-//     opacity: 1,
-//     y: 0,
-//     duration: 0.8,
-//     stagger: 0.3, 
-//     ease: "power3.out",
-//   });
-
-
-// const wwTextEls = wwText.querySelectorAll("h2, p");
-
-// gsap.set(wwText.querySelector("h2"), {
-//   opacity: 0,
-//   x: -60,
-//   filter: "blur(4px)"
-// });
-
-// gsap.to(wwText.querySelector("h2"), {
-//   opacity: 1,
-//   x: 0,
-//   filter: "blur(0px)",
-//   duration: 0.9,
-//   delay: 0.8,
-//   ease: "power3.out"
-// });
-
-
-// gsap.set(wwText.querySelector("p"), {
-//   opacity: 0,
-//   x: 60,
-//   filter: "blur(4px)"
-// });
-
-// gsap.to(wwText.querySelector("p"), {
-//   opacity: 1,
-//   x: 0,
-//   filter: "blur(0px)",
-//   duration: 0.9,
-//   delay: 0.8, 
-//   ease: "power3.out"
-// });
-
-
-// });
 function animateWW2GridItems() {
   const items = document.querySelectorAll(".grid-item:not(#ww2-text)");
   const wwText = document.getElementById("ww2-text");
@@ -174,6 +119,49 @@ function waitForSmootherWW2() {
 }
 
 waitForSmootherWW2();
+
+
+// === Modal Image Caption Support ===
+
+// Add caption container to modal (run once on DOM load)
+const modal = document.querySelector(".modal");
+const modalImage = modal?.querySelector(".modal-content img");
+const captionDiv = document.createElement("div");
+captionDiv.className = "modal-caption";
+modal?.appendChild(captionDiv);
+
+// Function to update modal image and caption
+function updateModalImage(imgElement) {
+  const imgSrc = imgElement.dataset.front || imgElement.src;
+  const caption = imgElement.dataset.caption;
+
+  if (modalImage) modalImage.src = imgSrc;
+
+  if (caption) {
+    captionDiv.textContent = caption;
+    captionDiv.classList.add("visible");
+  } else {
+    captionDiv.textContent = "";
+    captionDiv.classList.remove("visible");
+  }
+}
+
+// Hook into your gallery image clicks
+document.querySelectorAll(".img-wrapper img").forEach(img => {
+  img.addEventListener("click", () => {
+    document.querySelector(".modal").classList.add("active");
+    document.body.style.overflow = "hidden";
+    updateModalImage(img);
+  });
+});
+
+// Optional: modal close logic
+document.querySelector(".modal-close")?.addEventListener("click", () => {
+  document.querySelector(".modal").classList.remove("active");
+  document.body.style.overflow = "";
+  captionDiv.classList.remove("visible");
+});
+
 
 
     gsap.to("body", {
