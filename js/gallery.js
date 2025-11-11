@@ -108,27 +108,15 @@
 gsap.registerPlugin(ScrollTrigger);
 
 window.addEventListener("load", () => {
-  initMosaicAnimation();
-});
-
-function initMosaicAnimation() {
   const leftCol = document.querySelector(".column.left");
   const middleCol = document.querySelector(".column.middle");
   const rightCol = document.querySelector(".column.right");
-
-  if (!leftCol || !middleCol || !rightCol) return;
 
   const images = [
     "/img/gallery/1.webp","/img/gallery/2.webp","/img/gallery/3.webp",
     "/img/gallery/4.webp","/img/gallery/5.webp","/img/gallery/6.webp",
     "/img/gallery/7.webp","/img/gallery/8.webp","/img/gallery/9.webp",
-    "/img/gallery/10.webp","/img/gallery/11.webp","/img/gallery/12.webp",
-    "/img/gallery/13.webp","/img/gallery/14.webp","/img/gallery/15.webp",
-    "/img/gallery/16.webp","/img/gallery/17.webp","/img/gallery/18.webp",
-    "/img/gallery/19.webp","/img/gallery/20.webp","/img/gallery/21.webp",
-    "/img/gallery/22.webp","/img/gallery/23.webp","/img/gallery/24.webp",
-    "/img/gallery/25.webp","/img/gallery/26.webp","/img/gallery/27.webp",
-    "/img/gallery/28.webp","/img/gallery/29.webp","/img/gallery/30.webp"
+    "/img/gallery/10.webp","/img/gallery/11.webp","/img/gallery/12.webp"
   ];
 
   const cols = [
@@ -137,18 +125,16 @@ function initMosaicAnimation() {
     { el: rightCol, imgs: images.filter((_, i) => i % 3 === 2), dir: "normal" },
   ];
 
-  // Добавляем изображения в колонки
+  // создаём изображения один раз
   cols.forEach(c => {
-    const totalImages = [...c.imgs, ...c.imgs]; // дублируем для бесконечной прокрутки
-    totalImages.forEach((src, idx) => {
+    c.imgs.forEach(src => {
       const wrapper = document.createElement("div");
       wrapper.className = "image-wrapper";
 
       const img = document.createElement("img");
       img.src = src;
       img.alt = "photo";
-      img.loading = idx < 2 ? "eager" : "lazy";
-      if(idx < 2) img.setAttribute("fetchpriority", "high");
+      img.loading = "lazy";
 
       wrapper.appendChild(img);
 
@@ -160,28 +146,23 @@ function initMosaicAnimation() {
       c.el.appendChild(wrapper);
     });
 
-    // Устанавливаем начальное направление анимации
+    // начальное направление и CSS-анимация
+    c.el.style.animation = "scrollUp 60s linear infinite";
     c.el.style.animationDirection = c.dir;
   });
 
-ScrollTrigger.create({
-  trigger: ".mosaic-section",
-  start: "top top",
-  end: "bottom bottom",
-  onUpdate: self => {
-    if(window.innerWidth <= 900){
-      // на мобильных просто двигаем вверх
-      leftCol.style.animationDirection = "normal";
-      rightCol.style.animationDirection = "normal";
-      middleCol.style.animationDirection = "reverse";
-      return;
+  // ScrollTrigger меняет направление колонок только на десктопе
+  ScrollTrigger.create({
+    trigger: ".mosaic-section",
+    start: "top top",
+    end: "bottom bottom",
+    onUpdate: self => {
+      if(window.innerWidth > 900){
+        const dirFactor = self.direction === 1 ? 1 : -1;
+        leftCol.style.animationDirection = dirFactor === 1 ? "normal" : "reverse";
+        rightCol.style.animationDirection = dirFactor === 1 ? "normal" : "reverse";
+        middleCol.style.animationDirection = dirFactor === 1 ? "reverse" : "normal";
+      }
     }
-    // на десктопе меняем направление при скролле
-    const dirFactor = self.direction === 1 ? 1 : -1;
-    leftCol.style.animationDirection = dirFactor === 1 ? "normal" : "reverse";
-    rightCol.style.animationDirection = dirFactor === 1 ? "normal" : "reverse";
-    middleCol.style.animationDirection = dirFactor === 1 ? "reverse" : "normal";
-  }
+  });
 });
-
-}

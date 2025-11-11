@@ -1389,20 +1389,17 @@ top: -7%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  animation: scrollUp 80s linear infinite; /* медленная анимация */
   will-change: transform;
 }
 
 @keyframes scrollUp {
   0% { transform: translateY(0); }
-  100% { transform: translateY(-50%); } /* двигаем на половину контента */
+  100% { transform: translateY(-20%); } /* небольшой сдвиг, чтобы движение было заметным */
 }
 
-@media (max-width: 900px) {
-  .column {
-    animation: scrollUp 100s linear infinite; /* чуть медленнее на мобильных */
-  }
-}
+.column.left { animation-duration: 70s; }
+.column.middle { animation-duration: 50s; }
+.column.right { animation-duration: 60s; }
 
 
 .column img {
