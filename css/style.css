@@ -2401,177 +2401,6 @@ font-size: 16px;
   background-color: rgba(4, 56, 75, 0.9);
   justify-content: center;
   align-items: center;
-  padding: 20px;
-  box-sizing: border-box;
-  z-index: 9999;
-}
-
-#pdf-modal.active {
-  display: flex;
-}
-
-#pdf-modal::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: rgba(4, 56, 75, 0.9);
-  z-index: -1;
-}
-
-/* === Контейнер контента === */
-.pdf-modal-content {
-  position: relative;
-  width: 100%;
-  max-width: 900px;
-  height: 90vh;
-  background: transparent;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-/* === Сам PDF или изображение === */
-.pdf-viewer {
-  width: 100%;
-  height: 100%;
-  border: none;
-  background: white;
-  overflow: hidden;
-  display: block;
-}
-
-/* === Кнопка закрытия === */
-.modal-close.item-3 {
-  width: 35px;
-  height: 35px;
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-  z-index: 10001;
-  background: none;
-  border: none;
-  padding: 0;
-}
-
-.modal-close.item-3::before,
-.modal-close.item-3::after {
-  content: "";
-  position: absolute;
-  height: 2px;
-  width: 35px;
-  background-color: var(--white);
-  left: 50%;
-  top: 50%;
-  transform: translate(-50%, -50%) rotate(-45deg);
-  transition: transform 0.3s ease-out;
-}
-
-.modal-close.item-3::after {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.modal-close.item-3:hover::before,
-.modal-close.item-3:focus::before {
-  transform: translate(-50%, -50%) rotate(135deg);
-}
-
-.modal-close.item-3:hover::after,
-.modal-close.item-3:focus::after {
-  transform: translate(-50%, -50%) rotate(225deg);
-}
-
-/* === Сообщение снизу === */
-.pdf-popup-msg {
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translateX(-50%);
-  background-color: rgba(255, 255, 255, 0.95);
-  color: #042C3E;
-  font-family: "Libre Franklin", sans-serif;
-  font-size: 16px;
-  padding: 12px 20px;
-  border-radius: 4px;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.5s ease;
-  z-index: 10002;
-  max-width: 80%;
-  text-align: center;
-  box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-}
-
-.pdf-popup-msg.show {
-  opacity: 1;
-  pointer-events: auto;
-}
-
-/* === Мобильная адаптация === */
-@media (max-width: 768px) {
-  #pdf-modal {
-    padding: 10px;
-  }
-
-  .pdf-modal-content {
-    max-width: 95vw;
-    height: 90vh;
-  }
-
-  .pdf-viewer {
-    width: 100%;
-    height: 100%;
-    border-radius: 4px;
-    background: white;
-    transform: scale(0.98);
-    transform-origin: center;
-  }
-
-  .modal-close.item-3 {
-    top: 10px;
-    right: 10px;
-    width: 25px;
-    height: 25px;
-  }
-
-  .modal-close.item-3::before,
-  .modal-close.item-3::after {
-    width: 25px;
-  }
-
-  .pdf-popup-msg {
-    font-size: 14px;
-    padding: 10px 16px;
-    bottom: 25px;
-    max-width: 90%;
-  }
-}
-
-@media (max-width: 480px) {
-  .pdf-modal-content {
-    height: 85vh;
-  }
-
-  .pdf-popup-msg {
-    font-size: 13px;
-    padding: 8px 12px;
-    bottom: 15px;
-  }
-}
-
-
-
-/* #pdf-modal {
-  display: none;
-  position: fixed;
-  inset: 0;
-  width: 100vw;
-  height: 100vh;
-  background-color: rgba(4, 56, 75, 0.9);
-  justify-content: center;
-  align-items: center;
   padding: 40px;
   box-sizing: border-box;
   z-index: 9999;
@@ -2677,7 +2506,7 @@ font-size: 16px;
 .pdf-popup-msg.show {
   opacity: 1;
   pointer-events: auto;
-} */
+}
 
 /* @media (max-width: 768px) {
   .pdf-modal-content {
@@ -2746,11 +2575,7 @@ font-size: 16px;
   }
 } */
 
-
-
-
-
-/* @media (max-width: 768px) {
+@media (max-width: 768px) {
 .pdf-modal-content {
   position: relative;
   max-width: 90vw; 
@@ -2765,7 +2590,7 @@ font-size: 16px;
 .pdf-modal-content img {
   width: 100%;     
   height: auto;    
-  max-width: 100%;  
+  max-width: 100%; 
   object-fit: contain; 
 }
 
@@ -2807,7 +2632,7 @@ font-size: 16px;
       bottom: 20px;
     }
   }
-} */
+}
 
 
 /* INTERVIEWS */

@@ -7,7 +7,12 @@ document.addEventListener("DOMContentLoaded", () => {
   let popupTimeout = null;
 
 function openModal(pdfUrl) {
-  iframe.src = pdfUrl + "#zoom=fit"; 
+  if (!pdfUrl) return;
+
+  pdfUrl = pdfUrl.trim().replace(/\.pdf+$/, ".pdf");
+
+  iframe.src = pdfUrl + "#zoom=fit";
+
   modal.classList.add("active");
   document.body.style.overflow = "hidden";
 
@@ -18,6 +23,7 @@ function openModal(pdfUrl) {
     popupMsg.classList.add("show");
   }, 4000);
 }
+
 
 
   function closeModal() {
