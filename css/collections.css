@@ -377,8 +377,8 @@ body {
 .navigational-links:hover .v-left,
 .navigational-links:hover .v-right { height: 100%; }
 
-Modal styles
-.modal {
+/* Modal styles */
+.modal-gallery {
   display: none;
   position: fixed;
   inset: 0;
@@ -389,9 +389,9 @@ Modal styles
   align-items: center;
   padding: 40px;
   box-sizing: border-box;
-  z-index: 9999;
+  z-index: 9999999;
 }
-.modal::before {
+.modal-gallery::before {
   content: "";
   position: absolute;
   inset: 0;
@@ -403,7 +403,7 @@ Modal styles
   justify-content: center;
   align-items: center;
   max-width: 100%;
-  max-height: 90vh;
+  max-height: 100vh;
   object-fit: contain;
   margin: 0 auto;
   background: transparent;
@@ -650,7 +650,7 @@ Modal styles
 }
 /* ===== Modal Responsive Enhancements ===== */
 @media (max-width: 768px) {
-  .modal {
+  .modal-gallery {
     padding: 0;
     background-color: rgba(4, 56, 75, 0.98);
   }
@@ -812,11 +812,14 @@ Modal styles
     flex-direction: column;
   }
   .navigational-links {
-    padding: 10px 15px;
-    font-size: 10px;
+    padding: 8px 10px;
+    font-size: 9px;
   }
   .gallery-words h3 {
     font-size: 44px;
+  }
+    .gallery-words{
+    padding: 0 30px;
   }
   .gallery-words .blue {
     font-size: 38px;
@@ -1048,10 +1051,10 @@ Modal styles
 .breadcrumb {
   font-family: 'Libre Franklin', sans-serif;
   font-size: 18px;
-  padding: 20px 0;
+  padding: 20px 5px;
   color: var(--fonts);
   background-color: var(--background);
-text-align: center;
+  text-align: center;
 }
 
 .breadcrumb ul {

@@ -16,7 +16,7 @@ const translations = {
       tomorrow: "Tomorrow"
     },
     hero: {
-      description: "Over a <span>1000</span> verified photographs and historical documents bear witness to the twentieth century — its courage, its loss, and its rebirth. An archive built to preserve what must never be forgotten, reminding us not only of what happened, but why it matters.",
+      description: "Over a <span>1000</span> verified photographs and historical documents bear witness to the twentieth century — its courage, its loss, and its rebirth.",
       startJourney: "Explore the Archive",
       aboutUsText: "About Us"
     },
@@ -358,7 +358,7 @@ privacyLink: "プライバシーポリシー",
       tomorrow: "Mañana"
     },
     hero: {
-  description: "Más de <span>1000</span> fotografías verificadas y documentos históricos dan testimonio del siglo XX: su valentía, su pérdida y su renacimiento. Un archivo construido para preservar lo que nunca debe ser olvidado, recordándonos no solo lo que ocurrió, sino por qué es importante.",
+  description: "Más de <span>1000</span> fotografías verificadas y documentos históricos dan testimonio del siglo XX: su valentía, su pérdida y su renacimiento.",
       startJourney: "Explorar el Archivo",
       aboutUsText: "Sobre Nosotros"
     },
