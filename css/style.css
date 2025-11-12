@@ -2508,7 +2508,7 @@ font-size: 16px;
   pointer-events: auto;
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
   .pdf-modal-content {
     max-width: 100%;
     max-height: 75%;
@@ -2555,7 +2555,6 @@ font-size: 16px;
   }
 }
 
-/* Ultra small screens (e.g. older phones) */
 @media (max-width: 480px) {
   .pdf-viewer {
     height: 85vh;
@@ -2574,8 +2573,53 @@ font-size: 16px;
     padding: 8px 12px;
     bottom: 20px;
   }
-}
+} */
 
+@media (max-width: 768px) {
+  .pdf-modal-content {
+    max-width: 100%;
+    max-height: 75%;
+    padding: 10px 0; 
+  }
+
+  .pdf-viewer {
+    width: 100%;
+    height: calc(100vh - 80px); 
+    align-items: center;
+    object-fit: contain;  
+  }
+
+  .modal-close.item-3 {
+    top: 10px;
+    right: 10px;
+    width: 25px;
+    height: 25px;
+  }
+
+  .modal-close.item-3::before,
+  .modal-close.item-3::after {
+    width: 25px;
+  }
+
+  .pdf-popup-msg {
+    font-size: 14px;
+    padding: 10px 16px;
+    bottom: 40px;
+    max-width: 90%;
+  }
+
+  @media (max-width: 480px) {
+    .pdf-viewer {
+      height: calc(100vh - 60px); 
+    }
+
+    .pdf-popup-msg {
+      font-size: 13px;
+      padding: 8px 12px;
+      bottom: 20px;
+    }
+  }
+}
 
 
 /* INTERVIEWS */
