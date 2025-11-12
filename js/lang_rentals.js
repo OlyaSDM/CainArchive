@@ -354,35 +354,36 @@ const scrollTimeline = gsap.timeline({
     trigger: ".rentals-hero",
     start: "top top",
     end: "bottom top",
-    scrub: 1,
+    scrub: isMobile ? false : 1,
+    invalidateOnRefresh: true,
   }
 });
 
 scrollTimeline
   .to(leftPanel, {
     x: "-100%",
-    duration: 2.8,
+    duration: isMobile ? 1.5 : 2.8,
     ease: "power4.inOut"
   }, 0)
   .to(rightPanel, {
     x: "100%",
-    duration: 2.8,
+    duration: isMobile ? 1.5 : 2.8,
     ease: "power4.inOut"
   }, 0)
-.to(ampLetters, {
-  y: "-100%",
-  opacity: 0,
-  duration: isMobile ? 0.8 : 1.2,   // быстрее на мобильных
-  ease: "power2.inOut"
-}, isMobile ? 0 : 0.1)         // запускаем раньше на мобильных
- 
+  .to(ampLetters, {
+    y: "-100%",
+    opacity: 0,
+    duration: isMobile ? 0.6 : 1.2,
+    ease: "power2.inOut"
+  }, 0.1)
   .to([...leftLetters, ...rightLetters], {
     y: "-100%",
     opacity: 0,
-    stagger: 0.05,
-    duration: 2.8,
+    stagger: 0.04,
+    duration: isMobile ? 1.5 : 2.8,
     ease: "power2.inOut"
-  }, 0.3); 
+  }, 0.3);
+
 
   // Exhibit fade-in
   gsap.fromTo(".rentals-image", { opacity: 0 }, {
