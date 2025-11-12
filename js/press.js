@@ -6,20 +6,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
   let popupTimeout = null;
 
-  function openModal(pdfUrl) {
-    iframe.src = pdfUrl;
-    modal.classList.add("active");
-    document.body.style.overflow = "hidden";
+function openModal(pdfUrl) {
+  iframe.src = pdfUrl + "#zoom=fit"; 
+  modal.classList.add("active");
+  document.body.style.overflow = "hidden";
 
-    // Clear any previous timeout
-    if (popupTimeout) clearTimeout(popupTimeout);
-    popupMsg.classList.remove("show");
+  if (popupTimeout) clearTimeout(popupTimeout);
+  popupMsg.classList.remove("show");
 
-    // Show message after 4 seconds
-    popupTimeout = setTimeout(() => {
-      popupMsg.classList.add("show");
-    }, 4000);
-  }
+  popupTimeout = setTimeout(() => {
+    popupMsg.classList.add("show");
+  }, 4000);
+}
+
 
   function closeModal() {
     modal.classList.remove("active");
