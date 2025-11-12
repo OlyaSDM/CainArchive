@@ -205,153 +205,153 @@ const animateNavbar = () => {
   };
 
 
-//     // ===== MODAL =====
+    // ===== MODAL =====
 
-// const initModal = () => {
-//   const modal = document.getElementById("imageModal");
-//   const modalImgFront = document.getElementById("modalImgFront");
-//   const modalImgBack = document.getElementById("modalImgBack");
-//   const allImages = Array.from(document.querySelectorAll(".gallery-grid img"));
-//   let currentIndex = 0;
+const initModal = () => {
+  const modal = document.getElementById("imageModal");
+  const modalImgFront = document.getElementById("modalImgFront");
+  const modalImgBack = document.getElementById("modalImgBack");
+  const allImages = Array.from(document.querySelectorAll(".gallery-grid img"));
+  let currentIndex = 0;
 
-// const updateModal = () => {
-//   const currentImg = allImages[currentIndex];
-//   modalImgFront.src = currentImg.dataset.front;
-//   modalImgBack.src = currentImg.dataset.back || "/img/fallback.jpg";
+const updateModal = () => {
+  const currentImg = allImages[currentIndex];
+  modalImgFront.src = currentImg.dataset.front;
+  modalImgBack.src = currentImg.dataset.back || "/img/fallback.jpg";
 
-//   const modalCaption = document.querySelector(".modal-caption");
-// if (modalCaption) {
-//   const captionText = currentImg.dataset.caption;
-// if (captionText) {
-//   modalCaption.style.display = "block";
-//   modalCaption.textContent = captionText;
-//   modalCaption.classList.add("visible");
-// } else {
-//   modalCaption.style.display = "none";
-//   modalCaption.textContent = "";
-//   modalCaption.classList.remove("visible");
-// }
+  const modalCaption = document.querySelector(".modal-caption");
+if (modalCaption) {
+  const captionText = currentImg.dataset.caption;
+if (captionText) {
+  modalCaption.style.display = "block";
+  modalCaption.textContent = captionText;
+  modalCaption.classList.add("visible");
+} else {
+  modalCaption.style.display = "none";
+  modalCaption.textContent = "";
+  modalCaption.classList.remove("visible");
+}
 
-// }
-
-
-//   const flipContainer = document.getElementById("modalFlipCard");
-//   const flipHint = document.querySelector(".flip-hint");
-
-//   //Safari
-//   modalImgFront.onload = modalImgBack.onload = () => {
-//   flipContainer.classList.remove("flipped");
-// };
-
-//   // Reset flip state
-//   flipContainer.classList.remove("flipped");
-
-//   // Add click-to-flip
-//   flipContainer.onclick = () => {
-//     flipContainer.classList.toggle("flipped");
-//     // Hide the flip hint after first flip
-//     if (flipHint) flipHint.classList.remove("visible");
-//   };
-
-//   // Show flip hint (both desktop & mobile)
-//   if (flipHint) flipHint.classList.add("visible");
-// };
+}
 
 
-//   // const openModal = (i) => {
-//   //   currentIndex = i;
-//   //   updateModal();
-//   //   modal.style.display = "flex";
+  const flipContainer = document.getElementById("modalFlipCard");
+  const flipHint = document.querySelector(".flip-hint");
 
-//   //   // Show navigation buttons
-//   //   document.querySelectorAll(".modal-btn").forEach(btn => {
-//   //     btn.style.opacity = "1";
-//   //     btn.style.pointerEvents = "auto";
-//   //   });
-//   // };
-//   const openModal = (i) => {
-//   currentIndex = i;
-//   updateModal();
-//   modal.style.display = "flex";
+  //Safari
+  modalImgFront.onload = modalImgBack.onload = () => {
+  flipContainer.classList.remove("flipped");
+};
 
-//   // Pause ScrollSmoother + Lock Scroll
-//   document.body.style.overflow = "hidden";
-//   ScrollSmoother.get().paused(true);
+  // Reset flip state
+  flipContainer.classList.remove("flipped");
 
-//   document.querySelectorAll(".modal-btn").forEach(btn => {
-//     btn.style.opacity = "1";
-//     btn.style.pointerEvents = "auto";
-//   });
-// };
+  // Add click-to-flip
+  flipContainer.onclick = () => {
+    flipContainer.classList.toggle("flipped");
+    // Hide the flip hint after first flip
+    if (flipHint) flipHint.classList.remove("visible");
+  };
 
-// const closeModal = () => {
-//   modal.style.display = "none";
+  // Show flip hint (both desktop & mobile)
+  if (flipHint) flipHint.classList.add("visible");
+};
 
-//   // Restore scroll and smoother
-//   document.body.style.overflow = "";
-//   ScrollSmoother.get().paused(false);
-//   ScrollTrigger.refresh(); // 🔁 in case something broke
 
-//   document.querySelectorAll(".modal-btn").forEach(btn => {
-//     btn.style.opacity = "0";
-//     btn.style.pointerEvents = "none";
-//   });
-// };
+  // const openModal = (i) => {
+  //   currentIndex = i;
+  //   updateModal();
+  //   modal.style.display = "flex";
 
-//   // const closeModal = () => {
-//   //   modal.style.display = "none";
-//   //   document.querySelectorAll(".modal-btn").forEach(btn => {
-//   //     btn.style.opacity = "0";
-//   //     btn.style.pointerEvents = "none";
-//   //   });
-//   // };
+  //   // Show navigation buttons
+  //   document.querySelectorAll(".modal-btn").forEach(btn => {
+  //     btn.style.opacity = "1";
+  //     btn.style.pointerEvents = "auto";
+  //   });
+  // };
+  const openModal = (i) => {
+  currentIndex = i;
+  updateModal();
+  modal.style.display = "flex";
 
-//   const showNext = () => {
-//     currentIndex = (currentIndex + 1) % allImages.length;
-//     updateModal();
-//   };
+  // Pause ScrollSmoother + Lock Scroll
+  document.body.style.overflow = "hidden";
+  ScrollSmoother.get().paused(true);
 
-//   const showPrev = () => {
-//     currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
-//     updateModal();
-//   };
+  document.querySelectorAll(".modal-btn").forEach(btn => {
+    btn.style.opacity = "1";
+    btn.style.pointerEvents = "auto";
+  });
+};
 
-//   // Image click opens modal
-//   allImages.forEach((img, i) => img.addEventListener("click", () => openModal(i)));
+const closeModal = () => {
+  modal.style.display = "none";
 
-//   // Modal interactions
-//   document.getElementById("modalClose").addEventListener("click", closeModal);
-//   document.getElementById("prevBtn").addEventListener("click", showPrev);
-//   document.getElementById("nextBtn").addEventListener("click", showNext);
-//   modal.addEventListener("click", e => e.target === modal && closeModal());
+  // Restore scroll and smoother
+  document.body.style.overflow = "";
+  ScrollSmoother.get().paused(false);
+  ScrollTrigger.refresh(); // 🔁 in case something broke
 
-//   // Wheel scroll
-//   let lastScrollTime = 0;
-//   modal.addEventListener("wheel", e => {
-//     if (Date.now() - lastScrollTime > 600) {
-//       e.deltaY > 0 ? showNext() : showPrev();
-//       lastScrollTime = Date.now();
-//     }
-//     e.preventDefault();
-//   }, { passive: false });
+  document.querySelectorAll(".modal-btn").forEach(btn => {
+    btn.style.opacity = "0";
+    btn.style.pointerEvents = "none";
+  });
+};
 
-//   // Touch swipe
-//   let touchStartX = 0;
-//   modal.addEventListener("touchstart", e => touchStartX = e.changedTouches[0].screenX);
-//   modal.addEventListener("touchend", e => {
-//     const deltaX = e.changedTouches[0].screenX - touchStartX;
-//     if (Math.abs(deltaX) > 50) deltaX > 0 ? showPrev() : showNext();
-//   });
+  // const closeModal = () => {
+  //   modal.style.display = "none";
+  //   document.querySelectorAll(".modal-btn").forEach(btn => {
+  //     btn.style.opacity = "0";
+  //     btn.style.pointerEvents = "none";
+  //   });
+  // };
 
-//   // Keyboard nav
-//   document.addEventListener("keydown", e => {
-//     if (modal.style.display === "flex") {
-//       if (e.key === "ArrowRight") showNext();
-//       else if (e.key === "ArrowLeft") showPrev();
-//       else if (e.key === "Escape") closeModal();
-//     }
-//   });
-// };
+  const showNext = () => {
+    currentIndex = (currentIndex + 1) % allImages.length;
+    updateModal();
+  };
+
+  const showPrev = () => {
+    currentIndex = (currentIndex - 1 + allImages.length) % allImages.length;
+    updateModal();
+  };
+
+  // Image click opens modal
+  allImages.forEach((img, i) => img.addEventListener("click", () => openModal(i)));
+
+  // Modal interactions
+  document.getElementById("modalClose").addEventListener("click", closeModal);
+  document.getElementById("prevBtn").addEventListener("click", showPrev);
+  document.getElementById("nextBtn").addEventListener("click", showNext);
+  modal.addEventListener("click", e => e.target === modal && closeModal());
+
+  // Wheel scroll
+  let lastScrollTime = 0;
+  modal.addEventListener("wheel", e => {
+    if (Date.now() - lastScrollTime > 600) {
+      e.deltaY > 0 ? showNext() : showPrev();
+      lastScrollTime = Date.now();
+    }
+    e.preventDefault();
+  }, { passive: false });
+
+  // Touch swipe
+  let touchStartX = 0;
+  modal.addEventListener("touchstart", e => touchStartX = e.changedTouches[0].screenX);
+  modal.addEventListener("touchend", e => {
+    const deltaX = e.changedTouches[0].screenX - touchStartX;
+    if (Math.abs(deltaX) > 50) deltaX > 0 ? showPrev() : showNext();
+  });
+
+  // Keyboard nav
+  document.addEventListener("keydown", e => {
+    if (modal.style.display === "flex") {
+      if (e.key === "ArrowRight") showNext();
+      else if (e.key === "ArrowLeft") showPrev();
+      else if (e.key === "Escape") closeModal();
+    }
+  });
+};
 
 
   // ===== INIT EVERYTHING IN ORDER =====
