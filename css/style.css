@@ -2510,13 +2510,13 @@ font-size: 16px;
 
 @media (max-width: 768px) {
   .pdf-modal-content {
-    max-width: 100%;
+    width: 100%;
     max-height: 75%;
-    padding: 20px 0;
+    padding: 0 0;
   }
 
   .pdf-viewer {
-    width: 100%;
+    width: 120%;
     height: 80vh;
     align-items: center;
   }
