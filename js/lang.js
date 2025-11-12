@@ -129,7 +129,7 @@ const translations = {
       tomorrow: "الغد"
     },
     hero: {
-  description: "أكثر من <span>1000</span> صورة موثقة ووثائق تاريخية تشهد على القرن العشرين - شجاعته، خسارته وولادته من جديد. أرشيف تم بناؤه للحفاظ على ما يجب ألا يُنسى، ويذكرنا ليس فقط بما حدث، ولكن لماذا يهم.",
+      description: "أكثر من <span>1000</span> صورة فوتوغرافية ووثيقة تاريخية موثقة تشهد على القرن العشرين — شجاعته وخسارته وولادته من جديد.",
       startJourney: "استكشف الأرشيف",
       aboutUsText: "حولنا"
     },
@@ -244,7 +244,7 @@ privacyLink: "سياسة الخصوصية",
       tomorrow: "明日"
     },
     hero: {
-  description: "<span>1000</span>枚以上の検証された写真と歴史的文書が20世紀—その勇気、喪失、そして再生を証言します。忘れてはならないものを保存するために作られたアーカイブであり、何が起こったのかだけでなく、それがなぜ重要であるかを私たちに思い出させます。",
+      description: "<span>1000</span>点を超える真正な写真と歴史的文書が、20世紀の勇気、喪失、そして再生の証人となっている。",
       startJourney: "アーカイブを探索する",
       aboutUsText: "私たちについて"
     },
@@ -358,7 +358,7 @@ privacyLink: "プライバシーポリシー",
       tomorrow: "Mañana"
     },
     hero: {
-  description: "Más de <span>1000</span> fotografías verificadas y documentos históricos dan testimonio del siglo XX: su valentía, su pérdida y su renacimiento.",
+      description: "Más de <span>1000</span> fotografías verificadas y documentos históricos dan testimonio del siglo XX: su valentía, su pérdida y su renacimiento.",
       startJourney: "Explorar el Archivo",
       aboutUsText: "Sobre Nosotros"
     },
@@ -472,7 +472,7 @@ privacyLink: "política de privacidad",
       tomorrow: "明天"
     },
     hero: {
-  description: "超过<span>1000</span>张经过验证的照片和历史文献见证了20世纪——它的勇气、失落和重生。一个旨在保存永不应被遗忘的档案，提醒我们不仅是什么发生了，而且为什么它很重要。",
+      description: "超过<span>1000</span>张经核实的照片和历史文件见证了二十世纪的勇气、失落与重生。",
       startJourney: "探索档案",
       aboutUsText: "关于我们"
     },

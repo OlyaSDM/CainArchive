@@ -369,12 +369,13 @@ scrollTimeline
     duration: 2.8,
     ease: "power4.inOut"
   }, 0)
-  .to(ampLetters, {
-    y: "-100%",
-    opacity: 0,
-    duration: 1.2,  
-    ease: "power2.inOut"
-  }, 0.1) 
+.to(ampLetters, {
+  y: "-100%",
+  opacity: 0,
+  duration: isMobile ? 0.8 : 1.2,   // быстрее на мобильных
+  ease: "power2.inOut"
+}, isMobile ? 0 : 0.1)         // запускаем раньше на мобильных
+ 
   .to([...leftLetters, ...rightLetters], {
     y: "-100%",
     opacity: 0,
@@ -409,17 +410,21 @@ scrollTimeline
   });
 
   // Scroll indicator
-  gsap.to(scrollIndicator, {
-    y: 30,
-    opacity: 0,
-    scrollTrigger: {
-      trigger: ".rentals-hero",
-      start: "top top",
-      end: "center top",
-      scrub: 1,
-      onLeaveBack: () => gsap.to(scrollIndicator, { y: 0, opacity: 1, duration: 2.6 })
-    }
-  });
+gsap.to(scrollIndicator, {
+  y: 30,
+  opacity: 0,
+  ease: "power2.out",
+  scrollTrigger: {
+    trigger: ".rentals-hero",
+    start: "top top",
+    end: isMobile ? "bottom top" : "center top", 
+    scrub: 1,
+    toggleActions: "play none none reverse",
+    onEnter: () => gsap.to(scrollIndicator, { opacity: 0, duration: 0.8 }),
+    onLeaveBack: () => gsap.to(scrollIndicator, { y: 0, opacity: 1, duration: 1.2 })
+  }
+});
+
 }
 
 // INITIALIZATION
