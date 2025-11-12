@@ -640,7 +640,7 @@ body {
 .modal-watermark {
   position: absolute;
   bottom: 60px;
-  left: 12%;
+  left: 16%;
   color: rgba(255, 255, 255, 0.6);
   font-size: 18px;
   font-family: "Libre Franklin", sans-serif;
