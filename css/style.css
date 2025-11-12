@@ -2516,7 +2516,7 @@ font-size: 16px;
   }
 
   .pdf-viewer {
-    width: 120%;
+    width: 70%;
     height: 80vh;
     align-items: center;
     object-fit: cover;
