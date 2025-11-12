@@ -2519,6 +2519,8 @@ font-size: 16px;
     width: 120%;
     height: 80vh;
     align-items: center;
+    object-fit: cover;
+
   }
 
   .modal-close.item-3 {
