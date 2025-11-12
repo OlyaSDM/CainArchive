@@ -2576,11 +2576,24 @@ font-size: 16px;
 } */
 
 @media (max-width: 768px) {
-  .pdf-modal-content {
-    max-width: 100%;
-    max-height: 75%;
-    padding: 10px 0; 
-  }
+.pdf-modal-content {
+  position: relative;
+  max-width: 90vw; 
+  max-height: 90vh;
+  overflow: hidden; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pdf-viewer, 
+.pdf-modal-content img {
+  width: 100%;     
+  height: auto;    
+  max-width: 100%;  
+  object-fit: contain; 
+}
+
 
   .pdf-viewer {
     width: 100%;
