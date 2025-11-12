@@ -1,34 +1,32 @@
 document.addEventListener("DOMContentLoaded", () => {
   const modal = document.getElementById("pdf-modal");
-  const iframe = modal.querySelector(".pdf-viewer");
+  const pdfObject = modal.querySelector(".pdf-viewer");
   const closeBtn = modal.querySelector(".modal-close.item-3");
   const popupMsg = modal.querySelector("#pdf-popup-msg");
 
   let popupTimeout = null;
 
-function openModal(pdfUrl) {
-  if (!pdfUrl) return;
+  function openModal(pdfUrl) {
+    if (!pdfUrl) return;
 
-  pdfUrl = pdfUrl.trim().replace(/\.pdf+$/, ".pdf");
+    pdfUrl = pdfUrl.trim().replace(/\.pdf+$/, ".pdf");
 
-  iframe.src = pdfUrl + "#zoom=fit";
+    pdfObject.data = pdfUrl + "#zoom=100"; // zoom=100 для нормального масштаба
 
-  modal.classList.add("active");
-  document.body.style.overflow = "hidden";
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
 
-  if (popupTimeout) clearTimeout(popupTimeout);
-  popupMsg.classList.remove("show");
+    if (popupTimeout) clearTimeout(popupTimeout);
+    popupMsg.classList.remove("show");
 
-  popupTimeout = setTimeout(() => {
-    popupMsg.classList.add("show");
-  }, 4000);
-}
-
-
+    popupTimeout = setTimeout(() => {
+      popupMsg.classList.add("show");
+    }, 4000);
+  }
 
   function closeModal() {
     modal.classList.remove("active");
-    iframe.src = "";
+    pdfObject.data = "";
     document.body.style.overflow = "";
     popupMsg.classList.remove("show");
     if (popupTimeout) clearTimeout(popupTimeout);
@@ -54,8 +52,3 @@ function openModal(pdfUrl) {
     }
   });
 });
-
-
-
-
-
