@@ -354,10 +354,11 @@ const scrollTimeline = gsap.timeline({
     trigger: ".rentals-hero",
     start: "top top",
     end: "bottom top",
-    scrub: isMobile ? false : 1,
+    scrub: isMobile ? 0.5 : 1, 
     invalidateOnRefresh: true,
   }
 });
+
 
 scrollTimeline
   .to(leftPanel, {
