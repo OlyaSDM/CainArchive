@@ -257,18 +257,6 @@ if (captionText) {
   if (flipHint) flipHint.classList.add("visible");
 };
 
-
-  // const openModal = (i) => {
-  //   currentIndex = i;
-  //   updateModal();
-  //   modal.style.display = "flex";
-
-  //   // Show navigation buttons
-  //   document.querySelectorAll(".modal-btn").forEach(btn => {
-  //     btn.style.opacity = "1";
-  //     btn.style.pointerEvents = "auto";
-  //   });
-  // };
   const openModal = (i) => {
   currentIndex = i;
   updateModal();
@@ -297,14 +285,6 @@ const closeModal = () => {
     btn.style.pointerEvents = "none";
   });
 };
-
-  // const closeModal = () => {
-  //   modal.style.display = "none";
-  //   document.querySelectorAll(".modal-btn").forEach(btn => {
-  //     btn.style.opacity = "0";
-  //     btn.style.pointerEvents = "none";
-  //   });
-  // };
 
   const showNext = () => {
     currentIndex = (currentIndex + 1) % allImages.length;

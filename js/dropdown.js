@@ -19,9 +19,6 @@ document.addEventListener('DOMContentLoaded', function () {
       currentLang.textContent = lang.toUpperCase();
       switcher.classList.remove('open');
       toggleBtn.setAttribute('aria-expanded', false);
-
-      // Optional: save to localStorage
-      // localStorage.setItem('preferredLang', lang);
     }
   });
 

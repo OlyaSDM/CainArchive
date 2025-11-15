@@ -67,23 +67,6 @@ gsap.timeline({
   ease: "power2.out"
 }, 0);
 
-
-// VIDEO FOR SMALLER SCREENS
-  // const video = document.querySelector('.hero-video');
-  // const source = video.querySelector('source');
-
-  // const setResponsiveVideo = () => {
-  //   const isMobile = window.innerWidth <= 480;
-  //   const newSrc = isMobile ? '/video/sm-hero.MP4' : '/video/HERO.MP4';
-
-  //   if (source.getAttribute('src') !== newSrc) {
-  //     source.setAttribute('src', newSrc);
-  //     video.load();
-  //   }
-  // };
-
-  // setResponsiveVideo();
-  // window.addEventListener('resize', setResponsiveVideo);
   
 const video = document.querySelector('.hero-video');
 const source = video.querySelector('source');
@@ -167,26 +150,6 @@ window.addEventListener("loaderFinished", () => {
         scrub: 1
       }
     });
-
-    // Animate Paragraph(s)
-    // const paragraphs = section.querySelectorAll("p");
-    // if (paragraphs.length) {
-    //   gsap.fromTo(paragraphs,
-    //     { y: 20, opacity: 0 },
-    //     {
-    //       y: 0,
-    //       opacity: 1,
-    //       duration: 1,
-    //       ease: "power2.out",
-    //       scrollTrigger: {
-    //         trigger: section,
-    //         start: "top 65%",
-    //         end: "bottom 50%",
-    //         scrub: 1
-    //       }
-    //     }
-    //   );
-    // }
   });
 
   // --- Animate .coll-p paragraph independently ---
@@ -289,31 +252,3 @@ document.querySelectorAll(".coll-background").forEach((el) => {
   });
 });
 
-
-
-
-//ANIMATION FOR PRESS 
-
-
-// gsap.set(".press-intro h3, .press-intro p", { opacity: 0, y: 100 });
-
-// gsap.fromTo(".press-intro h3, .press-intro p",
-//   { opacity: 0, y: 100 },
-//   {
-//     opacity: 1,
-//     y: 0,
-//     ease: "power2.out",
-//     scrollTrigger: {
-//       trigger: ".press-intro",
-//       start: "top 60%",
-//       end: "top 30%",
-//       scrub: 0.2
-//     }
-//   }
-// );
-
-
-
-
-        // Animate both sections
-// animateLetterSection(".quote-two");
