@@ -270,18 +270,19 @@ const applyText = (el, text) => {
 const updateTitleLetters = (el, text, letterClass = 'letter') => {
   if (!el) return;
   el.innerHTML = '';
-  text.split('').forEach((char) => {
+  text.split('').forEach(char => {
     const span = document.createElement('span');
     span.className = letterClass;
     span.textContent = char === ' ' ? '\u00A0' : char;
     if (char === ' ') span.classList.add('space');
     el.appendChild(span);
   });
-  gsap.fromTo(
-    el.querySelectorAll(`.${letterClass}`),
-    { y: '100%', opacity: 0 },
-    { y: '0%', opacity: 1, duration: 1, ease: 'power3.out', stagger: 0.05 }
-  );
+gsap.fromTo(
+  el.querySelectorAll(`.${letterClass}`),
+  { y: '100%', opacity: 0 },
+  { y: '0%', opacity: 1, duration: 0.5, ease: 'power3.out', stagger: 0.03 }
+);
+
 };
 
 // HERO TITLES UPDATE
@@ -296,17 +297,20 @@ function updateHeroTitles(lang) {
   updateTitleLetters(leftEl, hero.left, 'rentals-letter');
   updateTitleLetters(rightEl, hero.right, 'rentals-letter');
 
-  if (ampEl) ampEl.style.display = hero.left && hero.right ? 'inline-block' : 'none';
+  if (ampEl) {
+    ampEl.style.display = hero.left && hero.right ? 'inline-block' : 'none';
+    gsap.fromTo(ampEl, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" });
+  }
 }
 
 // SET LANGUAGE
-const setLanguage = (lang) => {
+const setLanguage = lang => {
   const t = translations[lang];
   if (!t) return;
 
   localStorage.setItem('lang', lang);
 
-  document.querySelectorAll('[data-key]').forEach((el) => {
+  document.querySelectorAll('[data-key]').forEach(el => {
     const value = getValue(t, el.dataset.key);
     if (value == null) return;
 
@@ -328,74 +332,49 @@ function initGSAPAnimations() {
   const rightPanel = document.querySelector(".rentals-right-panel");
   const leftLetters = leftPanel.querySelectorAll(".rentals-letter");
   const rightLetters = rightPanel.querySelectorAll(".rentals-letter");
-  const ampersand = document.querySelector(".hero-ampersand");
-  const ampLetters = ampersand ? ampersand.querySelectorAll(".rentals-letter") : [];
+  const ampEl = document.querySelector(".hero-ampersand");
   const video = document.querySelector(".rentals-video");
   const scrollIndicator = document.querySelector(".scroll-down");
 
-  // Initial states
-  gsap.set([...leftLetters, ...rightLetters, ...ampLetters], { y: "100%", opacity: 0 });
+  const isMobile = window.innerWidth <= 768;
+
+  // Начальные состояния
+  gsap.set([...leftLetters, ...rightLetters], { y: "100%", opacity: 0 });
+  if (ampEl) gsap.set(ampEl, { y: 50, opacity: 0 });
   gsap.set(video, { y: 50, opacity: 0 });
   gsap.set([leftPanel, rightPanel], { xPercent: 0 });
 
   // Intro animation
   const introTimeline = gsap.timeline();
+  if (ampEl) introTimeline.to(ampEl, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0);
   introTimeline
-    .to(leftLetters, { y: "0%", opacity: 1, stagger: 0.05, duration: 1.2, ease: "power3.out" })
-    .to(rightLetters, { y: "0%", opacity: 1, stagger: 0.05, duration: 1.2, ease: "power3.out" }, "-=0.6")
-    .to(ampLetters, { y: "0%", opacity: 1, stagger: 0.05, duration: 1.2, ease: "power3.out" }, "-=0.8")
-    .to(video, { y: 0, opacity: 1, duration: 1, ease: "power3.out" }, "-=1");
+    .to(leftLetters, { y: "0%", opacity: 1, stagger: 0.05, duration: 1.2, ease: "power3.out" }, 0.2)
+    .to(rightLetters, { y: "0%", opacity: 1, stagger: 0.05, duration: 1.2, ease: "power3.out" }, 0.4)
+    .to(video, { y: 0, opacity: 1, duration: 1, ease: "power3.out" }, 0.6);
 
-// Scroll panels
-const isMobile = window.innerWidth <= 768;
+  // Scroll animations
+  const scrollTimeline = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".rentals-hero",
+      start: "top top",
+      end: "bottom top",
+      scrub: isMobile ? 0.5 : 1,
+      invalidateOnRefresh: true,
+    }
+  });
 
-const scrollTimeline = gsap.timeline({
-  scrollTrigger: {
-    trigger: ".rentals-hero",
-    start: "top top",
-    end: "bottom top",
-    scrub: isMobile ? 0.5 : 1, 
-    invalidateOnRefresh: true,
-  }
-});
-
-
-scrollTimeline
-  .to(leftPanel, {
-    x: "-100%",
-    duration: isMobile ? 1.5 : 2.8,
-    ease: "power4.inOut"
-  }, 0)
-  .to(rightPanel, {
-    x: "100%",
-    duration: isMobile ? 1.5 : 2.8,
-    ease: "power4.inOut"
-  }, 0)
-  .to(ampLetters, {
-    y: "-100%",
-    opacity: 0,
-    duration: isMobile ? 0.6 : 1.2,
-    ease: "power2.inOut"
-  }, 0.1)
-  .to([...leftLetters, ...rightLetters], {
-    y: "-100%",
-    opacity: 0,
-    stagger: 0.04,
-    duration: isMobile ? 1.5 : 2.8,
-    ease: "power2.inOut"
-  }, 0.3);
-
+  scrollTimeline
+    .to(leftPanel, { x: "-100%", duration: isMobile ? 1.5 : 2.8, ease: "power4.inOut" }, 0)
+    .to(rightPanel, { x: "100%", duration: isMobile ? 1.5 : 2.8, ease: "power4.inOut" }, 0)
+    .to([...leftLetters, ...rightLetters], { y: "-100%", opacity: 0, stagger: 0.04, duration: isMobile ? 1.5 : 2.8, ease: "power2.inOut" }, 0.3)
+    .to(ampEl, { y: "-100%", opacity: 0, duration: isMobile ? 0.6 : 1.2, ease: "power2.inOut" }, 0.1);
 
   // Exhibit fade-in
   gsap.fromTo(".rentals-image", { opacity: 0 }, {
     opacity: 1,
     duration: 0.8,
     ease: "power2.out",
-    scrollTrigger: {
-      trigger: ".rentals-hero",
-      start: "center bottom",
-      toggleActions: "play none none reverse"
-    }
+    scrollTrigger: { trigger: ".rentals-hero", start: "center bottom", toggleActions: "play none none reverse" }
   });
 
   gsap.fromTo(".exhibit-text", { opacity: 0, y: 30 }, {
@@ -404,29 +383,24 @@ scrollTimeline
     duration: 1,
     delay: 0.3,
     ease: "power3.out",
-    scrollTrigger: {
-      trigger: ".rentals-hero",
-      start: "center bottom",
-      toggleActions: "play none none reverse"
-    }
+    scrollTrigger: { trigger: ".rentals-hero", start: "center bottom", toggleActions: "play none none reverse" }
   });
 
   // Scroll indicator
-gsap.to(scrollIndicator, {
-  y: 30,
-  opacity: 0,
-  ease: "power2.out",
-  scrollTrigger: {
-    trigger: ".rentals-hero",
-    start: "top top",
-    end: isMobile ? "bottom top" : "center top", 
-    scrub: 1,
-    toggleActions: "play none none reverse",
-    onEnter: () => gsap.to(scrollIndicator, { opacity: 0, duration: 0.8 }),
-    onLeaveBack: () => gsap.to(scrollIndicator, { y: 0, opacity: 1, duration: 1.2 })
-  }
-});
-
+  gsap.to(scrollIndicator, {
+    y: 30,
+    opacity: 0,
+    ease: "power2.out",
+    scrollTrigger: {
+      trigger: ".rentals-hero",
+      start: "top top",
+      end: isMobile ? "bottom top" : "center top",
+      scrub: 1,
+      toggleActions: "play none none reverse",
+      onEnter: () => gsap.to(scrollIndicator, { opacity: 0, duration: 0.8 }),
+      onLeaveBack: () => gsap.to(scrollIndicator, { y: 0, opacity: 1, duration: 1.2 })
+    }
+  });
 }
 
 // INITIALIZATION
@@ -439,13 +413,13 @@ document.addEventListener('DOMContentLoaded', () => {
   const langMenu = document.getElementById('lang-menu');
 
   if (langSwitcher && langToggle && langMenu) {
-    langToggle.addEventListener('click', (e) => {
+    langToggle.addEventListener('click', e => {
       e.stopPropagation();
       langSwitcher.classList.toggle('open');
       langToggle.setAttribute('aria-expanded', langSwitcher.classList.contains('open'));
     });
 
-    langMenu.querySelectorAll('li').forEach((option) => {
+    langMenu.querySelectorAll('li').forEach(option => {
       option.addEventListener('click', () => {
         setLanguage(option.dataset.lang);
         langSwitcher.classList.remove('open');
@@ -453,7 +427,7 @@ document.addEventListener('DOMContentLoaded', () => {
       });
     });
 
-    document.addEventListener('click', (e) => {
+    document.addEventListener('click', e => {
       if (!langSwitcher.contains(e.target)) {
         langSwitcher.classList.remove('open');
         langToggle.setAttribute('aria-expanded', 'false');
