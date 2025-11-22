@@ -1513,16 +1513,17 @@ max-width: 550px;
 /*убрать!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
 .collection-line {
   background-image: url(/img/line.png);
-  height: 100px;
+  height: 20px;
   width: 100%;
   background-position: center;
   background-size: cover;
-  padding-top: 3%;
-  padding-bottom: 3%;
+  padding-top: 6px;
+  padding-bottom: 6px;
+
 }
 
 .collection-line-bg {
-  height: 100px;
+  height: 20px;
   background-color: var(--background);
 }
 
