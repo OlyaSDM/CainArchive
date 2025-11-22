@@ -1510,6 +1510,21 @@ max-width: 550px;
   flex-direction: column;
 }
 
+/*убрать!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!*/
+.collection-line {
+  background-image: url(/img/line.png);
+  height: 100px;
+  width: 100%;
+  background-position: center;
+  background-size: cover;
+  padding-top: 3%;
+  padding-bottom: 3%;
+}
+
+.collection-line-bg {
+  height: 100px;
+  background-color: var(--background);
+}
 
 .coll-intro{
   display: flex;
