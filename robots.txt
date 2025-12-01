@@ -1,0 +1,19 @@
+User-agent: *
+Allow: /
+
+# Allow important resources
+Allow: /img/
+Allow: /css/
+Allow: /js/
+
+# Block system/service folders (optional)
+Disallow: /private/
+Disallow: /drafts/
+
+# Block source files
+Disallow: /*.psd$
+Disallow: /*.zip$
+Disallow: /*.rar$
+
+# Sitemap
+Sitemap: https://cainarchive.com/sitemap.xml
