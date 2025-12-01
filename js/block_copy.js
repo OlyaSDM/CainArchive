@@ -39,7 +39,6 @@ const images = [
     const ctx = canvas.getContext("2d");
     const img = new Image();
 
-    img.crossOrigin = "anonymous"; // for CDN
     img.src = src;
 
     img.onload = () => {
@@ -77,7 +76,7 @@ document.addEventListener("contextmenu", e => e.preventDefault());
   document.addEventListener('keydown', (e) => {
   if (e.key === "PrintScreen") {
     e.preventDefault();
-    alert("Скриншоты запрещены!");
+    alert("");
   }
 });
 
