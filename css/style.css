@@ -1549,22 +1549,7 @@ max-width: 550px;
     left: -30px;
   }
 }
-/* .unseen, .untold, .unforg {
-  position: relative;
-}
-.unseen{
-  right: -200px;
-}
-.unforg{
-  left: -150px;
-} */
- /* --- Letters --- */
-/* .coll-intro .letter-inner {
-  display: inline-block;
-  transform: translateY(100%);
-  opacity: 0;
-  will-change: transform, opacity;
-} */
+
 /* Paragraph */
 .coll-p {
   display: flex;
@@ -1575,20 +1560,13 @@ max-width: 550px;
   max-width: 800px;
   text-align: center;
 }
-/* .coll-p p {
-  opacity: 0 !important;
-  transform: translateY(30px);
-  will-change: transform, opacity;  
-} */
 
-/* скрываем заголовки до разбиения и делаем спаны анимируемыми */
 .letter-section h3 {
-  visibility: hidden; /* скрипт сделает visible после split */
+  visibility: hidden; 
   overflow: hidden;
   line-height: 1;
 }
 
-/* каждый символ — inline-block чтобы можно было двигать по Y */
 .letter-inner {
   display: inline-block;
   transform: translateY(100%);

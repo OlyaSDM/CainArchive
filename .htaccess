@@ -1,0 +1,58 @@
+# --------------------------------------
+# 1. GZIP (powered by GoDaddy)
+# --------------------------------------
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+  AddOutputFilterByType DEFLATE application/javascript application/json
+  AddOutputFilterByType DEFLATE image/svg+xml
+</IfModule>
+
+# --------------------------------------
+# 2. Caching (ideal for PageSpeed)
+# --------------------------------------
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Картинки — 1 year
+  ExpiresByType image/jpg "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+  ExpiresByType image/avif "access plus 1 year"
+
+  # Шрифты — 1 year
+  ExpiresByType font/ttf "access plus 1 year"
+  ExpiresByType font/woff "access plus 1 year"
+  ExpiresByType font/woff2 "access plus 1 year"
+
+  # CSS и JS — 1 month
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+</IfModule>
+
+# --------------------------------------
+# 3. Cache-Control (PageSpeed ​​100/100)
+# --------------------------------------
+<IfModule mod_headers.c>
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|svg|avif)$">
+    Header set Cache-Control "public, max-age=31536000, immutable"
+  </FilesMatch>
+
+  <FilesMatch "\.(css|js)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+</IfModule>
+
+# --------------------------------------
+# 4. Mini-protection
+# --------------------------------------
+Options All -Indexes
+
+# --------------------------------------
+# 5. Supports SEO (pure HTML - no rules needed)
+# --------------------------------------
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+</IfModule>
