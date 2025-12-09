@@ -134,8 +134,6 @@ html, body {
 .term {
   background: var(--white);
   padding: 30px;
-  /* border-radius: 12px;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.1); */
   flex: 1 1 45%;
   max-width: 800px;
   transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -152,10 +150,7 @@ font-size: 18px;
   color: var(--fonts);
   font-weight: bold;
 }
-/* .term:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
-} */
+
 
 .term h3 {
   font-size: 50px;
@@ -244,16 +239,6 @@ font-size: 18px;
   }
 }
 
-/* 
-@keyframes scrollAnim {
-  0% { transform: translateY(0); opacity: 0.8; }
-  50% { transform: translateY(20px); opacity: 0.4; }
-  100% { transform: translateY(0); opacity: 0.8; }
-}
-
-@keyframes fadeIn {
-  to { opacity: 1; }
-} */
 
 
 @media (max-width: 1024px) {
