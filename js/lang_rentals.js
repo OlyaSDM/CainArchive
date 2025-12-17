@@ -255,7 +255,9 @@ exhibitions: {
   },
 };
 
+// ==============================
 // HELPERS
+// ==============================
 const getValue = (obj, path) =>
   path?.split('.').reduce((acc, key) => acc?.[key], obj);
 
@@ -277,15 +279,17 @@ const updateTitleLetters = (el, text, letterClass = 'letter') => {
     if (char === ' ') span.classList.add('space');
     el.appendChild(span);
   });
-gsap.fromTo(
-  el.querySelectorAll(`.${letterClass}`),
-  { y: '100%', opacity: 0 },
-  { y: '0%', opacity: 1, duration: 0.5, ease: 'power3.out', stagger: 0.03 }
-);
 
+  gsap.fromTo(
+    el.querySelectorAll(`.${letterClass}`),
+    { y: '100%', opacity: 0 },
+    { y: '0%', opacity: 1, duration: 1.5, ease: 'power3.out', stagger: 0.03 }
+  );
 };
 
+// ==============================
 // HERO TITLES UPDATE
+// ==============================
 function updateHeroTitles(lang) {
   const hero = translations[lang]?.hero;
   if (!hero) return;
@@ -298,12 +302,17 @@ function updateHeroTitles(lang) {
   updateTitleLetters(rightEl, hero.right, 'rentals-letter');
 
   if (ampEl) {
-    ampEl.style.display = hero.left && hero.right ? 'inline-block' : 'none';
-    gsap.fromTo(ampEl, { y: 50, opacity: 0 }, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" });
+    // безопасная анимация амперсанда
+    gsap.set(ampEl, { autoAlpha: 0, y: 50 });
+    if (hero.left && hero.right) {
+      gsap.to(ampEl, { autoAlpha: 1, y: 0, duration: 0.6, ease: "power3.out" });
+    }
   }
 }
 
+// ==============================
 // SET LANGUAGE
+// ==============================
 const setLanguage = lang => {
   const t = translations[lang];
   if (!t) return;
@@ -324,7 +333,9 @@ const setLanguage = lang => {
   if (currentLangEl) currentLangEl.textContent = lang.toUpperCase();
 };
 
+// ==============================
 // GSAP & SCROLL ANIMATIONS
+// ==============================
 function initGSAPAnimations() {
   gsap.registerPlugin(ScrollTrigger);
 
@@ -338,21 +349,27 @@ function initGSAPAnimations() {
 
   const isMobile = window.innerWidth <= 768;
 
-  // Начальные состояния
+  // ==============================
+  // Initial States
+  // ==============================
   gsap.set([...leftLetters, ...rightLetters], { y: "100%", opacity: 0 });
-  if (ampEl) gsap.set(ampEl, { y: 50, opacity: 0 });
+  if (ampEl) gsap.set(ampEl, { y: 50, autoAlpha: 0 });
   gsap.set(video, { y: 50, opacity: 0 });
   gsap.set([leftPanel, rightPanel], { xPercent: 0 });
 
-  // Intro animation
+  // ==============================
+  // Intro Animation
+  // ==============================
   const introTimeline = gsap.timeline();
-  if (ampEl) introTimeline.to(ampEl, { y: 0, opacity: 1, duration: 0.6, ease: "power3.out" }, 0);
+  if (ampEl) introTimeline.to(ampEl, { y: 0, autoAlpha: 1, duration: 0.6, ease: "power3.out" }, 0);
   introTimeline
     .to(leftLetters, { y: "0%", opacity: 1, stagger: 0.05, duration: 1.2, ease: "power3.out" }, 0.2)
     .to(rightLetters, { y: "0%", opacity: 1, stagger: 0.05, duration: 1.2, ease: "power3.out" }, 0.4)
     .to(video, { y: 0, opacity: 1, duration: 1, ease: "power3.out" }, 0.6);
 
-  // Scroll animations
+  // ==============================
+  // Scroll Animations (Curtain Closing)
+  // ==============================
   const scrollTimeline = gsap.timeline({
     scrollTrigger: {
       trigger: ".rentals-hero",
@@ -366,10 +383,18 @@ function initGSAPAnimations() {
   scrollTimeline
     .to(leftPanel, { x: "-100%", duration: isMobile ? 1.5 : 2.8, ease: "power4.inOut" }, 0)
     .to(rightPanel, { x: "100%", duration: isMobile ? 1.5 : 2.8, ease: "power4.inOut" }, 0)
-    .to([...leftLetters, ...rightLetters], { y: "-100%", opacity: 0, stagger: 0.04, duration: isMobile ? 1.5 : 2.8, ease: "power2.inOut" }, 0.3)
-    .to(ampEl, { y: "-100%", opacity: 0, duration: isMobile ? 0.6 : 1.2, ease: "power2.inOut" }, 0.1);
+    .to(ampEl, { y: "-100%", autoAlpha: 0, duration: isMobile ? 0.8 : 1.2, ease: "power2.inOut" }, 0)
+    .to([...leftLetters, ...rightLetters], {
+      y: "-100%",
+      opacity: 0,
+      stagger: 0.04,
+      duration: isMobile ? 1.5 : 2.8,
+      ease: "power2.inOut"
+    }, 0.1);
 
-  // Exhibit fade-in
+  // ==============================
+  // Exhibit Fade-In
+  // ==============================
   gsap.fromTo(".rentals-image", { opacity: 0 }, {
     opacity: 1,
     duration: 0.8,
@@ -386,7 +411,9 @@ function initGSAPAnimations() {
     scrollTrigger: { trigger: ".rentals-hero", start: "center bottom", toggleActions: "play none none reverse" }
   });
 
-  // Scroll indicator
+  // ==============================
+  // Scroll Indicator
+  // ==============================
   gsap.to(scrollIndicator, {
     y: 30,
     opacity: 0,
@@ -403,11 +430,14 @@ function initGSAPAnimations() {
   });
 }
 
+// ==============================
 // INITIALIZATION
+// ==============================
 document.addEventListener('DOMContentLoaded', () => {
   const lang = localStorage.getItem('lang') || 'en';
   setLanguage(lang);
 
+  // Language switcher
   const langSwitcher = document.getElementById('langSwitcher');
   const langToggle = document.getElementById('lang-toggle');
   const langMenu = document.getElementById('lang-menu');
