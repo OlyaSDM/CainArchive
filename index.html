@@ -473,7 +473,7 @@
 
 
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" defer></script>
-      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js" defer></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollToPlugin.min.js"></script>
       <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/TextPlugin.min.js"></script>
       <script src="https://cdn.jsdelivr.net/npm/gsap@3.13.0/dist/ScrollSmoother.min.js"></script>
@@ -493,5 +493,12 @@
       <script src="js/img.js" defer></script>
       <script src="js/block_copy.js" defer></script> 
       <script src="/js/lang.js" defer></script>
+      <script>
+    window.addEventListener('load', () => {
+      const script = document.createElement('script');
+      script.src = 'https://img1.wsimg.com/.../scc-c2.min.js';
+      document.body.appendChild(script);
+    });
+  </script>
    </body>
 </html>

@@ -1,98 +1,98 @@
- gsap.registerPlugin(ScrollTrigger);
+gsap.registerPlugin(ScrollTrigger);
 
- window.addEventListener("load", () => {
-   requestAnimationFrame(initMosaicAnimation);
- });
+window.addEventListener("load", () => {
+  requestAnimationFrame(initMosaicAnimation);
+});
 
- function initMosaicAnimation() {
-   const leftCol = document.querySelector(".column.left");
-   const middleCol = document.querySelector(".column.middle");
-   const rightCol = document.querySelector(".column.right");
+function initMosaicAnimation() {
+  const leftCol = document.querySelector(".column.left");
+  const middleCol = document.querySelector(".column.middle");
+  const rightCol = document.querySelector(".column.right");
 
-   if (!leftCol || !middleCol || !rightCol) return;
+  if (!leftCol || !middleCol || !rightCol) return;
 
-   const images = [
-     "/img/gallery/1.webp", "/img/gallery/2.webp", "/img/gallery/3.webp",
-     "/img/gallery/4.webp", "/img/gallery/5.webp", "/img/gallery/6.webp",
-     "/img/gallery/7.webp", "/img/gallery/8.webp", "/img/gallery/9.webp",
-     "/img/gallery/10.webp", "/img/gallery/11.webp", "/img/gallery/12.webp",
-     "/img/gallery/13.webp", "/img/gallery/14.webp", "/img/gallery/15.webp",
-     "/img/gallery/16.webp", "/img/gallery/17.webp", "/img/gallery/18.webp",
-     "/img/gallery/19.webp", "/img/gallery/20.webp", "/img/gallery/21.webp",
-     "/img/gallery/22.webp", "/img/gallery/23.webp", "/img/gallery/24.webp",
-     "/img/gallery/25.webp", "/img/gallery/26.webp", "/img/gallery/27.webp",
-     "/img/gallery/28.webp", "/img/gallery/29.webp", "/img/gallery/30.webp"
-   ];
+  const images = Array.from({ length: 30 }, (_, i) => `/img/gallery/${i + 1}.webp`);
 
-   const cols = [
-     { el: leftCol, dirFactor: 1, imgs: images.filter((_, i) => i % 3 === 0) },
-     { el: middleCol, dirFactor: -1, imgs: images.filter((_, i) => i % 3 === 1) },
-     { el: rightCol, dirFactor: 1, imgs: images.filter((_, i) => i % 3 === 2) },
-   ];
+  const cols = [
+    { el: leftCol, dirFactor: 1, imgs: images.filter((_, i) => i % 3 === 0) },
+    { el: middleCol, dirFactor: -1, imgs: images.filter((_, i) => i % 3 === 1) },
+    { el: rightCol, dirFactor: 1, imgs: images.filter((_, i) => i % 3 === 2) },
+  ];
 
-   cols.forEach(c => {
-     const totalImages = [...c.imgs, ...c.imgs];  
-     totalImages.forEach((src, index) => {
-       const wrapper = document.createElement("div");
-       wrapper.className = "image-wrapper";
-      
-       const imgTag = document.createElement("img");
-       imgTag.src = src;
-       imgTag.alt = "photo";
-       imgTag.loading = index < 3 ? "eager" : "lazy";  
-       if (index < 3) imgTag.setAttribute("fetchpriority", "high"); 
+  cols.forEach(c => {
+    const totalImages = [...c.imgs, ...c.imgs];
+    totalImages.forEach((src, index) => {
+      const wrapper = document.createElement("div");
+      wrapper.className = "image-wrapper";
 
-       wrapper.appendChild(imgTag);
-       wrapper.innerHTML += '<div class="watermark">© CainArchive</div>';
-       c.el.appendChild(wrapper);
-     });
+      const imgTag = document.createElement("img");
+      imgTag.src = src;
+      imgTag.alt = "photo";
+      imgTag.loading = index < 3 ? "eager" : "lazy";
+      if (index < 3) imgTag.setAttribute("fetchpriority", "high");
 
-     c.el.style.willChange = "transform";
-     c.el.style.transform = "translateZ(0)";
-   });
+      wrapper.appendChild(imgTag);
+      wrapper.insertAdjacentHTML("beforeend", '<div class="watermark">© CainArchive</div>');
 
-   let targetDir = 1;
-   let currentDir = 1;
+      c.el.appendChild(wrapper);
+    });
 
-   const SPEED = 50;
+    c.el.offset = 0;
+    c.el.shift = c.el.scrollHeight / 2;
 
-   ScrollTrigger.create({
-     trigger: ".mosaic-section",
-     start: "top top",
-     end: "bottom bottom",
-     invalidateOnRefresh: true,  
-     onUpdate(self) {
-       targetDir = window.innerWidth > 768 ? (self.direction === 1 ? 1 : -1) : 1;
-     },
-   });
+    c.el.style.willChange = "transform";
+    c.el.style.transform = "translateZ(0)";
+  });
 
-   gsap.ticker.fps(30);  
+  let targetDir = 1;
+  let currentDir = 1;
 
-   let lastTime = performance.now();
+  const SPEED = window.innerWidth <= 768 ? 20 : 50; 
 
-   gsap.ticker.add(() => {
-     const now = performance.now();
-     const dt = Math.min(0.05, (now - lastTime) / 1000); 
-     lastTime = now;
+  let ready = false;
+  setTimeout(() => { ready = true; }, 100);
 
-     currentDir += (targetDir - currentDir) * 0.15;
+  if (window.innerWidth > 768) {
+    ScrollTrigger.create({
+      trigger: ".mosaic-section",
+      start: "top top",
+      end: "bottom bottom",
+      invalidateOnRefresh: true,
+      onUpdate(self) {
+        targetDir = self.direction === 1 ? 1 : -1;
+      },
+    });
+  }
 
-     cols.forEach(c => {
-       c.el.offset = (c.el.offset || 0) + -currentDir * c.dirFactor * SPEED * dt;
-       const shift = c.el.scrollHeight / 2;
+  gsap.ticker.fps(30);
 
-       if (c.el.offset <= -shift) c.el.offset += shift;
-       if (c.el.offset > 0) c.el.offset -= shift;
+  let lastTime = performance.now();
 
-       gsap.set(c.el, { y: c.el.offset });
-     });
-   });
+  gsap.ticker.add(() => {
+    if (!ready) return; 
 
-   window.addEventListener("resize", () => {
-     cols.forEach(c => {
-       c.el.offset = c.el.offset || 0;
-     });
-     ScrollTrigger.refresh(); 
-   });
- }
+    const now = performance.now();
+    const dt = (now - lastTime) / 1000;
+    lastTime = now;
 
+    currentDir += (targetDir - currentDir) * 0.15;
+
+    cols.forEach(c => {
+      c.el.offset += -currentDir * c.dirFactor * SPEED * dt;
+      const shift = c.el.shift;
+
+      if (c.el.offset <= -shift) c.el.offset += shift;
+      if (c.el.offset > 0) c.el.offset -= shift;
+
+      gsap.set(c.el, { y: c.el.offset });
+    });
+  });
+
+  window.addEventListener("resize", () => {
+    cols.forEach(c => {
+      c.el.offset = 0;
+      c.el.shift = c.el.scrollHeight / 2;
+    });
+    ScrollTrigger.refresh();
+  });
+}
